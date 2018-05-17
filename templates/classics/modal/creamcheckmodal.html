@@ -1,0 +1,25 @@
+<ion-modal-view class='ksbz-model'>
+	<div class="hallmodelbox blackbg position-center">
+		<div class="closeb" ng-click="creamfixedModal.hide()"></div>
+		<div class="hallmodelbody">
+			<h1 class="a-font-size-medium a-text-color-light">请先选择房间类型</h1>
+			<div class="textClass">
+				<p ng-if="checkCss0" class="text a-font-size-small a-text-color-whit position-center">房间在大厅可见，任何人可以参加</p>
+				<p ng-if="checkCss1" class="text a-font-size-small a-text-color-whit position-center">房间在大厅不可见，只可通过大厅<span class="font-weight a-text-color-light">“快速进房”<br />输入房间号</span>或<span class="font-weight a-text-color-light">好友邀请</span></span>加入</p>
+			</div>
+			<div class="roomType flex-justify-a">
+				<div class="typeBox blackroom" ng-click="typechecked(0)" ng-class="{'greenborder':checkCss0}">
+					<img ng-if="checkCss0" src="../../../img2.0/hall/gkf_xz.png" alt="" />
+					<img ng-if="!checkCss0" src="../../../img2.0/hall/gkf_mr.png" alt="" />
+					<p class="a-font-size-small-x" ng-class="{true:'a-text-color-light font-weight',false:'a-text-color-whitDark'}[checkCss0]">公开房</p>
+				</div>
+				<div class="typeBox blackroom" ng-click="typechecked(1)"  ng-class="{'greenborder':checkCss1}">
+					<img ng-if="checkCss1" src="../../../img2.0/hall/smf_xz.png" alt="" />
+					<img ng-if="!checkCss1" src="../../../img2.0/hall/smf_mr.png" alt="" />
+					<p class="a-font-size-small-x" ng-class="{true:'a-text-color-light font-weight',false:'a-text-color-whitDark'}[checkCss1]">私密房</p>
+				</div>
+			</div>
+			<div class="searchbtn a-flex-center a-buttonSmall-green" ng-click="creamfixed()">前去创建</div>
+		</div>
+	</div>
+</ion-modal-view>

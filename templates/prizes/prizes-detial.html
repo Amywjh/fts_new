@@ -1,0 +1,162 @@
+<ion-view view-title="球星对战" class='prizes-room' hide-tabs>
+	<!--头部-->
+	<div header-rule></div>
+	<ion-content class="has-tt">
+		<div prizes-item-nostart class="details"></div>
+		<div class="a-background-item rSupport">
+			<h2>支持率</h2>
+			<div class="rOne">
+				<span class="leftBar" style="background:#ed1f24;width: {{prizesDetial.home.percent}};height: 100%;"></span>
+				<span class="rightBar" style="background:#0084c7;width: {{prizesDetial.away.percent}};height: 100%"></span>
+			</div>
+			<div class="rTwo">
+				<div>
+					<span>{{prizesDetial.home.percent}}</span>
+					<div ng-repeat="partPlayerHome in playerData.home.costRank track by $index">
+						<span>{{partPlayerHome.name}}&nbsp;投入</span>&nbsp;<img src="../../img2.0/prize2.0/xz.png" alt="" />&nbsp;<span class="ts">{{partPlayerHome.cost}}</span>
+					</div>
+				</div>
+				<div>
+					<span>{{prizesDetial.away.percent}}</span>
+					<div ng-repeat="partPlayerAway in playerData.away.costRank track by $index">
+						<span>{{partPlayerAway.name}}&nbsp;投入</span>&nbsp;<img src="../../img2.0/prize2.0/xz.png" alt="" />&nbsp;<span class="ts">{{partPlayerAway.cost}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="a-background-item rConvas">
+			<h2>实力对比</h2>
+			<div class="headC">
+				<div>
+					<span>{{prizesDetial.home.playerName}}</span>
+					<div><img ng-if="!prizesDetial.home.headImgUrl" src="./img2.0/common/player_default.png" alt="" /><img ng-src="{{prizesDetial.home.headImgUrl}}" onerror="loadDefaultImg(0)" alt="" /></div>
+				</div>
+				<div>
+					<div><img ng-if="!prizesDetial.away.headImgUrl" src="./img2.0/common/player_default.png" alt="" /><img ng-src="{{prizesDetial.away.headImgUrl}}" onerror="loadDefaultImg(0)" alt="" /></div>
+					<span>{{prizesDetial.away.playerName}}</span>
+				</div>
+			</div>
+			<div class="bodyC">
+				<div>
+					<span class="num">{{playerData.home.power}}</span>
+					<div class="bg_line"><span class="top-center" style="width:{{playerData.home.powerPercent}};"></span></div>
+					<span class="center">近期战力</span>
+					<div class="bg_line right"><span class="top-center" style="width:{{playerData.away.powerPercent}};"></span></div>
+					<span class="num">{{playerData.away.power}}</span>
+				</div>
+				<div>
+					<span class="num">{{playerData.home.startCount}}/{{playerData.home.teamMatchCount}}</span>
+					<div class="bg_line"><span class="top-center" style="width:{{playerData.home.startCountPercent}};"></span></div>
+					<span class="center">首发情况</span>
+					<div class="bg_line right"><span class="top-center" style="width:{{playerData.away.startCountPercent}};"></span></div>
+					<span class="num">{{playerData.away.startCount}}/{{playerData.away.teamMatchCount}}</span>
+				</div>
+				<div>
+					<span class="num">{{playerData.home.avgPlayTime}}min</span>
+					<div class="bg_line"><span class="top-center" style="width:{{playerData.home.avgTimePercent}};"></span></div>
+					<span class="center">场均时间</span>
+					<div class="bg_line right"><span class="top-center" style="width:{{playerData.away.avgTimePercent}};"></span></div>
+					<span class="num">{{playerData.away.avgPlayTime}}min</span>
+				</div>
+			</div>
+			<h2 class="exp" ng-if="playerData.home.recentExpression.length>4||playerData.away.recentExpression.length>4">球员近期表现</h2>
+			<highchart id="chart2" config="detailChartConfig"></highchart>
+		</div>
+		<div class="a-background-item rHistory">
+			<h2>球员历史数据</h2>
+			<span class="a-text-color-whitDark a-font-size-small" style="display: block;text-align: center;"  ng-if="!playerData.home.recentMatch.length && !playerData.away.recentMatch.length">新赛季尚未开始，暂无球员数据</span>
+			<div class="Hone" ng-if="playerData.home.recentMatch.length">
+				<div></div>
+				<div class="headImg"><img ng-if="!prizesDetial.home.headImgUrl" src="./img2.0/common/player_default.png" alt="" /><img ng-src="{{prizesDetial.home.headImgUrl}}" onerror="loadDefaultImg(0)" alt="" /></div>
+				<span class="historyPlayerName">
+					{{prizesDetial.home.playerName}}
+				</span>
+				<div class="a-text-color-light a-font-size-small historyMore"  ng-click="playerDetialPrizes(prizesDetial.home.playerId)">查看更多<i class="ion-ios-arrow-right a-text-color-light a-font-size-medium"></i></div>
+			</div>
+			<div class="Htwo" ng-if="playerData.home.recentMatch.length">
+				<div>
+					<table class="infoLeft" align="center" border="" cellspacing="" cellpadding="">
+						<tr class="headInfo">
+							<th class="a-font-size-small-s a-text-colorgreen">对战</th>
+						</tr>
+						<tr class="listInfo" ng-repeat="item in playerData.home.recentMatch">
+							<td>
+								<div class="a-flex-center listInfoBox">
+									<span class="a-flex-center-column time">
+										<p class="a-font-size-small-s a-text-color-whitDark">{{item.startMonth}}</p><p class="line"></p><p class="a-font-size-small-s a-text-color-whitDark">{{item.startDay}}</p>
+									</span>
+									<div class="a-flex-center-column teams">
+										<span ng-class="{1:'isHome'}[item.home]">{{item.homeName}}</span>
+										<span ng-class="{0:'isHome'}[item.home]">{{item.awayName}}</span>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<ion-scroll direction="x" class="scr">
+					<table class="prizePlayerDetial" border="" cellspacing="" cellpadding="">
+						<tr class="prizePlayerDetialTitle">
+							<th class="a-font-size-small-s a-text-colorgreen">结果</th>
+							<th class="a-font-size-small-s a-text-colorgreen">表现值</th>
+							<th class="a-font-size-small-s a-text-colorgreen" ng-repeat="(kk,val) in playerData.home.dimensionList">{{val}}</th>
+						</tr>
+						<tr class="prizePlayerDetialItem" ng-repeat="item in playerData.home.recentMatch">
+							<td class="a-font-size-small-s a-text-color-whit">{{item.result}}</td>
+							<td class="a-font-size-small-s a-text-color-light">{{item.expression}}</td>
+							<td class="a-font-size-small-s" ng-repeat="(kk,val) in playerData.away.dimensionList">{{item.dimensions[val]}}</td>
+						</tr>
+					</table>
+
+				</ion-scroll>
+			</div>
+			<div class="Hone HoneAway" ng-if="playerData.home.recentMatch.length">
+				<div></div>
+				<div class="headImg"><img ng-if="!prizesDetial.away.headImgUrl" src="./img2.0/common/player_default.png" alt="" /><img ng-src="{{prizesDetial.away.headImgUrl}}" onerror="loadDefaultImg(0)" alt="" /></div>
+				<span class="historyPlayerName bottom">
+					{{prizesDetial.away.playerName}}
+				</span>
+				<div class="a-text-color-light a-font-size-small historyMore"  ng-click="playerDetialPrizes(prizesDetial.away.playerId)">查看更多<i class="ion-ios-arrow-right a-text-color-light a-font-size-medium"></i></div>
+			</div>
+			<div class="Htwo" ng-if="playerData.away.recentMatch.length">
+				<div>
+					<table class="infoLeft" align="center" border="" cellspacing="" cellpadding="">
+						<tr class="headInfo">
+							<th class="a-font-size-small-s a-text-colorgreen">对战</th>
+						</tr>
+						<tr class="listInfo" ng-repeat="item in playerData.away.recentMatch">
+							<td>
+								<div class="a-flex-center listInfoBox">
+									<span class="a-flex-center-column time">
+										<p class="a-font-size-small-s a-text-color-whitDark">{{item.startMonth}}</p><p class="line"></p><p class="a-font-size-small-s a-text-color-whitDark">{{item.startDay}}</p>
+									</span>
+									<div class="a-flex-center-column teams">
+										<span ng-class="{1:'isHome'}[item.home]">{{item.homeName}}</span>
+										<span ng-class="{0:'isHome'}[item.home]">{{item.awayName}}</span>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<ion-scroll direction="x" class="scr">
+					<table class="prizePlayerDetial" border="" cellspacing="" cellpadding="">
+						<tr class="prizePlayerDetialTitle">
+							<th class="a-font-size-small-s a-text-colorgreen">结果</th>
+							<th class="a-font-size-small-s a-text-colorgreen">表现值</th>
+							<th class="a-font-size-small-s a-text-colorgreen" ng-repeat="(kk,val) in playerData.away.dimensionList">{{val}}</th>
+						</tr>
+						<tr class="prizePlayerDetialItem" ng-repeat="item in playerData.away.recentMatch">
+							<td class="a-font-size-small-s a-text-color-whit">{{item.result}}</td>
+							<td class="a-font-size-small-s a-text-color-light">{{item.expression}}</td>
+							<td class="a-font-size-small-s" ng-repeat="(kk,val) in playerData.away.dimensionList">{{item.dimensions[val]}}</td>
+						</tr>
+					</table>
+				</ion-scroll>
+			</div>
+		</div>
+	</ion-content>
+	<div class="prizes-vote"></div>
+	
+	
+</ion-view>

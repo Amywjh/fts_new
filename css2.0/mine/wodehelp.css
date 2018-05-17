@@ -1,0 +1,36 @@
+.wode-help div{
+  font-size: 100%;
+}
+.wode-help .wodehelp{
+    padding-left: 0;
+    padding-right:0;
+}
+.wode-help .item-icon-left .icon{
+    left: 0.16rem;
+}
+.wode-help .wodehelp p,.wode-help .wodehelp li>i{
+    font-size: 0.14rem;
+    color:rgb(143,234,150);
+}
+.wode-help .wodehelp ul{
+	padding: 0 .1rem;
+}
+.wode-help .wodehelp li.item{
+	background: none;
+	padding-left: .2rem;
+}
+.wode-help .wodehelp li>i>img{
+    width: 0.2rem;
+    height: 0.2rem;
+}
+.wode-help .wodehelp li>span{
+	right:0.05rem;
+	font-size: .14rem;
+	color:rgb(143,234,150);
+}
+.wode-help .wodehelp li>span>img{
+    width: 0.14rem;
+    height: 0.2rem;
+
+   
+}

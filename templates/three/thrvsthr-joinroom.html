@@ -1,0 +1,93 @@
+<ion-view title='三人战大厅' class='hall-joinroom' hide-tabs>
+  <!--加入房间时显示的头部-->
+<div class="header-sec-help"></div>
+<!--创建房间-->
+<ion-content class="room_jion" scrollbar-y="false" >
+	<div class="room_detial">
+		<article>
+			<div class="room_box">
+				<span class="roomtype roomType{{joinroomdata.official}}">
+					<!--房间类型-->
+					<div class="type" ng-if="joinroomdata.official==0">包厢</div>
+					<div class="type" ng-if="joinroomdata.official==1">官方</div>
+				</span>
+				<span class="roomName">{{joinroomdata.name}}</span>
+			</div>
+			<div class="reward_box">
+				<span class="rewardType">奖励规则：</span>
+				<span class="rewardDel">{{joinroomdata.playTypeDisplay}}
+					<span ng-if="joinroomdata.playType==3">均分</span><span ng-if="joinroomdata.playType==2">梯度</span>有奖
+				</span>
+			</div>
+			<div class="bonus_box">
+				<span class="bonus">最高奖金：</span>
+				<ul class="bonusDel" ng-if="joinroomdata.playType==0 || joinroomdata.playType==2" ng-click="rewardHelp(joinroomdata.fee)">
+					<li><span>第一名：</span><img src="../img/room_new/room_new_coin.png" alt="" /><span class="xb">{{joinroomdata.firstPrize}}</span><span ng-if="joinroomdata.fee" class="ion-help-circled help"></span></li>
+				</ul>
+				<ul class="bonusDel" ng-if="joinroomdata.playType==1" ng-click="rewardHelp(joinroomdata.fee)">
+					<li><span>第一名：</span><img src="../img/room_new/room_new_coin.png" alt="" /><span class="xb">{{joinroomdata.firstPrize}}</span><span ng-if="joinroomdata.fee" class="ion-help-circled help"></span></li>
+					<li><span>第二名：</span><img src="../img/room_new/room_new_coin.png" alt="" /><span class="xb">{{joinroomdata.secondPrize}}</span></li>
+					<li><span>第三名：</span><img src="../img/room_new/room_new_coin.png" alt="" /><span class="xb">{{joinroomdata.thirdPrize}}</span></li>
+				</ul>
+				<ul class="bonusDel" ng-if="joinroomdata.playType==3" ng-click="rewardHelp(joinroomdata.fee)">
+					<li><span>均分：</span><img src="../img/room_new/room_new_coin.png" alt="" /><span class="xb">{{joinroomdata.firstPrize}}</span><span ng-if="joinroomdata.fee" class="ion-help-circled help"></span></li>
+				</ul>
+				
+			</div>
+		</article>
+		<aside>
+			<div class="league_box">
+				<img ng-src="{{joinroomdata.leagueLogo}}" alt="" />
+				<span class="league{{joinroomdata.league}}">{{joinroomdata.leagueName}}</span>
+			</div>
+		</aside>
+	</div>
+	<div class="rule">
+		<div class="rule_title"><span class="title">竞技规则</span></div>
+		<div class="content">本房间内的比赛对应现实中即将开始的比赛，请选择3个球员（位置不限，工资不限），在比赛结束后通过球员的表现值总和进行结算。</div>
+	</div>
+	<div class="players">
+			<div class="title">
+				<span>参与用户：</span>
+			</div>
+	 		<a class="playershow" ng-click="playerlist(joinroomdata.roomId)" >
+				<div ng-repeat='users in joinroomdata.userPhotoList track by $index'>
+					<img class="player" ng-if="users" ng-src="{{users}}"/>
+					<img class="player" ng-if="!users" src="../../img2.0/common/touxiang_default.png"/>
+				</div>
+				<div><span>{{joinroomdata.userCount}}</span></div>
+	 		</a>
+			<div class="playermore">
+				<a><img class="player" src="./img/join/room_join_sign.png" /></a>
+			</div>
+	</div>
+	<div class="joinroomdetial">	
+		<header>
+			<span ng-if="joinroomdata.matchListCount">比赛列表（{{joinroomdata.matchListCount}}场）</span>
+		</header>
+		<li class="game" ng-repeat='rooms in joinroomdata.matchList'>
+			<div class="content">
+				<div class="aside"><img ng-src="{{rooms.homeLogo}}"/></div>
+				<center>
+					<div class="time">
+						<span>{{rooms.startTime}}</span>
+						<span><img src="./img/join/room_join_clock.png" alt="" />{{rooms.remainTime}}</span>
+					</div>
+					<img src="./img/join/room_join_vs.png"/>
+				</center>
+				<div class="aside"><img ng-src="{{rooms.awayLogo}}"/></div>
+			</div>
+			<div class="name">
+				<div class="aside">{{rooms.homeName}}</div>
+				<center></center>
+				<div class="aside">{{rooms.awayName}}</div>
+			</div>
+		</li>
+	</div>
+</ion-content>
+<div class="event">
+	<button ng-click = 'isjoin(2,joinroomdata)' ng-if="fee != 0"><img src="./img/join/jrfj_xz_1.png" style="height: 0.4rem;vertical-align: middle;position:relative;top:0.18rem;transform: translateY(-50%);" />&nbsp;{{fee}}&nbsp;加入{{no_click}}</button>		
+	<button ng-click = 'isjoin(2,joinroomdata)' ng-if="fee == 0">加入{{no_click}}</button>		
+</div>		
+
+</ion-view>

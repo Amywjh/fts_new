@@ -1,0 +1,219 @@
+.popup-container {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.confirm-popup > .popup,
+.exchange-popup > .popup {
+  width: 80vw;
+  padding: 0px 0.18rem;
+  border-radius: 2px;
+  background-image: -webkit-linear-gradient(top, #303845 0%, #222c35 100%);
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+.confirm-popup > .popup > .popup-head,
+.exchange-popup > .popup > .popup-head {
+  padding: 0.2rem;
+  border: none;
+  display: none;
+}
+.confirm-popup > .popup > .popup-body,
+.exchange-popup > .popup > .popup-body {
+  padding: 0.24rem 0px;
+}
+.confirm-popup > .popup > .popup-body > p,
+.exchange-popup > .popup > .popup-body > p {
+  color: #34ed41;
+  font-size: 0.16rem;
+  font-weight: bold;
+}
+.confirm-popup > .popup > .popup-buttons,
+.exchange-popup > .popup > .popup-buttons {
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  align-items: center;
+  -webkit-align-items: center;
+  flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+}
+.confirm-popup > .popup > .popup-buttons > .button,
+.exchange-popup > .popup > .popup-buttons > .button {
+  -webkit-box-flex: inherit;
+  -webkit-flex: inherit;
+  flex: inherit;
+  font-weight: bold;
+  color: #8fea96;
+  font-size: 0.14rem;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0.9rem;
+  height: 0.36rem;
+  min-height: 0.36rem;
+  border: none;
+  background-color: none;
+  margin-bottom: 0.14rem;
+  background-image: linear-gradient(-180deg, #3B4351 0%, #212d38 100%);
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  padding: 0px;
+}
+.confirm-popup > .popup > .popup-buttons > .button:last-child,
+.exchange-popup > .popup > .popup-buttons > .button:last-child {
+  color: #FFFFFF;
+  font-weight: bold;
+  background-image: linear-gradient(-180deg, #6ee00a 0%, #12b01d 70%);
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+.exchange-popup > .popup > .popup-head {
+  padding: 0.2rem 0 0;
+  border: none;
+  display: block;
+  letter-spacing: .02rem;
+}
+.exchange-popup > .popup > .popup-body {
+  padding: 0.2rem 0px;
+  text-align: center;
+}
+.exchange-popup > .popup > .popup-buttons > .button {
+  overflow: inherit;
+}
+.alert-popup > .popup {
+  width: 80vw;
+  padding: 0.18rem 0.18rem;
+  border-radius: 2px;
+  background-image: -webkit-linear-gradient(top, #303845 0%, #222c35 100%);
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.35), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+.alert-popup > .popup > .popup-head {
+  padding: 0px;
+  border: none;
+}
+.alert-popup > .popup > .popup-body {
+  color: #34ed41;
+  font-size: 0.14rem;
+}
+.alert-popup > .popup > .popup-body > p,
+.alert-popup > .popup > .popup-body > div {
+  color: #34ed41;
+  font-size: 0.14rem;
+  text-align: center;
+}
+.alert-popup > .popup > .popup-buttons {
+  width: 100%;
+  padding: 0px;
+  min-height: auto;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+}
+.alert-popup > .popup > .popup-buttons > .button.button.button-positive {
+  font-size: .14rem;
+  background-image: linear-gradient(-180deg, #6ee00a 0%, #12b01d 100%);
+  min-height: auto;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.5);
+  /* border-radius: 2px; */
+  width: .9rem;
+  height: .36rem;
+  line-height: .36rem;
+  font-weight: bold;
+  padding: 0;
+  border: none;
+  flex: none;
+}
+.alert-shut-popup > .popup {
+  width: 3.27rem;
+  height: 1.5rem;
+  padding: 0px 0.18rem;
+  border-radius: 2px;
+  background-image: -webkit-linear-gradient(top, #303845 0%, #222c35 100%);
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.35), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+.alert-shut-popup > .popup > .popup-head {
+  padding: 0px;
+  border: none;
+}
+.alert-shut-popup > .popup > .popup-body {
+  color: #34ed41;
+  font-size: 0.14rem;
+  padding: 0px;
+  text-align: left;
+  margin: auto;
+}
+.alert-shut-popup > .popup > .popup-body > div > h1,
+.alert-shut-popup > .popup > .popup-body > div > div {
+  margin-bottom: 0.1rem;
+}
+.alert-shut-popup > .popup > .popup-buttons {
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+  flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 0px;
+  width: 0.32rem;
+}
+.alert-shut-popup > .popup > .popup-buttons > .button.button.button-positive {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0px;
+  overflow: visible;
+  padding-top: 12px;
+}
+.corps-alert .popup,
+.corps-confirm .popup {
+  border-radius: 2px;
+  background-image: -webkit-linear-gradient(#2D4E7A 0%, #19375E 75%);
+  background-image: linear-gradient(#2D4E7A 0%, #19375E 75%);
+  width: 75%;
+}
+.corps-alert .popup .popup-head,
+.corps-confirm .popup .popup-head {
+  border: 0;
+}
+.corps-alert .popup .popup-buttons,
+.corps-confirm .popup .popup-buttons {
+  display: block;
+}
+.corps-alert .popup .popup-buttons button,
+.corps-confirm .popup .popup-buttons button {
+  margin: 0 auto;
+  min-height: auto;
+  height: .36rem;
+  width: .9rem;
+  font-size: .14rem;
+  font-weight: bold;
+  border: 0;
+  background-image: -webkit-linear-gradient(#6665FF 0%, #4342FF 75%);
+  background-image: linear-gradient(#6665FF 0%, #4342FF 75%);
+  box-shadow: -1px 7px 8px rgba(0, 0, 0, 0.3);
+}
+.corps-confirm .popup .popup-head {
+  padding: 0.26rem 0 .15rem;
+}
+.corps-confirm .popup .popup-buttons {
+  display: flex;
+  padding: .18rem 0 .22rem;
+}
+.corps-confirm .popup .popup-buttons button {
+  flex: initial;
+}
+.corps-confirm .popup .popup-buttons button:first-child {
+  background-image: -webkit-linear-gradient(#2D4E7A 0%, #19375E 75%);
+  background-image: linear-gradient(#2D4E7A 0%, #19375E 75%);
+  color: #A4B2CD;
+}

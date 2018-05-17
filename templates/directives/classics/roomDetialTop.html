@@ -1,0 +1,116 @@
+<div class="a-ownpm a-background-item a-flex-start-column room_detial">
+	<div class="leagueLogo">
+		<img class="a-img-size" ng-src="../../img2.0/joinroom/joinLeague_{{roomDetial.league}}.png"/>
+	</div>
+	<div class="a-flex-start room_head">
+		<span class="a-roomType roomType1" ng-if="roomDetial.official==1">
+			<div>官方</div>									
+		</span>
+		<span class="a-roomType roomType0" ng-if="roomDetial.official==0 && roomDetial.privacy == 0">
+			<div>个人</div>					
+		</span>
+		<span class="a-roomType roomType0" ng-if="roomDetial.official==0 && roomDetial.privacy == 1">
+			<div  style="color: #ff8027;">私密</div>					
+		</span>
+		<span class="a-roomType a-room-black-viole" ng-if="roomDetial.official==2">
+			<div class="a-text-color-whit">活动</div>					
+		</span>
+		<span class="a-font-size-small-x a-text-color-light roomName">{{roomDetial.name}}</span>
+	</div>
+	<div class="a-flex-between a-parting-line reward_box">
+		<div class="a-flex-start reward_box_left">
+			<img class="a-img-size" ng-src="../../img2.0/creatroom/cjfjl_{{roomDetial.playType}}.png" alt="" />
+			<div class="a-flex-start-column">
+				<span class="a-font-size-small a-text-color-whit">{{roomDetial.playTypeName}}</span>
+				<span class="a-text-color-whitDark a-font-size-small-s">开奖类型</span>
+			</div>
+		</div>
+		<div class="reward_box_right">
+			<span>
+				<img ng-if="roomDetial.prices.prizeType !=1 " class="a-img-size" src="../../img2.0/common/xb_28.png" alt="" />
+				<img ng-if="roomDetial.prices.prizeType ==1 " class="a-img-size" src="../../../img2.0/common/zs_28.png" alt="" />
+				<span class="a-text-shawgreen a-font-size-medium a-font-family-numstd">{{roomDetial.prices.predictPrizePool}}</span>
+			</span>
+			<span class="a-font-size-small-s a-text-color-whitDark">最高奖池</span>
+		</div>
+	</div>
+	<div class="bonus_box">
+		<div class="bonus_box_title" ng-click="rewardHelp(roomDetial.fee)">
+			<span class="a-font-size-small a-text-colorgreen">奖金分配:</span>
+			<img ng-if="roomDetial.fee" class="a-img-size help" src="../../img2.0/joinroom/jrfj_1.png" alt="" />
+		</div>
+		<div class="">
+			<table class="bonusDetial">
+				<tr class="">
+					<td class="a-text-color-whitDark a-font-size-small-s firstItem">排名</td>
+					<th class="a-text-color-whitDark a-font-size-small-s"></th>
+					<th class="a-text-color-whitDark a-font-size-small-s">当前奖励</th>
+					<th class="a-text-color-whitDark a-font-size-small-s">最高奖励</th>
+				</tr>
+				<tr class="">
+					<td class="firstItem">
+						<span class="a-text-color-whit a-font-size-small-x rank"  ng-if="roomDetial.playTypeName!='前50%'">1</span> 
+						<span class="a-text-color-whit a-font-size-small-x rank"  ng-if="roomDetial.playTypeName=='前50%'">前50%</span> 
+						<span class="a-dotted"></span>
+					</td>
+					<th class="xb_td">
+						<img ng-if="roomDetial.prices.prizeType !=1 " class="a-img-size" src="../../img2.0/common/xb_28.png" alt="" />
+				        <img ng-if="roomDetial.prices.prizeType ==1 " class="a-img-size" src="../../../img2.0/common/zs_28.png" alt="" />
+					</th>
+					<th class="">
+						<span class="a-text-color-whit a-font-size-medium-x a-font-family-numstd">
+							{{roomDetial.prices.realFirst}}
+						</span>
+					</th>
+					<th>
+						<span class="a-text-shawgreen a-font-size-medium-x a-font-family-numstd">
+							{{roomDetial.prices.predictFirst}}
+						</span>
+					</th>
+				</tr>
+				<tr class="" ng-if="roomDetial.prices.predictSecond && roomDetial.prices.predictSecond!=0 && roomDetial.playTypeName!='前50%'">
+					<td class="firstItem">
+						<span class="a-text-color-whit a-font-size-small-x rank">2</span> 
+						<span class="a-dotted"></span>
+					</td>
+					<th class="xb_td">
+						<img class="a-img-size" src="../../img2.0/common/xb_28.png" alt="" />
+					</th>
+					<th class="">
+						<span class="a-text-color-whit a-font-size-medium-x a-font-family-numstd">
+							{{roomDetial.prices.realSecond}}
+						</span>
+					</th>
+					<th>
+						<span class="a-text-shawgreen a-font-size-medium-x a-font-family-numstd">
+							{{roomDetial.prices.predictSecond}}
+						</span>
+					</th>
+				</tr>
+				<tr class="" ng-if="roomDetial.prices.predictThird && roomDetial.prices.predictThird!=0 && roomDetial.playTypeName!='前50%'">
+					<td class="firstItem">
+						<span class="a-text-color-whit a-font-size-small-x rank">3</span>
+						<span class="a-dotted"></span>
+					</td>
+					<th class="xb_td">
+						<img class="a-img-size" src="../../img2.0/common/xb_28.png" alt="" />
+					</th>
+					<th class="">
+						<span class="a-text-color-whit a-font-size-medium-x a-font-family-numstd">
+							{{roomDetial.prices.realThird}}
+						</span>
+					</th>
+					<th>
+						<span class="a-text-shawgreen a-font-size-medium-x a-font-family-numstd">
+							{{roomDetial.prices.predictThird}}
+						</span>
+					</th>
+				</tr>
+			</table>
+			<div class="a-flex-between" ng-if="roomDetial.playTypeName=='前25%' && roomDetial.maxUserCount>15">
+				<div have-more></div>
+				<div class="a-havemore-font" ng-click="moreBonus(roomDetial.roomId,true)">查看更多<i class="ion-ios-arrow-right"></i></div>
+			</div>
+		</div>
+	</div>
+</div>

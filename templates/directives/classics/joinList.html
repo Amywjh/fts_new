@@ -1,0 +1,16 @@
+<ion-content class="scroll-content-black a-ownpm player-rank" has-bouncing="true" scrollbar-y="false">  		
+	<!--玩家列表-->
+	<div class="list playerlist">
+	  	<a class="a-div-height-large-s a-flex-start a-parting-line playerItem " ng-repeat='playerlist in roomDetial.userList' ng-click="nameGet(playerlist.id)">
+		  	<img ng-if="playerlist.photo" ng-src="{{playerlist.photo}}" onerror="loadDefaultImg(1)"/>
+		  	<img ng-if="!playerlist.photo" src="../../../img2.0/common/touxiang_default.png"/>
+		    <span class="a-font-size-small-x a-text-color-whit playerName">{{playerlist.name}}</span>
+		    <!--<span class="item-note playerlevel">
+		    	<div class="img">
+			    	<img ng-src="{{playerlist.achievementLogo}}"/>
+		    	</div>
+		      {{playerlist.achievement}}{{playerlist.stage}}
+		    </span>-->
+  		</a>
+	</div>
+</ion-content>

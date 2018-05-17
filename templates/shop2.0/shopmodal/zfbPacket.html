@@ -1,0 +1,75 @@
+<ion-modal-view class="modalCss ">
+	<div class="warp packetmod" style="margin:18% auto 0;">
+		<div class="modelCloss packet" ng-click="zfbPacketMod.remove()"></div>
+		
+		<ion-slide-box  show-pager="false"  disable-scroll="true" active-slide="zfbNext">
+		  <ion-slide style=" padding: 0 1%;">
+		  	 <h2 class="title">申请兑换支付宝红包</h2>
+			<div class="by">
+				<div style="margin-bottom:0">
+					<div class="a-text-color-whit" style="position: relative;top: 2px;">兑换金额:</div>
+					<div class="list">
+					  <span class="item item-input byinput">
+					  	<span ng-if="zfbexHave" style="color: rgb(50,8,155);font-weight:bold;margin-top: .01rem;">￥</span>
+					    <input class="zfbInput" type="number" placeholder="最低¥20" ng-model="zfbexHave">
+					  </span>
+					</div>
+				</div>
+				<div>
+					<div class="a-text-color-violet">需要星币:</div><div><img src="../../img2.0/shop2.0/newShop/dhjl_3.png" alt="" />
+					<span ng-if="!zfbexHave">0</span>
+					<span class="exHave" ng-if="zfbexHave>0 && zfbexHave*10<=coinall" ng-bind="zfbexHave*10"></span>
+					<span class="exHave ztcolor" ng-if="zfbexHave*10 > coinall" ng-bind="zfbexHave*10"></span>
+					<div>
+						<img src="../../img2.0/shop2.0/newShop/dhjl_3.png" alt="" />10=<span class="font-weight" style="color: inherit;">¥</span>1
+					</div>
+					</div>
+				</div>
+				<div>
+					<div class="a-text-color-whit">我的星币:</div><div><img src="../../img2.0/shop2.0/newShop/dhjl_3.png" alt="" /><span id="monHave" style="margin-left: .05rem;">{{coinall}}</span></div>
+				</div>
+				<div>
+					<div class="a-text-color-violet">兑换流程:</div>
+				</div>
+				<ul><img style="width: 100%;height: auto;" src="../../../img2.0/shop2.0/zfbhb_lc.png" alt="" /></ul>
+			</div>
+			<p>
+				*每人每次最多可申请红包的最大金额为￥20000，最低￥20<br />
+				*申请兑换支付宝红包后我们会先扣除您的星币，若兑换失败，我们会将您的星币反还<br />
+				*申请兑换后，红包会于1-5个工作日内发放给您<br />
+				*请确保自己的支付宝账户已实名认证，否则不支持此兑换功能。<br />
+				*有任何疑问请联系客服
+			</p>
+			<div class="btn" ng-click="zfbHongbao(1,zfbexHave)">下一步</div>
+		  </ion-slide>
+		   <ion-slide  style=" padding: 0 1%;">
+		  	 <h2 class="title black"><div ng-click="zfbHongbao(0)" class="top-center a-text-color-whit"><i class="ion-chevron-left"></i>返回</div>申请兑换支付宝红包</h2>
+			<div class="by">
+				<div>
+					<div class="zfbtext a-text-color-whit" style="position: relative;top: 2px;">兑换金额:</div>
+					<div class="fontsize a-text-color-whit a-font-family-numstd">￥{{zfbexHave}}</div>
+				</div>
+				<div style="margin-bottom: .3rem;">
+				<div class="zfbtext a-text-color-whit" style="position: relative;top: 2px;">支付宝账号:</div>
+				<div class="list">
+				  <span class="item item-input byinput">
+				    <input type="text" placeholder="请输入支付宝账号" ng-model="zfbAccount">
+				  </span>
+				</div>
+			</div>
+			<div style="margin-bottom: .6rem;">
+				<div class="zfbtext a-text-color-whit" style="position: relative;top: 2px;">姓名:</div>
+				<div class="list">
+				  <span class="item item-input byinput">
+				    <input type="text" placeholder="请输入姓名" ng-model="zfbName">
+				  </span>
+				</div>
+			</div>
+			</div>
+			<div class="btn" ng-click="zfbApplication(zfbexHave,zfbAccount,zfbName)">申请兑换</div>
+		  </ion-slide>
+		 </ion-slide-box>
+  
+    
+	</div>
+</ion-modal-view>

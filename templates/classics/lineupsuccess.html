@@ -1,0 +1,43 @@
+
+<ion-view title='阵容提交成功' class='hall-lineupsuccess' hide-tabs>
+      	<div class="sucbg">
+      		<p class="a-text-color-whitopc a-font-size-medium font-weight mt">祝你好运！</p>
+      		<p class="a-text-colorgreen a-font-size-small-x mp">比赛时间</p>
+      		<h1>{{time}}</h1>
+      	</div>
+      	<div class="dufu_bigbox small" style="margin-top: -.2rem;">
+		     	<div class="luhk">
+		          <div class="box">
+		            <div class="dfrow" ng-repeat='lineup in lineupcontent'>
+		              <a class="dfbox" ng-repeat='xx in lineup track by $index'>
+		                <div class="df" ng-if="!xx.logo_url&&!xx.numone"></div>
+		                <div class="df" ng-if="!xx.logo_url && xx.numone" style="background-image: url(../../img2.0/common/qiuyi_default.png);">
+		                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+		                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+		                </div>
+		                <div class="df" ng-if="xx.logo_url" style="background-image: url('{{xx.logo_url}}');">
+		                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+		                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+		                </div>
+		                <img class="dfbg" src="../../img2.0/lineup2.0/bz_6.png" />
+		                <div class="a-background-playerSign dyms" ng-if="xx.logo_url || xx.name">
+		                  <p class="dyname">{{xx.name}}</p>
+		                  <p class="a-flex-center dygz">
+		                  	<span class="a-text-color-orange a-font-family-numstd" ng-if="xx.salary || xx.salary===0">${{xx.salary}}</span>
+		                  	<span class="a-text-color-light a-font-family-numstd">{{xx.recentExp}}</span>
+		                  </p>
+		                </div>
+		              </a>
+		            </div>
+		            <div class="btn-linups mod">
+				    	<img ng-src="../../img2.0/lineup2.0/bz_1{{liupimg}}.png" />
+				    	<p>{{liupfamid}}</p>
+				    </div>
+		       </div>
+		    </div>
+		    </div>
+		<div class="left-center flex-justify-b bntts">
+			<div ng-click='bntbalck()' class="a-buttonSmall-black bntt a-flex-center"><span style="color: inherit;">{{backaddress}}</span></div>
+			<div ng-click='bntlineupcopy()'  class="a-buttonSmall-green bntt a-flex-center"><span style="color: inherit;">同步此阵容</span></div>
+		</div>
+</ion-view>

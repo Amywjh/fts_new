@@ -1,0 +1,46 @@
+<div class="prizes" ng-click="go_detial(prize.id,0,0,0)">
+	<div prizes-nostart-head-top class="prizes-top"></div>
+	<div prize-teams class="ownTeamsBox"></div>
+	<div class="prizes_five prizes_five_noStart">
+		<div class="one" ng-if="!hidePrizesPre">
+			<div class="a-flex-between supportPer">
+				<p class="a-text-shaRRed leftPer">{{prize.home.percent}}</p>
+				<p class="a-text-shaBBlue rightPer">{{prize.away.percent}}</p>
+			</div>
+			<span class="leftBar" style="background:#ed1f24;width: {{prize.home.percent}};height: 100%;"></span>
+			<span class="rightBar" style="background:#0084c7;width: {{prize.away.percent}};height: 100%"></span>
+		</div>
+		<div class="two twoNostart" ng-class="{'a-parting-lineTop':hidePrizesPre}">
+			<div class="prizes_vote_Box" ng-click='vote(true,prize.home,prize,$index);$event.stopPropagation();'>
+				<div class="prizes_vote_leftBtn">
+					<span ng-if="!prize.homeCost" class="btn">支持</span>
+					<span ng-if="prize.homeCost" class="btn">追加支持</span>
+				</div>
+				<div class="prizes_vote_left a-flex-start">
+					<img ng-if="!prize.homeCost" src="../../img2.0/prize2.0/xz_1.png" alt="" />
+					<img class="ligh" ng-if="prize.homeCost" src="../../img2.0/prize2.0/xz.png" alt="" />
+					<span ng-class="{true: 'support', false: 'nonsupport'}[prize.homeCost?true:false]">{{prize.homeCost}}</span>
+				</div>
+			</div>
+			<div class="prizes_pool a-flex-center-column">
+				<span class="a-font-size-small-s a-text-color-whitDark prizes_poolName">当前奖池</span>
+				<span class="a-flex-center">
+					<img class="a-img-size" ng-if="prize.prizePool" src="../../../img2.0/common/xb_28.png" alt="" />
+					<img class="a-img-size" ng-if="!prize.prizePool" src="../../../img2.0/common/xb_28_grey.png" alt="" />
+					<span class="a-font-size-medium" ng-class="{'a-text-color-orange':prize.prizePool,'a-text-color-whitDark':!prize.prizePool}">{{prize.prizePool}}</span>
+				</span>
+			</div>
+			<div class="prizes_vote_Box" ng-click='vote(false,prize.away,prize,$index);$event.stopPropagation();'>
+				<div class="prizes_vote_rightBtn">
+					<span ng-if="!prize.awayCost" class="btn">支持</span>
+					<span ng-if="prize.awayCost" class="btn">追加支持</span>
+				</div>
+				<div class="prizes_vote_right a-flex-end">
+					<span ng-class="{true:'support', false: 'nonsupport'}[prize.awayCost?true:false]">{{prize.awayCost}}</span>
+					<img ng-if="!prize.awayCost" src="../../img2.0/prize2.0/xz_1.png" alt="" />
+					<img class="ligh" ng-if="prize.awayCost" src="../../img2.0/prize2.0/xz.png" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

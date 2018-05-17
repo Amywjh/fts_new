@@ -1,0 +1,12 @@
+<ion-modal-view id="charge">
+	<div class="msg">
+		<img src="../../img2.0/lineup2.0/jdz_tc_js.png" alt="" />
+		<span ng-if='msg != true' class="a-font-size-small-x">{{msg}}</span>
+		<span ng-if='msg == true' class="a-font-size-small">未提交阵容在开奖时<span class="a-text-color-whit a-font-size-small-x">排名将在房间最后</span>,为避免影响您的战绩,请先<span class="a-text-color-whit a-font-size-small-x">提交布阵</span></span>
+		<span ng-if='isCharge && firstCharge' ><img class="a-img-size" style="margin: 0px;margin-top: 0.12rem;" src="../../img2.0/main/tc_scewzsxz_1.png"/></span>
+	</div>
+	<div class="a-buttons">
+		<button class="a-buttonSmall-black" ng-click="cancel()">{{qx}}</button>
+		<button class="a-buttonSmall-green" ng-click="commit()">{{qd}}</button>
+	</div>
+</ion-modal-view>

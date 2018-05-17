@@ -1,0 +1,73 @@
+<ion-modal-view class='main_model'>
+	<div class="modelbox bg_img userInfor position-center">
+		<div class="closeNow" ng-click="inforReviseMod.remove()">
+			<i class="ion-ios-close-outline"></i>
+		</div>
+		<div class="modelbody">
+			<div class="textHtml" ng-if="peopleType">
+				<div class="a-flex-start header">
+							<div class="headImg">
+								<img id="face" ng-if="otherPeople.profile" ng-src="{{otherPeople.profile}}" click-img-big onerror="loadDefaultImg(1)"> 
+								 <img id="face" ng-if="!otherPeople.profile" src="../../../img2.0/common/touxiang_default.png" > 
+							</div>					
+		                 	 <div class="headTitle">
+		                 	 	<h1 ng-click="nameRevise()" class="font-weight a-text-color-whit a-font-size-medium-x">{{otherPeople.nickName}}</h1>
+		                 	 	<span class="a-font-size-small a-text-color-whit">战队</span>&nbsp;&nbsp;<span ng-if="!otherPeople.fightTeamName" class="a-font-size-small a-text-color-whitDark">暂无</span><span ng-if="otherPeople.fightTeamName" class="a-font-size-small a-text-color-light">{{otherPeople.fightTeamName}}</span>
+		                 	 </div>
+					</div>
+				<div class="grade a-flex-between headGrade">
+					<div><span class="a-text-shawgreen a-font-family-numstd a-font-size-medium-b ng-binding">Lv.{{otherPeople.level}}</span></div>
+					<div ng-if="isUser" class="a-font-size-small"><span class="a-text-color-light">{{otherPeople.currentExp}}</span><span class="a-text-color-whitDark">/{{otherPeople.nextLevelExp}}</span></div>
+				</div>
+				<div class="headline experienceline" ng-if="isUser">
+			      <span  style="width: {{otherPeople.currentExp/otherPeople.nextLevelExp*100}}%;" class="ycline"></span>
+		       </div>
+		       <div class="headline experienceline" style="height: 1px;background: rgba(0,0,0,.3);" ng-if="!isUser"></div>
+		       <div class="a-flex-start resultData">
+		       	 <div class="a-text-color-whit font-weight a-font-size-small-x">球星对战</div><div class="a-font-size-small a-text-color-whitDark"><p class="a-text-color-light a-font-size-medium-m">{{otherPeople.starJoinCount}}</p>场次</div><div class="a-font-size-small a-text-color-whitDark"><p class="a-text-color-light a-font-size-medium-m">{{otherPeople.starWinRate}}</p>胜率</div>
+		       </div>
+		       <div class="a-flex-start resultData">
+		       	 <div class="a-text-color-whit font-weight a-font-size-small-x">经典11人</div><div class="a-font-size-small a-text-color-whitDark"><p class="a-text-color-light a-font-size-medium-m">{{otherPeople.traditionJoinCount}}</p>场次</div><div class="a-font-size-small a-text-color-whitDark"><p class="a-text-color-light a-font-size-medium-m">{{otherPeople.traditionWinRate}}</p>胜率</div>
+		       </div>
+		       <div class="botImg a-flex-between">
+		       	<div class="leftBox">
+		       		<p class="a-font-size-small a-text-color-whitDark">最常参加联赛：</p>
+		       		<div ng-if="otherPeople.favoriteLeague" class="a-flex-center content">
+		       			<img ng-if='otherPeople.favoriteLeague =="英超"' src="../../../img2.0/hall/circleLeague_0.png" alt="" />
+		       			<img ng-if='otherPeople.favoriteLeague =="中超"' src="../../../img2.0/hall/circleLeague_1.png" alt="" />
+		       			<img ng-if='otherPeople.favoriteLeague =="欧冠"' src="../../../img2.0/hall/circleLeague_2.png" alt="" />
+		       			<img ng-if='otherPeople.favoriteLeague =="意甲"' src="../../../img2.0/hall/circleLeague_3.png" alt="" />
+		       			<img ng-if='otherPeople.favoriteLeague =="西甲"' src="../../../img2.0/hall/circleLeague_4.png" alt="" />
+		       			<span class="a-font-size-small-x font-weight a-text-color-whit">{{otherPeople.favoriteLeague}}</span>
+		       		</div>
+		       		<div ng-if="!otherPeople.favoriteLeague" class="a-flex-center content">
+		       			<span class="a-font-size-small-x font-weight a-text-color-whitDark">暂无</span>
+		       		</div>
+		       		<div class="br-span"></div>
+		       		<p class="a-font-size-small a-text-color-whitDark">常用阵型：</p>
+		       		<div ng-if='otherPeople.favoriteFormation' class="a-flex-center content">
+		       			<img ng-if='otherPeople.favoriteFormation == "4-4-2"' src="../../../img2.0/lineup2.0/bz_10_1.png" alt="" />
+		       			<img ng-if='otherPeople.favoriteFormation == "4-5-1"' src="../../../img2.0/lineup2.0/bz_11_1.png" alt="" />
+		       			<img ng-if='otherPeople.favoriteFormation == "5-4-1"' src="../../../img2.0/lineup2.0/bz_12_1.png" alt="" />
+		       			<img ng-if='otherPeople.favoriteFormation == "5-3-2"' src="../../../img2.0/lineup2.0/bz_13_1.png" alt="" />
+		       			<img ng-if='otherPeople.favoriteFormation == "4-3-3"' src="../../../img2.0/lineup2.0/bz_14_1.png" alt="" />
+		       			<img ng-if='otherPeople.favoriteFormation == "3-5-2"' src="../../../img2.0/lineup2.0/bz_15_1.png" alt="" />
+		       			<img ng-if='otherPeople.favoriteFormation == "3-4-3"' src="../../../img2.0/lineup2.0/bz_16_1.png" alt="" />
+		       			<span class="a-font-size-medium-m font-weight a-text-color-whit a-font-family-numstd">{{otherPeople.favoriteFormation}}</span>
+		       		</div>
+		       		<div ng-if='!otherPeople.favoriteFormation' class="a-flex-center content">
+		       			<span class="a-font-size-small-x font-weight a-text-color-whitDark">暂无</span>
+		       		</div>
+		       	</div>
+		       	 <div class="img">
+		       	 	<img src="../../../img2.0/grade/bspj_zjzr.png" alt="" />
+		       	 	<span class="font-weight a-font-size-medium-x">x&nbsp;{{otherPeople.bestCount}}</span>
+		       	 </div>
+		       </div>
+		       <div class="a-flex-center a-text-color-light a-font-size-small-x historyQuery" ng-click="historyQuery(otherPeople.userId)">
+		       	  查看历史战绩&nbsp;&nbsp;<i class="ion-ios-arrow-right"></i>
+		       </div>
+			</div>
+		</div>
+	</div>
+</ion-modal-view>

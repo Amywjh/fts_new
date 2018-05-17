@@ -1,0 +1,64 @@
+<ion-view view-title="赛况" class='battle-timeAxis' hide-tabs>
+	<header class="team a-flex-center">
+		<div class="left"><img ng-src="{{eventData.match.homeTeamLogo}}" alt="" /><p class="a-font-size-small a-text-color-whit">{{eventData.match.homeTeamName}}</p></div>
+		<div class="center">
+			<p class="a-text-color-whit a-font-size-small" ng-if="eventData.match.statusDisplay>=5">已结束</p>
+			<p class="a-text-color-whit a-font-size-small" ng-if="eventData.match.statusDisplay<3">未开始</p>
+			<p class="a-text-color-whit a-font-size-small" ng-if="eventData.match.statusDisplay==3 || eventData.match.statusDisplay==4">
+				<i class="ion-ios-clock-outline" style="color: #FFFFFF;"></i>&nbsp;{{eventData.match.matchLengthWithMinute}}'
+			</p>
+			<p class="result a-text-shawgreen font-weight">{{eventData.match.homeScore}}:{{eventData.match.awayScore}}</p>
+		</div>
+		<div class="right"><img ng-src="{{eventData.match.awayTeamLogo}}" alt="" /><p class="a-font-size-small a-text-color-whit">{{eventData.match.awayTeamName}}</p></div>
+	</header>
+	<ion-content class="axiscontent a-background-item" id="teamContent">
+		<header class="title  a-flex-center a-text-color-light font-weight a-font-size-small">重要事件</header>
+		<div class="timeLine" ng-style="{height:timeLineHeight  + 'px'}">
+	      <div class="left-container" style="top: 50%;position: relative;height: 50%;">
+	      </div>
+	      <div class="right-container">
+	      </div>
+	      <img class="battlestate position-center" style="top: 20%;" src="../../img2.0/battle/sk_zysj_1.png"  alt="" />
+	      <div class="center-container state a-background-circle-green position-center"></div>
+	    </div>
+	    <div class="nostate a-font-size-medium font-weight" ng-if="eventData.match.statusDisplay<3">比赛尚未开始</div>
+    <!--实体内容-->
+    <div class="timeLine" ng-repeat="currentEvent in eventData.timeLine track by $index">
+      <!--左边内容-->
+      <div class="left-container">
+        <div class="box" ng-if="currentEvent.home">
+          <div class="nickName" ng-if="currentEvent.name">
+          	<span class="one a-font-size-small-x">{{currentEvent.name}}</span>
+          	<span class="two"><img ng-if="currentEvent.eventTypeLogo" ng-src="{{currentEvent.eventTypeLogo}}" alt="" /></span>
+          </div>
+          <div class="nickName" ng-if="currentEvent.relationPlayerName">
+          	<span class="one a-font-size-small-x">{{currentEvent.relationPlayerName}}</span>
+          	<span class="two"><img ng-if="currentEvent.relationLogo" ng-src="{{currentEvent.relationLogo}}" alt="" /></span>
+          </div>
+        </div>
+      </div>
+      <!--右边-->
+      <div class="right-container">
+        <div class="box" ng-if="!currentEvent.home">
+          <div class="nickName" ng-if="currentEvent.eventTypeLogo">
+          	<span class="two"><img ng-if="currentEvent.eventTypeLogo" ng-src="{{currentEvent.eventTypeLogo}}" alt="" /></span>
+          	<span class="one  a-font-size-small-x">{{currentEvent.name}}</span>
+          </div>
+          <div class="nickName" ng-if="currentEvent.relationPlayerName">
+          	<span class="two"><img ng-if="currentEvent.relationLogo" ng-src="{{currentEvent.relationLogo}}" alt="" /></span>
+          	<span class="one a-font-size-small-x">{{currentEvent.relationPlayerName}}</span>
+          </div>
+        </div>
+      </div>
+      <!--中间时间轴-->
+      <div class="center-container a-background-circle-green left-center a-flex-center a-text-color-whit" ng-class="currentEvent.eventType == 'GOAL'|| currentEvent.eventType == 'OWN_GOAL'?'a-background-circle-yellow a-text-color-brown':''" ng-style="lineTime(currentEvent!= null)">{{currentEvent.matchLength}}</div>
+    </div>
+    <!--开始Start--><!--ng-if="isEnd"-->
+    <div class="timeLine" ng-style="{height:timeLineHeight+ 'px'}" ng-if="eventData.match.statusDisplay>=5">
+      <div class="left-container" style="position: relative;height: 50%;"></div>
+      <div class="right-container"></div>
+      <img class="battlestate position-center" style="top: 70%;" src="../../img2.0/battle/sk_zysj_10.png"  alt="" />
+      <div class="center-container  state a-background-circle-green position-center"></div>
+    </div>
+	</ion-content>
+</ion-view>

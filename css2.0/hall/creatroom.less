@@ -1,0 +1,121 @@
+.creatRoom {
+    >.room_create {
+        position: absolute;
+        top: 0.4rem;bottom: 0px;
+        .roomname {
+            >.header{
+                white-space: nowrap;                
+            }
+            >.content {
+                width: 100%;
+                margin: auto 0px;
+                margin-left: 0.1rem;
+                >input[name='roomname'] {
+                    height: 100%;width: 100%;padding: 0px 0.09rem;
+                    background-color: #19232b;
+                }
+            }
+        }
+        .chooseGame {
+            .league {
+                width: 100%;
+                .leagueList {
+                    margin-top: .1rem;width: 100%;
+                    .boxs{
+                        white-space: nowrap;overflow: visible;
+                        ul{padding: .04rem .04rem;}
+                        .leagueItem {
+                            border: none;
+                            >.radio-content {
+                                opacity: 0.5;border-radius: 2px;
+                                >.item-content {
+                                    display: table-row;
+                                    >img {
+                                        width: 100%;height:100%;position: absolute;top: 0px;left: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .games {
+                //日期选择
+                width: 100%;
+                >ul{
+                    margin-top: 0.1rem;
+                }
+            }
+        }
+        .awardRule{
+            >h1{
+                >img{
+                    margin-left: 0.1rem;
+                }
+                >span{
+                    margin-left: 0.04rem;
+                }
+            }
+            >ul{
+                margin-top: 0.1rem;
+                >label{
+                    flex-grow: 1;-webkit-flex-flow: 1;
+                }
+                >label:last-child{
+                    margin-right: 0px;
+                }
+            }
+        }
+        .awardNum{
+            .awardNumCon{
+                align-items: flex-start;-webkit-align-items: flex-start;
+                .leftAward{
+                    width: 100%;
+                    >li{
+                        height: 0.28rem;
+                        >img{
+                            margin-left: 0.1rem;
+                        }
+                        >img + span{
+                            margin-left: 0.04rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.roomSuccess{
+    .warp{
+        width: 100%;
+        background: url(../../img2.0/rank/wd_1.png) no-repeat top center;
+        background-size: 100% 2.18rem;
+        text-align: center;
+        >img{
+            width: .92rem;display: inline-block;margin-top: .5rem;
+        }
+        >h1{
+            margin-top: .1rem;letter-spacing: .06rem;
+        }
+        .roomtext{
+            margin-top: .24rem;
+        }
+        .shine{
+            font-size: .36rem;margin-top: .08rem;
+        }
+        .fontAlert{
+            width: 100%;
+            height: .48rem;
+            margin-top: .3rem;
+        }
+        .monImg{margin-top: .65rem;margin-bottom: .15rem;
+            >img{
+                height: .12rem;display: inline-block;
+            }
+        }
+        .btnone,.btntwo{
+            width: 2.55rem;height: .48rem;border-radius: 2px;margin:0 auto .2rem;
+        }
+    }
+}

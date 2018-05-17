@@ -1,0 +1,57 @@
+<ion-modal-view class='main_model'>
+	<div class="guideBoxOne guide_out_box  rewardScale" style="text-align: center;" ng-click="nextPage(0)" ng-if="oneShowPage && onePage">
+		<img src="../../../img2.0/guide/yd_1.png" style="width: 3rem;height: 3rem;margin-top: 30%;" alt="" />
+		<button class="a-buttonSmall-green" style="margin: 0 auto;display: block;">马上领取</button>
+	</div>
+	<div class="guideBoxTwo guide_out_box" style="text-align: center;padding: 0 .2rem;" ng-click="nextPage(1)" ng-if="isShowPage(1) && onePage">
+		<img class="rewardScale" src="../../../img2.0/guide/yd_2.png" style="width: 3rem;height: 3rem;margin-top: 20%;" alt="" />
+		<p style="text-align: left;font-size: .13rem;display:none;" class="a-text-color-whit font-weight rewardP"><span class="a-text-color-light a-font-size-medium-b">星钻</span>&nbsp;&nbsp;是<span class="a-text-color-light">参与竞猜</span>的必要道具，而且单次参与所需的星钻越多，获得奖励就越丰厚。</p>
+        <p style="text-align: left;font-size: .13rem;margin-top: .2rem;display:none;" class="a-text-color-whit font-weight rewardP">星钻可以<span class="a-text-color-light ">使用获胜奖励兑换</span>获得，或者直接<span class="a-text-color-light">充值</span>获得。</p>
+		<p class="a-text-color-light a-font-size-small-x goOther" style="margin: .6rem auto 0;display: none;">
+			点击屏幕继续&nbsp;&nbsp;<i class="ion-arrow-right-b a-text-color-light light"></i><i class="ion-arrow-right-b a-text-color-light light"></i>
+		</p>
+	</div>
+	<div class="guideBoxTwo guide_out_box" style="text-align: center;padding: 0 .2rem;margin-top: 20%;" ng-click="nextPage(2)" ng-if="twoPage">
+		<img src="../../../img2.0/guide/yd_4.png" class="position-center guideWidth" ng-if="!nextImg" alt="" />
+		<img src="../../../img2.0/guide/yd_5.png" class="position-center guideWidth" ng-if="nextImg" alt="" />
+		<p class="a-text-color-light a-font-size-small-x goOther" style="position: absolute;left: 50%;-webkit-transform:translatex(-50%) ;transform:translatex(-50%) ;bottom: .6rem;">
+			点击屏幕继续&nbsp;&nbsp;<i class="ion-arrow-right-b a-text-color-light light"></i><i class="ion-arrow-right-b a-text-color-light light"></i>
+		</p>
+	</div>
+	<div class="guideBoxThr guide_out_box" style="text-align: center;padding: 0 .2rem;margin-top: 20%;" ng-click="nextPage(3)" ng-if="thrPage">
+		<img src="../../../img2.0/guide/yd_8.png" class="position-center guideWidth" ng-if="!nextImg" alt="" />
+		<img src="../../../img2.0/guide/yd_9.png" class="position-center guideWidth" ng-if="nextOneImg" alt="" />
+		<img src="../../../img2.0/guide/yd_10.png" class="position-center guideWidth" ng-if="nextTwoImg" alt="" />
+		<p class="a-text-color-light a-font-size-small-x goOther" style="position: absolute;left: 50%;-webkit-transform:translatex(-50%) ;transform:translatex(-50%) ;bottom: .6rem;">
+			点击屏幕继续&nbsp;&nbsp;<i class="ion-arrow-right-b a-text-color-light light"></i><i class="ion-arrow-right-b a-text-color-light light"></i>
+		</p>
+	</div>
+	<div class="guideBoxThr guide_out_box" style="text-align: center;padding: 0 .2rem;margin-top: 20%;" ng-click="nextPage(4)" ng-if="forPage">
+		<img src="../../../img2.0/guide/yd_12.png" class="position-center guideWidth" ng-if="!nextImg" alt="" />
+		<p class="a-text-color-light a-font-size-small-x goOther" style="position: absolute;left: 50%;-webkit-transform:translatex(-50%) ;transform:translatex(-50%) ;bottom: .6rem;">
+			点击屏幕继续&nbsp;&nbsp;<i class="ion-arrow-right-b a-text-color-light light"></i><i class="ion-arrow-right-b a-text-color-light light"></i>
+		</p>
+	</div>
+	<div class="guideBoxThr guide_out_box" style="text-align: center;padding: 0 .2rem;margin-top: 20%;" ng-click="nextPage(5)" ng-if="fivePage">
+		<img src="../../../img2.0/guide/yd_13.png" class="position-center guideWidth" alt="" />
+		<p class="a-text-color-light a-font-size-small-x goOther" style="position: absolute;left: 50%;-webkit-transform:translatex(-50%) ;transform:translatex(-50%) ;bottom: .6rem;">
+			点击屏幕继续&nbsp;&nbsp;<i class="ion-arrow-right-b a-text-color-light light"></i><i class="ion-arrow-right-b a-text-color-light light"></i>
+		</p>
+	</div>
+	<div class="guideBoxThr guide_out_box" style="text-align: center;padding: 0 .2rem;margin-top: 20%;" ng-click="nextPage(6)" ng-if="sixPage">
+		<img src="../../../img2.0/guide/yd_16.png" class="position-center guideWidth" ng-if="!nextImg" alt="" />
+		<p class="a-text-color-light a-font-size-small-x goOther" style="position: absolute;left: 50%;-webkit-transform:translatex(-50%) ;transform:translatex(-50%) ;bottom: .6rem;">
+			点击屏幕继续&nbsp;&nbsp;<i class="ion-arrow-right-b a-text-color-light light"></i><i class="ion-arrow-right-b a-text-color-light light"></i>
+		</p>
+	</div>
+	<div class="guideBoxTwo guide_out_box" style="text-align: center;padding: 0 .2rem;margin-top: 20%;" ng-click="nextPage(7)" ng-if="sevPage">
+		<img class="rewardScale" src="../../../img2.0/guide/yd_14.png" style="width: 3rem;height: 3rem;margin-top: 0;" ng-if="!nextImg" alt="" />
+		<img src="../../../img2.0/guide/yd_15.png" class="position-center guideWidth" ng-if="nextImg" alt="" />
+		<p class="a-text-color-light a-font-size-small-x goOther" style="position: absolute;left: 50%;-webkit-transform:translatex(-50%) ;transform:translatex(-50%) ;bottom: .6rem;">
+			点击屏幕继续&nbsp;&nbsp;<i class="ion-arrow-right-b a-text-color-light light"></i><i class="ion-arrow-right-b a-text-color-light light"></i>
+		</p>
+	</div>
+
+</ion-modal-view>
+
+

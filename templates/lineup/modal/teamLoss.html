@@ -1,0 +1,41 @@
+<ion-modal-view class='ksbz-model'>
+	<div class="teamLoss position-center">
+		<div class="closeb" ng-click="removeLoss()"></div>
+		<div class="teamLossBody">
+			<div class="a-flex-center a-parting-line lossTeamInfo">
+				<div class="lossTeam a-flex-center-column">
+					<img ng-src="{{lossTeams.home.teamLogo}}" alt="" />
+					<span class="a-font-size-small a-text-colorgreen">{{lossTeams.home.teamName}}</span>
+					<div class="a-font-size-small a-text-color-whit">
+						<span class="a-font-size-small a-text-color-whitDark">排名：</span>{{lossTeams.home.rank}}
+					</div>
+				</div>
+				<div class="lossTeamVs">
+					<img class="a-img-size" src="../../../img2.0/joinroom/jrfj_6.png" alt="" />
+				</div>
+				<div class="lossTeam a-flex-center-column">
+					<img ng-src="{{lossTeams.away.teamLogo}}" alt="" />
+					<span  class="a-font-size-small a-text-colorgreen">{{lossTeams.away.teamName}}</span>
+					<div class="a-font-size-small a-text-color-whit"><span class="a-font-size-small a-text-color-whitDark">排名：</span>{{lossTeams.away.rank}}</div>
+				</div>
+			</div>
+			<div class="a-flex-center-column lossTeamData">
+				<div class="a-text-color-light a-font-size-small-x lossTeamDataTitle">赔率<span class="a-text-color-light a-font-size-small-x" ng-if="lossTeams.odds_type">（{{lossTeams.odds_type}}）</span></div>
+				<div class="a-flex-between lossTeamDataDetial">
+					<div class="a-flex-center-column">
+						<span class="a-text-color-whit a-font-size-small-x">胜</span>
+						<span class="a-font-family-numstd a-text-darkShadow a-text-color-light a-font-size-medium-x">{{lossTeams.odds.win}}</span>
+					</div>
+					<div class="a-flex-center-column">
+						<span class="a-text-color-whit a-font-size-small-x">平</span>
+						<span class="a-font-family-numstd a-text-darkShadow a-text-color-light a-font-size-medium-x">{{lossTeams.odds.equal}}</span>
+					</div>
+					<div class="a-flex-center-column">
+						<span class="a-text-color-whit a-font-size-small-x">负</span>
+						<span class="a-font-family-numstd a-text-darkShadow a-text-color-light a-font-size-medium-x">{{lossTeams.odds.fail}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-modal-view>

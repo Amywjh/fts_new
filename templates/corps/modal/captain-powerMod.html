@@ -1,0 +1,32 @@
+<ion-modal-view class='ksbz-model everonce'>
+	<div class="ksbz-ever corpsBack pane">
+		<div class="closeNow" ng-click="applyListMod.remove()">
+			<i class="ion-ios-close-outline"></i>
+		</div>
+	<div class="a-flex-between corpsRankHead">
+		<span class="a-text-color-cloudyBlue a-font-size-small">玩家</span>
+		<span class="a-text-color-cloudyBlue a-font-size-small">操作</span>
+	</div>
+	<ion-content class="a-ownpm corpsRank" style="bottom: .9rem;" has-bouncing="true" scrollbar-y="false">  		
+		<a class="handle" ng-repeat='list in modList'>
+		  	<div class="a-parting-line a-div-height-large-s a-flex-start">
+			  	<div class="a-flex-start corpsList">
+			  		<div class="imgBox">
+			  			<img ng-src="{{list.userHeadImg}}" onerror="loadDefaultImg(1)"/>
+			  	    </div>
+			  		<div class="a-flex-start-column corpsName">
+			  			<p class="a-font-size-small-x a-text-color-whit playerName">{{list.userName}}</p>
+			  			<span class="a-font-size-small-x a-text-color-cloudyBlue">Lv.{{list.userLevel}}</span>
+			  		</div>
+			  	</div>
+			  	<div ng-if='teamDetail.captain' class="a-text-color-whit a-font-size-medium-x a-font-family-numstd corpsNum">
+			  		<button ng-click='refuseBtn(list)' class="a-text-color-whit a-font-size-small-s font-weight a-buttonBig-corRed">拒绝</button>
+			  		<button ng-click='agreeBtn(list)' class="a-text-color-whit a-font-size-small-s font-weight a-buttonBig-corGreen" >同意</button>
+			  	</div>
+		  	</div>
+		</a>
+		<p ng-if='!modList.length' class="a-text-color-whit" style="text-align: center;margin-top: 50%;">暂无玩家申请</p>
+		<ion-infinite-scroll icon="ion-loading-c" immediate-check="false" ng-if="!moreAgree" on-infinite="loadMore(2)" distance="10%"></ion-infinite-scroll>
+	</ion-content>
+	</div>
+</ion-modal-view>

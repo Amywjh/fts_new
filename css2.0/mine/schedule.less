@@ -1,0 +1,172 @@
+.wode-sch {
+    .schhead {
+        width: 100%;
+        padding: .06rem 0 .02rem;
+        background-image: linear-gradient(-180deg, #19232B 0%, #303845 100%);
+        box-shadow: inset 0 -10px 15px 0 rgba(0,0,0,0.50);
+        .scroll {
+            height: 100%;
+            white-space: nowrap;
+            padding: .06rem 0;
+            li {
+                width: 1rem;
+                height: .42rem;
+                margin-left: .08rem;
+                border-radius: 2px;
+                opacity: .6;
+                display: inline-block;
+                >img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            li.check {
+                box-shadow: 0 0 10px 0 #34ED41;
+                opacity: 1;
+            }
+        }
+    }
+    .calendar {
+            width: 100%;
+            display: block;
+            height: 2.58rem;
+            padding-top: .1rem;
+        .calendar-title-box {
+            position: relative;
+            width: 100%;
+            height: 0.36rem;
+            line-height: 0.36rem;
+            text-align: center;
+            margin-bottom: .08rem;
+            span {
+                font-size: .14rem;
+                color: rgb(52, 237, 65);
+                font-weight: bold;
+            }
+            span.color {
+                color: rgba(164,178,205,.7);
+            }
+            //标题样式
+            .calendar-title {
+                font-size: .16rem;
+                letter-spacing: .02rem;
+            }
+            /*上下月设置*/
+            .prev-month,
+            .next-month {
+                position: absolute;
+                font-weight: 100;
+                color: #fff;
+                background-image: linear-gradient(0deg, #222C35 0%, #303845 90%);
+                box-shadow: 0 5px 10px 0 rgba(0,0,0,0.50), inset 0 1px 1px 0 rgba(255,255,255,0.15);
+                width: .73rem;
+                i {
+                    color: inherit;
+                    font-size: .15rem;
+                }
+            }
+            .prev-month {
+                left: 0;
+                border-top-right-radius: .18rem;
+                border-bottom-right-radius: .18rem; 
+            }
+            .next-month {
+                right: 0;
+                border-top-left-radius: .18rem;
+                border-bottom-left-radius: .18rem;
+            }
+        }
+        .calendar-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            tr {
+                height: .3rem;
+                line-height: .3rem;
+            }
+            .bodytitle th{
+                color:rgb(164,178,205);
+            }
+        }
+        /* 当前天 颜色特殊显示 */
+        .currentDay {
+            background: url(../../img2.0/wode/sc_greendot.png)no-repeat center;
+            background-size: .28rem .28rem;
+        }
+        /* 本月 文字颜色 */
+        .currentMonth,.currentDay {
+            color: #fff;
+            font-weight: bold;
+        }
+        /* 其他月颜色 */
+        .otherMonth {
+            color: rgb(164,178,205);
+        }
+    }
+    .footclick{
+        padding: 0 .16rem;margin-top: .15rem;
+        .footbtn{
+            width: .76rem;height: .28rem;
+        }
+    }
+    .schcontent{
+        top: 3.4rem;
+    }
+    
+    /**
+     *球队信息     
+     */
+    .schheadteam{
+        width: 100%;
+        height: 1.2rem;
+        background: url(../../img2.0/battle/sk_yjs_jdz_1.png)no-repeat center;text-align: center;
+        background-size:100% 100%;
+        >img{
+            height: .64rem;vertical-align: middle;margin-top: .14rem;
+        }
+        >.teamname{margin-top: .12rem;}
+    }
+    .schTeamPlayers{
+        .teamBox{
+            margin-top: .1rem;padding: 0 .1rem;
+            header{
+                height: .3rem;line-height: .3rem;
+                span{font-size: .14rem;font-weight: bold;}
+            }
+           .playersBox{
+               width: 100%;
+               display: -webkit-flex;
+               display: flex;
+               -webkit-flex-wrap: wrap;
+               flex-wrap: wrap;
+               border-top: .02rem solid rgba(0,0,0,.3);
+               li{
+                   border-bottom: .02rem solid rgba(0,0,0,.3);
+                   padding:.1rem 0;width: 50%;
+                   .wbox{
+                       display: -webkit-flex;display: flex;padding-left: .1rem;
+                        .logImg{
+                           width: .48rem;height: .48rem;border: .02rem solid #000;box-sizing: border-box;border-radius: 50%;overflow: hidden;position: relative;
+                           img{
+                               width: .48rem;height: .48rem;
+                           }
+                       }
+                       .text{
+                           margin-left: .1rem;
+                           p{
+                              font-size: .12rem ;
+                           }
+                           p:first-child{color: rgba(255,255,255,0.15);margin-top: .05rem;}
+                       }   
+                   }
+               }
+               li:nth-child(odd){
+                   .wbox{
+                       border-right: .02rem solid rgba(0,0,0,.3);
+                   }
+               }
+//             li:nth-last-of-type(2),li:last-child{border: 0;}
+           } 
+        }
+    }
+}

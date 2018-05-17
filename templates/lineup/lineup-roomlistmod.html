@@ -1,0 +1,74 @@
+<ion-modal-view class='ksbz-model everonce'>
+	<div class="ksbz-ever blackbg">
+		<div class="closeb" ng-click="roomlistmod.hide()"></div>
+		<div class="headcopyroom">
+			<h1 class="fontGreentitle">同步此阵容至更多房间</h1>
+		    <div class="flex-justify-b by" ng-click='teamhave()'>
+		    	<div class="a-font-size-small font-weight a-text-color-whit rowone">{{hallroomall.deadTime}}</div>
+			    <div class="flex-justify-b rowtwo">
+			    	<div><img class="teamlogo" ng-src='{{hallroomall.matchList[0].homeTeamLogo}}' /><p class="a-font-size-small a-text-color-whitDark" style="margin-top: -.06rem;">{{hallroomall.matchList[0].homeTeamName}}</p></div>
+			        <div><span class="a-font-size-small a-text-color-whitDark" ng-if="hallroomall.matchList[0].date">{{hallroomall.matchList[0].date}}</span><p class="a-font-size-small a-text-color-whit font-weight">{{hallroomall.matchList[0].time}}</p></div>
+			        <div><img class="teamlogo" ng-src='{{hallroomall.matchList[0].awayTeamLogo}}' /><p class="a-font-size-small a-text-color-whitDark" style="margin-top: -.06rem;">{{hallroomall.matchList[0].awayTeamName}}</p></div>
+			    </div>
+		        <span class="a-text-color-light a-font-size-small-x left">共{{teamnum}}场&nbsp;<i class="ion-ios-arrow-right a-text-color-light"></i></span>
+		    </div>
+		</div>
+		<div ng-if="!roomList || roomList==0" class="pane nocopyroom">
+			<img src="../../img2.0/battle/dt_kzt.png" alt="" />
+			<p class="a-text-color-whitDark a-font-size-small">暂无可同步加入的房间</p>
+		</div>
+		<div class="room_bg blackbg"></div>
+		<ion-content class="hall listmod" style="background: none;" scrollbar-y="false" delegate-handle="mainScroll" on-drag-down="searchshow()" on-drag-up="showReturn()">  
+		<div class="roomList" >
+		<!--<h1 class="headtitle">竞猜开始时间:{{today}}&nbsp;&nbsp;{{todayhour}}<img src="../../img2.0/prize2.0/qxdz_djs_1.png" alt="" /><span>{{todaycount}}</span></h1>-->
+		<a class="roomItem blackroom" ng-repeat='room in roomList track by $index' ng-class="room.activity ==1  ?'border-viole':''" ng-click="joinroom(room)" >
+			<div ng-if="!room.copy && room.joined==0" ng-click='copylineupto({{room.id}},room)' class="a-buttonSmall-green synchro a-flex-center"><span style="color: inherit;font-weight: bold;">同步加入</span></div>
+			<div ng-if="!room.copy && room.joined==1" class="a-text-colorgreen a-flex-center a-font-size-small synchrojoin font-weight">已参加</div><div ng-if="!room.copy && room.joined==1" ng-click='copylineupto({{room.id}},room)' class="a-buttonSmall-green synchro a-flex-center"><span style="color: inherit;font-weight: bold;">同步此阵容</span></div>
+			<header>
+				<article class="header">
+					<span class="roomtype blackbg"  ng-if="room.official==1 &&  room.activity!=1">
+						<!--房间类型-->
+						<div class="type">官方</div>
+					</span>
+					<span class="roomtype a-room-black-viole" ng-if="room.official==1 &&  room.activity==1">
+						<div class="type typewhite">活动</div>
+					</span>
+					<span class="roomtype blackbg" ng-if="room.official==0 && room.privacy==0">
+						<!--房间类型-->
+						<div class="type Type0">个人</div>
+					</span>
+					<span class="roomtype blackbg" ng-if="room.official==0 && room.privacy==1">
+						<!--房间类型-->
+						<div class="type" style="color: #ff8027;">私密</div>
+					</span>
+					<span class="roomname" ng-style="searchstyle(room.id)" >{{room.name}}</span>
+					
+				</article>
+				<span ng-if="room.copy" class="a-font-size-small a-text-color-whitDark"><i class="ion-checkmark-round" style="color: inherit;"></i>已同步加入</span>
+			</header>
+			<div ng-if="true" class="content" ng-class="room.privacy == 1?'mtop':''">	
+				<div class="roomlist">
+					<img ng-src="../../img2.0/hall/jdzdt_{{room.playTypenum}}.png" />
+					<div><p>{{room.playTypeName}}</p><p>开奖类型</p></div>
+				</div>
+				<div  class="roomlist"><p class="noFee" ng-if="room.feeNum == 0 || !room.feeNum"><img src="../../img2.0/hall/mianfei_biaoqian.png" alt="" /></p><p ng-if="room.feeNum > 0"><img src="../../img2.0/hall/jdzdt_11.png" /><span class="fontcolor">{{room.fee}}</span></p><p>入场券</p></div>
+				<div ng-if="room.activity != 1"  class="roomlist"><p><img ng-if="room.prizeCurrencyType ==1" src="../../img2.0/hall/jdzdt_11.png" /><img ng-if="room.prizeCurrencyType !=1" src="../../img2.0/hall/jdzdt_12.png" /><span class="fontcolor">{{room.maxPrizePool}}</span></p><p>最高奖池</p></div>
+				<div ng-if="room.activity == 1"  class="roomlist roomtop"><img ng-src="{{room.prize_thing_pic}}" alt="" /></div>
+			</div>
+			<div class="hallline experienceline">
+				<span ng-if="room.mark<100" ng-class="{0:'ycline',1:'zcline',2:'ogline',3:'yjline',4:'xjline'}[room.league]" style="width:{{room.mark}}%;"></span>
+				<span ng-if="room.mark==100" style="width: 100%;height: 2px;border-radius: 2px;background: rgb(133,142,160);"></span>
+				<!--<span ng-if="room.mark<100 && room.league==0" class="ycline" style="width:{{room.mark}}%;"></span>-->
+			</div>
+			<div class="peoples"><img src="../../img2.0/hall/jdzdt_10.png" alt="" /><span>{{room.userCount}}</span><span>&nbsp;/&nbsp;{{room.maxUserCount}}</span><img class="man" ng-if="room.mark==100" src="../../img2.0/hall/fjlb_1.png" alt="" />
+				<img class="team" ng-src="../../img2.0/hall/circleLeague_{{room.league}}.png"/>
+				<div ng-if="room.level_limit == 1" style="float: right;" class="a-text-colorgreen a-font-size-small">
+					限等级<span class="a-text-color-whit">Lv.{{room.min_level}}-Lv.{{room.max_level}}</span>
+				</div>
+			</div>
+		</a>
+		<div id="infinite_end" ng-if="more_end">住手，没有更多了</div>
+    	<ion-infinite-scroll icon="ion-loading-c" immediate-check="false" ng-if="!moreDataCanBeLoaded" on-infinite="loadMore(searchGoing)" distance="10%"></ion-infinite-scroll>
+	</ion-content>
+	</div>
+</ion-modal-view>

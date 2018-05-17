@@ -1,0 +1,27 @@
+<ion-view view-title="球队信息"  class="wode-sch" hide-tabs>
+	<ion-content class="schTeamPlayers">
+		<div class="schheadteam" >
+			<img ng-src="{{teamInfo.logo_url}}" alt="" />
+			<p class="teamname font-weight a-text-color-whit a-font-size-medium">{{teamInfo.name}}</p>
+		</div>
+		<div class="teamBox blackroom" ng-repeat="(keyindex,players) in teamPlayers">
+			<header class="a-flex-center">
+				<span ng-if="keyindex ==1" class="a-text-color-vgcolor">前锋</span>
+				<span ng-if="keyindex ==2" class="a-text-color-blue">中场</span>
+				<span ng-if="keyindex ==3" class="a-text-color-orange">后卫</span>
+				<span ng-if="keyindex ==4" class="a-text-color-light">门将</span>
+			</header>
+			<ul class="playersBox">
+				<li ng-click="playerDetial(player.id)" ng-repeat="player in players">
+					<div class="wbox">
+						<div class="logImg"  ng-if="keyindex ==1" style="border:.02rem solid rgb(255,128,39)"><img class="position-center" ng-if="!player.head_img_url" src="../../img2.0/common/player_default.png" alt="" /><img ng-if="player.head_img_url" class="position-center" ng-src="{{player.head_img_url}}"  onerror="loadDefaultImg(false)" alt="" /></div>
+						<div class="logImg"  ng-if="keyindex ==2" style="border:.02rem solid rgb(60,195,255)"><img class="position-center" ng-if="!player.head_img_url" src="../../img2.0/common/player_default.png" alt="" /><img ng-if="player.head_img_url" class="position-center" ng-src="{{player.head_img_url}}"  onerror="loadDefaultImg(false)"  alt="" /></div>
+						<div class="logImg"  ng-if="keyindex ==3" style="border:.02rem solid #ffd841"><img class="position-center" ng-if="!player.head_img_url" src="../../img2.0/common/player_default.png" alt="" /><img ng-if="player.head_img_url" class="position-center" ng-src="{{player.head_img_url}}"  onerror="loadDefaultImg(false)"  alt="" /></div>
+						<div class="logImg"  ng-if="keyindex ==4" style="border:.02rem solid #34ed41"><img class="position-center" ng-if="!player.head_img_url" src="../../img2.0/common/player_default.png" alt="" /><img ng-if="player.head_img_url" class="position-center" ng-src="{{player.head_img_url}}"  onerror="loadDefaultImg(false)"  alt="" /></div>
+						<div class="text"><p style="color: #fff;">{{player.name}}</p><p class="a-text-color-whitDark">{{player.shirt_num}}号</p></div>
+				    </div>
+				</li>
+			</ul>
+		</div>
+	</ion-content>
+</ion-view>

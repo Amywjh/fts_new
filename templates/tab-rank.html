@@ -1,0 +1,125 @@
+<ion-view view-title='排行 ' class="tab-rank" hide-tabs-t hide-shadow>
+  <div class="rankhead">
+    <!--主页  排行-->
+    <div class="a-flex-between rankTitle onlyRankTitle">
+      <div class="a-font-size-medium a-text-colorgreen rankTitleItem">财富榜<span></span></div>
+      <div class="a-font-size-medium a-text-colorgreen rankTitleItem">等级榜 <span></span></div>
+      <div class="a-font-size-medium a-text-colorgreen rankTitleItem">胜率榜 <span></span></div>
+    </div>
+    <!--排行榜-->
+    <div class="a-flex-between a-div-height-medium-s rankRowTitle">
+      <div class="a-font-size-small a-text-color-whit">排名</div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class="a-font-size-small a-text-color-whit" style="padding-right: 0.1rem;">{{ranktitle.harvest}}</div>
+    </div>
+  </div>
+  <ion-slide-box class="onlyRankSlide" active-slide="activated_slide" disable-scroll="true" delegate-handle="rankSlide" show-pager="false"  animation="slide-left-right-ios7">
+		<ion-slide class="rankSlide">
+		  <ion-content  class="a-background-bg userRanks" direction="y" overflow-scroll='false'  delegate-handle="rankScroll" style="padding-bottom: 0.1rem;" >
+		      <!--财富排行 -->
+		  		<div class="ranks" ng-repeat="zh in itemzh | orderBy:'rank'"  ng-click="nameGet(zh.userInfoId)">
+		  			<div class="a-flex-between a-div-height-medium a-parting-line rankItem">
+							<div class="a-flex-between rankLeft">
+								<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="zh.rank<=3 && zh.rank>0"><img ng-src="../img2.0/rank/phb_{{zh.rank}}.png" alt="" /></div>
+								<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="zh.rank>3">{{zh.rank}}</div>
+							  <div class="imgBox">
+								  <img ng-if="zh.userHeadImg" ng-src="{{zh.userHeadImg}}" onerror="loadDefaultImg(1)">
+								  <img ng-if="!zh.userHeadImg" src="../img2.0/common/touxiang_default.png">
+						  	</div>
+								<div class="a-flex-between-column userInfo">
+					      	<h2 class="a-font-size-small-x a-text-color-whit">{{zh.name}}</h2>
+					      	<p class="a-font-size-small-s a-text-color-whitDark" style="display: none;"><img ng-src="{{zh.guadeUrl}}">{{zh.guade}}</p>
+						    </div>
+							</div>
+							<div class="a-font-size-medium-x a-text-color-whit a-font-family-special userIcon" ng-class="{'topThreeIcon':zh.rank<4?true:false}" ><img src="../../img2.0/prize2.0/qxdz_yjs_4.png" alt="" />&nbsp;{{zh.totalBouns}}</div>
+		  			</div>
+				  </div>
+		    <ion-infinite-scroll class="prizes_loadmore" icon="ion-loading-c" immediate-check="false" on-infinite="getMore(ranktitle.id)" distance="80%" ng-if="!getMoreData"></ion-infinite-scroll> 
+		  </ion-content>
+		</ion-slide>
+		<ion-slide class="rankSlide">
+			<ion-content  class="a-background-bg userRanks" direction="y" overflow-scroll='false'  delegate-handle="rankScroll" style="padding-bottom: 0.1rem;" >
+		      <!--等级排行 -->
+		  		<div class="ranks" ng-repeat="zh in itemzh | orderBy:'rank'"  ng-click="nameGet(zh.userInfoId)">
+		  			<div class="a-flex-between a-div-height-medium a-parting-line rankItem">
+							<div class="a-flex-between rankLeft">
+								<!--排名-->
+								<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="zh.rank<=3 && zh.rank>0"><img ng-src="../img2.0/rank/phb_{{zh.rank}}.png" alt="" /></div>
+								<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="zh.rank>3">{{zh.rank}}</div>
+								<!--头像-->
+							  <div class="imgBox">
+								  <img ng-if="zh.userHeadImg" ng-src="{{zh.userHeadImg}}" onerror="loadDefaultImg(1)">
+								  <img ng-if="!zh.userHeadImg" src="../img2.0/common/touxiang_default.png">
+						  	</div>
+								<div class="a-flex-between-column userInfo">
+									<!--昵称-->
+					      	<h2 class="a-font-size-small-x a-text-color-whit">{{zh.name}}</h2>
+					      	<p class="a-font-size-small-s a-text-color-whitDark" style="display: none;"><img ng-src="{{zh.guadeUrl}}">{{zh.guade}}</p>
+						    </div>
+							</div>
+							<!--收获-->
+							<div class="userGrade">
+								<span class="a-font-size-medium-m a-text-color-whit a-font-family-special grade" ng-class="{'a-text-shawgreen':zh.rank<4?true:false}">Lv.{{zh.level}}</span>
+								<span class="a-font-size-small a-text-color-whitDark">{{zh.experience}}</span>
+							</div>
+		  			</div>
+				  </div>
+		    <ion-infinite-scroll class="prizes_loadmore" icon="ion-loading-c" immediate-check="false" on-infinite="getMore(ranktitle.id)" distance="80%" ng-if="!getMoreData"></ion-infinite-scroll> 
+		  </ion-content>
+		</ion-slide>
+		<ion-slide class="rankSlide">
+			<ion-content  class="a-background-bg userRanks" direction="y" overflow-scroll='false'  delegate-handle="rankScroll" style="padding-bottom: 0.1rem;" >
+		      <!--胜率排行 -->
+		  		<div class="ranks" ng-repeat="zh in itemzh | orderBy:'rank'" ng-click="nameGet(zh.userInfoId)">
+		  			<div class="a-flex-between a-div-height-medium a-parting-line rankItem">
+							<div class="a-flex-between rankLeft">
+								<!--排名-->
+								<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="zh.rank<=3 && zh.rank>0"><img ng-src="../img2.0/rank/phb_{{zh.rank}}.png" alt="" /></div>
+								<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="zh.rank>3">{{zh.rank}}</div>
+								<!--头像-->
+							  <div class="imgBox">
+								  <img ng-if="zh.userHeadImg" ng-src="{{zh.userHeadImg}}" onerror="loadDefaultImg(1)">
+								  <img ng-if="!zh.userHeadImg" src="../img2.0/common/touxiang_default.png">
+						  	</div>
+								<div class="a-flex-between-column userInfo">
+									<!--昵称-->
+					      	<h2 class="a-font-size-small-x a-text-color-whit">{{zh.name}}</h2>
+					      	<p class="a-font-size-small-x a-text-color-whitDark">Lv.{{zh.level}}</p>
+					      	<p class="a-font-size-small-s a-text-color-whitDark" style="display: none;"><img ng-src="{{zh.guadeUrl}}">{{zh.guade}}</p>
+						    </div>
+							</div>
+							<!--收获-->
+							<div class="a-font-size-medium-x a-text-color-whit a-font-family-special userIcon" ng-class="{'topThreeIcon':zh.rank<4?true:false}" >{{zh.winRate}}</div>
+		  			</div>
+				  </div>
+		    <ion-infinite-scroll class="prizes_loadmore" icon="ion-loading-c" immediate-check="false" on-infinite="getMore(ranktitle.id)" distance="80%" ng-if="!getMoreData"></ion-infinite-scroll> 
+		  </ion-content>
+		</ion-slide>
+	</ion-slide-box>
+	<div class="a-background-color-dark myRank">
+		<div class="a-flex-between a-div-height-medium rankItem" ng-click="nameGet(itemMine.userInfoId)">
+			<div class="a-flex-between rankLeft">
+				<div class="a-font-size-small-x rankNum" ng-if="ranktitle.id===2 && itemMine.level>5">{{itemMine.rank}}</div>
+				<div class="a-font-size-small-x rankNum" ng-if="ranktitle.id!==2">{{itemMine.rank}}</div>
+				<div class="a-font-size-small-x rankNum" ng-if="ranktitle.id===2 && itemMine.level<6">-</div>
+				<div class="imgBox" >
+					<img ng-if="itemMine.userHeadImg" ng-src="{{itemMine.userHeadImg}}" onerror="loadDefaultImg(1)">
+				  <img ng-if="!itemMine.userHeadImg" src="../img2.0/common/touxiang_default.png">
+				</div>
+				<div class="a-flex-between-column userInfo">
+		      	<h2 class="a-font-size-small-x a-text-color-dark">{{itemMine.name}}</h2>
+		      	<p ng-if="activated_slide == 2" class="a-font-size-small-x a-text-color-dark">Lv.{{itemMine.level}}</p>
+		      	<p class="a-font-size-small-s a-text-color-dark" style="display: none;"><img ng-src="{{itemzh[0].guadeUrl}}">{{itemMine.guade}}</p>
+		    </div>
+			</div>
+			<div class="a-font-size-medium-x a-font-family-special a-text-color-dark userIcon" ng-if="ranktitle.id===0"><img src="../../img2.0/prize2.0/qxdz_yjs_4.png" alt="" /> {{itemMine.totalBouns}}</div>
+			<div class="a-font-size-medium-x a-font-family-special a-text-color-dark userIcon" ng-if="ranktitle.id===2 && itemMine.level>5">{{itemMine.winRate}}</div>
+			<div class="a-font-size-small-x a-font-family-special a-text-color-dark userIcon" ng-if="ranktitle.id===2 && itemMine.level<6">Lv6解锁</div>
+			<div class="userGrade" ng-if="ranktitle.id===1">
+				<span class="a-font-size-medium-m a-text-color-dark a-font-family-special grade">Lv.{{itemMine.level}}</span>
+				<span class="a-font-size-small a-text-color-dark">{{itemMine.experience}}</span>
+			</div>
+		</div>
+  </div>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view view-title='奖金分配 ' class="bonusPlan"  hide-tabs>
+  <div class="planHead">
+    <!--主页  排行-->
+    <div class="a-div-height-medium-x a-background-item bonusTitle">
+      <div class="a-font-size-medium a-text-color-whit bonusTitleItem">奖金分配</div>
+    </div>
+    <!--排行榜-->
+    <div class="a-flex-between a-div-height-medium-s bonusRowTitle" ng-if="!bonusIsNoStart">
+      <div class="a-font-size-small a-text-color-whit">排名</div>
+      <div class="a-font-size-small a-text-color-whit" ng-cloak>{{prizeName.name}}</div>
+    </div>
+    <div class="a-flex-between a-div-height-medium-s bonusRowTitle" ng-if="bonusIsNoStart">
+      <div class="a-font-size-small a-text-color-whit">排名</div>
+      <div class="bonusRowTitleRight">
+      	<span class="a-font-size-small a-text-color-whit">当前奖励</span>
+      	<span class="a-font-size-small a-text-color-whit titleRightLast">最高奖励</span>
+      </div>
+    </div>
+  </div>
+  <ion-content  class="a-background-bg bonusList" direction="y" overflow-scroll='false'  delegate-handle="rankScroll">
+      <!--数据排行 -->
+  		<div class="a-div-height-medium ranks" ng-repeat="(key,zh) in bonusArr track by $index" ng-if="!bonusIsNoStart && zh">
+  			<div class="a-flex-between rankItem">
+  				<div class="a-font-size-small-x a-text-color-whit rankLeft">{{key+1}}<div class="centerLine">..............................................................</div></div>
+  				<div class="a-font-size-medium-x a-text-color-whit a-font-family-special userIcon" ng-if="!prizeName.activity"><img ng-if="prizeType == 1" src="../../img2.0/creatroom/cjfj_3.png" alt="" /><img ng-if="prizeType != 1" src="../../img2.0/prize2.0/qxdz_yjs_4.png" alt="" />&nbsp;{{zh}}</div>
+  				<img class="a-img-size" ng-if="prizeName.activity" style="max-height: 0.78rem;position: relative;right: -0.17rem;" ng-src="{{zh}}"/>
+  			</div>
+		  </div>
+		  <div class="a-div-height-medium ranks" ng-repeat="(key,zh) in bonusArr.predictTop25Prize track by $index" ng-if="bonusIsNoStart">
+  			<div class="a-flex-between rankItem">
+  				<div class="a-font-size-small-x a-text-color-whit rankLeft">{{key+1}}<div class="centerLine">..............................................................</div>
+  				</div>
+  				<div class="a-font-size-medium-x a-text-color-whit a-font-family-special userIcon  bonusNum"><img src="../../img2.0/prize2.0/qxdz_yjs_4.png" alt="" /> {{bonusArr.realTop25Prize[key] || 0}}</div>
+  				<div class="a-font-size-medium-x a-text-shawgreen a-font-family-special userIcon bonusNum bonusNumLast"><img src="../../img2.0/prize2.0/qxdz_yjs_4.png" alt="" /> {{zh}}</div>
+  			</div>
+		  </div>
+    <ion-infinite-scroll class="prizes_loadmore" immediate-check="false" on-infinite="getMore(key)" distance="20%" style="height: 1px;" ng-if="!getMoreData"></ion-infinite-scroll> 
+  </ion-content>
+</ion-view>

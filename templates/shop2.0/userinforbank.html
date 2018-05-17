@@ -1,0 +1,25 @@
+<ion-view view-title="我的银行卡"  class="phone bgBlue" hide-tabs>
+<ion-content scroll="false">
+	<div class="warp">
+		<div style="border: none;margin:.3rem 0 0 0;height: inherit;"><span></span><span ng-click="changeUser()">更改&nbsp;&nbsp;<i class="ion-ios-arrow-right"></i></span></div>
+	</div>
+	<div class="list perfect solid">
+	  	 <div class="item-input">
+	        <label class="input-label">持卡人:</label>
+	        <div>{{name}}</div>
+	    </div>
+		<div class="item-input">
+	        <label class="input-label">卡号:</label>
+	        <div>{{card}}</div>
+	 	</div>
+	 	<div class="item-input">
+	        <label class="input-label"><p style="margin: 0;">账户所</p>属地区:</label>
+	        <div>{{adress}}</div>
+	 	</div>
+	 	<div class="item-input">
+	        <label class="input-label"><p style="margin: 0;">账户开</p>户分行:</label>
+	        <div>{{bankBranch}}</div>
+	 	</div>
+	</div>
+</ion-content>
+</ion-view>

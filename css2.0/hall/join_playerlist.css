@@ -1,0 +1,33 @@
+.join_playerlist .playerList_header {
+  background-color: #26323d;
+  margin: auto;
+  text-align: center;
+}
+.join_playerlist .playerList_header > div {
+  text-align: center;
+}
+.join_playerlist .player-rank {
+  position: absolute;
+  top: 0.58rem;
+  bottom: 0.05rem;
+  margin-bottom: 0px;
+  padding: 0px 0.1rem;
+  padding-bottom: 0.1rem;
+}
+.join_playerlist .player-rank .playerlist {
+  padding: 0px;
+}
+.join_playerlist .player-rank .playerlist > .playerItem {
+  box-sizing: border-box;
+}
+.join_playerlist .player-rank .playerlist > .playerItem img {
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  margin-right: 0.12rem;
+}
+.join_playerlist .player-rank .playerlist > .playerItem .playerName {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

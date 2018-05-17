@@ -1,0 +1,29 @@
+<div class="lineup-zrxztt battle-lineup-zrxztt battle-lineup-thr-dir">
+    <div class="luduxz addplayer lineupshowthr">
+      	<div class="dfbox" ng-repeat="topLineup in lineup.data track by $index" ng-if="topLineup" ng-click="playerDetial(topLineup.id)">
+	        <div class="df" style=" background: url('{{topLineup.logo}}') no-repeat center;background-size: 100% 100%;">
+	        	<span class="dfhone"><img ng-src='{{topLineup.numone}}' ng-if='topLineup.numone'></span>
+	        	<span class="dfhtwo"><img ng-src='{{topLineup.numtwo}}' ng-if='topLineup.numtwo'></span>
+	        </div>
+	        <div class="dyms">
+	          <span	 class="dyname" >{{topLineup.name}}</span>
+	          <span class="dygz">近期战力：{{topLineup.recentExp}}</span>
+	          <span class="dygz" ng-if="topLineup.salary">工资：{{topLineup.salary}}</span>
+	        </div>
+      	</div>
+		<div class="dfbox dfbox_default" ng-repeat="topLineup in lineup.data track by $index" ng-if="!topLineup">
+      		<div class="df">
+	        </div>
+		</div>
+    </div>
+</div>
+<div class="lineupMsg" ng-if="!lineup.data[2]">
+	<div>
+		<p>您尚未设置阵容</p>
+		<span>为了避免影响您的战绩，请尽快完善阵容</span>
+	</div>
+</div>
+<div id="zrxz_bnt">
+	<div class="lineup-ctqd bnt warning-big" ng-if="!lineup.data[2]" ng-click="zrxz_tj()">完善阵容</div>
+	<div class="lineup-ctqd bnt" ng-if="lineup.data[2]" ng-click="zrxz_tj()">修改阵容</div>
+</div>

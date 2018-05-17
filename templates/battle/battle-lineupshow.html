@@ -1,0 +1,119 @@
+<ion-modal-view class="team_viewlineup">
+<ion-header-bar class="team_head">
+	<div class="title">
+		<span>阵容详情</span>
+	</div>
+	<div class="bnt" style="top:5px" ng-click="lineup_bnt()"><i class="icon ion-close-circled"></i></div>
+</ion-header-bar>
+<ion-content class="team_content">
+	<div class="lineup_headlist">
+		<div>
+			<img ng-if="lineup_data.logo_url" ng-src="{{lineup_data.logo_url}}"/><img ng-if="playId == 3 && !lineup_data.logo_url" src="../../img2.0/common/touxiang_default.png">
+			<img ng-if="thr_datalist.photo" ng-src="{{thr_datalist.photo}}"/><img ng-if="playId == 2 && !thr_datalist.photo" src="../../img2.0/common/touxiang_default.png">
+			<div>
+				<span>{{lineup_data.nick_name}}</span>
+				<p>提交时间:{{lineup_data.lineUpSubmitTime}}</p>	
+			</div>
+		</div>
+		<div>
+			<div ng-if="playId != 2">
+			<!--<p>剩余工资</p>
+		    <span style="color: #d1d1d1;">{{lineup_data.surPlusSalary}}</span>-->
+			</div>
+			<div>
+			    <p>阵容表现值</p>
+			    <span>{{lineup_data.expression}}</span>
+			</div>	
+		</div>
+	</div>   	
+     <!--经典站-->
+     <div class="dufu_bigbox" style="margin: 0;" ng-if="playId == 3">
+     	<div class="lineup_tzan lineupaniu lineupaniu_battle" style="left:0.3rem">
+         <span>{{lineup_data.lineup_name}}</span>       
+       </div>
+     	<div class="luhk">
+          <div class="box">
+           <!--第一行-->
+            <div class="dfrow" >
+              <a class="dfbox" ng-repeat='xx in lineupcontent.one track by $index' style="background: url('{{xx.bjIcon}}')no-repeat center;background-size: 100% 100%;" ng-click='playerDetial(xx.id,ids)'>
+                <div class="qygz" style=" background: url('{{xx.dfIcon}}') no-repeat center;background-size: 100% 100%;">
+                	{{xx.perExpression}}
+                </div>
+                <p ng-if="xx.perExpression || xx.perExpression===0" class="text">表现值</p>
+                <div class="df" style="background: url('{{xx.logo_url}}')no-repeat center;background-size: 100% 100%;">
+                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+                </div>
+                <div class="dyms">
+                  <p class="dyname">{{xx.name}}</p>
+                </div>
+                <div class="dycj">
+                    <img ng-src='{{xx.jb}}'>
+               </div>
+              </a>
+              
+            </div>
+            <!--第二行-->
+            <div class="dfrow" >
+              <a class="dfbox" ng-repeat='xx in lineupcontent.two track by $index' style="background: url('{{xx.bjIcon}}')no-repeat center;background-size: 100% 100%;" ng-click='playerDetial(xx.id,ids)'>
+                <div class="qygz" style=" background: url('{{xx.dfIcon}}') no-repeat center;background-size: 100% 100%;">
+                	{{xx.perExpression}}
+                </div>
+                <p ng-if="xx.perExpression || xx.perExpression===0"  class="text">表现值</p>
+                <div class="df" style="background: url('{{xx.logo_url}}')no-repeat center;background-size: 100% 100%;">
+                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+                </div>
+                <div class="dyms">
+                  <p class="dyname">{{xx.name}}</p>
+                </div>
+                <div class="dycj">
+                    <img ng-src='{{xx.jb}}'>
+               </div>
+              </a>
+              
+            </div>
+            <!--第三行-->
+            <div class="dfrow" >
+              <a class="dfbox" ng-repeat='xx in lineupcontent.thr track by $index' style="background: url('{{xx.bjIcon}}')no-repeat center;background-size: 100% 100%;" ng-click='playerDetial(xx.id,ids)'>
+                <div class="qygz" style=" background: url('{{xx.dfIcon}}') no-repeat center;background-size: 100% 100%;">
+                	{{xx.perExpression}}
+                </div>
+                <p ng-if="xx.perExpression || xx.perExpression===0" class="text">表现值</p>
+                <div class="df" style="background: url('{{xx.logo_url}}')no-repeat center;background-size: 100% 100%;">
+                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+                </div>
+                <div class="dyms">
+                  <p class="dyname">{{xx.name}}</p>
+                </div>
+                <div class="dycj">
+                    <img ng-src='{{xx.jb}}'>
+               </div>
+              </a>
+              
+            </div>
+            <!--第四行-->
+           <div class="dfrow" >
+              <a class="dfbox" ng-repeat='xx in lineupcontent.for track by $index' style="background: url('{{xx.bjIcon}}')no-repeat center;background-size: 100% 100%;" ng-click='playerDetial(xx.id,ids)'>
+                <div class="qygz" style=" background: url('{{xx.dfIcon}}') no-repeat center;background-size: 100% 100%;">
+                	{{xx.perExpression}}
+                </div>
+                <p ng-if="xx.perExpression || xx.perExpression===0"  class="text">表现值</p>
+                <div class="df" style="background: url('{{xx.logo_url}}')no-repeat center;background-size: 100% 100%;">
+                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+                </div>
+                <div class="dyms">
+                  <p class="dyname">{{xx.name}}</p>
+                </div>
+                <div class="dycj">
+                    <img ng-src='{{xx.jb}}'>
+               </div>
+              </a>
+            </div>
+          </div>  
+       </div>
+    </div>	
+</ion-content>
+</ion-modal-view>

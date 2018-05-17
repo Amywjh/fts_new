@@ -1,0 +1,17 @@
+<ion-view view-title="{{headTitle}}" class='roomSuccess' hide-tabs>
+	<div class="warp">
+		<img ng-if="privacy == 0" src="../../img2.0/hall/gkf_xz.png" alt="" />
+		<img ng-if="privacy == 1" src="../../img2.0/hall/smf_xz.png" alt="" />
+		<h1 ng-if="privacy == 0" class="a-text-color-light a-font-family-special font-weight a-font-size-medium-m">公开房创建成功!</h1>
+		<h1 ng-if="privacy == 1" class="a-text-color-light a-font-family-special font-weight a-font-size-medium-m">私密房创建成功!</h1>
+		<p class="roomtext a-text-color-whitDark a-font-size-small-x">房间号</p>
+		<p class="shine a-font-family-numstd a-text-shawgreen">{{roomPWD}}</p>
+		<div class="fontAlert">
+			<p ng-if="privacy == 0" class="a-text-color-whit a-font-size-small-x ">快邀请好友与其他玩家战个痛快</p>
+			<p ng-if="privacy == 1" class="a-font-size-small-x a-text-color-whit">私密房只能通过<span class="a-text-color-light font-weight">邀请微信好友</span>或<br /><span class="a-text-color-light font-weight">查找房间号</span>进入</p>
+		</div>
+		<p class="monImg"><img src="../../img2.0/creatroom/yqxr_ts.png" alt="" /></p>
+		<div ng-click="showShareModal('shareRoom',privacy)" class="btnone a-flex-center a-font-size-medium font-weight a-text-color-orangeDark a-buttonBig-orgnge">邀请好友加入</div>
+		<div ng-click="goingLineup()" class="btntwo a-flex-center a-font-size-medium font-weight a-text-color-whit a-buttonBig-green">前去布阵</div>
+	</div>
+</ion-view>

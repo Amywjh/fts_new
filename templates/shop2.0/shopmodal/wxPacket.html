@@ -1,0 +1,42 @@
+<ion-modal-view class="modalCss ">
+	<div class="warp packetmod" style="margin:18% auto 0;">
+		<div class="modelCloss packet" ng-click="wxPacketMod.remove()"></div>
+		<h2 class="title">申请兑换微信红包</h2>
+		<div class="by">
+			<div style="margin-bottom:0">
+				<div class="a-text-color-whit" style="position: relative;top: 2px;">兑换金额:</div>
+				<div class="list">
+				  <span class="item item-input byinput">
+				  	<span ng-if="wxexHave" style="color: rgb(50,8,155);font-weight:bold;margin-top: .01rem;">￥</span>
+				    <input class="wxInput" type="number" placeholder="最低¥20" ng-model="wxexHave">
+				  </span>
+				</div>
+			</div>
+			<div>
+				<div class="a-text-color-violet">需要星币:</div><div><img src="../../img2.0/shop2.0/newShop/dhjl_3.png" alt="" />
+				<span ng-if="!wxexHave">0</span>
+				<span class="exHave" ng-if="wxexHave>0 && wxexHave*10<=coinall" ng-bind="wxexHave*10"></span>
+				<span class="exHave ztcolor" ng-if="wxexHave*10 > coinall" ng-bind="wxexHave*10"></span>
+				<div>
+					<img src="../../img2.0/shop2.0/newShop/dhjl_3.png" alt="" />10=<span class="font-weight" style="color: inherit;">¥</span>1
+				</div>
+				</div>
+			</div>
+			<div>
+				<div class="a-text-color-whit">我的星币:</div><div><img src="../../img2.0/shop2.0/newShop/dhjl_3.png" alt="" /><span id="monHave" style="margin-left: .05rem;">{{coinall}}</span></div>
+			</div>
+			<div>
+				<div class="a-text-color-violet">兑换流程:</div>
+			</div>
+			<ul><img style="width: 100%;height: auto;" src="../../../img2.0/shop2.0/wxhb_lc.png" alt="" /></ul>
+		</div>
+		<p>*每人每次最多可申请红包的最大金额为￥200，最低￥20<br />
+			*申请兑换微信红包后我们会先扣除您的星币，若兑换失败，我们会将您的星币返还<br />
+			*申请兑换后，红包会于1-5个工作日内发放给您<br />
+			*红包发放后请于24小时内领取，否则红包过期失效StarKings不负责<br />
+			*请确保自己的微信账户已实名认证，未实名认证的微信账户不支持此兑换功能。<br />
+			*有任何疑问请联系客服
+		</p>
+		<div class="btn" ng-click="wxHongbao(wxexHave)">立即兑换</div>
+	</div>
+</ion-modal-view>

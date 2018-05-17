@@ -1,0 +1,16 @@
+<ion-modal-view class='ksbz-model'>
+	<div class="ksbz-bd blackbg">
+		<!--<div class="closeb"></div>-->
+		<i class="closeb ion-ios-close-outline" ng-click="fmtTypem.hide()"></i>
+		<div>
+			<div class="row flex-justify-b" ng-repeat="ll in lineupmod">
+				<div ng-repeat="zz in ll" ng-click='lineup_li(zz)' class="box blackroom" ng-class="{'true':'greenborder'}[zz.famT]"><img ng-src="../../img2.0/lineup2.0/bz_1{{zz.famid}}.png" /><p ng-class="{'true':'green'}[zz.famT]">{{zz.name}}</p></div>
+			</div>
+		</div>
+		<div class="btn-bb" ng-click="fmtTypem.hide()">
+	    	<h1><img src="../../img2.0/lineup2.0/bz_9.png" /></h1>
+	    	<img ng-src="../../img2.0/lineup2.0/bz_1{{liupimg}}.png" />
+	    	<p>{{lineupName}}</p>
+	    </div>
+	</div>
+</ion-modal-view>

@@ -1,0 +1,28 @@
+<!--头部-->
+<ion-header-bar align-title="left" class="helpHeader header bar-positive" >
+	  <!--大厅默认的头部头像-->
+	  <div class="buttons">
+  		<!--<a ng-click="return()" class="left_return"><span class="jiantou"></span></a>-->
+	  	<a ng-click="nameGet(userData.userId)" class="left"><img ng-if="userData.head_logo_url" ng-src="{{userData.head_logo_url}}" onerror="loadDefaultImg(1)"/><img ng-if="!userData.head_logo_url" src="../../img2.0/common/touxiang_default.png"/></a>
+	  </div>
+	  <!--大厅默认中间部分-->
+	  <h1 class="title" ng-click="hallsc()">
+			<div class="dat_boxs">	
+  			<div class="dat_box">
+	  			<img src="../../img2.0/hall/jdzdt_12.png"/>
+					<span ng-if="userData.coin">{{userData.coin}}</span>	
+					<span ng-if="!userData.coin">0</span>	
+	  		</div>
+  			<div class="dat_box">
+	  			<img src="../../img2.0/hall/jdzdt_11.png"/>
+					<span ng-if="userData.dmd">{{userData.dmd}}</span>	
+					<span ng-if="!userData.dmd">0</span>	
+  			</div>
+  			<span class="plus"></span>
+			</div> 	
+	  </h1>
+	  <!--大厅默认显示的头部右侧-->
+	  <div class="a-background-help buttons-right buttons-right-rule" ng-click="shopRecord()" >
+       	<div class="a-text-color-light a-font-size-small">{{headtext}}</div>
+   	</div>
+</ion-header-bar>

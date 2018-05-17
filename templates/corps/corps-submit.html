@@ -1,0 +1,45 @@
+<ion-view view-title="战队设置" class="corpsBack" hide-tabs>
+	<ion-content class="corpsCreamCon" scroll= false>
+        <div class="a-flex-between a-background-darkBlue logo">
+        	<span class="a-text-color-cloudyBlue a-font-size-small-x font-weight">战队图标：</span>
+        	<div>
+        		<div class="box-six" style="position: relative;width: .6rem;height: .72rem;background: url(../../img2.0/corps/zd_tx_bg_big.png)no-repeat 50% center;background-size: 120%;">
+					<div class="con-show01">  
+				        <div class="con-show02">  
+				          <div class="con-show03"> 
+				          	 <img img-resize class="position-center" ng-src="{{corpsCraem.corpsLogo}}" alt="" />
+				          </div>  
+				        </div>  
+				     </div>  
+				</div>
+        	</div>
+        </div>
+        <div class="a-flex-start a-background-darkBlue corspName">
+        	<span class="a-text-color-cloudyBlue a-font-size-small-x font-weight">战队名称：</span>
+        	<span>
+        		<p class="a-text-color-cloudyBlue" style="white-space: nowrap;padding-left: 16px;">{{corpsCraem.corpsName}}</p>
+        	<span>
+        </div>
+        <div class="a-flex-start a-background-darkBlue corspText">
+        	<span class="a-text-color-cloudyBlue a-font-size-small-x font-weight">战队口号：</span>
+        	<label for="corpsText" class="item item-input" style="height: .78rem;-webkit-align-items: flex-start;align-items: flex-start;">
+        		<textarea class="a-text-color-whit" maxlength="15" type="text" ng-model='corpsCraem.corpsText' id="corpsText" placeholder="1-15个字" rows="3" /></textarea>
+        	</label>
+        </div>
+         <div class="a-flex-between a-background-darkBlue corpsChose">
+        	<span class="a-text-color-cloudyBlue a-font-size-small-x font-weight">成员审核方式：</span>
+        	<div class="a-flex-between-column dWidth">
+        		<ion-radio class='onlyChose' ng-repeat="join in joinType"
+		                   ng-value="join.type"
+		                   ng-model="isJoin.type"
+		                   ng-change="joinRecord(join)"
+		                   name="consent">
+		                   <span>{{join.text}}</span>
+		      </ion-radio>
+        	</div>
+        </div>
+        <div  keyout-hide class="corpsSubmit">
+            <button ng-click='submitBtn(corpsCraem.corpsText)' class="a-flex-center a-font-size-medium font-weight a-text-color-whit a-buttonBig-purple">确定</button>
+        </div>
+	</ion-content>
+</ion-view>

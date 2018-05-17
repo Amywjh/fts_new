@@ -1,0 +1,81 @@
+<ion-view view-title='我的' class="tab-wode" hide-tabs-t>
+  <ion-content class="wodeCon mineBg">
+		<div class="mineHeader">
+			<div class="headImgName">
+				<div class="headBox">
+					 <div class="headImg">
+						 	<input id="capture" onchange="angular.element(this).scope().imgChange(this)" name="file" type="file" multiple accept="image/jpeg,image/png,image/jpg" style="width: 100%; height:  100%; display:block; border: none;opacity: 0;position: absolute;" />  
+							<img id="face" ng-if="userData.head_logo_url" ng-src="{{userData.head_logo_url}}" onerror="loadDefaultImg(1)"> 
+						  <img id="face" ng-if="!userData.head_logo_url" src="../../../img2.0/common/touxiang_default.png" > 
+	        </div>
+	        <div class="headName">
+	        	<h3 class="a-text-color-whit font-weight a-font-size-medium-x" ng-click="nameRevise()" id="newName">{{userData.name}}<img src="../../../img2.0/wode/grxx_xgxm_button.png" alt="" /></h3>
+	        	<p class="a-text-colorgreen"  ng-click="nameGet(userData.userId)">参与竞猜&nbsp;&nbsp;<span class="a-text-color-whit">{{userData.totalTimes}}</span>&nbsp;&nbsp;次<span style="margin-left: 0.1rem; margin-right: .09rem;border-right: 1px solid rgba(0, 0, 0, 0.3);"></span>胜率&nbsp;&nbsp;<span class="a-text-color-whit">{{userData.totalWinRate||0}}</span></p>
+	        </div>
+				</div>
+				<div class="grade a-flex-between">
+					<div><span class="a-text-shawgreen a-font-family-numstd a-font-size-medium-b ">Lv.{{userData.currLevel}}</span></div>
+					<div ng-click="bewrite()" class="a-flex-between" style="width: auto;"><span class="a-text-color-light">{{userData.currExp}}</span><span class="a-text-color-whitDark">/{{userData.maxExp}}</span>&nbsp;<img src="../../img2.0/joinroom/jrfj_1.png" alt="" /></div>
+				</div>
+				<div class="headline experienceline">
+			     <span ng-if="bl>0"  style="width:{{bl}}%;" class="ycline"></span>
+		  </div>
+		  <div class="rightArrow" ng-click="nameGet(userData.userId)">
+	    	<i class="icon ion-ios-arrow-right"></i>
+	    </div>
+		</div>
+			<div class="userExper" style="display: none;">
+				<div class="experInfo">
+					<div class="experInfoLeft">
+						<img ng-src="{{userData.rankings_logo_url}}"> <span class="">{{userData.rankings}}</span>
+					</div>
+					<div class="experInfoRight"><i>{{userData.currExp}}</i>&nbsp;/&nbsp;{{userData.maxExp}}</div>
+				</div>
+				<div class="experRate"><span class="experRateNow" style="width:{{bl}}%"></span></div>
+			</div>
+	    <div class="property">
+	    	    <div>
+	    	    	<img src="../../img2.0/rank/wd_2.png" alt="" />
+	    	    	<p class="a-font-family-special">{{userData.dmd}}</p>
+	    	    </div>
+	    	    <div>
+	    	    	<img src="../../img2.0/rank/phb_4.png" alt="" />
+	    	    	<p class="a-font-family-special">{{userData.coin}}</p>
+	    	    </div>
+	    </div>
+		</div>
+  	<div class="mineOtherCon">
+			<div class="hotItemBox">
+				<div class="hotItem charge" ng-click="wdGetSecond('/tab/wode/sc')">
+					<img src="../../img2.0/rank/wd_4.png" alt="" /><span>充值中心</span>
+					<img ng-if="firstCharge" class="firstCharge" src="../../img2.0/main/wd_scbq_1.png" alt=""/>
+				</div>
+				<div class="hotItem store" ng-click="wdGetSecond('/tab/wode/shop')">
+					<img src="../../img2.0/rank/wd_5.png" alt="" /><span>兑换商城</span>
+				</div>
+			</div>
+			<div style="margin: 0.16rem 0.2rem auto 0.2rem;width: auto;text-align: center;" ng-click="showShareModal('shareResult')">
+				<img class="a-background-item" style="width: 100%; margin:0;" src="../../img2.0/rank/wd_yqxryj_banner.png" alt="" />
+			</div>
+		  <ul class="otherItemBox">
+		    <!--<a href="#/tab/wode/xx" ng-click="wode_xx()"><li class="item item-icon-left item-icon-right wodeaniu"><i class="icon"><img src="img/wode/wo_home_message.png"></i><p >通知</p><i class="icon ion-ios-arrow-right" ></i></li></a>-->
+		    <!--<a ng-click="wdGetSecond('/tab/wode/dhjl')"><li class="item item-icon-left item-icon-right wodeaniu"><i class="icon "><img src="./img/wode/wo_jilu_coin.png"></i><p >记录</p><i  class="icon ion-ios-arrow-right"></i></li></a>-->
+	    	<a ng-click="wdGetSecond('/tab/wode/cjgz')"style="display: none;">
+		    	<li class="a-parting-line otherItem"><div class="otherItemLeft"><img class="a-img-size" src="../../img2.0/rank/wd_6.png"><p >等级</p></div><i  class="icon ion-ios-arrow-right"></i></li>
+	    	</a>
+		    <a onclick="TALKWATCH('我的-点击帮助')" ng-click="wdGetSecond('/tab/wode/help')" >
+		    	<li class="a-parting-line otherItem"><div class="otherItemLeft"><img class="a-img-size" src="../../img2.0/rank/wd_7.png"><p >帮助</p></div><i  class="icon ion-ios-arrow-right"></i></li>
+		    </a>
+		    <a onclick="TALKWATCH('我的-点击联系客服')" ng-click="wdGetSecond('/tab/wode/help/call')">
+		    	<li class="a-parting-line otherItem"><div class="otherItemLeft"><img class="a-img-size" src="../../img2.0/rank/wd_8.png"><p >联系客服</p></div><i class="icon ion-ios-arrow-right" ></i></li>
+		    </a>
+		    <a onclick="TALKWATCH('我的-点击用户协议')" ng-click="wdGetSecond('/tab/wode/help/xy')">
+		    	<li class="a-parting-line otherItem"><div class="otherItemLeft"><img class="a-img-size" src="../../img2.0/rank/wd_9.png"><p >用户协议</p></div><i class="icon ion-ios-arrow-right"></i></li>
+		    </a>
+		    <a onclick="TALKWATCH('我的-点击关于我们')" ng-click="wdGetSecond('/tab/wode/help/us')">
+		    	<li class="a-parting-line otherItem"><div class="otherItemLeft"><img class="a-img-size" src="../../img2.0/rank/wd_10.png"><p >关于我们</p></div><i class="icon ion-ios-arrow-right"></i></li>
+		    </a>
+		  </ul>
+  	</div>
+  </ion-content>
+</ion-view>

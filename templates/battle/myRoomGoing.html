@@ -1,0 +1,122 @@
+<ion-view title='我的房间' class='myRoomDetialView' hide-tabs>
+<ion-content class="room_jion myRoomDetial myRoomDetialGoing" scroll="false" scrollbar-y="false">
+	<div class="room_detial_bg a-background-item">
+		<div class="a-ownpm a-flex-start-column room_detial">
+				<div class="leagueLogo">
+					<img class="a-img-size" ng-src="../../img2.0/joinroom/joinLeague_{{roomDetial.league}}.png"/>
+				</div>
+				<div class="a-flex-start room_head" ng-if="roomDetial.activity!=1"><!--不是活动房-->
+					<span class="a-roomType roomType1" ng-if="roomDetial.official==1">
+						<div>官方</div>									
+					</span>
+					<span class="a-roomType roomType0" ng-if="roomDetial.official==0 && roomDetial.privacy==0">
+						<div>个人</div>					
+					</span>
+					<span class="a-roomType" ng-if="roomDetial.official==0 && roomDetial.privacy==1">
+						<div class=" a-text-color-vgcolor">私密</div>					
+					</span>
+					<span class="a-font-size-small-x a-text-color-light roomName">{{roomDetial.name}}</span>
+				</div>
+				<div class="a-flex-start room_head" ng-if="roomDetial.activity==1"><!--是活动房-->
+					<span class="a-roomType a-room-black-viole">
+						<div class="a-text-color-whit">活动</div>					
+					</span>
+					<span class="a-font-size-small-x a-text-color-light roomName">{{roomDetial.name}}</span>
+				</div>
+				<div class="a-flex-start start_box" style="padding-top: 0.06rem;">
+					<span class="a-font-size-small a-text-colorgreen">开奖类型:</span>
+					<span class="a-font-size-small a-text-color-whit">
+						{{roomDetial.playTypeName}}<span class="a-font-size-small a-text-color-whit" ng-if="roomDetial.playTypeName=='前50%'">均分</span><span class="a-font-size-small a-text-color-whit" ng-if="roomDetial.playTypeName=='前25%'">梯度</span>有奖
+					</span>
+				</div>
+				<div class="a-flex-start start_box">
+					<span class="a-font-size-small a-text-colorgreen">预计开奖时间:</span>
+					<span class="a-flex-between startTime">
+						<span class="a-font-size-small a-text-color-whit hasDotted">
+							{{roomDetial.prizeTime}}
+							<div class="a-dotted" style=""></div>
+						</span>
+						<span class="djs a-font-size-small-x a-text-color-whit countDown" ng-bind-html="roomDetial.countDown | trustHtml"></span>
+					</span>
+				</div>
+		</div>
+		<div class="a-background-black a-con-padding myroom_matchTeams"><!--比赛list-->
+			<ion-scroll direction='x' delegate-handle="small" scrollbar-x="false" class='boxs'>
+	 			<div class="a-background-item myroom_matchItem" ng-repeat='match in roomGoingData.matchList track by $index' ng-click="goEventPath(match.id)">
+	 				<div class="a-flex-center myroom_matchItemBox">
+	 					<div><img ng-src="{{match.homeLogo}}" alt="" /><div class="a-font-size-small-s a-text-color-whitDark" ng-cloak>{{match.homeName}}</div></div>
+	 					<div class="matchLive">
+			 				<div class="a-font-size-small matchLiveTime" ng-class="{'a-text-color-whitDark':match.status>=5,'a-text-colorgreen':match.status<=2}" ng-if="match.status>=5 || match.status<=2">{{match.statusMsg}}</div>
+			 				<div class="a-font-size-small a-text-color-light matchLiveTime" ng-if="match.status==3 || match.status==4">
+			 					<i class="ion-ios-clock-outline matchGoing"></i>&nbsp;{{match.length}}'
+			 				</div>
+	 						<div class="a-font-size-medium-m a-font-family-numstd matchScore" ng-if="match.status!=1" ng-class="{'a-text-shawgreen':(match.status==3 || match.status==4),'a-text-color-whitDark':(match.status!=3 && match.status!=4)}">
+	 							{{match.homeScore}}
+	 							<span ng-class="{'a-text-shawgreen':(match.status==3 || match.status==4),'a-text-color-whitDark':match.status!=3 && match.status!=4}">:</span>
+	 							{{match.awayScore}}
+	 						</div>
+	 						<div class="a-font-size-small-s a-text-color-light matchScore" ng-if="match.startTimeFormat && match.status==1">
+	 							{{match.startTimeFormat}}
+	 						</div>
+	 					</div>
+	 					<div><img ng-src="{{match.awayLogo}}" alt="" /><div class="a-font-size-small-s a-text-color-whitDark" ng-cloak>{{match.awayName}}</div></div>
+	 				</div>
+				</div>
+		 </ion-scroll>
+		</div>
+		<div class="a-background-item a-flex-between a-con-padding myroom_playersTitle"><!--玩家list-->
+			<div>
+				<span class="a-font-size-small a-text-colorgreen">房间实时排名</span>
+				<span class="a-font-size-small-s a-text-color-light" ng-click="bonusPlan()">查看奖金分配&nbsp;<i class="icon ion-ios-arrow-right a-text-color-light" style="font-size: 0.16rem;vertical-align: middle;"></i></span>
+			</div>
+			<div>
+				<span class="a-font-size-small a-text-colorgreen">当前阵容表现值</span>
+			</div>
+		</div>
+	</div>
+	<div class="a-background-gold a-div-height-large-s myroom_noSendPirze" ng-if="playing_noSendPirze">
+		<div class="a-text-color-gold a-font-size-small">为了公平公正，我们会在比赛结束后核实数据的准确性。</div>
+		<div class="a-text-color-gold a-font-size-small">统一开奖时间为&nbsp;<span class="a-text-color-gold a-font-size-small">早上{{prizeStart}}</span>&nbsp;，最终排名以开奖时为准</div>
+	</div>
+	<div class="a-margin-lr a-background-bg myroom_playersLive" ng-class="{'myroom_playersLive_lessHeight':playing_noSendPirze}">
+	  	<ion-scroll  class="userRanks" direction="y" overflow-scroll='false'  delegate-handle="rankScroll">
+	      	<!--玩家排行 -->
+	  		<div class="a-parting-line ranks" ng-class="{'rankTop':(key==0 || (key<3 && roomDetial.playType!=0 && roomDetial.playType!=4))}" ng-repeat="(key,zh) in roomGoingData.userList | orderBy:$index" ng-click="getLineup(zh.userId)">
+	  			<div class="a-flex-between a-div-height-medium-x rankItem">
+					<div class="a-flex-between rankLeft">
+						<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="key==0"><img src="../img2.0/rank/phb_1.png" alt="" /></div>
+						<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="key==1"><img src="../img2.0/rank/phb_2.png" alt="" /></div>
+						<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="key==2"><img src="../img2.0/rank/phb_3.png" alt="" /></div>
+						<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="key>2">{{key+1}}</div>
+					  	<div class="imgBox">
+							<img ng-if="zh.logo" ng-src="{{zh.logo}}" onerror="loadDefaultImg(1)">
+							<img ng-if="!zh.logo" src="../../img2.0/common/touxiang_default.png">
+					  	</div>
+						<div class="a-flex-between-column userInfo">
+				      	<h2 class="a-font-size-small-x a-text-color-whit">{{zh.nickName}}</h2>
+				    </div>
+					</div>
+					<div class="a-font-size-medium-x a-text-color-whit a-font-family-special userIcon">{{zh.expression}}</div>
+	  			</div>
+			</div>
+	    	<ion-infinite-scroll class="prizes_loadmore" immediate-check="false" on-infinite="getMore(ranktitle.id)" distance="20%" style="height: 1px;" ng-if="!getMoreData"></ion-infinite-scroll> 
+	  	</ion-scroll> 
+	</div>
+</ion-content>	
+<div class="a-background-color-dark myRank">
+	<div class="a-flex-between a-div-height-medium rankItem" ng-click="getLineup(roomGoingData.mine.userId)">
+		<div class="a-flex-between rankLeft" ng-if="roomGoingData.mine">
+			<div class="a-font-size-small-x rankNum">{{roomGoingData.mine.rank}}</div>
+			<div class="imgBox">
+				<img ng-if="roomGoingData.mine.logo" ng-src="{{roomGoingData.mine.logo}}" onerror="loadDefaultImg(1)">
+			  	<img ng-if="!roomGoingData.mine.logo" src="../../img2.0/common/touxiang_default.png">
+			</div>
+			<div class="a-flex-between-column userInfo">
+	      		<h2 class="a-font-size-small-x a-text-color-dark">{{roomGoingData.mine.nickName}}</h2>
+	    	</div>
+		</div>
+		<div class="a-font-size-medium-x a-font-family-special userIcon">{{roomGoingData.mine.expression}}</div>
+	</div>
+	<div class="goingCircleBox" runing-circle></div>
+</div>
+</ion-view>

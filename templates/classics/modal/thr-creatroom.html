@@ -1,0 +1,38 @@
+<ion-modal-view class='a-background-item iscreatroom-all'>
+<div class="a-pad-mar iscreatroom-info">	
+	 <ul>
+	 	<li ng-if='showMsg.roomname' class="a-flex-start a-font-size-small-x a-text-color-whitopc liparent"><span class="a-font-size-small a-text-color-light">房间名称：</span>{{showMsg.roomname}}</li>
+	 	<li ng-if='!showMsg.roomname' class="a-flex-start a-font-size-small-x a-text-color-whitopc liparent"><span class="a-font-size-small a-text-color-light">房间名称：</span>{{nickname}}</li>
+	 	<li class="a-flex-start a-font-size-small-x a-text-color-whitopc liparent"><span class="a-font-size-small a-text-color-light">竞猜开始时间：</span>{{showMsg.matchTime}}</li>
+ 		<li class="a-background-black matchListBox" ng-if="showMsg.matchListChoosed.length"> 
+ 			<ion-scroll class="" delegate-handle="matchScroll" style="overflow: auto;" >
+	 			<ul class="matchListDefault">
+	 				<li ng-repeat="teamName in showMsg.matchListChoosed">
+	 					<span class="a-text-color-whitDark a-font-size-small"><i class="a-text-color-whitDark a-font-size-small" ng-if="teamName.nextDayFlag">次日&nbsp;</i>{{teamName.startTimePoint}}</span>
+						<span class="a-text-colorgreen a-font-size-small">{{teamName.homeName}}</span><img class="a-img-size"  src="../../img2.0/joinroom/VS_cjfj.png"/><span class="a-text-colorgreen a-font-size-small">{{teamName.awayName}}</span>
+	 				</li>
+	 			</ul>
+ 			</ion-scroll>
+ 		</li>
+ 		<li class="a-flex-between a-parting-line fee_num">
+ 			<ul>
+ 				<li class="a-flex-start a-font-size-small-x a-text-color-whitopc"><span class="a-text-color-light a-font-size-small">奖励规则：</span>{{showMsg.rewardPlanName}}</li>
+ 				<li class="a-flex-start a-font-size-small-x a-text-color-whitopc"> 
+ 					<span class="a-text-color-light a-font-size-small">入场人数：</span>{{showMsg.num}}
+ 				</li>
+ 				<li class="a-flex-start a-font-size-small-x a-text-color-whitopc"> 
+ 					<span class="a-text-color-light a-font-size-small">入场费：</span><img class="a-img-size" src="../../img2.0/creatroom/cjfj_3.png" alt="" />{{showMsg.fee}} 
+ 				</li>
+ 			</ul>
+ 			<div>
+ 				<img class="a-img-size" ng-src="../../img2.0/creatroom/cjfjB_{{showMsg.rewardPlanId}}.png"/>
+ 			</div>
+ 		</li>
+	 	<li class="a-text-color-light a-font-size-medium a-flex-center remidefee">确定花费 <img class="a-img-size" src="../../img2.0/creatroom/cjfj_5.png" alt="" /><span class="a-text-color-whitopc">{{showMsg.fee}}</span>&nbsp;创建房间?</li>
+	 </ul>
+	<div class="a-buttons">
+		<button class="a-buttonSmall-black" ng-click="exit_creat()">取消</button>
+		<button class="a-buttonSmall-green" ng-click="commit_creat(showMsg,creat_choosed,$event)">确定</button>
+	</div>
+</div>
+</ion-modal-view>

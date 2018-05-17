@@ -1,0 +1,38 @@
+
+<ion-view view-title="我的"  class="wode-cjgz" hide-tabs>
+<!--头部-->
+<div header-sec-help></div>
+<!--内容-->
+<ion-content class="has-tt">
+   <!--柱状图分布-->
+    <div class="cjwrap">
+        <div  ng-repeat='cj in cjdatazhu'>
+        	<img src="./img/wode/b_green.png" ng-if='cj.currLevel' />
+        	<div ><img ng-src='{{cj.logo_url}}'></div>
+        	<p>{{cj.exp}}</p>
+        	<a>{{cj.name}}</a>
+        </div>
+    </div> 
+    <!--头像-->
+    <div class="cj_toubox">
+         <div class="cj_jyt">
+        	<img ng-src="{{userdata.head_logo_url}}" />
+        	<div class="cj_jyan">经验：{{userdata.currExp}}</div>
+        	<span style="width:{{bl}}%"></span>
+        	<div class="cj_jwname">{{userdata.rankings}}</div>
+        	<h1>{{userdata.name}}</h1>
+        </div>
+    </div>
+    <!--规则-->
+    <div class="gzcontent" style="margin-bottom: 0.5rem;">
+       
+        <h3>积分规则：</h3>
+        <div class="row" ng-repeat='rr in cjgzdata'>
+            <div class="col col-60"><span>{{rr.name}}</span></div>
+            <div class="col col-40"><span>{{rr.number}}</span></div>
+        </div>
+       
+        <p>{{p}}</p>
+    </div>
+</ion-content>
+</ion-view>

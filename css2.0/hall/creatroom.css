@@ -1,0 +1,130 @@
+.creatRoom > .room_create {
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0px;
+}
+.creatRoom > .room_create .roomname > .header {
+  white-space: nowrap;
+}
+.creatRoom > .room_create .roomname > .content {
+  width: 100%;
+  margin: auto 0px;
+  margin-left: 0.1rem;
+}
+.creatRoom > .room_create .roomname > .content > input[name='roomname'] {
+  height: 100%;
+  width: 100%;
+  padding: 0px 0.09rem;
+  background-color: #19232b;
+}
+.creatRoom > .room_create .chooseGame .league {
+  width: 100%;
+}
+.creatRoom > .room_create .chooseGame .league .leagueList {
+  margin-top: .1rem;
+  width: 100%;
+}
+.creatRoom > .room_create .chooseGame .league .leagueList .boxs {
+  white-space: nowrap;
+  overflow: visible;
+}
+.creatRoom > .room_create .chooseGame .league .leagueList .boxs ul {
+  padding: .04rem .04rem;
+}
+.creatRoom > .room_create .chooseGame .league .leagueList .boxs .leagueItem {
+  border: none;
+}
+.creatRoom > .room_create .chooseGame .league .leagueList .boxs .leagueItem > .radio-content {
+  opacity: 0.5;
+  border-radius: 2px;
+}
+.creatRoom > .room_create .chooseGame .league .leagueList .boxs .leagueItem > .radio-content > .item-content {
+  display: table-row;
+}
+.creatRoom > .room_create .chooseGame .league .leagueList .boxs .leagueItem > .radio-content > .item-content > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.creatRoom > .room_create .chooseGame .games {
+  width: 100%;
+}
+.creatRoom > .room_create .chooseGame .games > ul {
+  margin-top: 0.1rem;
+}
+.creatRoom > .room_create .awardRule > h1 > img {
+  margin-left: 0.1rem;
+}
+.creatRoom > .room_create .awardRule > h1 > span {
+  margin-left: 0.04rem;
+}
+.creatRoom > .room_create .awardRule > ul {
+  margin-top: 0.1rem;
+}
+.creatRoom > .room_create .awardRule > ul > label {
+  flex-grow: 1;
+  -webkit-flex-flow: 1;
+}
+.creatRoom > .room_create .awardRule > ul > label:last-child {
+  margin-right: 0px;
+}
+.creatRoom > .room_create .awardNum .awardNumCon {
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+}
+.creatRoom > .room_create .awardNum .awardNumCon .leftAward {
+  width: 100%;
+}
+.creatRoom > .room_create .awardNum .awardNumCon .leftAward > li {
+  height: 0.28rem;
+}
+.creatRoom > .room_create .awardNum .awardNumCon .leftAward > li > img {
+  margin-left: 0.1rem;
+}
+.creatRoom > .room_create .awardNum .awardNumCon .leftAward > li > img + span {
+  margin-left: 0.04rem;
+}
+.roomSuccess .warp {
+  width: 100%;
+  background: url(../../img2.0/rank/wd_1.png) no-repeat top center;
+  background-size: 100% 2.18rem;
+  text-align: center;
+}
+.roomSuccess .warp > img {
+  width: .92rem;
+  display: inline-block;
+  margin-top: .5rem;
+}
+.roomSuccess .warp > h1 {
+  margin-top: .1rem;
+  letter-spacing: .06rem;
+}
+.roomSuccess .warp .roomtext {
+  margin-top: .24rem;
+}
+.roomSuccess .warp .shine {
+  font-size: .36rem;
+  margin-top: .08rem;
+}
+.roomSuccess .warp .fontAlert {
+  width: 100%;
+  height: .48rem;
+  margin-top: .3rem;
+}
+.roomSuccess .warp .monImg {
+  margin-top: .65rem;
+  margin-bottom: .15rem;
+}
+.roomSuccess .warp .monImg > img {
+  height: .12rem;
+  display: inline-block;
+}
+.roomSuccess .warp .btnone,
+.roomSuccess .warp .btntwo {
+  width: 2.55rem;
+  height: .48rem;
+  border-radius: 2px;
+  margin: 0 auto .2rem;
+}

@@ -1,0 +1,19 @@
+<ion-modal-view class='ksbz-model'>
+	<div class="position-center scroll-content-black-up growModal">
+		<div>
+			<span class='a-font-size-small-x a-text-color-light'>分享成功，经验</span>
+			<span class='a-font-size-small-x a-text-color-whit'>+{{usefulData.growExp}}</span>
+		</div>
+		<div class='a-flex-between expNum'>
+			<span class='a-font-size-medium-x a-font-family-numstd a-text-shawgreen'>Lv.{{usefulData.Level}}</span>
+			<div>
+				<span class='a-font-size-small-s a-text-color-light'>{{usefulData.oldExp}}</span><span class='a-font-size-small-s a-text-color-whit'>+{{usefulData.growExp}}</span><span class='a-font-size-small-s a-text-color-whitDark'>/{{usefulData.maxExp}}</span>
+			</div>
+		</div>
+		<div class='a-flex-start a-progressBg expStrip'>
+			<div class='a-progressBg-green' style='width:{{usefulData.expPercent}};'></div>
+			<div class='a-progressBg-white  growExpAct' style='width:{{usefulData.growExpPercent}};'></div>
+		</div>
+		<div class="a-flex-center a-buttonSmall-green shutBtn" style="font-weight:bold;" ng-click="growSuccess.remove()">确定</div>
+	</div>
+</ion-modal-view>

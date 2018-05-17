@@ -1,0 +1,33 @@
+<ion-modal class="modalCss">
+	<div class="warp">
+		<div class="modelCloss" ng-click="modelCloss()"></div>
+		<h2 class="title">兑换现金券</h2>
+		<div class="by">
+			<div >
+				<div class="a-text-color-whit" style="position: relative;top: 2px;">兑换金额:</div>
+				<div class="list">
+				  <span class="item item-input byinput">
+				  	<span ng-if="exHave" style="color: rgb(50,8,155);font-weight:bold;margin-top: .01rem;">￥</span>
+				    <input type="number" placeholder="最低¥20" ng-model="exHave" ng-change="ggg()">
+				  </span>
+				  <h1 class="a-font-size-small ">现金兑换手续费5%</h1>
+				</div>
+			</div>
+			<div>
+				<div class="a-text-color-violet">需要星币:</div><div><img src="../../img2.0/shop2.0/newShop/dhjl_3.png" alt="" />
+				<span ng-if="!exHavehl">0</span>
+				<span class="exHave" ng-if="exHavehl>0 && exHavehl<=coinall" ng-bind="exHavehl"></span>
+				<span class="exHave ztcolor" ng-if="exHavehl > coinall" ng-bind="exHavehl"></span>
+				<div>
+					<img src="../../img2.0/shop2.0/newShop/dhjl_3.png" alt="" />10=<span class="font-weight" style="color: inherit;">¥</span>1
+				</div>
+				</div>
+			</div>
+			<div>
+				<div class="a-text-color-whit">我的星币：</div><div><img src="../../img2.0/shop2.0/newShop/dhjl_3.png" alt="" /><span id="monHave" style="margin-left: .05rem;">{{coinall}}</span></div>
+			</div>
+		</div>
+		<div class="btn" ng-click="nowexchange()">立即兑换</div>
+		<p>· 每人每日最多兑换¥50000现金券<br />· 现金券最低金额为¥20<br /></p>
+	</div>
+</ion-modal>

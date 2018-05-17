@@ -1,0 +1,931 @@
+.ground {
+    //  margin-top: 0.4rem;
+    >.battleCount {
+        width: auto;
+        .salary {
+            -webkit-flex-grow: 4;
+            flex-grow: 4;
+            padding-left: 0.13rem;
+            white-space: nowrap;
+            >.salaryAverage,
+            >.lineupExp {
+                margin-left: 0.14rem;
+            }
+        }
+        .lineupRule {
+            position: relative;overflow: hidden;
+            padding: 0px 0.1rem;
+            white-space: nowrap;
+            -webkit-flex-grow: 1;
+            flex-grow: 1;
+            border-left: 1px solid rgba(0, 0, 0, 0.3);
+            text-align: center;
+            >img {
+                margin: 0px;
+            }
+            >.addLight{
+               position: absolute; left: 0px;top:0;width: 200%;height:100%;opacity: 0;
+//             background-image: linear-gradient(-180deg, rgba(255,255,255,0.05) 5%, #B29200 50%,rgba(255,255,255,0.05) 100%);
+               background-image: radial-gradient(ellipse, #B29200 5%, rgba(255, 245, 153,0.1) 20%,rgba(255, 245, 153,0));
+            }
+            >.addLight.addLightAct{
+                -webkit-animation: addActLine 1s ease 0.5s forwards;
+                animation: addActLine 1s ease 0.5s forwards;
+            }
+        }
+    }
+    >.posPlayer {
+        width: 100%;
+        height: 1.12rem;
+        background: url(../../img2.0/lineup2.0/bz_xzqy_6.png) no-repeat center;
+        background-size: 100% 100%;
+        position: relative;
+        padding-top: 0.1rem;
+        >.posPlayerSlideBox{
+            overflow: visible;
+        }
+        .posPlayerSlide {
+            >.players {
+                >.player,
+                >.player_default {
+                    width: 0.82rem;
+                    text-align: center;
+                    >.playerSign {
+                        margin: auto;
+                        width: 0.52rem;
+                        height: 0.45rem;
+                        position: relative;
+                        >.poloShirt {
+                            margin: 0;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            width: 0.52rem;
+                            height: 0.45rem;
+                        }
+                        >.poloShirtShadow {
+                            margin: 0px;
+                            position: absolute;
+                            bottom: 0px;
+                            left: 50%;
+                            transform: translateX(-50%) translateY(100%);
+                            -webkit-transform: translateX(-50%) translateY(90%);
+                        }
+                        >.poloShirtNum {
+                            position: absolute;
+                            top: 50%;
+                            -webkit-transform: translateY(-65%);
+                            transform: translateY(-65%);
+                            >img {
+                                width: 0.12rem;
+                            }
+                        }
+                    }
+                    >.playerInfo {
+                        width: 0.7rem;
+                        margin: auto;
+                        margin-top: 0.05rem;
+                        position: relative;
+                        >.playerCheck {
+                            position: absolute;
+                            top: -0.2rem;
+                            right: 0;
+                            width: 100%;
+                            height: 0.5rem;
+                            top: -0.5rem;
+                            >img {
+                                width: 0.16rem;
+                                margin: 0;
+                                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.50);
+                            }
+                        }
+                        >.playerName {
+                            border-radius: 2px 2px 0px 0px;
+                            background-image: linear-gradient(-180deg, #222C35 0%, #303845 90%);
+                            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+                            line-height: 1.4em;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        >.playerData {
+                            line-height: 1em;
+                            white-space: nowrap;
+                            >div {
+                                width: 50%;
+                                display: inline-block;
+                                line-height: 1.2em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .slide_zrxzBtn{//选择球员位置下面的按钮
+            position: absolute;z-index: 10;
+            height: 0.36rem;
+            bottom: -0.18rem;
+            >.slide_zrxzBtnBox{
+                width: 1.46rem;height: 100%; margin: auto;white-space: nowrap;border-radius: 1rem;
+                >div{
+                    display: inline-block;
+                }
+                >.zrxzPos{
+                    width: 25%;
+                    >div{
+                        display: inline-block;
+                    }
+                }
+                >.zrxzPos_center{
+                        height: 100%;padding: 0.04rem 0px;
+                        >span{
+                            display: block;height: 100%;
+                            background: #26323D;
+                            box-shadow: inset 0 -5px 10px 2px rgba(0,0,0,0.30);
+                            border-radius: 2px;
+                            padding: 0px 0.12rem;
+                            border-radius: 2px;
+                            line-height: 0.28rem;
+                        }
+                }
+                >.zrxzPos_left{
+                    text-align: left;height: 100%;
+                    >div{
+                        width: 100%;text-align: center;height: 100%;
+                    }
+                }
+                .zrxzPos_right{
+                    text-align: right;height: 100%;
+                    >div{
+                        width: 100%;text-align: center;height: 100%;
+                    }
+                }
+                .zrxz_left,.zrxz_right{
+                    color: #FFFFFF;
+                    display: block;position: relative;top: 50%;
+                    transform: translateY(-50%); -webkit-transform: translateY(-50%);
+                }
+                .zrxz_left:before,.zrxz_right:before{
+                    font-weight: bold;
+                }
+                /*.zrxz_left{
+                position: relative;
+                left: 0px;transform: rotate(90deg);-webkit-transform: rotate(90deg);margin: 0px;
+                }
+                .zrxz_right{
+                    position: relative;
+                right: 0px;transform: rotate(-90deg);-webkit-transform: rotate(-90deg);margin: 0px;
+                }*/
+            }
+        }
+    }
+}
+.playerList {
+    border-radius: 0;position: relative;
+    padding-top: 0.17rem;
+    .playerConScorll {
+        top: 0px;height: 100%; //top: 2.5rem;
+        //bottom: 0.76rem;
+    }
+    >.rank_title{
+        >div.rank_titleItem{
+            padding: 0.12rem 0px;white-space: nowrap;margin-right: 0.5rem;margin-left: -0.96rem;
+            transform: translateX(0);
+            -webkit-transform: translateX(0);
+            -webkit-transition:-webkit-transform .2s ease;
+            transition: transform .2s ease;
+            >.titleNone{
+                width: 40%;height: 1px;background: none;
+            }
+            >.rank_titleItemTrue{
+                width: 60%;
+                >.rank_titleItem_former{
+                    //flex: 3;-webkit-flex: 3;
+                    width: 65%;
+                    >span{
+                        text-align: center;
+                        display: inline-block; width: 50%;//width: 0.35rem;
+                    }
+                    >span:nth-child(2){
+                        text-align: center;//margin-left: 0.12rem;
+                    }
+                }
+                >.rank_titleItem_chooseRate{
+                    width: 35%;
+                    //flex: 2;-webkit-flex: 2;
+                }
+            }
+        }
+        >.rank_titleItem.rank_titleItemSlide{
+            padding-right: 1.1rem;margin-right: 0.48rem;margin-left: -1.1rem;
+            transform: translateX(1.1rem);
+            -webkit-transform: translateX(1.1rem);
+            -webkit-transition:-webkit-transform .2s ease;
+            transition: transform .2s ease;
+            >.rank_titleItemTrue{
+                >.rank_titleItem_former{
+                    >span{
+                        font-size: 0.1rem;text-align: center;
+                    }
+                    >span:nth-child(2){
+                        text-align: center;//margin-left: 0.04rem;
+                    }
+                }
+                >.rank_titleItem_chooseRate{
+                    >span{
+                        font-size: 0.1rem;
+                    }
+                }
+            }
+        }
+        >span.orderType{
+            position: relative;z-index: 10;
+            >.orderVal{
+                padding: 0.12rem 0px;white-space: nowrap;
+                width: 0.82rem;text-align: center;
+                >img{
+                    margin-left: 0px;
+                }
+                >i{
+                    position: absolute;top: 50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);
+                    margin-left: 0.04rem;line-height: 1em;
+                }
+                >i.rollTop{
+                  transform: translateY(-50%) rotateX(180deg);-webkit-transform: translateY(-50%) rotateX(180deg);  
+                }
+            }
+            >.orderVal.filterVal{
+                padding: 0px;margin: 0.12rem 0px;
+                border-right: 2px solid rgba(0,0,0,0.3);
+            }
+            >.orderItem{
+                display: none;
+                position: absolute;z-index: 100;background: rgba(0,0,0,0.6);width: 100vw;height: 100vh;
+                border-left: 0.82rem solid transparent;left: -0.82rem;
+                >.rank_an_box{
+                    position: relative;top: 0.13rem;
+                    width: 1.12rem;//margin-left: 0.04rem;//padding: 0.06rem 0px;
+                    >i{
+                        position: absolute;top: -0.12rem;//font-size: 0.26rem;
+                        width: 0.16rem;height: 0.12rem;
+                        left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);color: #222C35;   
+                        background: url(../../img2.0/hall/sx_2.png) no-repeat;
+                        background-size: 100%; 
+                    }
+                    >.rank_an{
+                        position: relative;z-index: 10;
+                        padding: 0px 0.1rem;
+                        >li {
+                            white-space: nowrap;height: 0.52rem; //display: inline;
+                            >img {
+                                margin: 0px;margin-left: -0.11rem;
+                            }
+                        }
+                        >li:last-child{
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+            >.orderItem.filterItem{
+                border: none;left: 0px;
+                >.rank_an_box{
+                    width: auto;//display: inline-block;
+                    margin-left: 0.04rem;margin-right: 0.04rem;
+                    >i{
+                        left: 0.32rem;transform: auto;-webkit-transform: auto;
+                    }
+                    >div{
+                        padding: 0px 0.1rem;
+                    }
+                    >div.filterBtn{
+                        >div{
+                            text-align: center;line-height: 0.36rem;
+                        }
+                    }
+                    >div{
+                        width: auto;
+                        padding: 0.32rem 0px;margin: 0px 0.1rem;
+                        >.rank_an{
+                            width: 45%;border-left: 1px solid rgba(0,0,0,0.3);
+                            padding-left: 0.3rem;
+                            >li {
+                                white-space: nowrap;padding-bottom: 0.2rem;
+                                padding: 0.1rem 0px;
+                                >img {
+                                    margin: 0px;margin-left: -0.11rem;
+                                }
+                            }
+                            >li:first-child{
+                                margin-top: -0.1rem;
+                            }
+                            >li:last-child{
+                                padding-bottom: 0px;
+                            }
+//                          >.filterChecked{
+//                         
+//                          }
+//                          >.filterNoChecked{
+//                          
+//                          }
+                        }
+                        >div.maxPrice{
+                            padding: 0;margin: 0px 0.1rem;width: 55%;
+                            margin-right: 0px;padding-right: 0.3rem;
+                            >span.priceRange{
+                                opacity: 0.6;
+                            }
+                            >span.priceInput{
+                                margin-top: 0.08rem;white-space: nowrap;
+                                #maxPrice{
+                                    text-align: left;
+                                    margin: 0px;padding: 0px;padding-left: 0.2em;padding-right: 0.2em;
+                                    height: .3rem;width:100%;font-size: .2rem;
+                                    margin-left: .1rem;//margin-right: .1rem;
+                                    color: #FFD841;border: 1px solid #425466;
+                                    border-radius: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    >.zrxz_menus{
+        position: absolute;top: 0.69rem;height: 4.6rem;//padding-bottom: 3rem;height: 3.96rem;
+        >.zrxz_menuCon{
+            overflow: visible;
+            >.zrxz_menuBtn{
+                position: absolute;z-index: 10; top: 50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);
+                height: 1.28rem;width: 0.55rem;left: -0.02rem;
+                background: url(../../img2.0/lineup2.0/xzqy_plct_button.png) no-repeat;
+                background-size: 100%;
+//              opacity: 0.6;background-image: linear-gradient(0deg,#212D38 0%,#3B4351 100%);
+//              border-radius: 0px 10px 10px 0px;
+//              box-shadow:inset -1px 0px 2px 0px #FFFFFF,10px 0px 15px 0px rgba(0,0,0,0.35);
+                >.goMenu{
+                    color: #FFFFFF;text-align: left;margin-left: 0.08rem;
+                    display: inline-block;position: absolute;top: 50%;
+                    transform: translateY(-50%); -webkit-transform: translateY(-50%);
+                }
+                >.goMenu.rollLeft{
+                    transform: translateY(-50%) rotateY(180deg); -webkit-transform: translateY(-50%) rotateY(180deg);
+                }
+                >.goMenu:before{
+                    font-weight: bold;
+                }
+            }
+            >.zrxz_menuBtn.zrxz_menuBtnOpen{
+//              height: 1.18rem;width: 0.42rem;left: -0.02rem;
+//              background: url(../../img2.0/lineup2.0/xzqy_plct_open.png) no-repeat;
+//              background-size: 100%;
+                >.goMenu{
+                    margin-left: 0.04rem;
+                }
+                >.rightLine{
+                    position: absolute;top: 0.19rem;height: 0.9rem;bottom: 0.14rem;width: 0.02rem;background: #303845;
+                }
+            }
+        }
+        >.zrxz_menuLeft{
+            background-color: transparent;
+            >.zrxz_an{
+                height: 100%;//white-space: nowrap;
+                box-shadow:inset -1px 1px 2px 0px rgba(255,255,255,0.6),10px 0px 15px 0px rgba(0,0,0,0.35);
+                border-radius: 0px 2px 2px 0px;
+                >.zrxz_angd{
+                    height: 100%;
+                    .zrxz_an_scroll {
+                        padding: 0.08rem 0px;
+                        margin-left: 0.08rem;
+                        >.zrxz_bnt_fight {
+                            //display: inline-block;
+                            margin-right: 0.08rem;margin-bottom: 0.24rem;
+                            >.zrxz_bnt {
+                                //display: inline-block;
+                                text-align: center;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
+                                height: 0.26rem;line-height: 0.26rem;
+                                //padding: 0px 1em;
+                                border: 1px solid rgba(133, 142, 160, 0.3);
+                                border-radius: 2px;
+                            }
+                            >.zrxz_bnt.bnt_checked {
+                                box-shadow: 0 0 10px 0 #34ED41;
+                                background: #FFFFFF;
+                                color: #1e232b;
+                            }
+                            >.fight_vs{
+                                height: 0.28rem;
+                                >img{
+                                    margin: 0px;
+                                    margin-right: 0.12rem;
+                                }
+                                >i{
+                                    margin-left:0.02rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.playerConBox {
+    margin-right: 0px;
+    //选择球员的list
+    >.playerItem {
+//      margin-top: 0.08rem;
+        padding:0.2rem 0.08rem 0.16rem 0.14rem;
+        position: relative;
+        >.playerTag {
+            display: inline-block;
+            line-height: 1.2em;
+            padding: 0.1em 0.2em;
+            position: absolute;top: 0px;left: -0.1rem;margin-top: 0px;margin-left: 0.0rem;
+            border-radius:0px 0px 6px 0px;
+        }
+        >a {
+            padding-right: 0.4rem;flex-shrink: 1;-webkit-flex-shrink: 1;
+            >.playerSign {
+                display: inline-block;
+                width: 0.34rem;
+                height: 0.3rem;
+                position: relative;
+                >.poloShirt {
+                    position: relative;
+                    top: 0px;
+                    left: 0px;
+                    width: 0.34rem;
+                    height: 0.3rem;
+                }
+                >.poloShirtShadow {
+                    margin: 0px;
+                    position: absolute;
+                    bottom: 0px;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(100%);
+                    -webkit-transform: translateX(-50%) translateY(90%);
+                }
+                >.poloShirtNum {
+                    position: absolute;
+                    top: 50%;
+                    -webkit-transform: translateY(-65%);
+                    transform: translateY(-65%);
+                    >img {
+                        width: 0.08rem;
+                    }
+                }
+                >.zrxz_recommend{
+                    position: absolute;bottom: -0.08rem;right: -0.06rem;margin-top: 0px;margin-left: 0.0rem;
+                }
+            }
+            >.playerInfo {
+//              -webkit-flex-grow: 1;flex-grow: 1;
+                margin-left: 0.1rem;width: 100%;
+                >.playerData {
+                    >.teamFight {
+                        width: 40%;
+                        >img {
+                            margin-right: 0.04rem;
+                            margin-left: 0px;
+                        }
+                        >.fightGroup {
+                            display: inline-block;width: 100%;
+                            >div {
+                                white-space: nowrap;overflow: hidden; text-overflow: ellipsis;
+                                line-height: 1.4em;margin-top: 0.06rem;
+                            }
+                            >.playerName {
+                                white-space: nowrap;overflow: hidden; text-overflow: ellipsis;margin-top: 0px;
+                            }
+                        }
+                    }
+                    >.playerDetial{
+                        width: 60%;white-space: nowrap;//margin-top: -0.08rem; 
+                        >div {
+                            white-space: nowrap;width: 65%;  //flex: 3;-webkit-flex: 3;
+                            >.playerDetialSalary{
+                                text-align: center;
+                                display: inline-block;width: 50%; //width: 0.35rem;
+                            }
+                            >.playerDetialExp {
+                                text-align: center;
+                                display: inline-block;width: 50%;
+                                //margin-left: 0.12rem;width: 0.35rem;
+                            }
+                        }
+                        >div.playerDetialHot{
+                            width: auto;position: relative;width: 35%;
+                            //flex: 2;-webkit-flex: 2;
+                            >.progressBox {
+                                width: 0.46rem;display: inline-block;
+                                vertical-align: middle;
+                                margin-right: 0.3em;
+                                position: absolute;bottom: -0.06rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        >.check_mp_box {
+            width: 0.5rem;height: 0.5rem;flex-shrink: 0;-webkit-flex-shrink: 0;
+            position: absolute;
+            right: 0px;
+            >.checkbox {
+                left: 0px;
+            }
+        }
+    }
+    >.playerItem:first-child {
+        margin-top: 0px;
+    }
+}
+.playerConScorll_slide{
+    padding-right: 1.1rem;
+    >.scroll{
+        >.playerConBox{
+            margin: 0px;
+            > .playerItem{
+                > .playerTag{
+                    left: 0px;
+                }
+                > a{
+                    > .playerInfo{
+                        overflow: hidden;margin-left: 0.08rem;
+                        > .playerData{
+                            >.teamFight{
+                                width: 40%;
+                            }
+                            > .playerDetial{
+                                width: 60%;
+                                > div{
+                                    > .playerDetialExp{
+                                        //margin-left: 0.04rem;
+                                    }
+                                    >.playerDetialSalary,>.playerDetialExp{
+                                        text-align: center;
+                                        >span{
+//                                          font-size: 0.16rem;
+                                        }
+                                    }
+                                }
+                                > div.playerDetialHot{
+                                    >span{
+//                                      font-size: 0.16rem;
+                                    }
+                                    > .progressBox{
+                                        display: none;
+                                    }
+                                } 
+                            } 
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
+.replaceBg {
+    padding-top: 0.2rem;//margin-top: -0.09rem;
+    background-color: rgba(0,0,0,0.8);width: 100%;height: 100%;position: relative;z-index: 10;//top: -0.78rem;
+    >.playerConBox {
+        position: relative;
+        top: 25%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        >.playerItem {
+            margin-top: 0px;
+            >.playerTag{
+                left: 0px;
+            }
+        }
+    }
+    >.playerConBox.playerConBox_slide{
+        margin: 0px;margin-left: 1.1rem;
+        > .playerItem > a > .playerInfo > .playerData > .playerDetial > div.playerDetialHot > .progressBox{
+            display: none;
+        }
+    }
+}
+//红色热度条
+.progressRed{
+    height: 4px;width: 100%;
+    background: rgba(30,38,49,0.7);border-radius: 81px;
+    box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.5);
+}
+.progressRed .realProgress{/* 热度红条: */
+    height: 2px;margin: auto 0;
+    position: relative;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);
+    background: #FF3244;
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0.10), 0 0 6px 2px rgba(255,50,68,0.50);
+    border-radius: 4px 64px 64px 4px;
+}
+.zrxzBtn {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding: 0px 0.1rem;
+    display: none;
+}
+
+.check_mp,
+.check_mp_s {
+    >.checkbox {
+        padding: 20%;
+        position: relative;
+        left: -20%;
+        >input {
+            width: 0.3rem;
+            height: 0.3rem;
+        }
+        >input:before,
+        .checkbox-icon:before {
+            border: none;
+            border-radius: 0;
+            background: url(../../img2.0/lineup2.0/bz_xzqy_1.png)no-repeat center;
+            background-size: 100% 100%;
+        }
+        >input:after,
+        .checkbox-icon:after {
+            border: none
+        }
+        input:checked:before,
+        input:checked+.checkbox-icon:before {
+            background: url(../../img2.0/lineup2.0/bz_xzqy_2.png)no-repeat center;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.check_mp_s {
+    >.checkbox {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        left: 0px;
+        >input {
+            width: 0.16rem;
+            height: 0.16rem;
+            display: inline-block;
+            position: absolute;
+            right: 0px;
+            top: 100%;
+            transform: translateY(-110%);
+            -webkit-transform: translateY(-110%);
+        }
+    }
+}
+
+.check_replace {
+    >.checkbox {
+        input:checked:before,
+        input:checked+.checkbox-icon:before {
+            background: url(../../img2.0/lineup2.0/bz_xzqy_5.png)no-repeat center;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.check_shut {
+    >.checkbox {
+        >input:before,
+        .checkbox-icon:before {
+            background: url(../../img2.0/lineup2.0/bz_xzqy_3.png)no-repeat center;
+            background-size: 100% 100%;
+        }
+    }
+}
+.ksbz-model{
+    >.teamLoss{
+        width: 88%;
+        padding: .24rem .16rem .18rem;
+        background: url(../../img2.0/hall/yqjf_tc_bg.png) no-repeat top center;
+        background-size: 100% auto;
+        background-color:#2B333F ;
+        >.teamLossBody{
+            >.lossTeamInfo{
+                padding-bottom: 0.24rem;
+                >div{
+                    >img{
+                        margin: 0px;
+                    }
+                }
+                >.lossTeamVs{
+                    >img{
+                        margin-top: -0.24rem;
+                    }
+                }
+                >.lossTeam{
+                    >img{
+                        height: 0.48rem;
+                    }
+                    >div.visibleHide{
+                        visibility: hidden;
+                    }
+                }
+            }
+            >.lossTeamData{
+                >.lossTeamDataTitle{
+                    padding: 0.24rem 0px 0.2rem 0px;
+                }
+                >.lossTeamDataDetial{
+                    >div{
+                        background:rgba(133,142,160,0.1);
+                        padding: 0.08rem 0px;
+                        >span:first-child{
+                            margin-bottom: 0.02rem;
+                        }
+                    }
+                    >div:nth-child(2){
+                        background:rgba(133,142,160,0.05);
+                    }
+                }
+            }
+        }
+    }
+}
+.chooseSkillModalBg {
+    background: transparent;
+    width: 100vw;
+    height: 100vh;
+    .SkillModalShow {
+        position: relative; //top: -50%;
+        transform: translateY(50%);
+        -webkit-transform: translateY(50%);
+        margin: 0px 0.24rem;
+        width: auto;
+        overflow: visible;
+        >.modalShut {
+            position: relative;
+            >img {
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+            }
+        }
+        >.chooseSkillModal {
+            min-height: 3.1rem;
+            >.chooseSkillTitle {
+                >img {
+                    margin: 0px;
+                    position: absolute;
+                    top: 0px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    -webkit-transform: translateX(-50%);
+                }
+            }
+            >.chooseSkillSlideBox {
+                .chooseSkillSlide {
+                    >.chooseSkillCon {
+                        margin: 0.06rem 0px;
+                        >div {
+                            text-align: center;
+                            line-height: 2em;
+                        }
+                        >div.skillImg {
+                            margin: auto;
+                            text-align: center;
+                            >img {
+                                margin: 0px;
+                            }
+                        }
+                    }
+                    >.buttonBox {
+                        margin: auto;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .SkillModalHide {
+        width: 0.3rem;height: 0.3rem;
+        position: absolute;top: 50%;left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        >.SkillModalHideCircle{
+            width: 0.3rem;
+            height: 0.3rem;
+            border-radius: 50%;
+            margin: auto;
+            background-image: linear-gradient(-155deg, #FFF599 5%, #B29200 100%);
+            box-shadow: 0 0 15px 0 #FBEF91, inset 0 1px 1px 0 rgba(255, 255, 255, 0.50);
+//          position: absolute;
+//          top: 50%;
+//          left: 50%;
+//          transform: translateY(-50%) translateX(-50%);
+            opacity: 0;
+        }
+    }
+}
+
+.chooseSkillModalBg {
+    .SkillModalShow.fadeHideModal {
+        -webkit-animation: hideScal 1s ease-in 0s forwards;
+        -animation: hideScal 1s ease-in 0s forwards;
+    }
+    .SkillModalHide.SkillModalHideAct {
+        -webkit-animation: hideCircleX 1.5s cubic-bezier(0.02, 0.11, 0.21, 1) 1s forwards;
+        animation: hideCircleX 1.5s cubic-bezier(0.02, 0.11, 0.21, 1) 1s forwards;
+    }
+    .SkillModalHide.SkillModalHideAct {
+        >.SkillModalHideCircle{
+            -webkit-animation: hideCircleY 1.5s cubic-bezier(0.3, 0.27, 0.07, 1) 1s forwards;
+            animation: hideCircleY 1.5s cubic-bezier(0.3, 0.27, 0.07, 1) 1s forwards;
+        }
+    }
+    
+}
+
+@-webkit-keyframes hideScal {
+    from {
+        -webkit-transform: scale3d(1, 1, 1) translateY(50%) translateX(0%);
+        transform: scale3d(1, 1, 1) translateY(50%) translateX(0%);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: scale3d(0.5, 0.5, 0.5) translateY(100%) translateX(0%);
+        transform: scale3d(0.5, 0.5, 0.5) translateY(100%) translateX(0%);
+        opacity: 0;
+        //      -webkit-transform:scale3d(0.3,0.3,0.3) translateY(-95%) translateX(95%);      
+        //      transform:scale3d(0.3,0.3,0.3) translateY(-95%) translateX(95%);
+    }
+}
+@-webkit-keyframes hideCircleY {
+    0% {
+        opacity: 1;
+//      -webkit-animation-timing-function: cubic-bezier(0.02, 0.11, 0.21, 1);
+//      animation-timing-function: cubic-bezier(0.02, 0.11, 0.21, 1);
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;width: 0.2rem;height: 0.2rem;
+//      -webkit-animation-timing-function: cubic-bezier(0.02, 0.11, 0.21, 1);
+//      animation-timing-function: cubic-bezier(0.02, 0.11, 0.21, 1);
+        -webkit-transform: translateY(-50vh);
+        transform: translateY(-50vh);
+    }
+}
+
+@keyframes hideCircleY {
+    0% {
+        opacity: 1;
+//      -webkit-animation-timing-function: cubic-bezier(0.02, 0.11, 0.21, 1.5);
+//      animation-timing-function: cubic-bezier(0.02, 0.11, 0.21, 1.5);
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;width: 0.2rem;height: 0.2rem;
+//      -webkit-animation-timing-function: cubic-bezier(0.02, 0.11, 0.21, 1.5);
+//      animation-timing-function: cubic-bezier(0.02, 0.11, 0.21, 1.5);
+        -webkit-transform: translateY(-50vh);
+        transform: translateY(-50vh);
+    }
+}
+
+@-webkit-keyframes hideCircleX {
+    0% {
+//      -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.5);
+//      animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    100% {
+//      -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.5);
+//      animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.5);
+        -webkit-transform: translateX(40vw);
+        transform: translateX(40vw);
+    }
+}
+
+@keyframes hideCircleX {
+    0% {
+//      -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.5);
+//      animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.5);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    100% {
+//      -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.5);
+//      animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.5);
+        -webkit-transform: translateX(40vw);
+        transform: translateX(40vw);
+    }
+}
+@-webkit-keyframes addActLine{
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}

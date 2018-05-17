@@ -1,0 +1,403 @@
+.phone .phoneHead{
+	background:url(../../img2.0/shop2.0/newShop/sjhyz_1.png)no-repeat center ;
+	background-size: 100% 100%;
+	height: .77rem;
+	line-height: .77rem;
+	width: 100;
+	font-size: .18rem;
+	color: #fff;
+	font-weight: bold;
+	padding:0 6%;
+}
+.phone .bankmsg{
+	font-weight:bold;
+	margin:.2rem auto 0;
+	width: 88%;
+	font-size: .14rem;
+	color: rgb(187,161,255);
+}
+.phone .warnAlt{
+	width: 100%;
+	background:rgb(255,0,22);
+	height:.38rem ;
+	line-height: .38rem;
+	padding: 0 0 0 6vw;
+	font-size: .14rem;
+	color: #fff;
+}
+.phone .warnAlt i{
+	margin-right: .06rem;
+}
+.phone .list{
+	padding:0 6%;
+}
+.phone .list .item-input{
+	border-radius: 4px;
+	margin-top: .23rem;
+	height: .48rem;
+} 
+.phone .list .item-input i{
+	color: rgb(132,93,234);
+	margin-right: .1rem;
+	font-size: .24rem;
+}
+.phone .list .item-input span{
+    color: #fff;
+    font-size: .14rem;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: .06rem;
+    margin-right: .06rem;
+    text-align: center;
+    background: -webkit-linear-gradient(148deg, #FFDB56 0%, #F6378F 62%);
+    background: linear-gradient(148deg, #FFDB56 0%, #F6378F 62%);
+}
+#timeDown{
+	display: none;
+}
+.phone .list .item-input span.bg{
+	min-width: .96rem;
+	color: #fff;
+	background: rgb(132,93,234);
+}
+.phone .list .item-input span.bg span{
+	color: #fff;
+	background: none;
+	font-size: .16rem;
+	margin: 0;
+    padding: 0;
+    font-family: 'DIN1451EF-EngAlt';
+}
+.phone .list .item-input input{
+	font-size: .16rem;
+	height: .34rem;
+	line-height:normal;
+	color: rgb(132,93,234);
+    font-family: 'DIN1451EF-EngAlt';
+}
+.phone .list .item-input  input:focus{font-weight:bold;}
+.phone .list .item-input input::-webkit-input-placeholder{
+	font-size: .14rem;
+	color: rgb(132,93,234);
+    font-family: 'DIN1451EF-EngAlt';
+}
+.phone .list .item-input input[type=number]{
+	font-size: .18rem;
+}
+.phone .btn{
+  position: absolute;
+  bottom:.3rem;
+  width: 88vw;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  background:rgb(132,93,234) ;
+  border-radius: 4px;
+  font-size: .16rem;
+  height: .48rem;
+  line-height: .48rem;
+  text-align: center;
+  color: rgb(187,161,255);
+}
+.phone .btn.bg{
+	z-index: 10;
+	color: #fff;
+	font-weight: bold;
+    background: -webkit-linear-gradient(148deg, #FFDB56 0%, #F6378F 62%);
+    background: linear-gradient(148deg, #FFDB56 0%, #F6378F 62%);
+}
+/*完善身份*/
+.phone .list.perfect .item-input{
+	padding: 0;
+}
+.phone .list.perfect .input-label{
+	width: 26%;
+	color: rgb(187,161,255);
+	font-size: .14rem;
+}
+.phone .list.perfect .input-label p{
+	color: rgb(187,161,255);
+}
+.phone .list.perfect .item-input div.inputBg{
+	width: 74%;
+	height: .44rem;
+	-webkit-align-items: center;
+	align-items: center;
+	background:#fff;
+	border-radius: 4px;
+	padding: 0 0 0 .1rem;
+	display: -webkit-flex;
+	display: flex;
+    font-size: .12rem;
+}
+.phone .list.perfect .item-select:after{
+	color: #fff;
+}
+.phone .list.perfect .item-select .selects{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+    width: 75%;
+    height: .44rem;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.phone .list.perfect .item-select .selects select{
+	position: initial;
+	width: 45%;
+	border-radius: 4px;
+	padding: 0 0 0 .1rem;
+	font-size: .14rem;
+	color: rgb(187,161,255);color: rgb(187,161,255);
+	background: -webkit-linear-gradient(-135deg, #8545E2 0%, #4D21C0 100%);
+    background: linear-gradient(-135deg, #8545E2 0%, #4D21C0 100%);
+    direction: ltr;
+}
+.phone .list.perfect .item-select .selects::after{
+	position: absolute;
+    top: 50%;
+    left: 52%;
+    margin-top: -3px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    color: #fff;
+    content: "";
+    pointer-events: none;
+}
+.phone .list.perfect .item-select .choseitem,.phone .list.perfect .item-select .bankitem,.phone .list.perfect .item-select .bankbranch{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 75%;
+    padding: 0;
+    height: .44rem;
+    line-height: .44rem;
+    padding: 0 .1rem 0 .1rem;
+    border-radius: 4px;
+    font-size: .14rem;
+    background: -webkit-linear-gradient(-135deg, #8545E2 0%, #4D21C0 100%);
+    background: linear-gradient(-135deg, #8545E2 0%, #4D21C0 100%);
+    border-radius: 6px;
+    color: rgb(187,161,255);
+ }
+/*确认兑换*/
+.phone .warp{
+	width: 100%;
+	padding: 0 6vw;
+}
+.phone .warp>div{
+	width: 100%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-content: center;
+}
+.phone .warp>div>span{
+	font-size: 14px;
+	color: #fff;
+}
+.phone .warp>div>span i{
+	color: #fff;
+}
+.phone .warp>div:first-child{
+	height: .74rem;
+	border-bottom: 1px solid rgb(132,93,234);
+	margin-bottom: .16rem;
+}
+.phone .warp>div:first-child>span:last-child{
+	font-size: .3rem;
+	font-weight: bold;
+	font-family: 'DIN1451EF-EngAlt';
+}
+.phone .warp>div:last-child{
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+.phone .warp>div:last-child>span:last-child{
+	font-size: .12rem;
+	width: .58rem;
+	height: .35rem;
+	line-height: .35rem;
+	text-align: center;
+	border-radius: 4px;
+	border: 1px solid rgb(187,161,255);
+}
+.phone .nowarp>div:first-child{
+	display: block;
+     margin-top: .08rem; 
+	width: 100%;
+	min-height: 2.2rem;
+	overflow: hidden;
+	padding: 0 10%;
+	background: url(../../img2.0/shop2.0/newShop/dhqr_4.png)no-repeat center;
+	background-size: 96% 100%;
+}
+.phone .nowarp>div:first-child>div>p,.phone .nowarp>div:first-child>div>div>p{
+	margin-bottom: .1rem;
+	font-size: .12rem;
+    color: rgb(165,140,71);
+}
+.phone .nowarp>div:first-child>div>span,.phone .nowarp>div:first-child>div>div>span{
+	color:rgb(122,99,34);
+	font-size: .18rem;
+	font-weight: bold;
+	font-family: 'DIN1451EF-EngAlt';
+}
+.phone .nowarp>div:first-child>div:first-child>div>span.name{
+	font-size: .3rem;
+}
+.phone .nowarp>div:first-child>div:first-child>div>span.bank{
+	font-size: .18rem;
+	position: relative;
+	top: -2px;
+}
+.phone .nowarp>div:first-child>div:first-child>div:last-child>p{
+	text-align: right;
+}
+.phone .nowarp>div:first-child>div:first-child>span:last-child{
+	font-size: .3rem;
+	vertical-align: middle;
+}
+.phone .nowarp>div:first-child>div:nth-child(1){
+	display: -webkit-flex;	
+	display: flex;	
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	margin-top: .2rem;
+}
+.phone .nowarp>div:first-child>div:nth-child(2){
+	margin-top: .2rem;
+}
+.phone .nowarp>div:first-child>div:nth-child(3){
+	margin-top: .12rem;
+}
+.phone .nowarp>div:first-child>div:nth-child(4){
+	margin-top: .2rem;
+	margin-bottom: .5rem;
+}
+.phone .warp>.tindex{
+	padding-left:.1rem ;
+	text-indent: -.1rem;
+}
+.phone .warp>li>p{
+	font-size: .13rem;
+	line-height: .16rem;
+	color: rgb(187,161,255);
+	text-align: justify;
+	letter-spacing: .01rem;
+}
+/*银行选择*/
+.phone .phoneHead.bank{
+	font-size: .12rem;
+    line-height: .2rem;
+    padding-top: .18rem;
+}
+.phone .banktop{
+	top: .77rem;
+}
+.phone .banktop .list .item,.phone .info .list .item{
+    background: none;
+    font-size: .16rem;
+    color: #fff;
+    border-bottom: 1px solid rgb(132,93,234);
+    overflow: hidden;
+    padding:.18rem 0;
+}
+.phone .scroll-content .list .item{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.phone .scroll-content .list .item div{
+	color: rgb(187,161,255);
+	font-size: .14rem;
+}
+.phone .info .list .item div i{
+	color: rgb(187,161,255);
+}
+.phone .scroll-content .list .item div span.ff{
+	display: inline-block;
+	font-size: .12rem;
+	text-align: center;
+	width: .54rem;
+	height: .2rem;
+	background: red;
+	border-radius: .1rem;
+	font-weight: bold;
+	color: #fff;
+}
+.phone .scroll-content .list .item div span.tt{
+	color: #fff;
+	font-size: .14rem;
+}
+.phone .scroll-content .header_bg{
+	height: 1.48rem;
+	width: 100%;
+	background: url(../../img2.0/shop2.0/newShop/sjhyz_1.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.phone .scroll-content .header_bg .header,.phone .scroll-content .header_bg .username{
+	width: 100%;
+	text-align: center;
+}
+.phone .scroll-content .header_bg .header img{
+	width: .6rem;
+	height: .6rem;
+	border-radius: 2px;
+	margin-top: .3rem;
+}
+.phone .scroll-content .header_bg .username span{
+	font-size: .16rem;
+	color: #fff;
+	margin-top: .12rem;
+}
+.phone .oldphone{
+	text-align: center;
+	margin-top: .33rem;
+	color: #fff;
+	font-size: .24rem;
+}
+.phone .pfont{
+	font-size: .14rem!important;
+}
+.phone .list.perfect.solid .item-input{
+	margin-top: 0;
+	height: inherit;
+	padding: .18rem 0;
+	border-bottom: 1px solid rgb(132,93,234);
+	border-radius: 0;
+}
+.phone .list.perfect.solid .item-input:first-child{
+	padding:0 0 .18rem 0;
+}
+.phone .list.perfect.solid .item-input:last-child{
+	border: 0;
+}
+.phone .list.perfect.solid .item-input div{
+	color: #fff;
+	font-size: .16rem;
+	font-weight: bold;
+	white-space: nowrap;
+}
+.phone .list.perfect.solid .input-label{
+	width: 22%;
+	
+}
+.shopMsg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	z-index: 20;
+	
+}
+.shopMsg>img{
+		width: 1.61rem;height: 1.6rem;display: inline-block;margin-top: 32%;margin-bottom: .3rem;
+	}

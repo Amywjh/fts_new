@@ -1,0 +1,19 @@
+<!--头部-->
+<ion-header-bar align-title="left" class="header helpHeader bar-positive">
+	<!--用户信息-->
+ 	<div class="logo_name">
+	  	<a ng-click="nameGet(userData.userId)" class="left">
+	  		<img ng-if="userData.head_logo_url" ng-src="{{userData.head_logo_url}}" onerror="loadDefaultImg(1)"/>
+	  		<img ng-if="!userData.head_logo_url" src="../../img/common/touxiang_default.png" />
+	  		<span ng-cloak>{{userData.name}}</span>
+	  	</a>
+	</div>
+ 	 <!--个人财富-->
+	<h1 class="wealthStar">
+		<img src="../../img2.0/common/zs_28.png" alt="" />
+	  	<span ng-cloak>{{userData.dmd}}</span>
+	</h1>
+	<div class="buttons-right" ng-if="!hideRight" ng-click="showRule()" >
+        <a class="right"><img src="../../img2.0/prize2.0/qxdz_1.png"></a>
+    </div>
+</ion-header-bar>

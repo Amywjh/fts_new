@@ -1,0 +1,111 @@
+.shopHead{height: .76rem;overflow: hidden;width: 100%;background: url(../../img2.0/shop2.0/newShop/sjhyz_1.png)no-repeat center;    background-size: 100% 100%;text-align: center;}
+.shopHead>h1{margin-top: .16rem;}
+.shopHead>p{margin-top: .12rem;color: rgba(255,255,255,.9);}
+.shoptop{bottom: 0.52rem;}
+.Record .Recordbox{
+	width: 90%;
+	margin: .12rem auto 0;
+	display: -webkit-flex;	
+	display: flex;
+	-webkit-align-items: center;	
+	align-items: center;
+	padding: .12rem .06rem;
+	border-radius: 4px;
+	font-size: .12rem;
+    background: -webkit-linear-gradient(136deg,#8545E2 0%, #4D21C0 37%);
+    background: linear-gradient(136deg, #8545E2 0%, #4D21C0 37%);	
+}
+.Record .Recordbox.RecordboxTitle{
+	padding: 0px 0.06rem;
+	margin-top:0.14rem;
+}
+.Record .Recordbox>.Rone{
+	width: 20vw;
+}
+.Record .Recordbox>.Rone>p:first-child{
+	margin: 0;
+}
+.Record .Recordbox>.Rone>p:first-child,.Record .Recordbox>.Rthr>p:first-child{
+	color: #fff;
+}
+.Record .Recordbox>.Rone>p.RoneYear,.Record .Recordbox>.Rthr>p:last-child{
+	color: rgb(187,161,255);
+}
+.Record .Recordbox>.Rtwo{
+	width: 20vw;
+}
+.Record .Recordbox>.Rtwo>img{
+	height: .48rem;
+}
+.Record .Recordbox>.Rthr{
+	width: 40vw;
+}
+.Record .Recordbox>.Rthr img{
+	/*height: .12rem;*/
+	margin: 0px;
+    vertical-align: middle;
+    margin-right: .03rem;
+    margin-top: -2px;
+}
+.Record .Recordbox>.Rfor{
+	width: 20vw;
+	text-align: center;
+}
+.Record .Recordbox>.Rfor p{
+	margin: 0;
+	color:#fff;
+}
+.Record .Recordbox:first-child{
+	background: none;
+}
+.Record .Recordbox:first-child>div{
+	color:rgb(187,161,255);
+	font-size: .12rem; 
+}
+.Record .Recordbox:first-child>div:nth-child(1){
+	/*text-align: center;*/
+}
+/*无记录蒙版*/
+.Record .Recordmsg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	z-index: 10;
+}
+.Record .Recordmsg img{
+    width: 1.6rem;
+    margin-top: 40%;
+}
+.Record .Recordmsg div{
+   margin-top: .3rem;
+   color: rgb(187,161,255);
+   font-size: .18rem;
+}
+.recordTypesBox{
+	background: url(../../img2.0/shop2.0/newShop/sc_1.png) no-repeat center;
+    background-size: 100% 100%;
+    min-height: .5rem;
+    height: .5rem;
+}
+.recordTypesBox>.recordTypes{
+	width: 50%;text-align: center;
+}
+.recordTypesBox>.recordTypes>span{
+	display: inline-block;position: relative;
+	color: #BBA1FF;width: auto;height: 0.5rem;line-height: 0.5rem;
+}
+.recordTypesBox>.recordTypes.recordTypesAct>span{
+    color: #fff;font-weight: bold;
+	/*position: absolute;bottom: 0px;left:0;height: 2px;width: 100%;background: greenyellow;*/
+}
+.recordTypesBox>.recordTypes.recordTypesAct>span:after{
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: 10%;
+	width: 100%;
+	height: .04rem;
+	background: url(../../img2.0/shop2.0/print/cz_6.png)no-repeat center;
+	background-size: 100% 100%;
+}

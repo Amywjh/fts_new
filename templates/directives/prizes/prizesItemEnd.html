@@ -1,0 +1,97 @@
+<div class="prizes prizes_end">
+	<span class="prizes_end_cancle"  ng-if="prize.result==3">
+		<img class="a-img-size" src="../../img2.0/battle/sk_yjs_jdz_ysx.png" alt="" />
+		<span class="a-text-color-whitDark a-font-size-small" ng-if="prize.statusDetail==14">球员未上场</span>
+		<span class="a-text-color-whitDark a-font-size-small" ng-if="prize.statusDetail==15">对方无人支持</span>
+		<span class="a-text-color-whitDark a-font-size-small" ng-if="prize.statusDetail==17">比赛时间更改</span>
+	</span>
+	<div class="prizes_end_head">
+		<div class="team_img team_img_left">
+			<!--<span>{{prize.home.teamName}}</span>-->
+			<img ng-src="{{prize.home.teamLogo}}" />
+		</div>
+		<div class="team_img team_img_right">
+			<!--<span>{{prize.away.teamName}}</span>-->
+			<img ng-src="{{prize.away.teamLogo}}" />
+		</div>
+		<div class="prizes_span prizes_span_end"><span>已结束</span>{{prize.startTime}}</div>
+		<div class="prizes_one">
+			<img ng-src="../../../img2.0/prize2.0/prizeLeague_{{prize.league}}.png" alt="" />
+		</div>
+		<div class="prizes_two left" ng-click="playerDetial(prize.home.playerId)">
+<!--			<div class="bg_img" ng-if="!prize.home.headImgUrl"><div class="winLogo"></div><div class="sign"></div></div>-->
+			<div class="bg_img">
+				<div class="winLogo" ng-if="prize.result==0"></div>
+				<img class="imgTop" ng-if="!prize.home.headImgUrl" src="../../img2.0/common/player_default.png" alt="" />
+				<img class="imgTop" ng-if="prize.home.headImgUrl" ng-src="{{prize.home.headImgUrl}}" onerror="loadDefaultImg(0)" alt="" />
+				<div class="sign"></div>
+			</div>
+			<div class="bg_text">
+				<h2>{{prize.home.playerName}}</h2>
+			</div>
+		</div>
+		<div class="prizes_two right" ng-click="playerDetial(prize.away.playerId)">
+			<div class="bg_img">
+				<div class="winLogo" ng-if="prize.result==2"></div>
+				<img class="imgTop" ng-if="!prize.away.headImgUrl" src="../../img2.0/common/player_default.png" alt="" />
+				<img class="imgTop" ng-if="prize.away.headImgUrl" ng-src="{{prize.away.headImgUrl}}" onerror="loadDefaultImg(0)" alt="" />
+				<div class="sign"></div>
+			</div>
+			<div class="bg_text">
+				<h2>{{prize.away.playerName}}</h2>
+			</div>
+		</div>
+		<div class="prizes_four">
+			<div class="four_text">
+				<h2 ng-if='prize.position==4' style="color: #14D021;">门将</h2>
+				<h2 ng-if='prize.position==2' style="color:#1EB0FA">中场</h2>
+				<h2 ng-if='prize.position==1' style="color:#FF8027">前锋</h2>
+				<h2 ng-if='prize.position==3'>后卫</h2>
+			</div>
+		</div>
+	</div>
+	<div prize-teams class="ownTeamsBox"></div>
+	<div class="prizes_five_end">
+		<div class="prizes_five_endCon a-parting-lineTop" ng-class="{'prizes_five_endConAuto':detialEnd}">
+			<div class="homeStatus a-flex-center">
+				<span class="supportMark">已投入</span>
+				<img ng-if="!prize.homeCost" class="lose" src="../../img2.0/prize2.0/xz_1.png" alt="" />
+				<img ng-if="prize.homeCost" class="win" src="../../img2.0/prize2.0/xz.png" alt="" />
+				<span ng-class="{true: 'support', false: 'nonsupport'}[prize.homeCost?true:false]">{{prize.homeCost}}</span>
+			</div>
+			<div class="result" ng-if="!detialEnd">
+				<img ng-if="prize.prize" src="../../img2.0/prize2.0/qxdz_yjs_2.png" alt="" />
+				<img ng-if="!prize.prize && prize.result!=3" src="../../img2.0/prize2.0/qxdz_yjs_3.png" alt="" />
+				<div class="reward a-flex-center" ng-if="prize.prize">
+					<span>获奖</span>
+					<img class="a-img-size" src="../../../img2.0/common/xb_28.png" alt="" />
+					<span class="a-text-shawgreen">{{prize.prize}}</span>
+				</div>
+			</div>
+			<div class="prizes_pool a-flex-center-column" ng-if="detialEnd">
+				<span class="a-font-size-small-s a-text-color-whitDark prizes_poolName">总奖池</span>
+				<span class="a-flex-center">
+					<img class="a-img-size" src="../../../img2.0/common/xb_28.png" alt="" />
+					<span class="a-font-size-medium a-text-color-orange">{{prize.prizePool}}</span>
+				</span>
+			</div>
+			<div class="awayStatus a-flex-center">
+				<span ng-class="{true:'support', false: 'nonsupport'}[prize.awayCost?true:false]">{{prize.awayCost}}</span>
+				<img ng-if="!prize.awayCost" class="lose" src="../../img2.0/prize2.0/xz_1.png" alt="" />
+				<img ng-if="prize.awayCost" class="win" src="../../img2.0/prize2.0/xz.png" alt="" />
+				<span class="supportMark">已投入</span>
+			</div>
+		</div>
+		<div class="prizes_five_endConDetial" ng-if="detialEnd">
+			<div class="result">
+				<img class="a-parting-lineTop" ng-if="prize.prize" src="../../img2.0/prize2.0/qxdz_yjs_2.png" alt="" />
+				<img class="a-parting-lineTop" ng-if="!prize.prize && prize.result!=3" src="../../img2.0/prize2.0/qxdz_yjs_3.png" alt="" />
+				<div class="reward a-flex-center" ng-if="prize.prize">
+					<span>获奖</span>
+					<img class="a-img-size" src="../../../img2.0/common/xb_28.png" alt="" />
+					<span class="a-text-shawgreen">{{prize.prize}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

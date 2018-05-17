@@ -1,0 +1,140 @@
+.myroom_matchTeams {
+  padding-left: 0.04rem;
+  padding-right: 0.04rem;
+  background: #19232B;
+}
+.myroom_matchTeams > .boxs {
+  display: block;
+  width: 100vw;
+  margin: 0px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.myroom_matchTeams .myroom_matchItem {
+  display: inline-block;
+  border: 0px;
+  margin: 0px 0.06rem;
+  border-radius: 2px;
+  padding: 0.08rem 0px;
+  text-align: center;
+}
+.myroom_matchTeams .myroom_matchItem > .myroom_matchItemBox {
+  position: relative;
+}
+.myroom_matchTeams .myroom_matchItem > .myroom_matchItemBox > div {
+  display: inline-block;
+  line-height: 1.2em;
+  padding-top: 1.2em;
+  width: 6em;
+}
+.myroom_matchTeams .myroom_matchItem > .myroom_matchItemBox > div > img {
+  height: 0.24rem;
+}
+.myroom_matchTeams .myroom_matchItem > .myroom_matchItemBox > .matchLive {
+  position: absolute;
+  width: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+.myroom_matchTeams .myroom_matchItem > .myroom_matchItemBox > .matchLive > div.matchLiveTime {
+  line-height: 1.2em;
+  position: relative;
+  top: -1.2em;
+}
+.myroom_matchTeams .myroom_matchItem > .myroom_matchItemBox > .matchLive > div.matchLiveTime > .matchGoing:before {
+  color: #34ed41;
+}
+.myroom_matchTeams .myroom_matchItem > .myroom_matchItemBox > .matchLive > div.matchScore {
+  margin-bottom: 0.16rem;
+  padding-left: 0.05rem;
+  padding-right: 0.05rem;
+  position: relative;
+  top: -0.06rem;
+}
+.myroom_playersTitle {
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+}
+.myroom_noSendPirze {
+  padding: 0.1rem 0px;
+}
+.myroom_noSendPirze > div {
+  line-height: 1.4em;
+  text-align: center;
+  white-space: nowrap;
+}
+.myroom_noSendPirze > div > span {
+  font-weight: bold;
+}
+.myroom_playersLive {
+  position: relative;
+  top: 0.1rem;
+  height: 3.9rem;
+  padding-bottom: 0.16rem;
+}
+.myroom_playersLive > .userRanks {
+  height: 100%;
+  margin: 0px !important;
+  top: 0px !important;
+}
+.myroom_playersLive.myroom_playersLive_lessHeight {
+  height: 3.38rem;
+}
+.myRoomDetialView > .myRank {
+  bottom: 0px!important;
+}
+.myRoomDetialView > .myRank > .goingCircleBox {
+  position: absolute;
+  bottom: 0.57rem;
+  right: 0.13rem;
+}
+.myRoomDetialView .myRoomDetial.myRoomDetialGoing {
+  bottom: 0.54rem;
+}
+.myRoomDetialView .myRoomDetial.myRoomDetialGoing > .room_detial_bg > .room_detial > div.start_box > .startTime > .hasDotted {
+  white-space: nowrap;
+  flex: 1;
+  display: inline-block;
+  width: 65%;
+  overflow: hidden;
+  float: left;
+}
+.myRoomDetialView .myRoomDetial.myRoomDetialGoing > .room_detial_bg > .room_detial > div.start_box > .startTime > .countDown {
+  flex: 1;
+  width: 35%;
+  text-align: right;
+  white-space: nowrap;
+}
+.goingCircle {
+  display: inline-block;
+  border-radius: 50%;
+  opacity: 0.9;
+  background-image: linear-gradient(-180deg, #222C35 0%, #303845 90%);
+  border: 1px solid rgba(133, 142, 160, 0.5);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+.goingCircle > img {
+  margin: 0px;
+  float: left;
+  zoom: 0.6;
+  -webkit-animation: loadshow 3s linear 0s infinite ;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+.goingCircle > div {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.goingCircle > div > p {
+  line-height: 1.2em;
+  font-size: 0.12rem;
+  text-align: center;
+}
+.goingCircle > div > p:first-child {
+  font-weight: bold;
+}

@@ -1,0 +1,700 @@
+
+#rank{
+    position:relative;    background-image: linear-gradient(-180deg, #19232B 0%, #303845 100%);
+    box-shadow: inset 0 -10px 15px 0 rgba(0,0,0,0.35);
+    .boxs{
+            display: block;overflow-x: auto;width: 100vw;
+            white-space: nowrap;margin: 0px;
+             padding: .12rem 0 .12rem .12rem;
+             .scroll{   height: 100%;
+                .box{
+                    display: inline-block;position: relative;overflow: hidden;
+                    margin-right: .12rem;box-sizing: border-box;
+                    width: 1.8rem;height: 100%; padding: .05rem .1rem .02rem;
+                    .warp{
+                    >h2{display: -webkit-flex;display: flex;
+                    -webkit-align-items: center;align-items: center;
+                        span{font-family: "DIN1451EF-EngAlt";color: rgb(133,142,160);
+                        font-size: .12rem;}
+                        span.color{color:rgb(52,237,65)}
+                        span:first-child{font-weight: bold;font-size: .16rem;margin-right: .05rem;}
+                        img{width: .6rem;height: .2rem;position: absolute;top: 0;right: 0;}
+                    }
+                    >.by{display: -webkit-flex;display: flex;-webkit-justify-content: space-between;
+                    justify-content: space-between;-webkit-align-items: center;align-items: center;
+                    margin-top: .04rem;position: relative;
+                       >div{text-align: center;width: .65rem;height:.5rem;position: relative;
+                           img{height: .24rem;}
+                           p{
+                               text-align: center;color: rgb(133,142,160);
+                               font-size: .12rem;position: absolute;bottom: 0;
+                           }
+                           p.color{color:rgb(255,255,255);}
+                           >span{
+                               color: rgb(133,142,160);font-size: .12rem;
+                           }
+                        >span.color{color:rgb(255,255,255)}
+                       }
+                       >div.centerDate{
+                           position: absolute;
+                           p{position: static;line-height: .12rem;}
+                       }
+                    }
+                    >.linebg{width: 100%;height: 2px;}
+                }
+                    >.title{text-align: center;color: rgb(133,142,160);font-size: .12rem;
+                    i{color: rgb(133,142,160);}
+                    }
+                    >.title.color{color:rgb(52,237,65);
+                    i{color:rgb(52,237,65)}}
+                }
+             }
+    }
+}
+.hallheader{
+    position: absolute;
+    top: .4rem;
+    height: .44rem;
+    width: 100%;
+    background-color: #26323d;
+    display: -webkit-flex;
+    display: flex;
+    z-index: 10;
+    //搜索
+    #searchN{
+        height: 100%;
+        background-color: #26323d;
+        flex: 1;
+        div{
+            -webkit-flex: 1;
+            flex: 1;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            padding-left:.1rem ;
+            height: .32rem;
+            input{padding: 0;color: #fff;}
+            input::-webkit-input-placeholder{
+                color:rgb(133,142,160) ;
+                font-size: .14rem;
+            }
+            i{color:rgb(133,142,160);}
+            .ion-ios-close{margin-right: .1rem;color: #fff;font-size: .18rem;}
+        }
+    }
+  //  筛选排序
+#count{
+    -webkit-flex: 1;
+     flex: 1;
+     background:inherit;
+     display: -webkit-flex;
+     display: flex;
+    .filter,.sort {
+        color: rgb(133,142,160);
+        height: 100%;
+        line-height: .44rem;
+        margin: 0px;
+        font-size: 0.14rem;
+        text-align: center;
+        flex: 1;
+        i{color: rgb(133,142,160);}
+    }
+    .sort.sortcss,.filter.filtcss,.sort.upsortcss,.filter.upfiltcss{
+        color: rgb(52,237,65);
+        i{
+            color: rgb(52,237,65);
+            display: inline-block;
+            -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+        }
+    } 
+    .sort.upsortcss,.filter.upfiltcss{
+        i{
+            -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+        }
+    }
+}
+#pxDetial{
+    display: none;
+}
+#pxDetial_thr{
+    display: none;
+}  
+}
+.hall{top:.84rem;bottom: .2rem;background: rgb(38,50,61);}
+.hall.listmod{top: 1rem;}
+.hall,.battle{
+    overflow: hidden!important;overflow-y: auto!important;
+    .refresh{
+        display: none;
+    }
+    .fanhui{
+        transform:translate3d(0px, 0px, 0px) scale(1);
+        -webkit-transform:translate3d(0px, 0px, 0px) scale(1);
+        transition: transform 1 ease-in;
+    }
+    #allteam{
+        overflow: auto;
+        margin: auto;
+        .team {
+            display: block;background: #FFFFFF;
+            width: 95vw;margin: 0 auto;
+            margin-bottom: 0.3rem;
+            padding: 0.18rem 4vw;
+            border: 1px solid #e2ddd7;
+            header {
+                height: 0.62rem;line-height:0.52rem;display: flex;display: -webkit-flex;
+                justify-content: space-between;-webkit-justify-content: space-between;
+                 span{
+                    font-size: 0.4rem;
+                    color: #606062;
+                }
+                .roomname:first-child{
+                    font-size: 0.40rem;font-weight: 600;
+                    color: #606062;
+                }
+                .status:last-child{
+                    display: inline-block;width: 30vw;text-align: center;font-size: 0.3rem;color: #A3A1A3;
+                    letter-spacing: 0.2em;margin-bottom: 0px;align-self: flex-end;//background: blue;
+                    img{
+                        position: relative;top: 0.05rem;
+                        width: 0.42rem;height: 0.36rem;margin-right: 0.8em;
+                    }
+                    .hall_full{
+                        position: relative;top: 0.05rem;
+                        width: 0.24rem;height: 0.36rem;margin-right: 0.8em;
+                    }
+                }
+                .full:last-child{
+                   img{
+                        width: 0.42rem;height: 0.36rem;margin-right: 0.8em;
+                    }
+                }
+            }
+            .content {
+                display: flex;
+                display: -webkit-flex;
+                justify-content: flex-start;-webkit-justify-content: flex-start;
+                aside {
+                    width: 33vw;
+                    div {
+                        height: 0.6rem;
+                        line-height: 0.6rem;
+                        white-space: nowrap;
+                        span{
+                            white-space: nowrap;
+                        }
+                        span:first-child {
+                            display: inline-block;
+                            width: 1.45rem;
+                            color: #A3A1A3;
+                            font-size: 0.3rem;
+                        }
+                        span:last-child {
+                            color: #484749;
+                            font-weight: bold;
+                            font-size: 0.36rem;
+                        }
+                    }
+                    div:nth-child(2){
+                        span:last-child{
+                            color: #484749;font-size: 0.3rem;
+                            font-weight: normal;
+                        }
+                    }
+                    .leaguetype{
+                        display: inline-block;//background: #D0CDCD;
+                        border-radius: 0.04rem; background: #EDEDED;
+                        font-size: 0.24rem;line-height:normal;
+                        padding:0px 0.1rem 0px 0.2rem;letter-spacing: 0.1rem;
+                    }
+                    .zhongchao{
+                        color: #3B3B3B;
+                    }
+                    .yingchao{
+                        color: #054792;
+                    }
+                }
+                article {
+                  width: 50vw;
+                  display: flex;
+                  display: -webkit-flex;
+                  justify-content: space-between;-webkit-justify-content: space-between;
+                  .price,.prizes{
+                      width: 20vw;text-align: center;
+                      span:first-child {
+                            display: block;
+                            color: #A3A1A3;
+                            font-size: 0.3rem;
+                            line-height: 0.6rem;
+                        }
+                        span:nth-child(2){
+                            display: block;
+                            height: 0.6rem;
+                            li {
+                              display: inline-block;
+                              position: relative;
+                              font-size:0.6rem;line-height: 0.6rem;
+                              color: #484749;font-weight: bold;
+                              img {
+                                display: block;
+                                display: inline-block;
+                                height: 0.26rem;
+                                position: absolute;
+                                left: -0.46rem;
+                                top: 50%;
+                                margin-top: -0.13rem;
+                            }
+                            }
+
+                        }
+                    }
+                    .prizes{
+//                      width: 20vw;
+                        span:nth-child(2){
+                            li{
+                                color: #57A900;
+                            }
+                        }
+                        .roomtype{
+                            display: inline-block;
+                            border-radius: 0.04rem;
+                            font-size: 0.24rem; letter-spacing: 0.1rem;
+                            line-height: normal;padding:0rem 0.1rem 0rem 0.2rem;
+                        }
+                        .official{
+                            background: #FFD20C;color: #000000;
+                        }
+                        .baoxiang{
+                            background: #B2B2E0;color: #FFFFFE;
+                        }
+                    }
+                }
+            }
+        }
+        .team.activated{
+            width: 98vw;
+        }
+    }
+//  新list*****************************************************
+    .roomList{
+        overflow: auto;
+        margin:0 auto .1rem;
+        .roomItem.activated{
+            width: 98vw;
+        }
+        .headtitle{font-size: .13rem;color: rgb(143,234,150);text-align: center;
+             margin: .12rem 0 .06rem;
+             img{
+                 width: .1rem;vertical-align: middle;    
+                 position: relative;top:-2px;margin: 0 5px;
+             }
+             >span{font-size:.14rem ;color: #fff;}
+             >span:last-child{font-size: .12rem;}
+          }
+          .headtitle.padd{
+             margin: .18rem 0 .18rem; 
+          }
+        .roomItem{
+                position: relative;display: block;width: 95vw;
+                margin: 0 auto .12rem;overflow: hidden;
+                padding: .08rem .12rem .06rem .12rem;
+            >.synchro{    width: .76rem;
+                        height: .28rem;
+                        font-size: .12rem;
+                        position: absolute;
+                        right: 0;z-index: 5;
+                        top: 0;}
+            >.synchrojoin{height: .28rem;position: absolute;right: .78rem;top: 0;width: .4rem;white-space: nowrap;}            
+            >.isJoin{
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                width: .56rem;
+                height: .56rem;
+                z-index: 5;
+            }
+            >.isJoin.roomUnAvailable{
+                top: .1rem;
+                right: .12rem;
+                z-index: 10;
+            }
+            >.isJoin.unused{
+                width: 100%;
+                height: 100%;
+                opacity: 0.8;
+                background-image: -webkit-linear-gradient(0,#222C35 0%, #303845 90%);
+                background-image: linear-gradient(0,#222C35 0%, #303845 90%);
+                box-shadow: inset 0 -1px 1px 0 rgba(255,255,255,0.15);
+                z-index: 5;
+            }
+            >.isJoin.noUnAvailable{
+                   width: .67rem;height: .26rem;
+                   top: .05rem;right: .05rem;
+            }
+            >.isactivity{
+                width: .92rem;height: .78rem;position: absolute;top: 0;right: 0;
+            }
+            header{
+                height: 0.2rem;display: -webkit-flex;
+                display: flex;justify-content: space-between;-webkit-justify-content: space-between;
+                .header{
+                    height: 0.2rem;float: left;
+                    display: flex;display: -webkit-flex;
+                    justify-content: flex-start;-webkit-justify-content: flex-start;align-items: center;-webkit-align-items: center;
+                    .roomtype{
+                        display: block;text-align: center;
+                        width: .32rem;height: .2rem;
+                        border-radius: 2px;
+                        .type{
+                            position: relative;top: 50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);
+                            color: rgb(52,237,65);font-size: 0.13rem;
+                        }
+                        .Type0{color: rgb(54,187,255);}
+                        .typewhite{color: #fff;}
+                    }
+                    .roomname{
+                            padding-left: 0.1rem;font-size: 0.13rem;color:rgb(52,237,65);white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
+                    }
+                }
+                >aside{
+                    >.no_full{
+                        height: 0.74rem;position: absolute;right: -0.03rem;
+                    }
+                    >.win{
+                        height: 0.74rem;position: absolute;right: -0.03rem;
+                    }
+                }
+            }
+            .content{
+                display: -webkit-flex;display: flex;margin-top: .1rem;
+                 -webkit-align-items: center;align-items: center;position: static;
+                 >.UnAvailable{}
+                 >.roomlist{
+                     width: 20%;
+                     p{text-align: center;
+                     span{font-size: .18rem;font-weight: normal}
+                     span.cc{color: rgb(52,237,65);font-family:'DINEngschriftStd';}
+                     span.fontc{font-size: .1rem;color: rgb(133,142,160);}
+                     img{width: .14rem;height: .14rem;vertical-align: middle;
+                     margin-right: .04rem;position: relative;top: -2px;}
+                     }
+                     p:first-child{color: #fff;
+                        font-size: .14rem;
+                        font-weight:bold ;
+                     }
+                     p:last-child{
+                         font-size: .12rem;color: rgb(164,178,205);
+                     }
+                     p.nopeople{
+                         position: relative;z-index: 10;
+                     }
+                     p.noFee{ 
+                        >img{display: inline-block;width: .27rem;height: .14rem;margin: 0;}
+                     }
+                 }
+                >.roomlist.roomtop{
+                    height: .78rem;
+                    img{
+                        width: .92rem;height: .78rem;position: absolute;right: 0;top: .28rem;margin: 0;
+                    }
+                } 
+                 >.roomlist:first-child{
+                     width: 46%;
+                     display: -webkit-flex;
+                     display: flex;
+                     img{width: .36rem;height: .32rem;margin-right: .04rem;}
+                 }
+                 >.roomlist:last-child{
+                     width: 34%;
+                 }
+                 >.roomlist.completeone:first-child{
+                     width:30%
+                 }
+                 >.roomlist.completeone{
+                     width:24%
+                 }
+                 >.roomlist.completeone.bg{
+                     position: relative;
+//                   background: url(../../img2.0/battle/sk_yjs_pm_circle.png)no-repeat center;
+//                   background-size: .46rem .46rem;
+                 }
+                 >.roomlist.completeone.bg>img{
+                     width: .46rem;
+                     height: .46rem;
+                     top: 36%;
+                 }
+            }
+            .content.mtop{margin: 0;position: static;}
+            .hallline{
+                height: 4px;width: 100%;margin-top: .1rem;position: relative;
+                span{
+                    height: 100%;display: inline-block;position: absolute;
+                top: 50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);
+                }
+            }
+            .hallline.unused{
+                height: 1px;background: rgba(0,0,0,.3);
+            }
+            .peoples{
+                position: relative;
+                margin-top: .04rem;height: .2rem;line-height: .2rem;
+                img:first-child{width: .1rem;height: .1rem;margin-right: .05rem;}
+                img{width: .18rem;height: .18rem;vertical-align: middle;} 
+                img.man{margin-left: .05rem;}
+                img.team{float: right;margin-top: 1px;margin-left: .1rem;}
+                span{font-size: .12rem;color:rgb(164,178,205)}
+                div{span{color: white;}}
+                span:nth-child(2){color:rgb(143,234,150)}
+            }
+            .content_end{//已结束房间的UI
+                padding-bottom: 0.24rem;
+                >ul{
+                    padding-right: 0.28rem;
+                    >.reward_box{
+                        display: flex;display: -webkit-flex;justify-content: space-between;-webkit-justify-content: space-between;align-items: center;
+                        margin: 0.3rem 0px ;line-height: 0.7rem;
+                        >.reward{
+                            font-size: 0.40rem;padding-right: 1.5em;white-space: nowrap;letter-spacing: 0.04rem;color: #262626;
+                            >span{
+                                font-size: 0.40rem;
+                                padding-left: 0.3em;color:#57A900 ;
+                            }
+                        }
+                        >.money{
+                            display: flex;display: -webkit-flex;align-items: center;-webkit-align-items: center;
+                            >img{
+                                width: 0.36rem;height: 0.36rem;
+                            }
+                            >.xb{
+                                color: #5EAF00;font-size: 0.97rem;padding: 0px 0.1em;
+                            }
+                            >.from{
+                               font-size: 0.36rem;
+                            }
+                        }
+                    }
+                    .fee_time_num{
+                        display: flex;display: -webkit-flex;justify-content: space-between;-webkit-justify-content: space-between;align-items: center;-webkit-align-items: center;
+                        line-height: 1em;
+                        >div{
+                            display: flex;display: -webkit-flex;justify-content: flex-start;-webkit-justify-content: flex-start;
+                            >span{
+                                font-size: 0.36rem;color:#878787;
+                                >span{
+                                    color: #878787;
+                                }
+                            }
+                            .fee{
+                                padding-right: 1em;white-space: nowrap;
+                                >img{
+                                    height: 0.38rem;vertical-align: middle;margin-left: 0.2em;
+                                }
+                            }
+                            .point{
+                                position: relative;top: -0.09rem;padding-right: 1em;
+                            }
+                            .time{
+                                padding-right: 2em;white-space: nowrap;
+                                >span{
+                                    padding-left: 0.3em;
+                                }
+                                >i{
+                                    display: inline-block;transform: rotateY(180deg);-webkit-transform: rotateY(180deg);
+                                    font-size: 0.38rem;color: #BBBBBB;
+                                }
+                            }
+                        }
+                        >.num{
+                            float: right;
+                            font-size: 0.36rem;color: #878787;white-space: nowrap;
+                            >span{
+                                padding-left: 0.3em;font-size: 0.36rem;color: #878787;
+                                >.ranking{
+                                    color: #5EAF00;
+                                }
+                                >.ranking_fail{
+                                    color: #262626;
+                                }
+                            }
+                            >span:last-of-type{
+                                color: #262626;
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+        .roomItem.border-viole{
+            border: .02rem solid rgb(96,35,255);
+             box-sizing: border-box;
+        }
+    }
+}
+ .have_none,.date_none{
+                width: 100vw;
+                height: 8.6rem;
+                background: #232932;
+                text-align: center;
+                position: absolute;
+                top: 2.14rem;
+                z-index: 10;
+            >img{
+                margin:24% auto 0;width: 1.4rem;
+            }
+        }
+.date_none{top: .84rem;bottom: 0;z-index: 15;
+    img{
+        margin:30% auto 0;
+    }
+    .textBox{
+        text-align: center;
+        .timeTitle{
+            margin-top: .2rem;margin-bottom: .1rem;
+        }
+        .textMar{
+            margin-bottom: .06rem;
+        }
+    }
+}      
+.returntop{
+    position: absolute;bottom:0.08rem;right: 0;
+    width: .62rem;height: .6rem;z-index: 10;
+    background: url(../../img2.0/hall/jdzdt_15.png) no-repeat;
+    background-size: 100% 100%;
+}
+#roomcount{
+    position: absolute;bottom: 0rem;height: .2rem;width: 100%;
+    background: #21282f;text-align: center;line-height: .2rem;
+    color: #fff;font-size: .12rem;z-index: 10;
+    box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.35)
+}
+.roomcount{
+    position: absolute;
+    height: 0.63rem;width: 100vw;
+    background: #DAD9DB;border-radius: 10px 10px 0px 0px;
+    text-align: center;font-size: 0.36rem;font-weight: bold;color: #606062;
+    line-height: 0.63rem;
+}
+//大厅默认结束
+
+//头部
+.bar{
+    background-size: 0px 0px;
+}
+
+//没有更多
+#infinite_end{
+    height: .3rem;
+    width: 100%;
+    text-align: center;
+    line-height: 0.1rem;
+    color: rgb(164,178,205);
+    font-size: 0.12rem;
+}
+/**
+ *大厅样式 
+ */
+.hallmodelbox{
+    width: 88%;padding: .24rem .16rem .18rem;
+    .hallmodelbody{text-align: center;width: 100%;
+        .textClass{
+            height: .4rem;width:100%;margin-top: .18rem;position: relative;
+            .text{width: 100%;}
+        }
+        .inputBoxContainer{
+            width: 100%;
+            height: .54rem;
+            margin: .3rem auto;
+            position: relative;
+            .bogusInput{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-justify-content: center;
+                justify-content: center;
+                z-index: 1;
+                input{
+                    padding: 0;
+                    width: .54rem;
+                    height: 100%;
+                    background: -webkit-linear-gradient(#11171d 0%, #222b38 80%);
+                    background: linear-gradient(#11171d 0%, #222b38 80%);
+                    box-shadow: inset 0 1px 10px 0 #313947;
+                    text-align: center;
+                    font-size: 20px;
+                    border: none;
+                    border: 1px solid rgb(66, 84, 102);
+                    box-sizing: border-box;
+                    margin-right: .06rem;
+                    border-radius: 2px;
+                    font-size: .48rem;
+                    color: #FFFFFF;
+                    vertical-align: middle;
+                    padding-top: .05rem;
+                    text-shadow: 0 0 0.06rem #12B01D;
+                    filter:alpha(opacity=1);
+                    -moz-opacity:1;
+                    opacity:1;
+                }
+                input:last-child{
+                    margin-right: 0;
+                }
+            }
+        .realInput{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top:0;
+                left: 0;
+                z-index: 0;
+                filter:alpha(opacity=0);
+                -moz-opacity:0;
+                opacity:0;
+            }
+        }
+        .roomType{
+            width: 100%;margin: .3rem 0;
+            .typeBox{
+                width: 1.24rem;height: 1.1rem;
+                text-align: center;position: relative;
+                >p{
+                    position: absolute;bottom: 0.14rem;line-height: 1em;
+                    width: 100%;text-align: center;
+                }
+                img{
+                    width: .72rem;
+                }
+            }
+        }
+      .searchbtn{
+              margin: 0 auto;
+            width: .9rem;
+            display: inline-flex;
+            display: block;
+            border: none;
+            outline: none;
+            white-space: nowrap;
+            min-height: .31rem;
+            height: .31rem;
+            line-height: .31rem;
+            color: #fff;
+            font-size: .14rem;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
+      }
+      >.guideTab{
+          height: .65rem;margin: 0 auto;
+      }
+        >.guideText{
+            margin-top: .13rem;margin-bottom: .24rem;
+        }
+      
+      
+    }
+}

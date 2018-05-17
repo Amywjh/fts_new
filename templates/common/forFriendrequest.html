@@ -1,0 +1,18 @@
+<ion-modal-view class='ksbz-model'>
+	<div class="friendmodelbox position-center">
+		<div class="closeb" ng-click="removeRequest(modalShowId)"></div>
+		<div class="forfriendmodelbody">
+			<div class="a-flex-between-top">
+				<div class="inviteImg">
+					<img ng-if="getInvite.userInfo.logo_url" ng-src="{{getInvite.userInfo.logo_url}}" onerror="loadDefaultImg(1)"/>
+					<img ng-if="!getInvite.userInfo.logo_url" src="../../img2.0/common/player_default.png" alt="" />
+				</div>
+				<div class="text">
+					<h1 class="a-text-color-whit font-weight a-font-size-medium-b">{{getInvite.userInfo.nickName}}</h1>
+					<p class="a-text-color-whitDark a-font-size-medium">邀请您进入&nbsp;<span class="a-text-color-whit a-font-size-medium font-weight">经典11人&nbsp;<span class="a-text-color-light a-font-size-medium">{{getInvite.timeDay}}</span>&nbsp;{{getInvite.leagueName}}&nbsp;</span>竞猜房间</p>
+				</div>
+			</div>
+			<div class="searchbtn a-flex-center a-buttonSmall-green" style="font-weight: bold;" ng-click="removeRequest(modalShowId,getInvite.roomId)">前往查看</div>
+		</div>
+	</div>
+</ion-modal-view>

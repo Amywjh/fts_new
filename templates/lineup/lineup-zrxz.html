@@ -1,0 +1,295 @@
+  <ion-view view-title="{{home_title}}" delegate-handle="zrxz_title" class="lineup-zrxz" hide-tabs>
+	<!--<div header-sec-help></div>-->
+	<!--缓存提示标-->
+	<div ng-if="isPointingShow"  class="onePointing five"><img src="../../img2.0/common/up_jiantou.png" alt="" /><div class="a-flex-center a-text-color-whit font-weight a-font-size-small">查看更多<span class="a-text-color-light">选人攻略</span></div></div>
+	<div class="ground">
+		<!--工资表现值等数据-->
+		<div class="a-div-height-small a-background-item battleCount a-flex-between">
+			<div class="salary">
+				<span class="a-font-size-small a-text-colorgreen">剩余资金:<span class="a-font-size-medium a-text-color-orange a-font-family-numstd" ng-class="{true:'a-text-color-red'}[lineupCost.restSalary<0]">${{lineupCost.restSalary}}</span></span>
+				<span class="a-font-size-small a-text-colorgreen salaryAverage">剩余人均:<span class="a-font-size-medium a-text-color-orange a-font-family-numstd" ng-class="{true:'a-text-color-red'}[lineupCost.restSalary<0]">${{lineupCost.surplusPerAvg}}</span></span>
+				<span class="a-font-size-small a-text-colorgreen lineupExp">阵容战斗力:<span class="a-font-size-medium a-text-color-light a-font-family-numstd">{{lineupCost.recentExpAll}}</span></span>
+			</div>
+			<div class="a-background-help lineupRule" ng-click="getSkill()">
+					<div class="addLight"></div>
+					<img class="a-img-size" src="../../img2.0/lineup2.0/xzqy_gl.png"/>
+					<span class="a-text-color-goldLight a-font-size-small">攻略</span>
+			</div>
+		</div>
+		<!--选择的球员-->
+		<div class="posPlayer">
+			<div class="a-flex-center slide_zrxzBtn">
+				<div class="a-flex-between a-background-item slide_zrxzBtnBox">
+					<div class="zrxzPos zrxzPos_left" ng-click="slideChange(false,posIndex)">
+						<div class="" ng-show="posIndex>0">
+							<span class="ion-ios-arrow-left a-font-size-medium-b zrxz_left"></span>
+						</div>
+					</div>
+					<div class="zrxzPos_center">
+						<span class="a-font-size-small a-text-color-light">{{posName[posIndex]}}</span>
+					</div>
+					<div class="zrxzPos zrxzPos_right" ng-click="slideChange(true,posIndex)" >
+						<div class="" ng-show="posIndex<3">
+							<span class="ion-ios-arrow-right a-font-size-medium-b zrxz_right"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ion-slide-box class="posPlayerSlideBox" show-pager="false" active-slide ="posPage" disable-scroll="true" auto-play="false" enableSlide="false" on-slide-changed="changeS(posPage)" delegate-handle="playerPos" does-continue="false">
+			  <ion-slide class="posPlayerSlide" ng-repeat="(lineupxhIndex,lineupxhItem) in lineupxhArr">
+					<div class="a-flex-center-top players">
+						<div class="player" ng-repeat="tj in lineupxhItem track by $index">
+							<div class="playerSign">
+								<img class="poloShirt" ng-if="tj.logo_url" ng-src="{{tj.logo_url}}" alt="" />
+								<img class="poloShirt" ng-if="!tj.logo_url" src="../../img2.0/common/qiuyi_default.png" alt="" />
+								<img class="a-img-size poloShirtShadow" src="../../img2.0/lineup2.0/bz_6.png" alt="" />
+								<div class="a-flex-center poloShirtNum">
+									<img ng-src='{{tj.numone}}' ng-if='tj.numone'>
+									<img ng-src='{{tj.numtwo}}' ng-if='tj.numtwo'>
+								</div>
+							</div>
+							<div class="a-background-playerSign playerInfo">
+								<div class="check_mp_s playerCheck" ng-if="replacePlayer.status.change != 'replace'">
+									<label class="checkbox">
+										<input class="" type="checkbox" ng-model='tj.checked' ng-disabled="tj.disable" ng-click="del_player(tj)" ng-value='' name='' />
+									</label>
+								</div>
+								<div class="check_mp_s playerCheck check_replace" ng-if="replacePlayer.status.change == 'replace'">
+									<label class="checkbox">
+										<input class="" type="checkbox" ng-model='tj.checked' ng-disabled="tj.disable" ng-click="del_player(tj,true,replacePlayer.detial)" ng-value='' name='' />
+									</label>
+								</div>
+								<div class="a-font-size-small-s a-text-color-whit playerName">{{tj.name}}</div>
+								<div class="a-flex-center playerData">
+									<div class="a-font-size-small-x a-text-color-orange a-font-family-numstd">${{tj.salary}}</div>
+									<div class="a-font-size-small-x a-text-color-light a-font-family-numstd">{{tj.recentExp}}</div>
+								</div>
+							</div>
+						</div>
+						<div class="player_default" ng-repeat="tj in lineupxhDefArr[lineupxhIndex] track by $index">
+							<div class="playerSign">
+								<img class="a-img-size poloShirt" src="../../img2.0/lineup2.0/bz_4.png" alt="" />
+								<img class="a-img-size poloShirtShadow" src="../../img2.0/lineup2.0/bz_6.png" alt="" />
+							</div>
+						</div>
+					</div>
+			  </ion-slide>
+			</ion-slide-box>
+		</div>
+	</div>
+	<div class="a-background-item playerList">
+		<div class="rank_title a-flex-between">
+			<span class="orderType">
+				<div class="a-font-size-small orderVal filterVal" ng-class="{'a-text-color-light':hasFilter,'a-text-color-whitDark':!hasFilter}">
+					<img class="a-img-size" src="../../img2.0/common/xr_ld_normal.png" ng-if="!hasFilter" alt=""/>
+					<img class="a-img-size" src="../../img2.0/common/xr_ld_selected.png" ng-if="hasFilter" alt=""/>
+					筛选
+				</div>
+				<div class="orderItem filterItem">
+					<!--赛选按钮通道-->
+					<div class="rank_an_box a-background-item">
+						<i class=""></i>
+						<div class="a-flex-between-top a-parting-line">
+							<div class="a-flex-start-column maxPrice">
+								<span class="a-font-size-small a-text-color-whitDark priceRange">身价范围</span>
+								<span class="a-font-size-small-x a-text-color-whitDark a-flex-start priceInput">最大
+								<input class="a-font-family-inputblod a-background-black" oninput="if(value.length>4)value=value.slice(0,4);" type="number" min="0.1" max="50" step="0.1" name="maxPrice" id="maxPrice" value="" /></span>
+							</div>
+							<ul class="a-flex-center-column rank_an">
+								<li class="a-font-size-small a-flex-start" ng-class="{'a-text-color-light':filterItem.checked,'a-text-color-whitDark':!filterItem.checked}" ng-repeat="filterItem in zrxz_filter" ng-click="filterItem.checked=!filterItem.checked">
+									<i class="ion-ios-circle-outline a-text-color-whitDark a-font-size-medium" ng-if="!filterItem.checked"></i>
+									<i class="ion-ios-checkmark a-text-color-light a-font-size-medium" ng-if="filterItem.checked"></i>
+									&nbsp;{{filterItem.name}}
+								</li>
+							</ul>
+						</div>
+						<div class="a-flex-between filterBtn">
+							<div class="a-buttonThin-black" ng-click="restore()">重置</div>
+							<div class="a-buttonThin-green" ng-click="hasFilter = false; commitFilter()">确定</div>
+						</div>
+					</div>
+				</div>
+			</span>
+			<span class="orderType">
+				<div class="a-text-color-light a-font-size-small orderVal">
+					<!--<img class="a-img-size" src="../../img2.0/common/sx_3.png" alt=""/>-->{{nowOrderType}}
+					<i class="ion-ios-arrow-down a-text-color-light a-font-size-small-x"></i>
+				</div>
+				<div class="orderItem">
+					<!--排序按钮通道-->
+					<div class="rank_an_box a-background-item">
+						<i class=""></i>
+						<ul class="a-flex-center-column rank_an">
+							<li class="a-font-size-small a-parting-line a-text-color-light a-flex-center" style="font-weight: bold;" ng-if="$index==0" ng-repeat="gzpx in zrxz_gzpx" ng-click="sortPlayer(gzpx,$event)">
+								<!--<img class="a-img-size" src="../../img2.0/common/sx_3.png" alt="" />-->{{gzpx.name}}
+							</li>
+							<li class="a-font-size-small a-parting-line a-text-color-whitDark a-flex-center" ng-if="$index>0" ng-repeat="gzpx in zrxz_gzpx" ng-click="sortPlayer(gzpx,$event)">
+								<!--<img class="a-img-size" src="../../img2.0/common/sx_4.png" alt="" />-->{{gzpx.name}}
+							</li>
+						</ul>
+					</div>
+				</div>
+			</span>
+			<div class="a-flex-between rank_titleItem" ng-class="{'rank_titleItemSlide':isOpenMenu}">
+				<div class="titleNone"></div>
+				<div class="rank_titleItemTrue a-flex-start">
+					<div class="a-flex-start rank_titleItem_former">
+						<span class="a-font-size-small a-text-color-whitDark">身价</span>
+						<span class="a-font-size-small a-text-color-whitDark">战力</span>
+					</div>
+					<div class="rank_titleItem_chooseRate a-flex-center">
+						<span class="a-font-size-small a-text-color-whitDark">选择率</span>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		
+		<ion-side-menus class="zrxz_menus a-background-blackMenu" delegate-handle="zrxzMenu">
+			<ion-side-menu-content drag-content='false' edge-drag-threshold='900' class="zrxz_menuCon">
+				<div class="zrxz_menuBtn" ng-class="{'zrxz_menuBtnOpen':isOpenMenu}" ng-click="goMenus($event)">
+				 <div class="rightLine"></div>
+				 <i class="ion-ios-arrow-right a-font-size-medium-b goMenu" ng-class="{'rollLeft':isOpenMenu}"></i>
+				</div>
+				<!--内容页-->
+				<ion-scroll class="playerConScorll" ng-class="{'playerConScorll_slide':isOpenMenu}" delegate-handle="playScroll" on-swipe-down="searchshow()" on-swipe-up="showReturn()">
+					<div class="a-margin-lr playerConBox">
+						<div class="a-flex-between a-parting-line playerItem" ng-repeat="zrxz in lineupxx">
+							<span class="a-text-color-whit a-font-size-small playerTag" ng-if="(zrxz.detailStatusDisplay || zrxz.detailStatusDisplay==0) && zrxz.detailStatusDisplay!='-10'" 
+								ng-class="{'0':'a-tag-neutral','1':'a-tag-danger','2':'a-tag-danger','3':'a-tag-danger','-2':'a-tag-default','-1':'a-tag-gold'}[zrxz.detailStatusDisplay]">
+								<i ng-if="zrxz.detailStatusDisplay==0">? </i>{{zrxz.detailStatusShow}}
+							</span>
+							<a class="a-flex-start" ng-click="playerDetial(zrxz.id,{'checked':zrxz.checked,'disable':num<maxNum?false:true},zrxz)">
+								<div class="playerSign">
+									<img class="poloShirt" ng-if="zrxz.logo_url" ng-src="{{zrxz.logo_url}}" alt="" />
+									<img class="poloShirt" ng-if="!zrxz.logo_url" src="../../img2.0/common/qiuyi_default.png" alt="" />
+									<img class="a-img-size poloShirtShadow" src="../../img2.0/lineup2.0/bz_6.png" alt="" />
+									<div class="a-flex-center poloShirtNum">
+										<img ng-src='{{zrxz.numone}}' ng-if='zrxz.numone'>
+										<img ng-src='{{zrxz.numtwo}}' ng-if='zrxz.numtwo'>
+									</div>
+									<img ng-if="zrxz.recommendDisplay && zrxz.detailStatusDisplay<0" class="a-img-size zrxz_recommend" style="" src="../../img2.0/lineup2.0/xzqy_tj_new.png"/>
+								</div>
+								<div class="playerInfo">
+									<div class="a-flex-start playerData">
+										<div class="a-flex-start teamFight">
+											<!--<img class="a-img-size" src="../../img2.0/joinroom/VS_cjfj.png" alt="" />-->
+											<div class="fightGroup">
+												<div class="a-font-size-small-x a-text-color-whit playerName" ng-class="{'a-choosed-color-gold':zrxz.detailStatusDisplay=='-1'}">{{zrxz.name}}</div>
+												<!--<div class="a-font-size-small a-text-color-whitDark" ng-bind="(zrxz.homePlay)?zrxz.homeTeamName:zrxz.awayTeamName"></div>-->
+												<div class="a-font-size-small a-text-color-whitDark">{{zrxz.teamName}}</div>
+											</div>
+										</div>
+										<div class="a-flex-start playerDetial">
+											<div class="a-flex-start">
+												<span class="a-font-size-small a-text-color-whitDark playerDetialSalary"><span class="a-font-size-medium-m a-text-color-orange a-font-family-numstd">${{zrxz.salary}}</span></span>
+												<span class="a-font-size-small a-text-color-whitDark playerDetialExp"><span class="a-font-size-medium-m a-text-color-light a-font-family-numstd">{{zrxz.recentExp}}</span> </span>
+											</div>
+											<div class="a-flex-center-column playerDetialHot">
+												<span class="a-font-size-medium-m a-text-color-red a-font-family-numstd">{{zrxz.hot}}</span>
+												<span class="progressBox"><div class="progressRed"><div class="realProgress" style="width:{{zrxz.hot}};max-width: 100%;"></div></div></span>
+												<!--<span class="a-font-size-small a-text-color-whitDark">的人选他</span>--> 
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							<div class="check_mp check_mp_box">
+								<label class="checkbox">
+									<input type="checkbox" ng-model='zrxz.checked' ng-disabled="zrxz.disable" ng-change="cliP(zrxz)" ng-value='' name='' />
+								</label>
+							</div>
+						</div>
+						<div class="a-text-color-whitDark a-font-size-small" ng-if="noMore" style="text-align: center;height: 3em;line-height: 3em;">
+							---没有更多了---
+						</div>
+					</div>
+					<ion-infinite-scroll icon="ion-loading-c" immediate-check="false" ng-if="!moreDataCanBeLoaded" on-infinite="morePlayer(teamId)" distance="5%"></ion-infinite-scroll>
+				</ion-scroll>
+			</ion-side-menu-content>
+			<ion-side-menu class="zrxz_menuLeft" id="zrxz_menuLeft" side="left" width="{{menuWidth}}">
+						<!--球队按钮通道-->
+				<div class="zrxz_an">
+					<ion-scroll direction='y' scrollbar-x="false" class='zrxz_angd' delegate-handle="teams">
+						<div class="zrxz_an_scroll">
+							<div class="zrxz_bnt_fight">
+								<div class="a-font-size-small a-text-color-whitDark zrxz_bnt" ng-class="{'bnt_checked':zrxzdatabnt[0].checked_all}" ng-click='zrxz_bnt(zrxzdatabnt[0].id)'>
+									{{zrxzdatabnt[0].name}}{{checked_all}}
+								</div>
+							</div>
+							<div class="zrxz_bnt_fight" ng-if="$index>0" ng-repeat="bnt in zrxzdatabnt">
+								<div class="a-font-size-small a-text-color-whitDark zrxz_bnt" ng-class="{'bnt_checked':bnt.checked_home}" ng-click='zrxz_bnt(bnt.homeTeamId)'>
+									{{bnt.homeTeamName}}
+								</div>
+								<div class="fight_vs a-font-size-small-s a-text-color-light a-flex-center" ng-click="lossPercent(bnt)">
+									<img class="a-img-size" src="../../img2.0/lineup2.0/xzqy_qdxz_vs.png" alt="" />赔率<i class="ion-ios-arrow-right a-text-color-light a-font-size-small-x"></i>
+								</div>
+								<div class="a-font-size-small a-text-color-whitDark zrxz_bnt" ng-class="{'bnt_checked':bnt.checked_away}" ng-click='zrxz_bnt(bnt.awayTeamId)'>
+									{{bnt.awayTeamName}}
+								</div>
+							</div>
+						</div>
+					</ion-scroll>
+				</div>
+			</ion-side-menu>
+		</ion-side-menus>	
+	</div>
+	<div class="a-background-black a-div-height-footer zrxzBtn">
+		<button class="a-buttonBig-green a-text-color-whit a-font-size-medium" ng-class="{'a-buttonBig-green':true,'a-buttonBig-danger':false}" ng-click="zrxz_tj(salarySum,lineupxhArr)">确&nbsp;&nbsp;定</button>
+	</div>
+	<div class="replaceBg" ng-if="replacePlayer.status.change == 'replace'" >
+	 	<div class="a-text-color-light a-font-size-small-x" style="text-align: center;" >请在上方点击您想交换的球员</div>
+	 	<div class="playerConBox" ng-class="{'playerConBox_slide':isOpenMenu}">
+			<div class="a-flex-between a-background-item playerItem">
+				<span class="a-text-color-whit a-font-size-small playerTag" ng-if="(replacePlayer.detial.detailStatusDisplay || replacePlayer.detial.detailStatusDisplay==0) && replacePlayer.detial.detailStatusDisplay!='-10'" 
+					ng-class="{'0':'a-tag-neutral','1':'a-tag-danger','2':'a-tag-danger','3':'a-tag-danger','-2':'a-tag-default','-1':'a-tag-gold'}[replacePlayer.detial.detailStatusDisplay]">
+					<i ng-if="replacePlayer.detial.detailStatusDisplay==0">? </i>{{replacePlayer.detial.detailStatusShow}}
+				</span>
+				<a class="a-flex-start">
+					<div class="playerSign">
+						<img class="poloShirt" ng-if="replacePlayer.detial.logo_url" ng-src="{{replacePlayer.detial.logo_url}}" alt="" />
+						<img class="poloShirt" ng-if="!replacePlayer.detial.logo_url" src="../../img2.0/common/qiuyi_default.png" alt="" />
+						<img class="a-img-size poloShirtShadow" src="../../img2.0/lineup2.0/bz_6.png" alt="" />
+						<div class="a-flex-center poloShirtNum">
+							<img ng-src='{{replacePlayer.detial.numone}}' ng-if='replacePlayer.detial.numone'>
+							<img ng-src='{{replacePlayer.detial.numtwo}}' ng-if='replacePlayer.detial.numtwo'>
+						</div>
+						<img ng-if="replacePlayer.detial.recommendDisplay && replacePlayer.detial.detailStatusDisplay<0" class="a-img-size zrxz_recommend" src="../../img2.0/lineup2.0/xzqy_tj_new.png"/>
+					</div>
+					<div class="playerInfo">
+						<div class="a-flex-start playerData">
+							<div class="a-flex-start teamFight">
+								<!--<img class="a-img-size" src="../../img2.0/joinroom/VS_cjfj.png" alt="" />-->
+								<div class="fightGroup">
+									<div class="a-font-size-small-x a-text-color-whit playerName" ng-class="{'a-choosed-color-gold':replacePlayer.detial.detailStatusDisplay=='-1'}">{{replacePlayer.detial.name}}
+									</div>
+									<div class="a-font-size-small a-text-color-whitDark">
+										{{replacePlayer.detial.teamName}}
+									</div>
+									<!--<div class="a-font-size-small a-text-color-whitDark" ng-bind="(replacePlayer.detial.homePlay)?replacePlayer.detial.homeTeamName:replacePlayer.detial.awayTeamName">
+									</div>-->
+								</div>
+							</div>
+							<div class="a-flex-start playerDetial">
+								<div class="a-flex-start">
+									<span class="a-font-size-small a-text-color-whitDark playerDetialSalary"><span class="a-font-size-medium-m a-text-color-orange a-font-family-numstd">${{replacePlayer.detial.salary}}</span></span>
+									<span class="a-font-size-small a-text-color-whitDark playerDetialExp"><span class="a-font-size-medium-m a-text-color-light a-font-family-numstd">{{replacePlayer.detial.recentExp}}</span> </span>
+								</div>
+								<div class="a-flex-center-column playerDetialHot">
+									<span class="a-font-size-medium-m a-text-color-red a-font-family-numstd">{{replacePlayer.detial.hot}}</span>
+									<span class="progressBox"><div class="progressRed"><div class="realProgress" style="width:{{replacePlayer.detial.hot}};max-width: 100%;"></div></div></span>
+<!--									<span class="a-font-size-small a-text-color-whitDark">的人选他</span> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				<div class="check_mp check_shut check_mp_box">
+					<label class="checkbox">
+						<input type="checkbox" ng-click="shut()" name='' />
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-view>

@@ -1,0 +1,9 @@
+<ion-modal-view class='hall-choose-all sort'>
+   <div class='hall-choose sortl blackroom'>
+   	    <ul class="sortlist">
+		    <li ng-repeat="sor in sortList" ng-click='sortcheck(sor.id)'>
+		        <p ng-class="{'true':'checkone'}[sor.checko]">{{sor.typename}}</p>
+		    </li>
+		</ul>
+   </div>
+</ion-modal-view>

@@ -1,0 +1,318 @@
+.a-text-color-blue{
+    color: rgb(60,195,255);
+}
+/*指示标志*/
+.onePointing{
+	position: absolute;
+	z-index: 10;
+	-webkit-animation: float ease-in-out 2s infinite;
+  animation: float ease-in-out 2s infinite;
+}
+.onePointing>img{
+	width: .4rem;
+	height: .18rem;
+	bottom: -.25rem;
+}
+.onePointing>div{
+	padding: 0 .1rem;
+	height: .32rem;
+	border-radius: 2px;
+	background-image: linear-gradient(-180deg, #222C35 0%, #303845 90%);
+  box-shadow: 0 10px 15px 0 rgba(0,0,0,1.00), inset 0 1px 1px 0 rgba(255,255,255,0.15);
+}
+.onePointing.one{
+	bottom: 1rem;
+}
+.onePointing.two{
+	top: 160%;
+    left: 50%;
+    display: none;
+}
+.onePointing.two>div{
+	white-space: nowrap;
+    padding: 0 .1rem;
+}
+.onePointing.thr{
+	top: 2.4rem;
+  left: .3rem;
+}    
+.onePointing.for{
+	top: 3.5rem;
+    left: .3rem;
+}
+.onePointing.five{
+	 top: .6rem;
+    right: -.5rem;
+}
+.onePointing.five>img{
+	position: absolute;
+    top: -.25rem;
+    right: 0;
+}
+.onePointing.two>img{
+	position: absolute;
+	top: -.25rem;
+}
+.guideImg,.guideImg>ul,.guideImg>ul>li,.guideImg>ul>li>img.imgBg{
+	width: 100%;height: 100%;
+}
+.guideImg>ul>li>img.imgBg.sixteen{
+	width: 3rem;height: 3rem;
+}
+.guideImg>ul>li>img.imgBg.seventeen{
+	width: 3.27rem;height: 3.56rem;
+}
+.guideImg>ul>li>img.imgBg.twenty{
+	width:3.57rem ;height:2.94rem ;
+}
+.guideImg>ul>li>img.imgBg.second{
+	width: 2.99rem;height: 3rem;
+} 
+.guideImg>ul>li>img.imgBg.third{
+	width: 2.99rem;height:3.07rem ;
+}
+
+.guideImg>ul>li{
+	position: absolute;top: 0;left: 0;
+}
+.guideImg>ul>li.noBg{
+	background: rgba(0,0,0,.6);
+}
+.guideImg>ul>li>img.handImg{
+	position: absolute;
+	width:.66rem ;
+	height: .65rem;
+	bottom: 2.2rem;
+	right: .3rem;
+	-webkit-animation: float ease-in-out 2s infinite;
+  animation: float ease-in-out 2s infinite;
+}
+.guideImg>ul>li>img.handImg.one{
+	bottom: 2.3rem;right: .3rem;
+}
+.guideImg>ul>li>img.handImg.two{
+	top: 1.9rem;left: 1.4rem;
+}
+.guideImg>ul>li>img.handImg.seven{
+	    top: 2.8rem;right: -.1rem;bottom: auto;
+}
+.guideImg>ul>li>img.handImg.eight{
+	 bottom: -0.1rem;
+}
+.guideImg>ul>li>img.handImg.nine{
+	bottom: .2rem;right: 0;
+}
+.guideImg>ul>li>img.handImg.ten{
+	bottom: -.2rem;right: -.2rem;
+}
+.guideImg>ul>li>img.handImg.twelfth{
+	bottom: auto;top: 2.4rem;
+}
+.guideImg>ul>li>img.handImg.eighteen{
+	bottom: auto;top: 2.1rem;
+}
+.guideImg>ul>li>img.handImg.nineteen{
+	    bottom: auto;top: .7rem;
+}
+.guideImg>ul>li>img.handImg.first{
+	 bottom: auto;top: 1.2rem;right: .1rem;
+}
+
+.guideImg>ul>li>div.text{
+	position: absolute;
+	width: 100%;
+	bottom: 3.2rem;
+	text-align: center;
+	
+}
+.guideImg>ul>li>div.text.one{
+	top: .5rem;
+}
+.guideImg>ul>li>div.text.seven{
+	top: 1.6rem;bottom: auto;
+}
+.guideImg>ul>li>div.text.eight,.guideImg>ul>li>div.text.ten{
+	bottom: .8rem;
+}
+.guideImg>ul>li>div.text.nine,.guideImg>ul>li>div.text.twelfth{
+	bottom: 1.6rem;
+}
+.guideImg>ul>li>div.text.eighteen{
+	    top: 1rem;bottom: auto;
+}
+.guideImg>ul>li>div.text.nineteen{
+	    top: 1.4rem;bottom: auto;
+}  
+.guideImg>ul>li>div.text.first{
+	top: 2rem;bottom: auto;
+}  
+    
+.guideImg>ul>li>div.textAm{
+	position: absolute;
+	text-align: justify;
+	width: 100%;
+	padding: 0 .2rem;
+	bottom: 2rem;
+	white-space: nowrap;
+	overflow: hidden;
+	-webkit-animation: leftfloa ease-in-out 2s forwards;
+  animation: leftfloa ease-in-out 2s forwards;
+}
+.guideImg>ul>li>div.textAm.one{
+	top: .5rem;
+}
+.guideImg>ul>li>div.textAm.two{
+	bottom: 1.6rem;
+}
+
+
+.guideImg>ul>li>img.textimg{
+	width: 1.07rem;
+	height: .14rem;
+	bottom: 1rem;
+	-webkit-animation: twinkling ease-in-out 3s infinite;
+  animation: twinkling ease-in-out 3s infinite;
+}
+.intro .guideIntro,.intro .guideIntro>img{
+	width: 100%;height: 100%;
+}
+.intro .guideIntro>.guideBox{
+	bottom: 0;text-align: center;
+	padding: 0 .16rem;width: 100%
+}
+.intro .guideIntro>.guideBox>.gbtn{
+	height: .48rem;margin: 0;;
+}
+.intro .guideIntro>.guideBox>.gh{
+	height: .58rem;
+}
+.intro .guideIntro>.guideBox>.gh>img{
+	width: .18rem;height: .18rem;margin-left: .06rem;
+}
+@-webkit-keyframes float {
+    0% {
+        -webkit-transform: translate(-50%,0);
+        transform: translate(-50%,0);
+    }
+    50% {
+        -webkit-transform: translate(-50%,5px);
+        transform: translate(-50%,5px);
+    }
+    100% {
+        -webkit-transform: translate(-50%,0);
+        transform: translate(-50%,0);
+    }
+}
+
+@keyframes float {
+    0% {
+      -webkit-transform: translate(-50%,0);
+      transform: translate(-50%,0);
+    }
+    50% {
+      -webkit-transform: translate(-50%,5px);
+      transform: translate(-50%,5px);
+    }
+    100% {
+      -webkit-transform: translate(-50%,0);
+      transform: translate(-50%,0);
+    }
+}
+@-webkit-keyframes floatAll {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatAll {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    50% {
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+}
+@-webkit-keyframes twinkling{
+	0%{
+	opacity: 1;
+	}
+	50%{
+	opacity: 0.5;
+	}
+	100%{
+	opacity: 1;
+	}
+}
+@keyframes twinkling{
+	0%{
+	opacity: 1;
+	}
+	50%{
+	opacity: 0.5;
+	}
+	100%{
+	opacity: 1;
+	} 
+}
+@-webkit-keyframes leftfloa{
+	0%{
+	width: 0;
+	}
+	100%{
+	width: 100%;
+	}
+}
+@keyframes leftfloa{
+	0%{
+	width: 0;
+	}
+	100%{
+	opacity: 100%;
+	} 
+}
+.mainCover{
+	display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2.6rem;
+    box-sizing: content-box;
+    border-top: 2.31rem solid rgba(0,0,0,.8);
+    z-index: 50;
+    border-bottom: 10rem solid rgba(0,0,0,.8);
+}
+.mainCover .textDescribe{
+        position: absolute;top: -.3rem;
+    }
+.mainCover .imgDescribe{
+       position: absolute;bottom: -.4rem;right: .3rem;width: .66rem;
+    }
+    
+.imgEnlarge{
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	position: fixed;
+	background-color: #000;
+}
+.imgEnlarge>img{
+	width: 80%;
+}

@@ -1,0 +1,46 @@
+<ion-view view-title="绑定银行卡"  class="phone bgBlue" hide-tabs>
+<ion-content scroll="true">
+  <div class="phoneHead" ng-if="phoneHead">
+  	我们还需要您完善一下账号信息：
+  </div>
+  <div class="warnAlt" style="display: none;"><i class="ion-ios-information-outline"></i>{{alt}}</div>
+  <div class="bankmsg">请务必填写真实信息，否则有可能兑换失败</div>
+  <div class="list perfect">
+  	 <div class="item-input">
+        <label class="input-label">持卡人:</label>
+        <div class="inputBg"><input ng-model="all.pName" placeholder="请输入持卡人姓名" type="text"></div>
+    </div>
+	<div class="item-input">
+        <label class="input-label">卡号:</label>
+        <div class="inputBg"><input ng-model="all.pCard" id="pCard" placeholder="仅支持储蓄卡，不支持信用卡" type="text" onkeyup='this.value=this.value.replace(/\D/gi,"")'></div>
+ </div>
+    <div class="item-input item-select  right">
+        <div class="input-label">银行:</div>
+        <div class="bankitem" ng-if="!all.bank" ng-click="banksBtn()">点击选择所在银行</div>
+        <div class="bankitem" ng-if="all.bank" ng-click="banksBtn()">{{all.bank}}</div>
+    </div>
+    <div class="item-input item-select">
+        <label class="input-label"><p style="margin: 0;">账户所</p>属地区:</label>
+        <div class="selects" data-tap-disabled="true">
+        	<select id="selpri" ng-model="all.currentProvinceId"  ng-options="pri.provinceId as pri.provinceName for pri in privinceList" ng-change="provinceChange(all.currentProvinceId)">
+        		<option value="">点击所在省</option>
+	        </select>
+	        <select id="selcity" ng-model="all.currentCityId" ng-options="city.cityId as city.cityName for city in citys" ng-change="cityChange(all.currentCityId,true)">
+	        	<option value="">点击所在市</option>
+	        </select>
+        </div>
+    </div>
+    <div class="item-input item-select">
+        <div class="input-label"><p style="margin: 0;">账户开</p>户分行:</div>
+        <div class="bankbranch" ng-if="!all.BranchName" ng-click="branchBtn()">点击选择账户开户分行</div>
+        <div class="bankbranch" ng-if="all.BranchName" ng-click="branchBtn()">{{all.BranchName}}</div>
+    </div>
+ </div>
+</ion-content>
+<div class="btn">
+	{{btnmsg}}
+</div>
+<div class="btn bg" ng-click="conClick()" ng-if="all.pName && all.pCard && all.currentProvinceId && all.currentCityId">
+	{{btnmsg}}
+</div>
+</ion-view>

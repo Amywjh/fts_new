@@ -1,0 +1,44 @@
+<div class="noroom" ng-if="!dateMsg">
+	<img class="a-img-size noroomImg" src="./img2.0/hall/dt_kzt.png" alt="" />
+</div>
+<div class="noDate" ng-if="dateMsg">
+	<img src="../../img2.0/battle/dt_kzt.png" alt="" />
+	<div class="a-font-size-small-x textBox">
+		<p class="a-text-color-whitDark">很不巧 , 各大联赛正处于休赛期<br />新竞猜将从<span class="font-weight a-text-color-whit">{{dateMsg.newMatchDate}}</span>开始</p>
+		<p class="a-text-color-whitDark timeTitle">- 开赛时间 -</p>
+		<p class="font-weight a-text-color-whit textMar" ng-repeat="(league,MatchDate) in dateMsg.leagueMatchDate">{{league}}&nbsp;&nbsp;{{MatchDate}}</p>
+	</div>
+</div>
+
+<style type="text/css">
+	.noroom,.noDate{
+	    width: 100vw;
+	    position: fixed;
+	    top: 50%;margin-top: -30%;
+	    text-align: center;
+	}
+	.noroom >.noroomImg{
+	    display: block;
+	    margin: 0 auto;
+	    /*width: 2.2rem;
+	    height: 1.6rem; */
+	}
+	.noroom >span{
+	    display: block;
+	    text-align: center;
+	    font-size: 0.13rem;
+	    color: #a3a1a3; 
+	}
+	.noDate{
+		margin-top: -50%;
+	}
+	.noDate>.textBox>.timeTitle{
+            margin-top: .2rem;margin-bottom: .1rem;
+    }
+	.noDate>.textBox>.textMar{
+            margin-bottom: .06rem;
+        }
+	.noDate>img{
+		width: 1.4rem;
+	}
+</style>

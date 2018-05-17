@@ -1,0 +1,108 @@
+<ion-view view-title="球员详情"  class="lineup-quxx" hide-tabs>
+  <ion-content class="qyxx" ng-class="{'hasBtn':playerDetial.status.status}">
+  	<div header-sec-help class="qyxxTitle"></div>
+    <div class="qyxx_header">
+      <div class="a-flex-between qyxx_headerInfo">
+      	<div class="a-flex-start qyxx_headerInfo-left">
+      		<div class="headerImg">
+		        <img class="lineup_bjt_img" ng-if="playerDetial.info.head_img_url" ng-src="{{playerDetial.info.head_img_url}}"  onerror="loadDefaultImg(false)">
+		        <img class="lineup_bjt_img" ng-if="!playerDetial.info.head_img_url" src="./img2.0/common/player_default.png" >
+      		</div>
+      		<div class="headerInfo">
+      			<div class="a-flex-start">
+      				<span class="a-font-size-medium-m a-text-color-whit">{{playerDetial.info.name}}</span>
+      				<span class="a-font-size-medium-x a-font-family-numstd a-text-color-orange">${{playerDetial.info.salary}}</span>
+      			</div>
+      			<div class="a-flex-start">
+	      			<span class="a-roomType playerPos" ng-if="playerDetial.info.positionDisplay==1"><div class="a-pos1">前锋</div></span>
+	      			<span class="a-roomType playerPos" ng-if="playerDetial.info.positionDisplay==2"><div class="a-pos2">中场</div></span>
+	      			<span class="a-roomType playerPos" ng-if="playerDetial.info.positionDisplay==3"><div class="a-pos3">后卫</div></span>
+	      			<span class="a-roomType playerPos" ng-if="playerDetial.info.positionDisplay==4"><div class="a-pos4">门将</div></span>
+		          	<span class="a-font-size-small a-text-colorgreen">{{playerDetial.info.shirt_num}}号</span>
+      			</div>
+      		</div>
+      	</div>
+        <div class="qyxx_headerInfo_right">
+	        <img ng-src="{{playerDetial.team.logo_url}}">
+        	<span class="a-text-color-whitDark a-font-size-small">{{playerDetial.team.name}}</span>
+        </div>
+      </div>
+      <div class="a-flex-between qyxx_headerDetial">
+      	<div class="a-flex-center-column radialItem">
+      		<div class="radial prg-cont rad-prg" id="indicatorExp">
+      			<div class="a-font-size-medium-x a-font-family-numstd a-text-color-whit centerCon">{{playerDetial.recentExp}}</div>
+      		</div>
+      		<span class="a-font-size-small a-text-color-light" style="position: relative;width: 100%;" ng-click="whatRecentExp()">近期战力
+      			<img class="a-img-size" style="margin: 0px;zoom: 0.44;margin-left: 0.5em;position: absolute;top: 50%; transform: translateY(-50%);-webkit-transform: translateY(-50%);" src="../../img2.0/joinroom/jrfj_1.png"/>
+      		</span>      		
+      	</div>
+      	<div class="a-flex-center-column radialItem">
+      		<div class="radial prg-cont rad-prg" id="indicatorCount">
+      			<div class="a-font-size-medium-x a-font-family-numstd a-text-color-whit centerCon">{{playerDetial.firstCount}}/{{playerDetial.teamMatchCount}}</div>
+      		</div>
+      		<span class="a-font-size-small a-text-color-whitDark">首发情况</span>
+      	</div>
+      	<div class="a-flex-center-column radialItem">
+      		<div class="radial prg-cont rad-prg" id="indicatorAvg">
+      			<div class="a-font-size-medium-x a-font-family-numstd a-text-color-whit centerCon">{{playerDetial.avgPlayTime}}min</div>
+      		</div>
+      		<span class="a-font-size-small a-text-color-whitDark">场均时间</span>
+      	</div>
+      </div>
+    </div>
+    <div class="a-background-item playerStatus">
+    	<h1 class="a-text-color-light a-font-size-small">球员状态</h1>
+    	<span class="a-font-size-small a-text-color-whitDark"  ng-if="!playerDetial.recentExpList || playerDetial.recentExpList.length<1" style="display: block;text-align: center;">暂无球员数据</span>
+    	<highchart id="chart1" config="qyxxChartConfig"></highchart>
+    </div>
+    <div class="a-background-item matchRecord">
+    	<h1 class="a-text-color-light a-font-size-small a-parting-line">比赛记录</h1>
+    	<span class="onlyActive">
+	    	<ion-toggle class="a-toggle" ng-click='!checked;changeRecent(checked)' ng-model="checked" ng-checked="false">
+		    	<span class="a-font-size-small" ng-class="{'a-text-color-light':checked,'a-text-color-whitDark':!checked,'qyxx_toggle_font':checked,}" >只看上场纪录</span>
+	    	</ion-toggle>
+    	</span>
+    	<span class="a-text-color-whitDark a-font-size-small" style="display: block;text-align: center;margin-top: 0.1rem;" ng-if="!playerDetial.recent">暂无球员数据</span>
+		<div class="Htwo" ng-if="playerDetial.recent">
+			<div>
+				<table class="infoLeft" align="center" border="" cellspacing="" cellpadding="">
+					<tr class="headInfo">
+						<th class="a-font-size-small-s a-text-colorgreen">对战</th>
+					</tr>
+					<tr class="listInfo" ng-repeat="(key,dataDetial) in playerDetial.recent">
+						<td>
+							<div class="a-flex-start listInfoBox">
+								<span class="a-flex-center-column time">
+									<p class="a-font-size-small a-text-color-whitDark">{{dataDetial['startMonth']}}</p><p class="line"></p><p class="a-font-size-small a-text-color-whitDark">{{dataDetial['startDay']}}</p>
+								</span>
+								<div class="a-flex-center-column teams">
+									<span ng-class="{'isLight':dataDetial['home']==1}">{{dataDetial['homeName']}}</span>
+									<span ng-class="{'isLight':dataDetial['home']!=1}">{{dataDetial['awayName']}}</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<ion-scroll direction="x" class="scr">
+				<table class="prizePlayerDetial" border="" cellspacing="" cellpadding="">
+					<tr class="prizePlayerDetialTitle">
+						<th class="a-font-size-small a-text-colorgreen">结果</th>
+						<th class="a-font-size-small a-text-colorgreen">表现值</th>
+						<th class="a-font-size-small a-text-colorgreen" ng-repeat="(kk,val) in playerDetial.dimensionList">{{val}}</th>
+					</tr>
+					<tr class="prizePlayerDetialItem" ng-repeat="(key,dataDetial) in playerDetial.recent">
+						<td class="a-font-size-small a-text-color-whit">{{dataDetial['result']}}</td>
+						<td class="a-font-size-small a-text-color-light">{{dataDetial['expression']}}</td>
+						<td class="a-font-size-small" ng-repeat="(kk,val) in playerDetial.dimensionList">{{playerDetial.recent[key].dimensions[val]}}</td>
+					</tr>
+				</table>
+			</ion-scroll>
+		</div>
+    </div>
+  </ion-content>
+  <div class="a-background-black a-div-height-footer qyxxBtn"  ng-if="playerDetial.status.status">
+  	<button class="a-buttonBig-green a-text-color-whit a-font-size-medium a-buttonBig-danger" ng-if="playerDetial.status.status.checked" ng-click="changeStatus(playerDetial.status)">取消选择</button>
+  	<button class="a-buttonBig-green a-text-color-whit a-font-size-medium a-buttonBig-green" ng-if="!playerDetial.status.status.checked" ng-click="changeStatus(playerDetial.status)">选择该球员</button>
+  </div>
+</ion-view>

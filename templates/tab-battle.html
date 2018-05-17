@@ -1,0 +1,51 @@
+<ion-view view-title="我的竞猜" class='tab-battle' hide-tabs-t>
+<!--<div id="r_img" style="width: 100%;height: 100%;background: rgba(0,0,0,0.5);position: fixed;z-index: 100;">
+	<img style="width: 70px;height: 50px;position: absolute;left: 50%;top: 50%; margin-top: -25px;margin-left: -35px;" src="./img/load.gif"/>
+</div>-->
+<div class="battle_status">
+  <div class="tab" ng-repeat='status in battlestatus' ng-click='choosestatus(status.id,playerTypeAct.id,matchTypeAct.id)'>
+  	<span class="{{status.class}}">
+  		{{status.title}}
+  		<!--未开始小红点-->
+  		<i ng-if="status.id==0 && battleRedHot.unplay.statusShow" class="ion-record redSign"></i>
+  		<!--进行中小红点，点击消失 && battlestatusAct!=1-->
+  		<i ng-if="status.id==1 && battleRedHot.playing.statusShow" class="ion-record redSign"></i>
+  		<!--已结束小红点-->
+  		<i ng-if="status.id==2 && battleRedHot.finished.statusShow" class="ion-record redSign"></i>
+  	</span>
+  </div>
+</div>
+<div class="battle_type tab-itembg">
+	<div class="a-flex-center type_tab {{playerTypes.activated}}" ng-if="key!=2" ng-repeat="(key,playerTypes) in playerType.data" ng-click="roomFilter(key,$event)">
+		<span class="type_tab_sign"></span>
+		<span>
+			{{playerTypes.name}}
+			<!--未开始经典战小红点-->
+			<i ng-if="battlestatusAct==0 && key==3 && battleRedHot.unplay.Tradition.showHas" class="ion-record redSign"></i>
+			<!--进行中球星对战小红点-->
+			<i ng-if="battlestatusAct==1 && key==1 && battleRedHot.playing.StarGuess.showHas" class="ion-record redSign"></i>
+			<!--进行中经典战小红点-->
+			<i ng-if="battlestatusAct==1 && key==3 && battleRedHot.playing.Tradition.showHas" class="ion-record redSign"></i>
+			<!--已结束球星对战小红点-->
+			<i ng-if="battlestatusAct==2 && key==1 && battleRedHot.finished.StarGuess.showHas" class="ion-record redSign"></i>
+			<!--已结束经典战小红点-->
+			<i ng-if="battlestatusAct==2 && key==3 && battleRedHot.finished.Tradition.showHas" class="ion-record redSign"></i>
+		</span>
+	</div>
+</div>
+<style type="text/css">
+</style>
+<!--disable-scroll禁止滑动-->
+<ion-slide-box class="battle_slide" active-slide="slide_page" disable-scroll="true" does-continue="false"  auto-play="false" delegate-handle="battle_slide" show-pager="false"  animation="slide-left-right-ios7">
+	<ion-slide class="">
+		<battle-prizes></battle-prizes>
+	</ion-slide>
+	<ion-slide class="">
+		<!--<battle-thr></battle-thr>-->
+	</ion-slide>
+	<ion-slide class="">
+		<battle-default></battle-default>
+	</ion-slide>
+</ion-slide-box>
+
+</ion-view>

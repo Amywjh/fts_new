@@ -1,0 +1,705 @@
+.corpsBack {
+  /**
+     *  战队通用排名样式
+     */
+}
+.corpsBack .corpsConten {
+  top: .6rem;
+  padding: 0 .2rem;
+}
+.corpsBack .corpsConten .corpsRoom {
+  width: 100%;
+  padding: .1rem .1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: .12rem;
+  background: -webkit-linear-gradient(0deg, #19375E 0%, #2D4E7A 90%);
+  background: linear-gradient(0deg, #19375E 0%, #2D4E7A 90%);
+  position: relative;
+  z-index: 10;
+}
+.corpsBack .corpsConten .corpsRoom .corpsLogo {
+  width: 22%;
+}
+.corpsBack .corpsConten .corpsRoom .corpsBox {
+  width: 76%;
+  padding-top: .1rem;
+  position: relative;
+}
+.corpsBack .corpsConten .corpsRoom .corpsBox .corpsSynopsis {
+  margin-top: .12rem;
+}
+.corpsBack .corpsConten .corpsRoom .corpsBox .yLabel {
+  height: .18rem;
+  padding-top: .03rem;
+  text-align: center;
+  width: 1.2rem;
+  border-radius: 0.55555556rem;
+  color: #5B4812;
+  font-size: .12rem;
+  box-shadow: none;
+}
+.corpsBack .corpsConten .corpsRoom .corpsBox .yLabel span {
+  color: inherit;
+}
+.corpsBack .corpsConten .corpsRoom .corpsBox .divideLine {
+  width: 100%;
+  height: 2px;
+  margin: .2rem auto .1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.corpsBack .corpsConten .corpsRoom .corpsBox .boxList button {
+  width: .72rem;
+  height: .32rem;
+  line-height: .32rem;
+  border-radius: 2.25rem;
+  border: none;
+  padding: 0;
+}
+.corpsBack .corpsConten .corpsRoom .corpsBox .boxList button.apply {
+  background: inherit;
+  color: #A4B2CD;
+  border: 1px solid #A4B2CD;
+}
+.corpsBack .corpsConten .corpsRoom .corpsBox .reviseBtn {
+  position: absolute;
+  right: 0;
+  top: .2rem;
+  width: .4rem;
+  height: .4rem;
+  text-align: right;
+}
+.corpsBack .corpsConten .corpsRoom .corpsBox .reviseBtn i {
+  color: white;
+  font-size: .26rem;
+}
+.corpsBack .corpsConten.team {
+  padding: 0;
+  top: 0;
+}
+.corpsBack .corpsConten.team .corpsRoom {
+  border-radius: 0;
+  margin: 0;
+}
+.corpsBack .corpsConten.team .corpsRoom .corpsBox .boxList div img {
+  width: .2rem;
+  vertical-align: middle;
+  margin-left: .06rem;
+  position: relative;
+  top: -1px;
+}
+.corpsBack .corpsConten.team .corpsRoom .corpsBox .experience {
+  background: #1E2631;
+  box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  height: 2px;
+}
+.corpsBack .corpsConten.team .corpsRoom .corpsBox .experience span {
+  height: 1px;
+  width: 60%;
+}
+.corpsBack .corpsConten.team .navigationTab {
+  height: .47rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.3);
+  display: -webkit-flex;
+  display: flex;
+  background: #19375E;
+  position: relative;
+  z-index: 10;
+}
+.corpsBack .corpsConten.team .navigationTab span {
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+  line-height: .47rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.corpsBack .corpsConten.team .navigationTab span:last-child {
+  border: 0;
+}
+.corpsBack .corpsConten.team .navigationTab span.but {
+  color: white;
+  background-color: #172C47 ;
+  border-bottom: 1px solid #93C1FF;
+  box-shadow: inset 0 -5px 10px 2px rgba(0, 0, 0, 0.3);
+}
+.corpsBack .corpsConten.team .navigationTab span.but p {
+  color: inherit;
+}
+.corpsBack .corpsConten.team .navigationTab span.peopleAll {
+  line-height: .18rem;
+  padding-top: .04rem;
+}
+.corpsBack .corpsConten.team .tabContent {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  top: 36%;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide {
+  height: 100%;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .corps-buts {
+  position: absolute;
+  bottom: 0;
+  height: .78rem;
+  width: 100%;
+  padding: 0 .18rem;
+  background-image: -webkit-linear-gradient(rgba(12, 30, 53, 0) 0%, #0A1E37 75%);
+  background-image: linear-gradient(rgba(12, 30, 53, 0) 0%, #0A1E37 75%);
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .corps-buts button {
+  width: .9rem;
+  height: .32rem;
+  border: none;
+  white-space: nowrap;
+  border-radius: 2.47619048rem;
+  position: relative;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .corps-buts .upText {
+  width: 100%;
+  overflow: visible;
+  height: .4rem;
+  border-radius: .19rem;
+  box-sizing: border-box;
+  background-color: #122845;
+  border: 1px solid rgba(201, 224, 255, 0.4);
+  box-shadow: inset 0 -5px 10px 2px rgba(0, 0, 0, 0.3);
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .corps-buts .upText input {
+  border: none;
+  color: white;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .corps-buts .upText input::-webkit-input-placeholder {
+  color: rgba(164, 178, 205, 0.8);
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .corps-buts .upText button {
+  height: .4rem;
+  width: .4rem;
+  position: relative;
+  top: -1px;
+  right: -1px;
+  border-radius: 50%;
+  background-color: #6665FF;
+  text-align: center;
+  padding: 0px;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .corps-buts .upText button i {
+  font-size: .28rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  line-height: 0.38rem;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .corps-buts .circleBut {
+  width: .54rem;
+  height: .54rem;
+  border-radius: 50%;
+  float: right;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .corps-buts .circleBut img {
+  height: .24rem;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .slidethr {
+  margin: 0 .14rem;
+  padding: .2rem;
+  border-radius: 5px;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide .slidethr .noNew {
+  margin: 20% auto 0;
+  text-align: center;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox {
+  position: relative;
+  padding-bottom: 0.76rem;
+  height: 100%;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con {
+  height: 100%;
+  padding: 0px 0.2rem;
+  margin-bottom: 0.76rem;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer {
+  margin-top: 0.14rem;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .info {
+  position: relative;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .info > .name_date > p {
+  line-height: 1.4em;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .info > .name_date > .date {
+  opacity: 0.8;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .info > .infoHead {
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .info > .captain {
+  margin: 0px;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .chatDetial {
+  display: inline-block;
+  margin-top: 0.08rem;
+  max-width: 70%;
+  padding: 0.12rem 0.14rem;
+  line-height: 1.2em;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .sysInfoItem {
+  margin-top: 0.1rem;
+  text-align: center;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .sysInfoItem > .sysInfo {
+  display: inline-block;
+  text-align: center;
+  height: 0.3rem;
+  line-height: 0.3rem;
+  padding: 0 0.14rem;
+  border-radius: 0.14rem;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .sysInfoItem > .sysInfo > span {
+  color: #fff;
+  font-size: 0.12rem;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .sysInfoItem > .sysInfo.sysLow > span {
+  font-size: 0.12rem;
+  color: #A4B2CD;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .sysInfoItem > .sysInfo.sysLow > span:last-child {
+  color: #FF0004;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer > .sysInfoItem > .sysInfoTime {
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 0.06rem;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer.chatPlayerR {
+  text-align: right;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer.chatPlayerR > .info {
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer.chatPlayerR > .info > .captain,
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer.chatPlayerR > .info > .infoHead {
+  display: none;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer.chatPlayerR > .info > .name_date > .name {
+  display: none;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer.chatPlayerR > .chatDetial {
+  text-align: left;
+  background-color: #6665FF;
+  color: #FFFFFF;
+  border-radius: 0.38rem 0px 0.38rem 0.38rem;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer.chatPlayerL > .info > .captain {
+  position: absolute;
+  left: -0.2rem;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer.chatPlayerL > .info > .infoHead {
+  margin-right: 0.1rem;
+}
+.corpsBack .corpsConten.team .tabContent .corps_slide > .slider-slides > .chat_slide > .chat_slideBox > .chat_con > .scroll > .chatPlayer.chatPlayerL > .chatDetial {
+  margin-left: 0.42rem;
+  color: #0A1E37;
+  background-color: #ffffff;
+  border-radius: 0px 0.38rem 0.38rem 0.38rem;
+}
+.corpsBack .corpsCreamCon .logo {
+  padding: .1rem .14rem;
+  height: 1.12rem;
+  margin-top: .12rem;
+}
+.corpsBack .corpsCreamCon .logo div {
+  text-align: center;
+}
+.corpsBack .corpsCreamCon .corspName,
+.corpsBack .corpsCreamCon .corspText,
+.corpsBack .corpsCreamCon .corpsChose {
+  padding: .1rem .14rem;
+  margin-top: .12rem;
+}
+.corpsBack .corpsCreamCon .corspName span,
+.corpsBack .corpsCreamCon .corspText span,
+.corpsBack .corpsCreamCon .corpsChose span {
+  width: 25%;
+  white-space: nowrap;
+}
+.corpsBack .corpsCreamCon .corspName label,
+.corpsBack .corpsCreamCon .corspText label,
+.corpsBack .corpsCreamCon .corpsChose label {
+  width: 75%;
+  background: #122845;
+  border: 1px solid rgba(201, 224, 255, 0.4);
+  box-shadow: inset 0 -5px 10px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+.corpsBack .corpsCreamCon .corspName label input,
+.corpsBack .corpsCreamCon .corspText label input,
+.corpsBack .corpsCreamCon .corpsChose label input,
+.corpsBack .corpsCreamCon .corspName label textarea,
+.corpsBack .corpsCreamCon .corspText label textarea,
+.corpsBack .corpsCreamCon .corpsChose label textarea {
+  padding-left: .02rem;
+  text-shadow: 0px 0px 0px #000;
+}
+.corpsBack .corpsCreamCon .corspName label #corpsName::-webkit-input-placeholder,
+.corpsBack .corpsCreamCon .corspText label #corpsName::-webkit-input-placeholder,
+.corpsBack .corpsCreamCon .corpsChose label #corpsName::-webkit-input-placeholder {
+  color: rgba(164, 178, 205, 0.8);
+}
+.corpsBack .corpsCreamCon .corspText #corpsText {
+  resize: none;
+  background-color: inherit ;
+}
+.corpsBack .corpsCreamCon .corspText #corpsText::-webkit-input-placeholder {
+  color: rgba(164, 178, 205, 0.8);
+}
+.corpsBack .corpsCreamCon .corpsChose {
+  min-height: 1.1rem;
+}
+.corpsBack .corpsCreamCon .corpsChose .dWidth {
+  width: 1.4rem;
+  height: 1rem;
+}
+.corpsBack .corpsCreamCon .corpsChose .dWidth .onlyChose.item-radio {
+  width: auto;
+  background: none;
+  border: none;
+  box-shadow: none;
+  height: 50%;
+}
+.corpsBack .corpsCreamCon .corpsChose .dWidth .onlyChose.item-radio > .radio-content {
+  background: none;
+  box-shadow: none;
+}
+.corpsBack .corpsCreamCon .corpsChose .dWidth .onlyChose.item-radio > .radio-content .item-content > span {
+  font-size: .14rem;
+  color: #A4B2CD;
+  text-align: left;
+  padding-left: .3rem;
+}
+.corpsBack .corpsCreamCon .corpsChose .dWidth .onlyChose.item-radio > .radio-content .radio-icon {
+  display: initial;
+  width: .18rem;
+  height: .18rem;
+  padding: 0;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  visibility: initial;
+}
+.corpsBack .corpsCreamCon .corpsChose .dWidth .onlyChose.item-radio > .radio-content .ion-checkmark:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(../../img2.0/corps/cjzd_sh_unselected.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.corpsBack .corpsCreamCon .corpsChose .dWidth .onlyChose.item-radio input:checked + .radio-content .item-content > span {
+  color: white;
+  font-weight: bold;
+}
+.corpsBack .corpsCreamCon .corpsChose .dWidth .onlyChose.item-radio input:checked + .radio-content .ion-checkmark:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(../../img2.0/corps/cjzd_sh_selected.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.corpsBack .corpsCreamCon .corpsChose .dWidth .onlyChose.item-radio:first-child {
+  border-radius: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.corpsBack .corpsCreamCon .corpsSubmit {
+  position: absolute;
+  bottom: .2rem;
+  text-align: center;
+  width: 100%;
+}
+.corpsBack .corpsCreamCon .corpsSubmit button {
+  border: none;
+  width: 2.31rem;
+  height: .42rem;
+  display: inline-block;
+  margin-top: .18rem;
+  border-radius: 5.5rem;
+}
+.corpsBack .logoChoose {
+  bottom: .7rem;
+  padding: 0 .24rem;
+}
+.corpsBack .logoChoose .headcss {
+  height: .68rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+.corpsBack .logoChoose .headcss h1 {
+  width: 50%;
+  white-space: nowrap;
+}
+.corpsBack .logoChoose .headcss button {
+  border: none;
+  width: .96rem;
+  height: .32rem;
+  display: inline-block;
+  border-radius: 3rem;
+  margin: 0;
+  position: relative;
+}
+.corpsBack .logoChoose .headcss button i {
+  color: white;
+}
+.corpsBack .logoChoose .logoR {
+  margin-top: .14rem;
+}
+.corpsBack .logoChoose .logoR .imgChoose {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.corpsBack .logoChoose .logoR .imgChoose .item-radio {
+  display: inline-block;
+  background-color: inherit;
+  margin-bottom: .14rem;
+  width: 25%;
+  max-width: 25%;
+}
+.corpsBack .logoChoose .logoR .imgChoose .item-radio > .radio-content {
+  height: auto;
+  box-shadow: none;
+  margin: 0 auto;
+}
+.corpsBack .logoChoose .logoR .imgChoose .item-radio > .radio-content .radio-icon {
+  display: block;
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 12px 18px;
+}
+.corpsBack .logoChoose .logoR .imgChoose .item-radio > .radio-content .ion-checkmark:before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.corpsBack .logoChoose .logoR .imgChoose .item-radio > .radio-content > .item-content {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.corpsBack .logoChoose .logoR .imgChoose .item-radio > .radio-content > .item-content .con-show4 {
+  display: none;
+}
+.corpsBack .logoChoose .logoR .imgChoose .item-radio > .radio-content .box-six .con-show01,
+.corpsBack .logoChoose .logoR .imgChoose .item-radio > .radio-content .box-six .con-show02,
+.corpsBack .logoChoose .logoR .imgChoose .item-radio > .radio-content .box-six .con-show03 {
+  width: .74rem;
+  height: .84rem;
+  margin: auto;
+}
+.corpsBack .logoChoose .logoR .imgChoose .item-radio input:checked + .radio-content {
+  background: none;
+  position: relative;
+}
+.corpsBack .logoChoose .logoR .imgChoose .item-radio input:checked + .radio-content .con-show4 {
+  display: block;
+}
+.corpsBack .logoChooseSubmit {
+  position: absolute;
+  bottom: 0;
+  height: .7rem;
+  padding-top: .1rem ;
+  width: 100%;
+  text-align: center;
+}
+.corpsBack .logoChooseSubmit button {
+  border: none;
+  width: 2.31rem;
+  height: .42rem;
+  display: inline-block;
+  border-radius: 5.5rem;
+}
+.corpsBack .corpsRankHead {
+  padding: 0 .34rem;
+  height: .34rem;
+}
+.corpsBack .corpsRank {
+  top: .35rem;
+  background-color: #2D4E7A;
+  padding: .1rem 0;
+  border-radius: 10px;
+}
+.corpsBack .corpsRank .scroll {
+  padding-bottom: 0.4rem;
+}
+.corpsBack .corpsRank a {
+  padding: 0 .21rem;
+  position: relative;
+  width: 100%;
+  height: .52rem;
+  display: block;
+}
+.corpsBack .corpsRank a .captain {
+  width: .16rem;
+  position: absolute;
+  left: 0;
+}
+.corpsBack .corpsRank a .corpsList {
+  height: 100%;
+  width: 60%;
+  position: relative;
+}
+.corpsBack .corpsRank a .corpsList .imgBox {
+  width: 25%;
+}
+.corpsBack .corpsRank a .corpsList .imgBox img {
+  border-radius: 50%;
+  display: block;
+  width: .32rem;
+  height: .32rem;
+}
+.corpsBack .corpsRank a .corpsList .corpsName {
+  height: 100%;
+  line-height: initial;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  width: 70%;
+}
+.corpsBack .corpsRank a .corpsList .corpsName p {
+  white-space: nowrap;
+  max-width: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: -0.11rem;
+}
+.corpsBack .corpsRank a .corpsList .operate {
+  position: absolute;
+  right: 0 ;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  width: .24rem;
+}
+.corpsBack .corpsRank a .corpsList .operate .open {
+  width: .24rem;
+  height: .24rem;
+  border-radius: 50%;
+  background: #335F9A;
+}
+.corpsBack .corpsRank a .corpsList .operate .open i {
+  color: white;
+  font-size: .16rem;
+}
+.corpsBack .corpsRank a .corpsList .operate .off {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  width: 2rem;
+  background: #2D4E7A;
+  height: 90%;
+}
+.corpsBack .corpsRank a .corpsList .operate .off i {
+  color: white;
+  font-size: .3rem;
+}
+.corpsBack .corpsRank a .corpsList .operate .off button {
+  margin-left: .06rem;
+}
+.corpsBack .corpsRank a .corpsNum {
+  white-space: nowrap;
+  width: 20%;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.corpsBack .corpsRank a button {
+  border: none;
+  width: .5rem;
+  height: .28rem;
+  line-height: .28rem;
+  text-align: center;
+  border-radius: 1.5rem;
+  padding: 0;
+  white-space: nowrap;
+}
+.corpsBack .corpsRank a.handle .corpsList {
+  width: 60%;
+}
+.corpsBack .corpsRank a.handle .corpsList .imgBox {
+  width: 23%;
+}
+.corpsBack .corpsRank a.handle .corpsList .corpsName {
+  width: 75%;
+}
+.corpsBack .corpsRank a.handle .corpsList .corpsName p {
+  max-width: 1.7rem;
+}
+.corpsBack .corpsRank a.handle .corpsNum {
+  width: 40%;
+  text-align: center;
+}
+.corpsBack .box-six .con-show01,
+.corpsBack .box-six .con-show02,
+.corpsBack .box-six .con-show03 {
+  width: .576rem;
+  height: .72rem;
+  overflow: hidden;
+}
+.corpsBack .box-six .con-show01 {
+  transform: rotate(120deg);
+  margin: 0 auto;
+}
+.corpsBack .box-six .con-show02 {
+  transform: rotate(-60deg);
+}
+.corpsBack .box-six .con-show03 {
+  transform: rotate(-60deg);
+  position: relative;
+}
+.corpsBack .box-six .con-show4 {
+  width: 100%;
+  height: 100%;
+  background: rgba(102, 101, 255, 0.8);
+  position: absolute;
+}
+.corpsBack .noTeamRoom {
+  text-align: center;
+  margin-top: 64%;
+  font-size: .16rem;
+  color: white;
+}
+.corpsBack .redSign {
+  position: absolute;
+  top: -0.05rem;
+  right: 0;
+  color: #FF0016;
+}
+.corpsBack .redSign.tab {
+  right: 2.3em;
+}
+.chat_con_old .ionic-refresher-content .icon-refreshing {
+  display: none;
+}
+.chat_con_old .ionic-refresher-content .icon-refreshing .spinner {
+  display: none;
+}

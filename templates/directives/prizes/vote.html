@@ -1,0 +1,38 @@
+<div class="input_bg" style="display: none;">				
+	<div class="enter_c">
+		<div class="enter_c_content">
+			<div class="select"><span class="color">您选择支持：</span><img src="{{voter.headImgUrl}}" alt="" />&nbsp;<span class="name">{{voter.playerName}}</span></div>
+			<div class="useable_xz a-flex-start">
+		    	<span class="color">星钻余额 ：&nbsp;&nbsp;</span>
+		    	<span class="useable_xz_val a-flex-start">
+		    		<img class="a-img-size" src="../../img2.0/prize2.0/xz.png" alt="" /><span>{{xz}}</span>
+		    	</span>
+		    </div>
+		    <div class="enter_c_contentTop enter_c_contentTop_num">
+		    	<span class="color">投入星钻：</span>
+		    	<div class="vote_num_all">
+				  	<article class="item item-input vote_num">
+					    <i class="icon ion-minus-round minus" ng-click="changeInput(1)"></i>
+					    <input id="vote_num" type="number" pattern="[0-9]*" name="num" value="">
+				    	<i class="icon ion-plus-round plus" ng-click="changeInput(2)"></i>
+				  	</article>
+				</div>
+		    </div>
+		    <div class="line"></div>
+		    <div class="explain" ng-if="voter.expectPrize!==false">
+		    	<span class="color">预计奖励：</span>
+		    	<div>
+		    		<div class="a-flex-start">
+		    			<img class="a-img-size" src="../../img2.0/hall/jdzdt_12.png" alt="" />&nbsp;&nbsp;<span>{{voter.expectPrize}}</span>
+		    		</div>	
+		    		<p>最终获奖以比赛开始前最终赔率决定，预计奖励仅供参考</p>
+		    	</div>
+		    </div>
+		    <br />
+		</div>
+	    <div class="enter_c_contentS">
+	    	<button ng-click="novote()">取消</button>
+			<button ng-click="commitvote(voteInfo)">确定</button>
+	    </div>	        
+	</div>
+</div>

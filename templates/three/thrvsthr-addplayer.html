@@ -1,0 +1,102 @@
+<ion-view view-title="阵容" class="lineup-zrxz add_thr_ts" hide-tabs>
+	<div class="" header-title></div>
+  <div class="lineuphead dzsm zr">
+    <div class="lineuphead dzsmsm gz">工资位置不限</span></div>
+    <div class="lineuphead dzsmsm gz">仅可选择{{maxNum}}人上场</div>
+    <div class="lineuphead dzsmsm ry">人员：&nbsp;&nbsp;<span><span class="useNum">{{num}}</span>/{{maxNum}}</span></div>
+  </div>
+  <div class="lineup-zrxztt">
+    <div class="lutt">
+    </div>
+    <div class="luduxz addplayer">
+      	<div class="dfbox" ng-repeat="tj in lineupxh track by $index">
+      		<img class="del_player" src="./img/lineup/lineup_default/x.png"/>
+         	<input class="del_player del_default" type="checkbox" ng-model='tj.checked' ng-disabled="tj.disable" ng-click="del_player(tj)" ng-value='' name='' />
+	        <div class="df" style=" background: url('{{tj.logo}}')no-repeat center;background-size: 100% 100%;">
+	        	<span class="dfhone"><img ng-src='{{tj.numone}}' ng-if='tj.numone'></span>
+	        	<span class="dfhtwo"><img ng-src='{{tj.numtwo}}' ng-if='tj.numtwo'></span>
+	        </div>
+	        <div class="dyms">
+	          <p class="dyname" >{{tj.name}}</p>
+	          <p class="dygz">工资：{{tj.salary}}</p>
+	        </div>
+      	</div>
+		<div class="dfbox dfbox_default" ng-repeat="tj in lineupxh_default track by $index">
+      	</div>
+    </div>
+    <!--按钮通道-->
+    <div class="zrxz_an">
+    	<ion-scroll direction='x' scrollbar-x="false" class='zrxz_angd'>
+    		<div class="zrxz_bnt bnt_checked" ng-click='zrxz_bnt($event,0,positionId)'>
+    			所有
+    		</div>
+    		<div class="zrxz_bnt" ng-repeat="(key,value) in teams track by $index" ng-click='zrxz_bnt($event,key,positionId)'>
+    			{{value}}
+    		</div>
+      	</ion-scroll>
+    </div>
+    <div class="zrxz_px add_px">
+    	<div class="zrxz_px_aniu add_px"><p>所有位置</p><span></span>
+      	<ul class="zrxz_uu">
+      		<li ng-repeat='qywz in zrxz_qywz'>{{qywz}}</li>
+      	</ul>
+      </div>
+      <div class="zrxz_px_aniu add_px"><p>工资排序</p><span></span>
+      	<ul class="zrxz_uu">
+      		<li ng-repeat='gzpx in zrxz_gzpx'>{{gzpx}}</li>
+      	</ul>
+      </div>
+    </div>
+  </div>
+    <!--内容页-->
+  <ion-content class="zrxz_nrcon" has-bouncing="false" delegate-handle="thrplayerlist" >
+    <div class="zrxz_nr">
+      <div class="zrxz_nr_box" ng-repeat="zrxz in players|orderBy: pxAction">
+       <a ng-click="playerDetialThr(zrxz.id)">
+         <div class="zrxz_nr_one" style="background:url('{{zrxz.logo}}')no-repeat center 0.1rem;background-size: 80% 70%;">
+          <span ><img ng-src="{{zrxz.numone}}"><img class="zrxz_df_sz2" ng-src="{{zrxz.numtwo}}" ng-if="zrxz.numtwo"></span>
+          </div>
+         <div class="zrxz_nr_two">
+          <h1 ng-cloak>{{zrxz.name}}</h1>
+          <div>
+            <div class="zrxz_vs">
+              <img src="img/lineup/lineup_default/lineup_default_vs.png" alt="">
+            </div>
+            <div class="zrxz_wz">
+              <div ng-cloak class="zrxz_wz_q1">{{zrxz.teamName}}</div>
+              <div ng-cloak class="zrxz_wz_q2">{{zrxz.againstTeamName}}</div>
+            </div>
+            <div style="clear: both"></div>
+          </div>
+        </div>
+        <div class="zrxz_nr_thr">
+          <div class="zrxz_div">
+            <div class="zrxz_nr_thr_box">
+              <div class="zrxz_left zrxz_nr_thr_img"><img src="img/lineup/lineup_default/lineup_default_$.png"></div>
+              <div ng-cloak class="zrxz_num">{{zrxz.salary}}</div>
+            </div>
+            <div class="zrxz_nr_thr_box">
+              <div class="zrxz_left">近期战力</div>
+              <div ng-cloak class="zrxz_num">{{zrxz.recentExp}}</div>
+            </div>
+            <div class="zrxz_nr_thr_box">
+              <div class="zrxz_left thr">热度</div>
+              <div class="zrxz_num thr"><span ng-repeat="v in zrxz.torch"></span></div>
+            </div>
+          </div>
+        </div>
+         </a>
+        <div class="zrxz_nr_for">
+         <label class="checkbox">
+         	<input type="checkbox" ng-model='zrxz.checked' ng-disabled="zrxz.disable" ng-change="cliP(zrxz)" ng-value='' name='' />
+         </label>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll icon="ion-loading-c" immediate-check="false" ng-if="!moreDataCanBeLoaded" on-infinite="morePlayer(teamId)" distance="5%"></ion-infinite-scroll>
+  </ion-content>
+  <div class="zrxz_bnt add">
+    <div class="lineup-ctqd bntadd red" style="visibility: hidden;" ng-click="zrxz_tj()">快速选择</div>
+    <div class="lineup-ctqd bntadd green" ng-click="zrxz_off(salarySum,lineupxh)">确&nbsp;&nbsp;定</div>
+  </div>
+</ion-view>

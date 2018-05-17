@@ -1,0 +1,602 @@
+/*导航*/
+.tab-rank,
+.rankSlide,
+.myroom_playersLive,
+.myRoomDetialView,
+.bonusPlan,
+.battle-room {
+  background-image: linear-gradient(-180deg, #222C35 0%, #303845 90%);
+  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.35), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+.tab-rank .rankhead .rankTitle,
+.rankSlide .rankhead .rankTitle,
+.myroom_playersLive .rankhead .rankTitle,
+.myRoomDetialView .rankhead .rankTitle,
+.bonusPlan .rankhead .rankTitle,
+.battle-room .rankhead .rankTitle,
+.tab-rank .planHead .rankTitle,
+.rankSlide .planHead .rankTitle,
+.myroom_playersLive .planHead .rankTitle,
+.myRoomDetialView .planHead .rankTitle,
+.bonusPlan .planHead .rankTitle,
+.battle-room .planHead .rankTitle,
+.tab-rank .rankhead .bonusTitle,
+.rankSlide .rankhead .bonusTitle,
+.myroom_playersLive .rankhead .bonusTitle,
+.myRoomDetialView .rankhead .bonusTitle,
+.bonusPlan .rankhead .bonusTitle,
+.battle-room .rankhead .bonusTitle,
+.tab-rank .planHead .bonusTitle,
+.rankSlide .planHead .bonusTitle,
+.myroom_playersLive .planHead .bonusTitle,
+.myRoomDetialView .planHead .bonusTitle,
+.bonusPlan .planHead .bonusTitle,
+.battle-room .planHead .bonusTitle {
+  height: 0.48rem;
+  line-height: 0.48rem;
+  background: #26323d;
+}
+.tab-rank .rankhead .rankTitle .rankTitleItem,
+.rankSlide .rankhead .rankTitle .rankTitleItem,
+.myroom_playersLive .rankhead .rankTitle .rankTitleItem,
+.myRoomDetialView .rankhead .rankTitle .rankTitleItem,
+.bonusPlan .rankhead .rankTitle .rankTitleItem,
+.battle-room .rankhead .rankTitle .rankTitleItem,
+.tab-rank .planHead .rankTitle .rankTitleItem,
+.rankSlide .planHead .rankTitle .rankTitleItem,
+.myroom_playersLive .planHead .rankTitle .rankTitleItem,
+.myRoomDetialView .planHead .rankTitle .rankTitleItem,
+.bonusPlan .planHead .rankTitle .rankTitleItem,
+.battle-room .planHead .rankTitle .rankTitleItem,
+.tab-rank .rankhead .bonusTitle .rankTitleItem,
+.rankSlide .rankhead .bonusTitle .rankTitleItem,
+.myroom_playersLive .rankhead .bonusTitle .rankTitleItem,
+.myRoomDetialView .rankhead .bonusTitle .rankTitleItem,
+.bonusPlan .rankhead .bonusTitle .rankTitleItem,
+.battle-room .rankhead .bonusTitle .rankTitleItem,
+.tab-rank .planHead .bonusTitle .rankTitleItem,
+.rankSlide .planHead .bonusTitle .rankTitleItem,
+.myroom_playersLive .planHead .bonusTitle .rankTitleItem,
+.myRoomDetialView .planHead .bonusTitle .rankTitleItem,
+.bonusPlan .planHead .bonusTitle .rankTitleItem,
+.battle-room .planHead .bonusTitle .rankTitleItem,
+.tab-rank .rankhead .rankTitle .bonusTitleItem,
+.rankSlide .rankhead .rankTitle .bonusTitleItem,
+.myroom_playersLive .rankhead .rankTitle .bonusTitleItem,
+.myRoomDetialView .rankhead .rankTitle .bonusTitleItem,
+.bonusPlan .rankhead .rankTitle .bonusTitleItem,
+.battle-room .rankhead .rankTitle .bonusTitleItem,
+.tab-rank .planHead .rankTitle .bonusTitleItem,
+.rankSlide .planHead .rankTitle .bonusTitleItem,
+.myroom_playersLive .planHead .rankTitle .bonusTitleItem,
+.myRoomDetialView .planHead .rankTitle .bonusTitleItem,
+.bonusPlan .planHead .rankTitle .bonusTitleItem,
+.battle-room .planHead .rankTitle .bonusTitleItem,
+.tab-rank .rankhead .bonusTitle .bonusTitleItem,
+.rankSlide .rankhead .bonusTitle .bonusTitleItem,
+.myroom_playersLive .rankhead .bonusTitle .bonusTitleItem,
+.myRoomDetialView .rankhead .bonusTitle .bonusTitleItem,
+.bonusPlan .rankhead .bonusTitle .bonusTitleItem,
+.battle-room .rankhead .bonusTitle .bonusTitleItem,
+.tab-rank .planHead .bonusTitle .bonusTitleItem,
+.rankSlide .planHead .bonusTitle .bonusTitleItem,
+.myroom_playersLive .planHead .bonusTitle .bonusTitleItem,
+.myRoomDetialView .planHead .bonusTitle .bonusTitleItem,
+.bonusPlan .planHead .bonusTitle .bonusTitleItem,
+.battle-room .planHead .bonusTitle .bonusTitleItem {
+  text-align: center;
+}
+.tab-rank .rankhead .rankRowTitle,
+.rankSlide .rankhead .rankRowTitle,
+.myroom_playersLive .rankhead .rankRowTitle,
+.myRoomDetialView .rankhead .rankRowTitle,
+.bonusPlan .rankhead .rankRowTitle,
+.battle-room .rankhead .rankRowTitle,
+.tab-rank .planHead .rankRowTitle,
+.rankSlide .planHead .rankRowTitle,
+.myroom_playersLive .planHead .rankRowTitle,
+.myRoomDetialView .planHead .rankRowTitle,
+.bonusPlan .planHead .rankRowTitle,
+.battle-room .planHead .rankRowTitle,
+.tab-rank .rankhead .bonusRowTitle,
+.rankSlide .rankhead .bonusRowTitle,
+.myroom_playersLive .rankhead .bonusRowTitle,
+.myRoomDetialView .rankhead .bonusRowTitle,
+.bonusPlan .rankhead .bonusRowTitle,
+.battle-room .rankhead .bonusRowTitle,
+.tab-rank .planHead .bonusRowTitle,
+.rankSlide .planHead .bonusRowTitle,
+.myroom_playersLive .planHead .bonusRowTitle,
+.myRoomDetialView .planHead .bonusRowTitle,
+.bonusPlan .planHead .bonusRowTitle,
+.battle-room .planHead .bonusRowTitle {
+  padding: 0px 0.1rem;
+  background: #26323D;
+  box-shadow: inset 0 0.1rem 0.15rem 0 rgba(0, 0, 0, 0.35);
+}
+.tab-rank .rankhead .rankRowTitle > div,
+.rankSlide .rankhead .rankRowTitle > div,
+.myroom_playersLive .rankhead .rankRowTitle > div,
+.myRoomDetialView .rankhead .rankRowTitle > div,
+.bonusPlan .rankhead .rankRowTitle > div,
+.battle-room .rankhead .rankRowTitle > div,
+.tab-rank .planHead .rankRowTitle > div,
+.rankSlide .planHead .rankRowTitle > div,
+.myroom_playersLive .planHead .rankRowTitle > div,
+.myRoomDetialView .planHead .rankRowTitle > div,
+.bonusPlan .planHead .rankRowTitle > div,
+.battle-room .planHead .rankRowTitle > div,
+.tab-rank .rankhead .bonusRowTitle > div,
+.rankSlide .rankhead .bonusRowTitle > div,
+.myroom_playersLive .rankhead .bonusRowTitle > div,
+.myRoomDetialView .rankhead .bonusRowTitle > div,
+.bonusPlan .rankhead .bonusRowTitle > div,
+.battle-room .rankhead .bonusRowTitle > div,
+.tab-rank .planHead .bonusRowTitle > div,
+.rankSlide .planHead .bonusRowTitle > div,
+.myroom_playersLive .planHead .bonusRowTitle > div,
+.myRoomDetialView .planHead .bonusRowTitle > div,
+.bonusPlan .planHead .bonusRowTitle > div,
+.battle-room .planHead .bonusRowTitle > div {
+  padding: 0px 0.16rem;
+}
+.tab-rank .rankhead .rankRowTitle .bonusRowTitleRight > span,
+.rankSlide .rankhead .rankRowTitle .bonusRowTitleRight > span,
+.myroom_playersLive .rankhead .rankRowTitle .bonusRowTitleRight > span,
+.myRoomDetialView .rankhead .rankRowTitle .bonusRowTitleRight > span,
+.bonusPlan .rankhead .rankRowTitle .bonusRowTitleRight > span,
+.battle-room .rankhead .rankRowTitle .bonusRowTitleRight > span,
+.tab-rank .planHead .rankRowTitle .bonusRowTitleRight > span,
+.rankSlide .planHead .rankRowTitle .bonusRowTitleRight > span,
+.myroom_playersLive .planHead .rankRowTitle .bonusRowTitleRight > span,
+.myRoomDetialView .planHead .rankRowTitle .bonusRowTitleRight > span,
+.bonusPlan .planHead .rankRowTitle .bonusRowTitleRight > span,
+.battle-room .planHead .rankRowTitle .bonusRowTitleRight > span,
+.tab-rank .rankhead .bonusRowTitle .bonusRowTitleRight > span,
+.rankSlide .rankhead .bonusRowTitle .bonusRowTitleRight > span,
+.myroom_playersLive .rankhead .bonusRowTitle .bonusRowTitleRight > span,
+.myRoomDetialView .rankhead .bonusRowTitle .bonusRowTitleRight > span,
+.bonusPlan .rankhead .bonusRowTitle .bonusRowTitleRight > span,
+.battle-room .rankhead .bonusRowTitle .bonusRowTitleRight > span,
+.tab-rank .planHead .bonusRowTitle .bonusRowTitleRight > span,
+.rankSlide .planHead .bonusRowTitle .bonusRowTitleRight > span,
+.myroom_playersLive .planHead .bonusRowTitle .bonusRowTitleRight > span,
+.myRoomDetialView .planHead .bonusRowTitle .bonusRowTitleRight > span,
+.bonusPlan .planHead .bonusRowTitle .bonusRowTitleRight > span,
+.battle-room .planHead .bonusRowTitle .bonusRowTitleRight > span {
+  padding: 0px 0.13rem;
+}
+.tab-rank .rankhead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.rankSlide .rankhead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.myroom_playersLive .rankhead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.myRoomDetialView .rankhead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.bonusPlan .rankhead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.battle-room .rankhead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.tab-rank .planHead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.rankSlide .planHead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.myroom_playersLive .planHead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.myRoomDetialView .planHead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.bonusPlan .planHead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.battle-room .planHead .rankRowTitle .bonusRowTitleRight > span.titleRightLast,
+.tab-rank .rankhead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.rankSlide .rankhead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.myroom_playersLive .rankhead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.myRoomDetialView .rankhead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.bonusPlan .rankhead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.battle-room .rankhead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.tab-rank .planHead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.rankSlide .planHead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.myroom_playersLive .planHead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.myRoomDetialView .planHead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.bonusPlan .planHead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast,
+.battle-room .planHead .bonusRowTitle .bonusRowTitleRight > span.titleRightLast {
+  display: inline-block;
+  width: 7em;
+  text-align: right;
+  padding-right: 0px;
+}
+.tab-rank .myRank,
+.rankSlide .myRank,
+.myroom_playersLive .myRank,
+.myRoomDetialView .myRank,
+.bonusPlan .myRank,
+.battle-room .myRank,
+.tab-rank .ranks,
+.rankSlide .ranks,
+.myroom_playersLive .ranks,
+.myRoomDetialView .ranks,
+.bonusPlan .ranks,
+.battle-room .ranks {
+  width: 100%;
+  padding: 0px 0.2rem;
+  position: absolute;
+  bottom: 0.5rem;
+}
+.tab-rank .myRank > .rankItem > .rankLeft,
+.rankSlide .myRank > .rankItem > .rankLeft,
+.myroom_playersLive .myRank > .rankItem > .rankLeft,
+.myRoomDetialView .myRank > .rankItem > .rankLeft,
+.bonusPlan .myRank > .rankItem > .rankLeft,
+.battle-room .myRank > .rankItem > .rankLeft,
+.tab-rank .ranks > .rankItem > .rankLeft,
+.rankSlide .ranks > .rankItem > .rankLeft,
+.myroom_playersLive .ranks > .rankItem > .rankLeft,
+.myRoomDetialView .ranks > .rankItem > .rankLeft,
+.bonusPlan .ranks > .rankItem > .rankLeft,
+.battle-room .ranks > .rankItem > .rankLeft {
+  position: relative;
+}
+.tab-rank .myRank > .rankItem > .rankLeft .rankNum,
+.rankSlide .myRank > .rankItem > .rankLeft .rankNum,
+.myroom_playersLive .myRank > .rankItem > .rankLeft .rankNum,
+.myRoomDetialView .myRank > .rankItem > .rankLeft .rankNum,
+.bonusPlan .myRank > .rankItem > .rankLeft .rankNum,
+.battle-room .myRank > .rankItem > .rankLeft .rankNum,
+.tab-rank .ranks > .rankItem > .rankLeft .rankNum,
+.rankSlide .ranks > .rankItem > .rankLeft .rankNum,
+.myroom_playersLive .ranks > .rankItem > .rankLeft .rankNum,
+.myRoomDetialView .ranks > .rankItem > .rankLeft .rankNum,
+.bonusPlan .ranks > .rankItem > .rankLeft .rankNum,
+.battle-room .ranks > .rankItem > .rankLeft .rankNum {
+  width: .5rem;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+  white-space: nowrap;
+}
+.tab-rank .myRank > .rankItem > .rankLeft .rankNum > img,
+.rankSlide .myRank > .rankItem > .rankLeft .rankNum > img,
+.myroom_playersLive .myRank > .rankItem > .rankLeft .rankNum > img,
+.myRoomDetialView .myRank > .rankItem > .rankLeft .rankNum > img,
+.bonusPlan .myRank > .rankItem > .rankLeft .rankNum > img,
+.battle-room .myRank > .rankItem > .rankLeft .rankNum > img,
+.tab-rank .ranks > .rankItem > .rankLeft .rankNum > img,
+.rankSlide .ranks > .rankItem > .rankLeft .rankNum > img,
+.myroom_playersLive .ranks > .rankItem > .rankLeft .rankNum > img,
+.myRoomDetialView .ranks > .rankItem > .rankLeft .rankNum > img,
+.bonusPlan .ranks > .rankItem > .rankLeft .rankNum > img,
+.battle-room .ranks > .rankItem > .rankLeft .rankNum > img {
+  width: 0.28rem;
+  height: .24rem;
+  vertical-align: middle;
+}
+.tab-rank .myRank > .rankItem > .rankLeft > .imgBox,
+.rankSlide .myRank > .rankItem > .rankLeft > .imgBox,
+.myroom_playersLive .myRank > .rankItem > .rankLeft > .imgBox,
+.myRoomDetialView .myRank > .rankItem > .rankLeft > .imgBox,
+.bonusPlan .myRank > .rankItem > .rankLeft > .imgBox,
+.battle-room .myRank > .rankItem > .rankLeft > .imgBox,
+.tab-rank .ranks > .rankItem > .rankLeft > .imgBox,
+.rankSlide .ranks > .rankItem > .rankLeft > .imgBox,
+.myroom_playersLive .ranks > .rankItem > .rankLeft > .imgBox,
+.myRoomDetialView .ranks > .rankItem > .rankLeft > .imgBox,
+.bonusPlan .ranks > .rankItem > .rankLeft > .imgBox,
+.battle-room .ranks > .rankItem > .rankLeft > .imgBox {
+  width: 0.32rem;
+  height: 0.32rem;
+  border: 1px solid transparent;
+  margin-left: 0.18rem;
+}
+.tab-rank .myRank > .rankItem > .rankLeft > .imgBox > img,
+.rankSlide .myRank > .rankItem > .rankLeft > .imgBox > img,
+.myroom_playersLive .myRank > .rankItem > .rankLeft > .imgBox > img,
+.myRoomDetialView .myRank > .rankItem > .rankLeft > .imgBox > img,
+.bonusPlan .myRank > .rankItem > .rankLeft > .imgBox > img,
+.battle-room .myRank > .rankItem > .rankLeft > .imgBox > img,
+.tab-rank .ranks > .rankItem > .rankLeft > .imgBox > img,
+.rankSlide .ranks > .rankItem > .rankLeft > .imgBox > img,
+.myroom_playersLive .ranks > .rankItem > .rankLeft > .imgBox > img,
+.myRoomDetialView .ranks > .rankItem > .rankLeft > .imgBox > img,
+.bonusPlan .ranks > .rankItem > .rankLeft > .imgBox > img,
+.battle-room .ranks > .rankItem > .rankLeft > .imgBox > img {
+  height: 0.32rem;
+  width: 0.32rem;
+  border-radius: 50%;
+}
+.tab-rank .myRank > .rankItem > .rankLeft > div,
+.rankSlide .myRank > .rankItem > .rankLeft > div,
+.myroom_playersLive .myRank > .rankItem > .rankLeft > div,
+.myRoomDetialView .myRank > .rankItem > .rankLeft > div,
+.bonusPlan .myRank > .rankItem > .rankLeft > div,
+.battle-room .myRank > .rankItem > .rankLeft > div,
+.tab-rank .ranks > .rankItem > .rankLeft > div,
+.rankSlide .ranks > .rankItem > .rankLeft > div,
+.myroom_playersLive .ranks > .rankItem > .rankLeft > div,
+.myRoomDetialView .ranks > .rankItem > .rankLeft > div,
+.bonusPlan .ranks > .rankItem > .rankLeft > div,
+.battle-room .ranks > .rankItem > .rankLeft > div {
+  display: inline-block;
+}
+.tab-rank .myRank > .rankItem > .rankLeft .userInfo,
+.rankSlide .myRank > .rankItem > .rankLeft .userInfo,
+.myroom_playersLive .myRank > .rankItem > .rankLeft .userInfo,
+.myRoomDetialView .myRank > .rankItem > .rankLeft .userInfo,
+.bonusPlan .myRank > .rankItem > .rankLeft .userInfo,
+.battle-room .myRank > .rankItem > .rankLeft .userInfo,
+.tab-rank .ranks > .rankItem > .rankLeft .userInfo,
+.rankSlide .ranks > .rankItem > .rankLeft .userInfo,
+.myroom_playersLive .ranks > .rankItem > .rankLeft .userInfo,
+.myRoomDetialView .ranks > .rankItem > .rankLeft .userInfo,
+.bonusPlan .ranks > .rankItem > .rankLeft .userInfo,
+.battle-room .ranks > .rankItem > .rankLeft .userInfo {
+  margin-left: 0.1rem;
+}
+.tab-rank .myRank > .rankItem > .rankLeft .userInfo > p,
+.rankSlide .myRank > .rankItem > .rankLeft .userInfo > p,
+.myroom_playersLive .myRank > .rankItem > .rankLeft .userInfo > p,
+.myRoomDetialView .myRank > .rankItem > .rankLeft .userInfo > p,
+.bonusPlan .myRank > .rankItem > .rankLeft .userInfo > p,
+.battle-room .myRank > .rankItem > .rankLeft .userInfo > p,
+.tab-rank .ranks > .rankItem > .rankLeft .userInfo > p,
+.rankSlide .ranks > .rankItem > .rankLeft .userInfo > p,
+.myroom_playersLive .ranks > .rankItem > .rankLeft .userInfo > p,
+.myRoomDetialView .ranks > .rankItem > .rankLeft .userInfo > p,
+.bonusPlan .ranks > .rankItem > .rankLeft .userInfo > p,
+.battle-room .ranks > .rankItem > .rankLeft .userInfo > p {
+  line-height: 1.5em;
+}
+.tab-rank .myRank > .rankItem > .rankLeft .userInfo > p > img,
+.rankSlide .myRank > .rankItem > .rankLeft .userInfo > p > img,
+.myroom_playersLive .myRank > .rankItem > .rankLeft .userInfo > p > img,
+.myRoomDetialView .myRank > .rankItem > .rankLeft .userInfo > p > img,
+.bonusPlan .myRank > .rankItem > .rankLeft .userInfo > p > img,
+.battle-room .myRank > .rankItem > .rankLeft .userInfo > p > img,
+.tab-rank .ranks > .rankItem > .rankLeft .userInfo > p > img,
+.rankSlide .ranks > .rankItem > .rankLeft .userInfo > p > img,
+.myroom_playersLive .ranks > .rankItem > .rankLeft .userInfo > p > img,
+.myRoomDetialView .ranks > .rankItem > .rankLeft .userInfo > p > img,
+.bonusPlan .ranks > .rankItem > .rankLeft .userInfo > p > img,
+.battle-room .ranks > .rankItem > .rankLeft .userInfo > p > img {
+  width: 0.08rem;
+  margin-right: 0.04rem;
+}
+.tab-rank .myRank > .rankItem > .userIcon,
+.rankSlide .myRank > .rankItem > .userIcon,
+.myroom_playersLive .myRank > .rankItem > .userIcon,
+.myRoomDetialView .myRank > .rankItem > .userIcon,
+.bonusPlan .myRank > .rankItem > .userIcon,
+.battle-room .myRank > .rankItem > .userIcon,
+.tab-rank .ranks > .rankItem > .userIcon,
+.rankSlide .ranks > .rankItem > .userIcon,
+.myroom_playersLive .ranks > .rankItem > .userIcon,
+.myRoomDetialView .ranks > .rankItem > .userIcon,
+.bonusPlan .ranks > .rankItem > .userIcon,
+.battle-room .ranks > .rankItem > .userIcon {
+  white-space: nowrap;
+}
+.tab-rank .myRank > .rankItem > .userIcon > img,
+.rankSlide .myRank > .rankItem > .userIcon > img,
+.myroom_playersLive .myRank > .rankItem > .userIcon > img,
+.myRoomDetialView .myRank > .rankItem > .userIcon > img,
+.bonusPlan .myRank > .rankItem > .userIcon > img,
+.battle-room .myRank > .rankItem > .userIcon > img,
+.tab-rank .ranks > .rankItem > .userIcon > img,
+.rankSlide .ranks > .rankItem > .userIcon > img,
+.myroom_playersLive .ranks > .rankItem > .userIcon > img,
+.myRoomDetialView .ranks > .rankItem > .userIcon > img,
+.bonusPlan .ranks > .rankItem > .userIcon > img,
+.battle-room .ranks > .rankItem > .userIcon > img {
+  width: 0.14rem;
+  vertical-align: initial;
+}
+.tab-rank .myRank > .rankItem > .userGrade,
+.rankSlide .myRank > .rankItem > .userGrade,
+.myroom_playersLive .myRank > .rankItem > .userGrade,
+.myRoomDetialView .myRank > .rankItem > .userGrade,
+.bonusPlan .myRank > .rankItem > .userGrade,
+.battle-room .myRank > .rankItem > .userGrade,
+.tab-rank .ranks > .rankItem > .userGrade,
+.rankSlide .ranks > .rankItem > .userGrade,
+.myroom_playersLive .ranks > .rankItem > .userGrade,
+.myRoomDetialView .ranks > .rankItem > .userGrade,
+.bonusPlan .ranks > .rankItem > .userGrade,
+.battle-room .ranks > .rankItem > .userGrade {
+  height: 100%;
+  padding: 0.1rem 0px;
+  text-align: right;
+}
+.tab-rank .myRank > .rankItem > .userGrade > span,
+.rankSlide .myRank > .rankItem > .userGrade > span,
+.myroom_playersLive .myRank > .rankItem > .userGrade > span,
+.myRoomDetialView .myRank > .rankItem > .userGrade > span,
+.bonusPlan .myRank > .rankItem > .userGrade > span,
+.battle-room .myRank > .rankItem > .userGrade > span,
+.tab-rank .ranks > .rankItem > .userGrade > span,
+.rankSlide .ranks > .rankItem > .userGrade > span,
+.myroom_playersLive .ranks > .rankItem > .userGrade > span,
+.myRoomDetialView .ranks > .rankItem > .userGrade > span,
+.bonusPlan .ranks > .rankItem > .userGrade > span,
+.battle-room .ranks > .rankItem > .userGrade > span {
+  display: block;
+  white-space: nowrap;
+  line-height: 0.12rem;
+}
+.tab-rank .myRank > .rankItem > .userGrade > span.grade,
+.rankSlide .myRank > .rankItem > .userGrade > span.grade,
+.myroom_playersLive .myRank > .rankItem > .userGrade > span.grade,
+.myRoomDetialView .myRank > .rankItem > .userGrade > span.grade,
+.bonusPlan .myRank > .rankItem > .userGrade > span.grade,
+.battle-room .myRank > .rankItem > .userGrade > span.grade,
+.tab-rank .ranks > .rankItem > .userGrade > span.grade,
+.rankSlide .ranks > .rankItem > .userGrade > span.grade,
+.myroom_playersLive .ranks > .rankItem > .userGrade > span.grade,
+.myRoomDetialView .ranks > .rankItem > .userGrade > span.grade,
+.bonusPlan .ranks > .rankItem > .userGrade > span.grade,
+.battle-room .ranks > .rankItem > .userGrade > span.grade {
+  line-height: 0.22rem;
+}
+.tab-rank .myRank > .rankItem > .userIcon.bonusNum,
+.rankSlide .myRank > .rankItem > .userIcon.bonusNum,
+.myroom_playersLive .myRank > .rankItem > .userIcon.bonusNum,
+.myRoomDetialView .myRank > .rankItem > .userIcon.bonusNum,
+.bonusPlan .myRank > .rankItem > .userIcon.bonusNum,
+.battle-room .myRank > .rankItem > .userIcon.bonusNum,
+.tab-rank .ranks > .rankItem > .userIcon.bonusNum,
+.rankSlide .ranks > .rankItem > .userIcon.bonusNum,
+.myroom_playersLive .ranks > .rankItem > .userIcon.bonusNum,
+.myRoomDetialView .ranks > .rankItem > .userIcon.bonusNum,
+.bonusPlan .ranks > .rankItem > .userIcon.bonusNum,
+.battle-room .ranks > .rankItem > .userIcon.bonusNum {
+  padding: 0px 0.13rem;
+  width: 7em;
+  text-align: left;
+}
+.tab-rank .myRank > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.rankSlide .myRank > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.myroom_playersLive .myRank > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.myRoomDetialView .myRank > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.bonusPlan .myRank > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.battle-room .myRank > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.tab-rank .ranks > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.rankSlide .ranks > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.myroom_playersLive .ranks > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.myRoomDetialView .ranks > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.bonusPlan .ranks > .rankItem > .userIcon.bonusNum.bonusNumLast,
+.battle-room .ranks > .rankItem > .userIcon.bonusNum.bonusNumLast {
+  padding-right: 0px;
+  text-align: right;
+}
+.tab-rank > .userRanks,
+.rankSlide > .userRanks,
+.myroom_playersLive > .userRanks,
+.myRoomDetialView > .userRanks,
+.bonusPlan > .userRanks,
+.battle-room > .userRanks,
+.tab-rank > .bonusList,
+.rankSlide > .bonusList,
+.myroom_playersLive > .bonusList,
+.myRoomDetialView > .bonusList,
+.bonusPlan > .bonusList,
+.battle-room > .bonusList {
+  top: 0.9rem;
+  bottom: 1rem;
+  margin: 0px 0.1rem;
+  padding: 0px;
+}
+.tab-rank > .userRanks .ranks,
+.rankSlide > .userRanks .ranks,
+.myroom_playersLive > .userRanks .ranks,
+.myRoomDetialView > .userRanks .ranks,
+.bonusPlan > .userRanks .ranks,
+.battle-room > .userRanks .ranks,
+.tab-rank > .bonusList .ranks,
+.rankSlide > .bonusList .ranks,
+.myroom_playersLive > .bonusList .ranks,
+.myRoomDetialView > .bonusList .ranks,
+.bonusPlan > .bonusList .ranks,
+.battle-room > .bonusList .ranks {
+  position: inherit;
+  top: 0px;
+  left: 0px;
+  padding: 0px 0.1rem;
+}
+.tab-rank > .userRanks .ranks > .rankItem > .userIcon.topThreeIcon,
+.rankSlide > .userRanks .ranks > .rankItem > .userIcon.topThreeIcon,
+.myroom_playersLive > .userRanks .ranks > .rankItem > .userIcon.topThreeIcon,
+.myRoomDetialView > .userRanks .ranks > .rankItem > .userIcon.topThreeIcon,
+.bonusPlan > .userRanks .ranks > .rankItem > .userIcon.topThreeIcon,
+.battle-room > .userRanks .ranks > .rankItem > .userIcon.topThreeIcon,
+.tab-rank > .bonusList .ranks > .rankItem > .userIcon.topThreeIcon,
+.rankSlide > .bonusList .ranks > .rankItem > .userIcon.topThreeIcon,
+.myroom_playersLive > .bonusList .ranks > .rankItem > .userIcon.topThreeIcon,
+.myRoomDetialView > .bonusList .ranks > .rankItem > .userIcon.topThreeIcon,
+.bonusPlan > .bonusList .ranks > .rankItem > .userIcon.topThreeIcon,
+.battle-room > .bonusList .ranks > .rankItem > .userIcon.topThreeIcon {
+  /* 前三名的发光字: */
+  text-shadow: 0 0 0.06rem #12B01D;
+}
+.tab-rank > .userRanks .ranks.rankTop,
+.rankSlide > .userRanks .ranks.rankTop,
+.myroom_playersLive > .userRanks .ranks.rankTop,
+.myRoomDetialView > .userRanks .ranks.rankTop,
+.bonusPlan > .userRanks .ranks.rankTop,
+.battle-room > .userRanks .ranks.rankTop,
+.tab-rank > .bonusList .ranks.rankTop,
+.rankSlide > .bonusList .ranks.rankTop,
+.myroom_playersLive > .bonusList .ranks.rankTop,
+.myRoomDetialView > .bonusList .ranks.rankTop,
+.bonusPlan > .bonusList .ranks.rankTop,
+.battle-room > .bonusList .ranks.rankTop {
+  background-color: #394552;
+}
+.tab-rank > .userRanks .ranks.rankTop > .rankItem > .userIcon,
+.rankSlide > .userRanks .ranks.rankTop > .rankItem > .userIcon,
+.myroom_playersLive > .userRanks .ranks.rankTop > .rankItem > .userIcon,
+.myRoomDetialView > .userRanks .ranks.rankTop > .rankItem > .userIcon,
+.bonusPlan > .userRanks .ranks.rankTop > .rankItem > .userIcon,
+.battle-room > .userRanks .ranks.rankTop > .rankItem > .userIcon,
+.tab-rank > .bonusList .ranks.rankTop > .rankItem > .userIcon,
+.rankSlide > .bonusList .ranks.rankTop > .rankItem > .userIcon,
+.myroom_playersLive > .bonusList .ranks.rankTop > .rankItem > .userIcon,
+.myRoomDetialView > .bonusList .ranks.rankTop > .rankItem > .userIcon,
+.bonusPlan > .bonusList .ranks.rankTop > .rankItem > .userIcon,
+.battle-room > .bonusList .ranks.rankTop > .rankItem > .userIcon {
+  text-shadow: 0 0 0.06rem #12B01D;
+}
+.tab-rank > .userRanks .ranks:last-child,
+.rankSlide > .userRanks .ranks:last-child,
+.myroom_playersLive > .userRanks .ranks:last-child,
+.myRoomDetialView > .userRanks .ranks:last-child,
+.bonusPlan > .userRanks .ranks:last-child,
+.battle-room > .userRanks .ranks:last-child,
+.tab-rank > .bonusList .ranks:last-child,
+.rankSlide > .bonusList .ranks:last-child,
+.myroom_playersLive > .bonusList .ranks:last-child,
+.myRoomDetialView > .bonusList .ranks:last-child,
+.bonusPlan > .bonusList .ranks:last-child,
+.battle-room > .bonusList .ranks:last-child {
+  margin-bottom: .2rem;
+}
+.tab-rank > .rankhead > .onlyRankTitle > .rankTitleItem {
+  position: relative;
+  width: 50%;
+  flex: 1;
+  -webkit-flex: 1;
+}
+.tab-rank > .rankhead > .onlyRankTitle > .rankTitleItem.activated {
+  color: #34ED41;
+  opacity: inherit !important;
+  box-shadow: inset 0px 0.05rem 0.1rem 2px rgba(0, 0, 0, 0.3);
+}
+.tab-rank > .rankhead > .onlyRankTitle > .rankTitleItem.activated > span {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 1px;
+  width: 100%;
+  background: #12B01D;
+  box-shadow: 0px -0.04rem 0.1rem 1px rgba(18, 176, 29, 0.5);
+}
+.tab-rank > .onlyRankSlide {
+  height: 100vh;
+  padding-bottom: 0.5rem;
+  padding-top: 0.42rem;
+  top: -0.42rem;
+}
+.tab-rank > .onlyRankSlide .rankSlide {
+  background: none;
+  box-shadow: none;
+}
+.tab-rank > .onlyRankSlide .rankSlide > .userRanks {
+  top: 0px;
+}
+.bonusPlan > .bonusList {
+  bottom: 0px;
+  padding: 0px 0.17rem;
+}
+.bonusPlan > .bonusList .ranks {
+  padding: 0px;
+}
+.bonusPlan > .bonusList .ranks .rankLeft {
+  width: 70vw;
+  margin-right: 0.24rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.bonusPlan > .bonusList .ranks .rankLeft > .centerLine {
+  margin-left: 0.24rem;
+}

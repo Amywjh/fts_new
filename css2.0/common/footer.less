@@ -1,0 +1,58 @@
+//底部
+.tabs{
+    height: 0.5rem;padding-top: 0px;//padding-top: 0.06rem;padding-bottom: 0.04rem;
+    background: #112b51;
+//  box-shadow: 0 -10px 15px 0 rgba(0,0,0,0.35);
+    background-size: 0px 0px;
+    display: flex;display: -webkit-flex;
+    a.tab-item{
+        height:100%;display: block;
+        background-repeat: no-repeat;
+        background-position:bottom center;
+        background-size:auto 0.4rem;
+        position: relative;
+    }
+    a.tab-item.tab-item-active{ /* 导航栏选中背景: */
+        background-size:auto 0.46rem;
+        background-color: transparent;
+//      box-shadow: inset 0 -5px 10px 2px rgba(0,0,0,0.30);
+        >span{
+            position: absolute;bottom: 0rem;
+            display: block;border: none;height: 0.02rem;width: 100%; background-color: #3264bb;
+        }
+    }
+    .tab-item-active{
+        span{
+            color:#8eae40;
+        }
+    }
+    .tab-item:nth-child(5){
+        background-image: url(../../img2.0/rank/dhl_1_unselected.png);
+    }
+    .tab-item.tab-item-active:nth-child(5){
+        background-image: url(../../img2.0/rank/dhl_1.png);
+    }
+    .tab-item:nth-child(6){
+        background-image: url(../../img2.0/rank/dhl_2_unselected.png);
+    }
+    .tab-item-active:nth-child(6){
+        background-image: url(../../img2.0/rank/dhl_2.png);
+    }
+    .tab-item:nth-child(7){
+        background-image: url(../../img2.0/rank/dhl_3_unselected.png);
+    }
+    .tab-item-active:nth-child(7){
+        background-image: url(../../img2.0/rank/dhl_3.png);
+    }
+    .tab-item:nth-child(8){
+        background-image: url(../../img2.0/rank/dhl_4_unselected.png);
+    }
+    .tab-item-active:nth-child(8){
+        background-image: url(../../img2.0/rank/dhl_4.png);
+    }
+//  .icon{
+//      display: none;
+//  }
+
+}
+.tabs.tab-shadow{box-shadow: none;}

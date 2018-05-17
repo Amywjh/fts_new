@@ -1,0 +1,38 @@
+<ion-view view-title="战队大厅" class="corpsBack" hide-tabs>
+	<div corps-header></div>
+	<ion-content class="corpsConten">
+		<div class="corpsRoom a-flex-start-top" ng-repeat = "(kk,room) in teamRooms">
+			<div class="corpsLogo">
+				<div class="box-six" style="position: relative;width: .6rem;height: .72rem;background: url(../../img2.0/corps/zd_tx_bg_big.png)no-repeat 50% center;background-size: 120%;">
+					<div class="con-show01">  
+				        <div class="con-show02">  
+				          <div class="con-show03"> 
+				          	 <img img-resize class="position-center" ng-src="{{room.logo}}" alt="" />
+				          </div>  
+				        </div>  
+				     </div>  
+			   </div> 
+			</div>
+			<div class="corpsBox">
+				<h1 class="a-text-color-whit font-weight a-font-size-medium corpsName">{{room.name}}</h1>
+				<p class="corpsSynopsis a-font-size-small a-text-color-whitDark">{{room.slogan}}</p>
+				<div class="divideLine"></div>
+				<div class="a-flex-between boxList">
+					<div>
+						<h2 class="a-text-color-whit font-weight a-font-size-medium-m">Lv.{{room.level}}</h2>
+						<p class="a-font-size-small a-text-color-whitDark">等级</p>
+					</div>
+					<div>
+						<h2 ng-if="room.userNum<room.totalUserNum" class="a-text-color-whit font-weight a-font-size-medium-m">{{room.userNum}}/{{room.totalUserNum}}</h2>
+						<h2 ng-if="room.userNum>=room.totalUserNum" class="a-text-color-whit font-weight a-font-size-medium-m">满员</h2>
+						<p class="a-font-size-small a-text-color-whitDark">人数</p>
+					</div>
+					<button ng-if="room.applyStatus == 3" ng-click="joinCorps(room)" class="a-buttonBig-purple a-font-size-small a-text-color-whit">申请加入</button>
+					<button ng-if="!room.applyStatus" class="a-font-size-small a-text-color-whit apply">已申请</button>
+				</div>
+			</div>
+		</div>
+		<ion-infinite-scroll icon="ion-loading-c" immediate-check="false" ng-if="!moreDataCanBeLoaded" on-infinite="loadMore(searchGoing)" distance="10%"></ion-infinite-scroll>
+	    <p class="noTeamRoom" ng-if="!teamRooms">暂无战队房间</p>
+	</ion-content>
+</ion-view>

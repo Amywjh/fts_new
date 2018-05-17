@@ -1,0 +1,578 @@
+@import "../common/base.less";
+.tab-main{
+    .mainCon{
+        position: relative;.l-pos-withHeader();padding-top: 0.14rem;
+        .lb{//轮播图
+            height: 1.15rem;width: 100%;top: 0px;
+            background: transparent;z-index: 9;padding: 0px 0.15rem;
+            .expand_box{
+                height: 100%;
+                >.slider-pager{
+                    bottom: 0;height: .2rem;background:transparent;
+                    >.slider-pager-page{
+                        opacity: 1;height: .2rem;width: .2rem;
+                        background: url(../../img2.0/hall/sx_4.png)no-repeat center;
+                        background-size: 100%;
+                        background: none;
+                        >.ion-record{ 
+//                          display: none;
+                            color: #284c80;font-size: 50%; display: block;
+                        }
+                    }
+                    >.slider-pager-page.active{
+                        background: url(../../img2.0/hall/sx_3.png)no-repeat center;
+                        background-size: 100%;
+                        background: none;
+                        >.ion-record{
+//                          display: none;
+                            color: #ffffff;display: block;
+                        }
+                    }
+                }
+                .expand{
+                    .box{
+                        width: 100%;height: 0.95rem;border-radius: 0.04rem;overflow: hidden;
+                        a{
+                            width: 100%;height: 100%;
+                            img{
+                                width: 100%;height:100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .headline{//导航条
+            top: 0px;
+            width: 100%;z-index: 9;padding: 0.05rem 0.15rem 0.17rem 0.15rem; height:0.72rem;
+            .l-flex-between(center);background: transparent;
+            .headline_con{
+                padding-top: 0px !important;
+                height: 100%;width: 50%;box-sizing: border-box;//position: relative;text-align: center;padding-top:.04rem ;
+                .l-flex-center(center);.l-bg-item();margin-left: 0.19rem;padding-right: 0.2rem;//padding-left: 0.23rem;
+                span{
+                    display: block;white-space: nowrap;position: relative;
+                    color: @color-whit;font-size:@fs-medium-16;margin-left: 0.22rem;
+                    >.newNum{
+                        display: block;width: 0.24rem;height: 0.24rem;border-radius: 50%; background-color: #ff4381;text-align: center;
+                        position: absolute;right: -0.4rem;top: 50%;
+                        transform:translateY(-50%);-webkit-transform:translateY(-50%);
+                        >i{
+                            font-size: @fs-medium-18;font-family: @ff-numstd;color: @color-whit;line-height: 1em;//background: blue;
+                            position: absolute;top: 50%;left: 50%;margin-top: 1px;
+                            transform: translateX(-50%) translateY(-50%);
+                            -webkit-transform: translateX(-50%) translateY(-50%);
+                        }
+                    }
+                }
+                img{
+                    .l-img-size();
+                }
+                &:first-child{
+                    margin-left: 0px;
+                }
+            }
+            .headline_con.activated{
+                -webkit-filter: contrast(1.2);
+            }
+        }
+    }
+    .main{//房间
+        position: absolute;top: 2.51rem;bottom: 0.5rem;
+        overflow: auto !important;
+        height: auto !important;
+        .main_rooms{
+            margin: 0.12rem auto 0px;padding: 0 .15rem;
+            >.play_room_item{
+                width: 100%;height: .95rem;margin-bottom: .14rem;border-radius:0.04rem;overflow: hidden;border-bottom: 3px solid transparent;
+                >.room_item_bgbox{
+                    position: relative;
+                    width: 100%;height: 100%;
+                    background-size:100% 100%;
+                    background-color: none;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    >.hotFight{
+                        height: 100%;width: 70%;padding-top: 0.1rem;
+                        >.leftPlayer,>.rightPlayer{
+                            width: 30%;
+                            >.imgBox{
+                                position: relative;width: 0.6rem;height: 0.6rem;
+                                border: 0.03rem solid #9FAFEE;border-radius: 50%;
+                                >img{
+                                    width: 100%;border-radius: 100%;
+                                }
+                                >img.teamLogo{
+                                    position: absolute;top: 0px;left: -0.2rem;
+                                    height: 0.16rem;width: auto;border: none;border-radius:inherit;
+                                }
+                            }
+                            >span{
+                                margin-top: 0.04rem;text-shadow: 0 0 0.02rem #131A46;white-space: nowrap;
+                            }
+                        }
+                        >.leftPlayer{
+                           
+                        }
+                        >.rightPlayer{
+                            >.imgBox{
+                                >img.teamLogo{
+                                    left: auto;right: -0.2rem;
+                                }  
+                            }
+                        }
+                        >.fightVS{
+                            margin: 0px;margin-top: -0.2rem;
+                        }
+                    }
+                    .tag{
+                        position: absolute;right: 0;top: .1rem;
+                        width: .4rem;height: .16rem;
+                    }
+                    .tag_new{
+                        background: url(../../img2.0/main/zy_6.png) no-repeat ;
+                        background-size: 100% 100%;
+                    }
+                    >.state{
+                        position: absolute;right: .14rem;font-weight: bold;
+                        display: block;height: 100%;padding-top: 0.17rem;
+                        .l-flex-col(center,center);
+                        &.stateLeft{
+                            left: 0.14rem;right: auto;
+                        }
+                        >span{
+                            line-height: 1em;
+                            &.title{
+                                font-size: @fs-medium-24;color: @color-blueDark;
+                            }
+                            &.des{
+                                font-size: @fs-small-14;color: @color-blueLight;margin-top: 0.06rem;
+                            }
+                        }
+                    }
+                }
+                .main_room_jc.activated{
+                    opacity: .7;
+                }
+            }
+        }
+    }
+    
+    
+}
+@keyframes jd{
+  0%,100%,20%,50%,80%{
+    transition-timing-function: cubic-bezier(0.215,.61,.355,1); /*贝塞尔曲线 ： X1 Y1 X2 Y2*/
+    transform: translate3d(0,0,0); /*设置只在Z轴上移动*/
+    -webkit-transform: translate3d(0,0,0); /*设置只在Z轴上移动*/
+    -webkit-filter: contrast(1);
+  }
+  40%,43%{
+    transition-timing-function: cubic-bezier(0.755,0.50,0.855,0.060);
+    transform: translate3d(0,-3px,0);
+    -webkit-transform: translate3d(0,-3px,0);
+    -webkit-filter: contrast(2);
+  }
+  70%{
+    transition-timing-function: cubic-bezier(0.755,0.050,0.855,0.060);
+    transform: translate3d(0,-1.5px,0);
+    -webkit-transform: translate3d(0,-1.5px,0);
+    -webkit-filter: contrast(1.5);
+  }
+  90%{
+    transform: translate3d(0,-0.4px,0);
+    -webkit-transform: translate3d(0,-0.4px,0);
+    -webkit-filter: contrast(2);
+  }
+
+}
+.friendmodelbox{//好友邀请
+    width: 88%;padding:.24rem .16rem .18rem;
+    background: url(../../img2.0/joinroom/wd_1.png)no-repeat top center;
+    background-size: 100% auto;
+    .forfriendmodelbody{
+        width: 100%;overflow: hidden;
+        div{
+            img{
+                border-radius: 50%;
+            }
+            h1{
+                margin-bottom: .25rem;
+            }
+        }
+        .inviteImg{
+            >img{
+                width: 0.6rem;height: 0.6rem;
+            }
+        }
+        .text{
+            margin-left: .2rem;
+        }
+        .searchbtn{
+            width: 1.2rem;
+            margin: .3rem auto 0;
+        }
+    }
+}
+.joinSum{//历史参赛汇总
+    >.joinSumBgImg{
+        height: 100vh;
+        margin: 0px;
+        position: absolute;top: 0px;left: 0px;
+        animation: fadeLeft 3s forwards;
+        -webkit-animation: fadeLeft 3s forwards;
+    }
+    >.joinSumBg{
+        width: 100vw;height: 100vh;
+        padding-left: 0.3rem;
+        position: relative;
+        >.joinSumHead{//参赛日期
+            font-size: 0.16rem;
+            padding-top: 0.42rem;padding-bottom: 0.2rem;
+            border-bottom: 0.01rem solid rgba(255,255,255,0.1);
+            padding-right: 0.3rem;
+            >.joinMathDay{
+                height: 0.2rem;position: relative;left: -100%;line-height: 1.8em;
+                >.joinSumDays{}
+            }
+            >.joinMathDay.joinMathDayFade{
+                animation: fadeLeft 1s forwards;
+                -webkit-animation: fadeLeft 1s forwards;
+            }
+        }
+        >.matchTypeItemBox{
+            padding: 0.2rem 0px 0.3rem 0px;
+            >.matchTypeItem{//参赛统计
+                position: relative;left: -100%;
+                margin-bottom: 0.16rem;
+                >.matchType{
+                    color: #34ED41;font-size: 0.14rem;
+                    >.matchTypeStart:before{
+                        content: "|";font-size: 0.16rem;
+                        width: 0.04rem;color: transparent;
+                        background-image: linear-gradient(0deg, #12B01D 50%, #6EE00A 100%);
+                        box-shadow: 0 10px 15px 0 rgba(0,0,0,0.50), inset 0 1px 1px 0 rgba(255,255,255,0.50);
+                        margin-right: 0.06rem;
+                    }
+                }
+                >.matchNum{
+                    margin-left: 0.08rem;
+                }
+            }
+            >.matchTypeItemFade{
+                animation: fadeLeft 1s forwards;
+                -webkit-animation: fadeLeft 1s forwards;
+            }
+        }
+        >.pay_get{
+            >.paySum,>.getSum{//支出收入
+                position: relative;left: 100%;margin-bottom: 0.06rem;line-height: 0.42rem;
+                background-image: linear-gradient(90deg, rgba(6,27,32,0.5) 0%, rgba(6,27,32,0) 100%);
+                padding-left: 0.14rem;
+                >.sumTitle{
+                    width: 4em;
+                }
+                >.sumNum{
+                    >img{
+                        margin: 0px;
+                    }
+                    >.hasReward:first-child{
+                       >img{
+                            margin: 0px;
+                        } 
+                    }
+                }
+            }
+            >.paySumFad,>.getSumFad{
+                animation: fadeRight 1s forwards;
+                -webkit-animation: fadeRight 1s forwards;
+            }
+        }
+        >.getHonor{//获得荣誉
+            padding-right: 0.3rem;
+//          display: flex;display: -webkit-flex;
+//          justify-content: center;
+            >.guadeDes{
+                display: none;
+                text-align: center;margin: 0.24rem 0px;
+                >span{
+                    text-shadow:0px 2px 4px rgba(0,0,0,0.5);
+                    line-height: 1.2em;
+                }
+            }
+            >.guadeImg{
+                >.img2,>.img1{
+                    width: 50%;text-align: center;
+                    >.imgBox{
+                        position: relative;display: inline-block;
+                        >img{
+                            margin: 0px;opacity: 0;height: 1rem;vertical-align: middle;
+                        }
+                        >span.winNum{
+                            display: none;
+                            position: absolute;bottom: 0px;right: 0px;font-weight: bold;
+                            letter-spacing: 0.2em;
+                        }
+                    }
+                }
+                .img1>.imgBox>.imgFade{
+                    opacity: 1;
+                    animation: fadeBigRotate 0.8s ease-in;
+                    -webkit-animation: fadeBigRotate 0.8s ease-in;
+                }
+                .img2>.imgBox>.imgFade{
+                    opacity: 1;
+                    animation: fadeBigRotate 0.8s ease-in;
+                    -webkit-animation: fadeBigRotate 0.8s ease-in;
+                }
+            }
+        }
+    }
+    >.gradeBg{
+        width: 100vw;height: 100vh;
+        padding-left: 0.3rem;
+        position: relative;
+        display: none;
+        >.gradeRule{
+            margin: 0.42rem 0px 0rem;
+            >.gradeRuleItem{
+                position: relative;left: 100%;margin-bottom: 0.06rem;line-height: 0.42rem;
+                background-image: linear-gradient(90deg, rgba(6,27,32,0.5) 0%, rgba(6,27,32,0) 100%);
+                padding-left: 0.14rem;padding-right: 0.64rem;
+                >.growNeed{
+                    width: 8em;flex-shrink: 0;-webkit-flex-shrink: 0;
+                }
+                >.growScore{
+                    width: 100%;white-space: nowrap;
+                    flex-shrink: 1;-webkit-flex-shrink: 1;
+                    >.a-dotted{
+                        position: relative;top: -1px;
+                        transform: translateY(50%);-webkit-transform: translateY(50%);
+                        border-top: 2px dotted rgba(255,255,255, 0.3);   
+                    }
+                }
+                >.growNeed{
+                    display: block;
+                   // flex: 1;-webkit-flex: 1;
+                }
+            }
+            >.nowGrade{
+                margin-top: 0.36rem;padding-top: 0.2rem;padding-bottom: 0.08rem;line-height: 1.2em; //height: 1rem;
+                >div{
+                    margin-bottom: 0.12rem;
+                }
+                >span{
+                    margin-bottom: 0.06rem;
+                }
+            }
+            >.gradeItemFad{
+                animation: fadeRight 1s forwards;
+                -webkit-animation: fadeRight 1s forwards;
+            }
+        }
+    }
+    >.joinSumBtnBox{
+        position: absolute;bottom: 0.3rem;width: 100%;
+        >.joinSumBtn{
+            display: none;
+            width: 1.5rem;
+            font-weight: bold;text-align: center;line-height: 0.36rem;margin: auto;
+        }
+    }
+}
+.matchHint{//未来赛事推荐
+    background: url(../../img2.0/grade/jctj_bg.jpg) no-repeat center;
+    background-size: cover;
+    >.matchHintScroll{
+        >.topHalf,>.footerHalf{
+            max-height: 50vh;
+        }
+        >.footerHalf{
+            padding-top: 0.15rem;padding-bottom: 0.52rem;
+        }
+    }
+    .matchHintHeader{
+        padding: 0.14rem 0px;text-align: center;
+    }
+    .starDual,.classics{
+        position: relative;
+        margin: 0.15rem 0.09rem 0px;
+        padding-top: 0.15rem;
+        border: 1px solid #1075E4;background: #07223B;
+        >.boxLight{ //光线
+           
+        }
+        >.playTitle{
+            height: 0.3rem;width: 1.2rem; text-align: center;line-height: 0.3rem;
+            position: absolute;top: -0.15rem;background-size:contain;background-position: center;
+            left: 50%;transform: translateX(-50%);-webkit-transform: translateX(-50%);
+            >span{
+                line-height: 1em;
+            }
+            >img{
+                margin: 0px;
+            }
+        }
+        >.prizes{
+            width: 100%;margin: 0px;padding: 0px 0.02rem;
+            background:none;box-shadow: none;
+            >.prizes-top{
+                >.prizes_one{
+                    display: none;
+                }
+                >.prize_sign{
+                    display: none;
+                }
+            }
+        }
+        >.goHall{
+            text-align: center;
+            >div{
+                height: 0.3rem;line-height: 0.3rem;
+                font-size: 0.14rem;font-weight: bold;
+                >i{
+                    color: #ABD3FF;
+                }
+            }
+        }
+    }
+    .classics{
+        max-height: 2.69rem;
+        padding-bottom: 0.3rem;//margin-top: 0.3rem;
+        >.hintMatchDate{
+            line-height: 1em;padding-left: 0.12rem;
+            margin-bottom: 0.14rem;
+        }
+        >.allMatchScroll{
+            max-height: 1.69rem;
+            .hintMatchItem{
+                position: relative;padding-left: 0.12rem;
+                margin-bottom: 0.14rem;
+                >div{
+                    line-height: 1em;
+                }
+                >.league{
+                    position: relative;left: -0.12rem;margin-bottom: 0.08rem;
+                    font-weight: bold;
+                    >img{
+                        margin: 0px;
+                    }
+                }
+                >.allMatch{
+                    >.scroll{
+                        >.allMatchX{
+                            white-space: nowrap;
+                            >span{
+                                margin-right: 0.12rem;
+                                font-size: 0.13rem;
+                                >img{
+                                    margin: 0px 0.04rem;
+                                }
+                            }
+                            >span.a-color-blueLight{
+                                font-weight: bold;
+                                >img{
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        >.goHall{
+            height: 0.46rem;padding-top: 0.16rem;
+            position: absolute;bottom: 0px;width: 100%;
+            background-image: linear-gradient(0deg, rgba(7,34,59,1) 0%, rgba(7,34,59,0) 100%);
+        }
+    }
+    >.goOther{
+        width: 100%;
+        position: fixed;bottom: 0.18rem;margin-top: 0.18rem;text-align: center;
+        >.ion-arrow-right-b{
+            font-size: 0.18rem;color: #34ED41;margin-left: 0.08rem;
+            position: relative;top: 0.02rem;
+        }
+        >.ion-arrow-right-b.light{
+            opacity: 0.6;margin: 0px;
+        }
+    }
+    
+}
+.growModal{
+    width: 80vw;padding: 0.18rem 0.18rem;border-radius: 2px;text-align: center;
+    >.expNum{
+        margin-top:0.2rem ;margin-bottom: 0.12rem;
+    }
+    >.expStrip{
+        margin-bottom: 0.20rem;
+    }
+    >.shutBtn{
+        min-height: auto;width: .9rem;font-weight: bold;margin: auto;
+    }
+}
+
+@-webkit-keyframes fadeLeft{
+    from{
+        left: -100%;
+    }
+    to{
+        left: 0px;
+    }
+}
+@keyframes fadeLeft{
+    from{
+        left: -100%;
+    }
+    to{
+        left: 0px;
+    }
+}
+@-webkit-keyframes fadeRight{
+    from{
+        left: 100%;
+    }
+    to{
+        left: 0px;
+    }
+}
+@keyframes fadeRight{
+    from{
+        left: 100%;
+    }
+    to{
+        left: 0px;
+    }
+}
+@-webkit-keyframes fadeBigRotate{
+    from{
+        transform: scale(1.2);-webkit-transform: scale(1.2);
+        opacity: 0.3;
+    }
+    to{
+//      transform:rotate(360deg);
+//      -ms-transform:rotate(360deg);   /* IE 9 */
+//      -moz-transform:rotate(360deg);  /* Firefox */
+//      -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+        transform: scale(1);-webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes fadeBig{
+    from{
+        transform: scale(1.2);-webkit-transform: scale(1.2);
+        opacity: 0.3;
+    }
+    to{
+        transform: scale(1);-webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+//@-webkit-keyframes fadeBig{
+//  from{
+//      height: 1rem;
+//  }
+//  to{
+//      height: 1.2rem;
+//  }
+//}

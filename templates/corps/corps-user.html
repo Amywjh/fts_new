@@ -1,0 +1,93 @@
+<ion-view title='我的战队' class='corpsBack' id="corpsView" hide-tabs>
+<ion-content class="corpsConten team" scroll="false" scrollbar-y="false" >
+	<div class="corpsRoom a-flex-start-top">  <!--hide-on-keyboard-open  键盘显示时隐藏类-->
+		<div class="corpsLogo">
+			<div class="box-six" style="position: relative;width: .6rem;height: .72rem;background: url(../../img2.0/corps/zd_tx_bg_big.png)no-repeat 50% center;background-size: 120%;">
+				<div class="con-show01">  
+			        <div class="con-show02">  
+			          <div class="con-show03"> 
+			          	 <img img-resize class="position-center" ng-src="{{teamDetail.logo}}" alt="" />
+			          </div>  
+			        </div>  
+			     </div>  
+			</div>
+		</div>
+		<div class="corpsBox">
+			<h1 class="a-text-color-whit font-weight a-font-size-medium-m corpsName">{{teamDetail.name}}</h1>
+			<p class="corpsSynopsis a-font-size-small a-text-color-whitDark">{{teamDetail.slogan}}</p>
+			<div class="divideLine"></div>
+			<div class="a-flex-between boxList">
+				<h2 class="a-flex-start" style="width: 70%;">
+					<span class="a-text-color-whit font-weight a-font-size-medium-m">Lv.{{teamDetail.level}}</span>&nbsp;
+					<!--<!--<div class="a-buttonBig-orgnge yLabel">加成：<span class="font-weight">星币奖励+{{teamDetail.reward}}</span></div>显示战队经验加成-->
+				</h2>
+				<div style="white-space: nowrap;">
+				   <span class="a-text-color-light">{{teamDetail.curEXP}}</span><span class="a-text-color-cloudyBlue">/{{teamDetail.totalEXP}}</span><img  ng-click = 'ruleBtn()' src="../../img2.0/joinroom/jrfj_1.png" alt="" />	
+				</div>
+			</div>
+			<div class="a-flex-start experience">
+				<span class="ycline" ng-if="teamDetail.curEXP" style="width: {{teamDetail.percent}};"></span>
+			</div>
+			<div ng-if="teamDetail.captain" ng-click="updateText()" class="reviseBtn"><i class="ion-ios-gear"></i></div>
+		</div>
+	</div>
+	<div class="navigationTab">
+		<span class="a-text-color-cloudyBlue a-font-size-small-x" ng-repeat="item in butList" ng-click="butClick(item)" ng-class="{'but':item.isShow,'peopleAll':item.index == 1}">{{item.but}}<p class="a-text-color-cloudyBlue" ng-if='item.index == 1'>{{teamDetail.userNum}}/{{teamDetail.totalUserNum}}</p><i ng-if="corpsNotice && item.index == 2" class="ion-record redSign tab"></i></span>
+	</div>
+	<div class="tabContent">
+			<ion-slide-box class="corps_slide" active-slide="corps_slide" disable-scroll="true" show-pager="false"  animation="slide-left-right-ios7">
+				<ion-slide class="chat_slide" id="chatS" delegate-handle="chatSlide">
+					<div class="chat_slideBox">
+						<ion-scroll class="chat_con" id="chat_con" delegate-handle="chat_con" has-bouncing="true" scrollbar-y="false" scrollDownOnLoad="true">
+							<ion-refresher class="chat_con_old" pulling-text="" pullMin="600" pulling-icon="" on-refresh="GetMoreRecord()" ng-if="!moreRecord"></ion-refresher>
+							<div class="chatPlayer" ng-if="messageArr.length" ng-repeat="chatItem in messageArr" ng-class="{true:'chatPlayerR',false:'chatPlayerL'}[chatItem.isSelf]" >
+								<div class="a-flex-start info" ng-if="!chatItem.groupSysType">
+									<img ng-if="chatItem.isOwner" class="top-center a-img-size captain" src="../../../img2.0/corps/zd_zy_dzbs.png" alt="" />
+									<img class="infoHead" ng-if="!chatItem.headImg" src="../../img2.0/common/touxiang_default.png" alt="" />
+									<img class="infoHead" ng-if="chatItem.headImg" ng-src="{{chatItem.headImg}}" onerror="loadDefaultImg(1)" alt="" />
+									<div class="name_date">
+										<p class="name a-text-color-cloudyBlue a-font-size-small">{{chatItem.fromName}}</p>
+										<p class="date a-text-color-cloudyBlue a-font-size-small" ng-if="chatItem.time!=messageArr[$index-1].time && chatItem.timeStamp-messageArr[$index-1].timeStamp>120000">{{chatItem.time}}</p>
+									</div>
+								</div>
+								<div class="chatDetial a-text-color-whit" style="" ng-if="!chatItem.groupSysType">
+									{{chatItem.data}}
+								</div>
+								<div class="sysInfoItem" ng-if="chatItem.groupSysType">
+									<span class="sysInfoTime a-font-size-small a-text-color-cloudyBlue">{{chatItem.time}}</span>
+									<span class="sysInfo a-font-size-small a-text-color-cloudyBlue a-background-gray" ng-class="{'sysLow':chatItem.groupSysType==1}" ng-bind-html="chatItem.data | trustHtml"></span>
+								</div>
+							</div>
+						</ion-scroll>
+						<div class="a-flex-between corps-buts">
+							<div class="item item-input upText">
+								<!--<textarea  contenteditable="true" placeholder="点击发言" focus-input type="text" ng-blur="changeH(false)" ng-focus="changeH(true)" name="chatMsg" id="chatMsg" ng-model="msgWill" value="" rows="" cols=""></textarea>-->
+								<input contenteditable="true" placeholder="点击发言" focus-input type="text" ng-blur="changeH(false)" ng-focus="changeH(true)" name="chatMsg" id="chatMsg" ng-model="msgWill" value="" />
+								<button ng-click="sendMsg(msgWill)" ng-disabled="firstSend"><i class="ion-arrow-up-c"></i></button>
+							</div>
+						</div>
+					</div>
+				</ion-slide>
+				<ion-slide class="chat_slide">
+					<div corps-player-list></div>
+					<div class="a-flex-between corps-buts">
+						<button ng-click="corpsQuit(teamDetail.captain)" class="font-weight a-font-size-small-x a-text-color-cloudyBlue a-buttonBig-corGay">退出战队</button>
+						<button ng-click="teamApply()" class="a-font-size-small-x a-text-color-whit font-weight a-buttonBig-purple red">申请列表<i ng-if="corpsApply" class="ion-record redSign"></i></button>
+					</div>
+				</ion-slide>
+				<ion-slide class="chat_slide">
+					<div class="a-flex-between corpsRankHead">
+						<span class="a-text-color-cloudyBlue a-font-size-small">公告</span>
+					</div>
+					<ion-content class="slidethr corpsRank" scroll="false">
+						<P ng-if="!teamDetail.memo" class="a-text-color-cloudyBlue a-font-size-medium noNew">暂无公告</P>
+						<P ng-if="teamDetail.memo" class="a-text-color-whit a-font-size-medium">{{teamDetail.memo}}</P>
+					</ion-content>
+					<div class="corps-buts">
+						<button ng-if="teamDetail.captain" ng-click="textEdit()" class="a-buttonBig-purple a-flex-center circleBut"><img src="../../img2.0/corps/zd_gg_dzck_bj.png" alt="" /></button>
+					</div>
+				</ion-slide>
+			</ion-slide-box>
+	</div>
+</ion-content>
+</ion-view>

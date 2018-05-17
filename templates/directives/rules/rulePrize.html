@@ -1,0 +1,28 @@
+<div class="rule_box">	
+	<h1 class="rule_title">
+		竞技规则
+		<i class="closeButton ion-ios-close-outline" ng-click="closeModal()"></i>
+	</h1>
+	<div class="rule_con">
+		<ion-scroll style="max-height: 92vh;">
+			<div class="ruleItems">	
+				<h2 class="title green"><i></i> 球星对战：</h2>
+				<p class="content">StarKings每日都会选出即将参加比赛的两名同位置的球星，根据他们在即将开始的真实比赛的表现数据，计算各自的 <span class="a-text-color-orange">表现值</span>，表现值高的一方获胜。</p>
+				<p class="content">玩家可以凭借自己的专业知识，<span class="a-text-color-orange">预判并支持两名球星谁的表现值更高，获得奖励</span></p>
+				<h2 class="title green"><i></i> 玩法规则：</h2>		
+				<p class="content">1. 为了保证公正性，我们会在真实比赛结束后对数据进行核实。并在<span class="a-text-color-orange">早上{{prizeStart}}</span>对当天凌晨及前一天晚上的比赛竞猜进行开奖。</p>
+				<p class="content">2. 若球员在比赛中没有上场，则该竞猜将以失效处理，退还用户所有投入的星钻。</p>
+				<p class="content">3. 若两位球星在该场比赛的表现值相同，则判定<span class="a-text-color-orange">右边的球员</span>（代表客场）获胜</p>
+				<h2 class="title green"><i></i> 奖金分配：</h2>
+				<p class="content">预判正确的玩家可以按自己支持的比例，获得的预判错误玩家投注相应的星币。也就是说自支持的钻石越多，或者对方球星的投注钻石越多，玩家可赢得的奖励就越多。
+星币可以兑换成丰富奖品，如<span class="a-text-color-orange">现金券</span>，也可以兑换成<span class="a-text-color-orange">星钻</span>参与更多的游戏。</p>
+				<h2 class="title green"><i></i> 表现值计算：</h2>
+				<div rule-exp></div>				
+				<h2 class="title green"><i></i> 免责说明：</h2>
+				<p class="content">球员数据均取自权威数据提供商，如果用户存在异议，我司拥有最终解释权。</p>
+				<!--<a href="#/tab/wode/help/problem">查看 <span>常见问题</span> </a>-->
+				
+			</div>
+		</ion-scroll>
+	</div>
+</div>	

@@ -1,0 +1,214 @@
+.qyxx {
+  top: 0rem;
+}
+.qyxx .qyxxTitle > .header.bar {
+  position: relative;
+}
+.qyxx .qyxx_header {
+  width: 100vw;
+  padding: 0.12rem 0.2rem;
+  background: #2c3440 url(../../img2.0/battle/sk_yjs_jdz_1.png) no-repeat top;
+  background-size: 100%;
+}
+.qyxx .qyxx_header > .qyxx_headerInfo > .qyxx_headerInfo-left > .headerImg > img {
+  width: 0.72rem;
+  border-radius: 50%;
+  border: 0.02rem solid #34ed41;
+}
+.qyxx .qyxx_header > .qyxx_headerInfo > .qyxx_headerInfo-left > .headerInfo {
+  margin-left: 0.12rem;
+}
+.qyxx .qyxx_header > .qyxx_headerInfo > .qyxx_headerInfo-left > .headerInfo > div:first-child {
+  margin-bottom: 0.12rem;
+}
+.qyxx .qyxx_header > .qyxx_headerInfo > .qyxx_headerInfo-left > .headerInfo > div:first-child > span:first-child {
+  margin-right: 0.1rem;
+}
+.qyxx .qyxx_header > .qyxx_headerInfo > .qyxx_headerInfo-left > .headerInfo > div:nth-child(2) > span:first-child {
+  margin-right: 0.06rem;
+}
+.qyxx .qyxx_header > .qyxx_headerInfo > .qyxx_headerInfo-left > .headerInfo > div:nth-child(2) > .playerPos {
+  width: 0.32rem;
+  height: 0.18rem;
+}
+.qyxx .qyxx_header > .qyxx_headerInfo > .qyxx_headerInfo-left > .headerInfo > div:nth-child(2) > .playerPos > div {
+  font-size: 0.12rem;
+}
+.qyxx .qyxx_header > .qyxx_headerInfo > .qyxx_headerInfo_right {
+  text-align: center;
+}
+.qyxx .qyxx_header > .qyxx_headerInfo > .qyxx_headerInfo_right > img {
+  width: 0.52rem;
+}
+.qyxx .qyxx_header > .qyxx_headerInfo > .qyxx_headerInfo_right > span {
+  display: block;
+  white-space: nowrap;
+}
+.qyxx .qyxx_header > .qyxx_headerDetial {
+  padding: 0.16rem 0.26rem 0px;
+}
+.qyxx .qyxx_header > .qyxx_headerDetial > .radialItem {
+  width: auto;
+}
+.qyxx .qyxx_header > .qyxx_headerDetial > .radialItem > .radial {
+  display: inline-block;
+  position: relative;
+  width: 0.58rem;
+  height: 0.58rem;
+  box-sizing: content-box;
+  border: 3px solid #3b434f;
+  border-radius: 50%;
+  box-shadow: inset 0px 4px 12px 0px rgba(0, 0, 0, 0.5);
+}
+.qyxx .qyxx_header > .qyxx_headerDetial > .radialItem > .radial > .centerCon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  text-align: center;
+  line-height: 0.6rem;
+}
+.qyxx .qyxx_header > .qyxx_headerDetial > .radialItem > .radial canvas {
+  width: 0.58rem;
+  height: 0.58rem;
+}
+.qyxx .playerStatus {
+  margin: 0.13rem 0.1rem 0.12rem;
+  padding: 0.1rem 0px;
+}
+.qyxx .playerStatus > h1 {
+  text-align: center;
+  padding-bottom: 0.1rem;
+}
+.qyxx .matchRecord {
+  margin: 0.13rem 0.1rem 0.12rem;
+  padding: 0.1rem 0px;
+  position: relative;
+}
+.qyxx .matchRecord > h1 {
+  text-align: center;
+  padding-bottom: 0.1rem;
+  margin: 0px 0.12rem;
+}
+.qyxx .matchRecord > .onlyActive {
+  display: block;
+  padding: 0.1rem;
+}
+.qyxx .matchRecord > .onlyActive > .a-toggle {
+  white-space: nowrap;
+  height: auto;
+}
+.qyxx .matchRecord > .onlyActive > .a-toggle .qyxx_toggle_font {
+  font-weight: bold;
+}
+.qyxx .matchRecord > .Htwo {
+  padding: 0px 0.06rem;
+  display: -webkit-flex;
+  display: flex;
+}
+.qyxx .matchRecord > .Htwo > div:first-child {
+  width: 25%;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft {
+  width: 98%;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .listInfo {
+  width: 100%;
+  height: .36rem;
+  color: #fff;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .listInfo > td {
+  text-align: center;
+  height: 0.34rem;
+  border-top: 0.016rem solid rgba(0, 0, 0, 0.2);
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox {
+  width: 100%;
+  height: 100%;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .time {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  color: #858ea0;
+  margin-right: 0.05rem;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .time > p {
+  line-height: 1.2em;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .time > .line {
+  border: none;
+  border-bottom: 1px solid #858ea0;
+  transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  width: 1.2em;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .teams {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .teams > span {
+  display: block;
+  font-size: 0.12rem;
+  line-height: 0.14rem;
+  text-align: center;
+  white-space: nowrap;
+  color: #858ea0;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .teams > span.isLight {
+  color: #fff;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .headInfo {
+  width: 100%;
+  height: .24rem;
+  line-height: .24rem;
+}
+.qyxx .matchRecord > .Htwo > div:first-child > .infoLeft .headInfo > th {
+  color: #8fea96;
+  font-size: .12rem;
+  text-align: center;
+}
+.qyxx .matchRecord > .Htwo > .scr {
+  width: 75%;
+  height: 100%;
+  left: inherit;
+  box-shadow: #000 0px 0px 0.5rem inset;
+}
+.qyxx .matchRecord > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem {
+  height: 0.36rem;
+}
+.qyxx .matchRecord > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem > td {
+  line-height: 0.36rem;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+}
+.qyxx .matchRecord > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem > td:nth-child(2) {
+  color: #34ed41;
+}
+.qyxx .matchRecord > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem:nth-child(2n) {
+  background-color: rgba(133, 142, 160, 0.1);
+}
+.qyxx .matchRecord > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem:nth-child(2n+1) {
+  background-color: rgba(133, 142, 160, 0.05);
+}
+.qyxx .matchRecord > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialTitle {
+  height: 0.24rem;
+}
+.qyxx .matchRecord > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialTitle > th {
+  line-height: 0.24rem;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0px 0.5em;
+}
+.qyxx.hasBtn {
+  bottom: 0.76rem;
+}
+.qyxxBtn {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 0rem 0.1rem;
+}

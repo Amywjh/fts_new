@@ -1,0 +1,122 @@
+<ion-view view-title="{{headTitle}}" class='creatRoom' hide-tabs>
+<!--头部-->
+<div header-rule></div>
+<!--创建房间-->
+<ion-content class="scroll room_create" scroll="true" direction="y" scrollbar-y=false delegate-handle="creatScroll" >
+		<div class="a-flex-start a-div-height-large a-pad-mar a-background-item roomname">
+			<h1 class="a-font-size-small a-text-color-light header">
+				房间名称:
+			</h1>
+			<div class="a-div-height-small-x content">
+				<input type="text" class="a-text-color-whit a-background-black"  ng-click="roominput()" name="roomname" id="roomname" value="" placeholder="{{nickname}}"/>
+			</div>
+		</div>
+		<div class="a-flex-start-column a-pad-mar a-background-item chooseGame">
+			<div class="a-flex-start-column a-con-padding a-parting-line league">
+				<h1 class="a-font-size-small a-text-color-light">
+				 	比赛赛事:
+				</h1>
+				<div class="leagueList">
+					<ion-scroll direction='x' scrollbar-x="false" class='boxs'>
+					<ul class="a-flex-start">
+						<li ng-repeat="league in creatroomdata"> <!--| orderBy:'league'-->
+							<ion-radio class="a-radio-medium leagueItem" ng-value="league.league" ng-model="creat_choosed.league" name='creat_league' ng-click="creatroomgame(league.league)">
+								<img ng-src="{{league.logo}}" />
+								<!--<img ng-if="!league.logo" src="../../img2.0/creatroom/creatLeague_{{league.league}}.png" />-->
+							</ion-radio>
+						</li>
+					</ul>
+					</ion-scroll>
+				</div>
+				
+			</div>
+			<div class="a-flex-start-column a-con-padding games">
+				<h1 class="a-font-size-small a-text-color-light">
+				 	比赛日期:
+				</h1>
+				<ul class="a-flex-start">
+					<li class='dataList' ng-if="choose_game" ng-repeat="(k,matchMsg) in matchList.matchMap track by $index" >
+						<ion-radio class="a-radio-medium" ng-value="k" ng-model="creat_choosed.matchId" name='creat_game' ng-click="chooseMacth(k)">
+							<span class="a-text-color-whitDark">{{k}}</span>
+						</ion-radio>
+					</li>
+				</ul>
+				<ul class="a-background-black matchListDefault">
+					<li ng-if="!matchChoosedList">
+						<div class="a-font-size-small a-text-color-whitDark" style="line-height: 5em;">
+							近一周内没有本赛事比赛，请选择其他赛事
+						</div>
+					</li>
+					<li ng-if="choose_game" ng-repeat='game_team in matchChoosedList track by $index'>
+						<span class="a-text-color-whitDark a-font-size-small"><i class="a-text-color-whitDark a-font-size-small" ng-if="game_team.nextDayFlag">次日&nbsp;</i>{{game_team.startTimePoint}}</span>
+						<span class="a-text-colorgreen a-font-size-small">{{game_team.homeName}}</span><img class="a-img-size" src="../../img2.0/joinroom/VS_cjfj.png"/><span class="a-text-colorgreen a-font-size-small">{{game_team.awayName}}</span>
+					</li>
+					<li ng-if="choose_wit">
+						<div class="a-font-size-small a-text-color-whitDark" style="line-height: 5em;">
+							赛事即将开始，敬请期待
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="a-flex-start-column a-pad-mar a-con-padding a-background-item awardRule">
+			<h1 class="a-flex-start a-font-size-small a-text-color-light">
+			 	奖励规则:&nbsp;&nbsp;<span  class="a-text-color-whitopc a-font-size-small-x" ng-if="creat_choosed.rewardPlanName">{{creat_choosed.rewardPlanName}}</span>
+			</h1>
+			<ul class="a-flex-between">
+				<ion-radio class="a-radio-small" ng-repeat='plan in contestType |orderBy:"rankCode" | limitTo:4'  ng-click="ackpot_plan(plan.name,plan.code)" ng-value="plan.code"  ng-model="creat_choosed.rewardPlanId"  name='creat_plan'>
+					<span class="a-text-color-whitDark">{{plan.name}}</span>
+				</ion-radio>
+			</ul>
+		</div>
+		<div class="a-flex-start-column a-pad-mar a-con-padding a-background-item awardRule">
+			<h1 class="a-flex-start a-font-size-small a-text-color-light">
+			 	入场人数:&nbsp;&nbsp;<span class="a-text-color-whitopc a-font-size-small-x">{{creat_choosed.num}}</span>
+			</h1>
+			<ul class="a-flex-between">
+					<ion-radio class="a-radio-small" ng-repeat="creatnum in creatroom_num.value" ng-value="creatnum.detial" ng-click="entry(creatnum.detial)" ng-model="creat_choosed.num" name='creatroom_entry_num' class='num' ng-if='creatnum.detial != "自定义"'>
+					 <span class="a-text-color-whitDark">{{creatnum.detial}}</span> 
+					</ion-radio>
+					<ion-radio class="a-radio-small" ng-repeat="creatnum in creatroom_num.value" ng-value="creatnum.detial" name='creatroom_entry_num' class='num' ng-if='creatnum.detial == "自定义"' ng-click='enter_c(0)'>
+					  <span class="a-text-color-whitDark">{{creatnum.detial}}</span> 
+					</ion-radio>
+			</ul>
+		</div>
+		<div class="a-flex-start-column a-pad-mar a-con-padding a-background-item awardRule">
+			<h1 class="a-flex-start a-font-size-small a-text-color-light">
+			 	入场费:&nbsp;<img class="a-img-size" src="../../img2.0/creatroom/cjfj_3.png"/><span class="a-text-color-whitopc a-font-size-small-x">{{creat_choosed.fee}}</span>
+			</h1>
+			<ul class="a-flex-between">
+				  <ion-radio class="a-radio-small" ng-repeat="fee in creatroom_fee.value"
+		           ng-value="fee.detial"
+		           ng-click="entry_fee(fee.detial)"
+		           ng-model="creat_choosed.fee" name='creatroom_entry_fee' class='num' ng-if='fee.detial != "自定义"'>
+					  <span class="a-text-color-whitDark">{{fee.detial}}</span> 
+					</ion-radio>
+					<ion-radio class="a-radio-small" ng-repeat="fee in creatroom_fee.value"
+		          	ng-value="fee.detial"
+		           	name='creatroom_entry_fee' class='num' ng-if='fee.detial == "自定义"' ng-click='enter_c(1)'>
+					  <span class="a-text-color-whitDark">{{fee.detial}}</span>
+					</ion-radio>
+			</ul>
+		</div>
+		<div class="a-flex-start-column a-pad-mar a-con-padding a-background-item awardNum">
+			<h1 class="a-font-size-small a-text-color-light">
+			 	预计最高奖励:
+			</h1>
+			<div class="a-flex-between a-con-padding awardNumCon">
+				 <ul class="leftAward">
+				 	<li class="a-flex-start" ng-if="rewardArr[0]>0"><span class="a-text-color-whitDark a-font-size-small-x">第一名</span><img class="a-img-size" src="../../img2.0/creatroom/cjfj_4.png" alt="" /><span class="a-font-family-special a-text-shawgreen a-font-size-medium-x">{{rewardArr[0]}}</span></li>
+				 	<li class="a-flex-start" ng-if="(creat_choosed.rewardPlanId==1 || creat_choosed.rewardPlanId==2) && rewardArr[1]>0" ><span class="a-text-color-whitDark a-font-size-small-x">第二名</span><img class="a-img-size" src="../../img2.0/creatroom/cjfj_4.png" alt="" /><span class="a-font-family-special a-text-shawgreen a-font-size-medium-x">{{rewardArr[1]}}</span></li>
+				 	<li class="a-flex-start" ng-if="(creat_choosed.rewardPlanId==1 || creat_choosed.rewardPlanId==2) && rewardArr[2]>0" ><span class="a-text-color-whitDark a-font-size-small-x">第三名</span><img class="a-img-size" src="../../img2.0/creatroom/cjfj_4.png" alt="" /><span class="a-font-family-special a-text-shawgreen a-font-size-medium-x">{{rewardArr[2]}}</span></li>
+				 	<div have-more ng-if="creat_choosed.rewardPlanId==2 && creat_choosed.num>15"></div>
+				 </ul>
+				 <div class="rightImg">
+				 	<img class="a-img-size" ng-src="../../img2.0/creatroom/cjfjB_{{creat_choosed.rewardPlanId}}.png"/>
+				 </div>
+			</div>
+			<button class="a-buttonBig-green a-text-color-whit a-font-size-medium" ng-class="{'a-buttonBig-unused':false}" ng-click='is_creat(creat_choosed)'>创建房间</button>
+		</div>
+</ion-content>
+</ion-view>
+

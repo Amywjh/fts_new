@@ -1,0 +1,31 @@
+<ion-modal-view class='shareModal'>
+	<div class="hand">
+		<img class="a-img-size" src="../../img2.0/guide/hand.png"/>
+	</div>
+	<div class="shareRoom" ng-if="shareAction=='shareRoom'">
+		<div class="shareText a-text-color-whit a-font-size-small-x">
+			使用右上角微信将房间<span class="a-text-color-light a-font-size-small-x">分享给好友</span>，您的好友点击<br />链接可以直接进房
+		</div>
+		<div class="">
+			<img class="a-img-size" src="../../img2.0/common/fx_fjfx_1.png" alt="" />
+		</div>
+		<div class="shareTextOR a-font-size-small-x a-text-color-whitDark">或</div>
+		<div class="shareText a-text-color-whit a-font-size-small-x">
+			您也可以把房间号告诉好友，好友输入<span class="a-text-color-light a-font-size-small-x">房间号</span><br /><span class="a-text-color-light a-font-size-small-x">快速进房</span>
+		</div>
+		<div class="maxImg">
+			<img class="a-img-size" src="../../img2.0/common/fx_fjfx_2.png" alt="" />
+		</div>
+	</div>
+	<div class="shareResult" ng-if="shareAction=='shareResult'">
+		<div class="shareText a-text-color-whit a-font-size-small-x">
+			使用右上角微信将StarKings<span class="a-text-color-light a-font-size-small-x">分享给好友</span>，您的好友<br />作为新用户进入游戏您就可以获得<span class="a-text-color-orange a-font-size-small-x">1星钻</span>奖励！
+		</div>
+		<div class="">
+			<img class="a-img-size" src="../../img2.0/common/fx_fjfx_1.png" alt="" />
+		</div>
+	</div>
+	<div class="buttonBox">
+		<button class="a-buttonBig-green" ng-click="closeShareModal()">确定</button>
+	</div>
+</ion-modal-view>

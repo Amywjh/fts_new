@@ -1,0 +1,121 @@
+.battle-lineup > .lineup-ksbz {
+  position: absolute;
+  top: 2rem;
+}
+.battle-lineup > .lineup-ksbz .dufu_bigbox {
+  margin-top: 0.5rem;
+}
+.battle-lineup {
+  position: relative;
+  height: 2.75rem;
+  overflow: auto;
+}
+.battle-lineup.oh {
+  overflow: hidden;
+}
+.battle_lineup_all > .lineup-ksbz.position,
+.battle-lineup > .lineup-ksbz.position,
+.battle_bestlineup_all > .lineup-ksbz.position {
+  bottom: 0!important;
+}
+.battle_lineup_all > .lineup-ksbz,
+.battle-lineup > .lineup-ksbz,
+.battle_bestlineup_all > .lineup-ksbz {
+  background: #d2d1d3;
+  overflow-y: auto;
+}
+.battle_lineup_all > .lineup-ksbz .lineupaniu_battle,
+.battle-lineup > .lineup-ksbz .lineupaniu_battle,
+.battle_bestlineup_all > .lineup-ksbz .lineupaniu_battle {
+  top: 0.2rem;
+}
+.battle_lineup_all > .lineup-ksbz .ksbz_bnts,
+.battle-lineup > .lineup-ksbz .ksbz_bnts,
+.battle_bestlineup_all > .lineup-ksbz .ksbz_bnts {
+  padding: 0px 2vw;
+}
+.battle_lineup_all > .lineup-ksbz.kkkk,
+.battle-lineup > .lineup-ksbz.kkkk,
+.battle_bestlineup_all > .lineup-ksbz.kkkk {
+  overflow: hidden;
+}
+.myroom_detial_tabs.mtop {
+  margin-top: 0.4rem!important ;
+}
+.myroom_detial_lineup {
+  height: 3.62rem;
+  padding-top: 0.1rem;
+  padding-bottom: .2rem ;
+}
+.myroom_detial_lineup.lowHeightSec {
+  height: 3.40rem;
+  padding-top: 0.2rem;
+}
+.myroom_detial_lineup.lowHeightSec .battle-lineup {
+  height: 2.45rem;
+}
+.myroom_detial_lineup.lowHeightThr {
+  height: 3.18rem;
+  padding-top: 0.2rem;
+}
+.myroom_detial_lineup.lowHeightThr .battle-lineup {
+  height: 2.2rem;
+}
+.myroom_detial_lineup.lessHeight {
+  height: 2.92rem;
+  padding-top: 0.2rem;
+}
+.myroom_detial_lineup.lessHeight .battle-lineup {
+  height: 1.95rem;
+}
+.myroom_detial_lineup.moreHeight {
+  height: 3.9rem;
+  padding-top: 0.2rem;
+}
+.myroom_detial_lineup.moreHeight .battle-lineup {
+  height: 2.9rem;
+}
+.lineupMsg {
+  position: absolute;
+  top: 0;
+  height: 3.6rem;
+  z-index: 40;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  text-align: center;
+  font-size: 0.44rem;
+  color: #333333;
+}
+.lineupMsg > div {
+  margin-top: 1rem;
+}
+.lineupMsg > div > img {
+  width: .8rem;
+  height: .68rem;
+  margin-bottom: .24rem;
+}
+.lineupMsg > div > p:last-child {
+  font-weight: bold;
+}
+.lineupMsg > div > p {
+  margin-bottom: .1rem;
+}
+.lineup-ctqd.bnt {
+  line-height: .36rem;
+  margin: 0.1rem auto 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.16rem;
+  color: #ffffff;
+  width: 95vw;
+  height: .36rem;
+  border-radius: 2px ;
+}
+#lineupClassics > .lineup-ksbz {
+  top: -0.5rem;
+  bottom: 1.4rem;
+  background: #d2d1d3;
+}
+#lineupClassics .lineup_tzan.lineupaniu.ksbz {
+  top: 0.5rem;
+}

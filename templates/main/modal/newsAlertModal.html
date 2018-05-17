@@ -1,0 +1,34 @@
+<ion-modal-view class='main_model'>
+	<div class="modelbox blackbg position-center">
+		<div class="closeNow" ng-click="newsAlertModel.hide()">
+			<i class="ion-ios-close-outline"></i>
+		</div>
+		<div class="modelbody mainH">
+			<div class="news_title">
+				<span ng-repeat="msg in titleMsg" ng-click="newsBtn(msg)" class="a-font-size-small-x " ng-class="{'abled':msg.disabled}">{{msg.msg}}</span>
+			</div>
+			<ion-slide-box class="newsSlide" show-pager="false"  disable-scroll="true" active-slide="newsIndex">
+				<ion-slide>
+					<ion-content class="newsList"  scrollbar-y="false">
+						<ul>
+							<li class="a-flex-start" ng-repeat="newData in newsAll" ng-click="onlyNewBtn(newData)">
+								<div class="bg_newImg" ng-class="{'read':newData.status}"></div>
+								<p class="a-font-size-small-x a-text-color-whit" ng-class="{'a-text-color-whitDark':newData.status}">{{newData.summary}}</p>
+							</li>
+							<li class="a-flex-center tail" ng-if="newsAllNum>=20">
+								<p class="a-text-color-whitDark a-font-size-small">最多保留20条</p>
+							</li>
+							<li class="a-flex-center tail" ng-if="newsAllNum == 0" style="margin-top: 1rem;">
+								<p class="a-text-color-whitDark a-font-size-small-x">暂无消息</p>
+							</li>
+						</ul>
+					</ion-content>
+				</ion-slide>
+				<ion-slide>
+					<img class="noticeImg" ng-if="noctiAdata" ng-src="{{noctiAdata[1].pic1}}" alt="" />
+					<p class="a-flex-center a-text-color-whitDark a-font-size-small-x" style="margin-top: 1.2rem;" ng-if="!noctiAdata || (noctiAdata && !noctiAdata[1])">暂无活动</p>
+				</ion-slide>
+			</ion-slide-box>
+		</div>
+	</div>
+</ion-modal-view>

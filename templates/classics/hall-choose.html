@@ -1,0 +1,37 @@
+<ion-modal-view class='hall-choose-all'>
+   <div class='hall-choose blackroom'>
+   	 <h2><span>入场人数:</span><span>{{peopleType}}</span></h2>
+   	 <div class="peoplechose">
+	    <ion-radio ng-click='peoplechosetype(creatnum.name)' class="radiolist" ng-repeat="creatnum in choosedata.limitNum" ng-value="creatnum.id" ng-model="choosedRoom.limitNumId" name='choose_entry_num' class='num'>
+		  {{creatnum.name}}
+		</ion-radio>
+   	 </div>
+   	 <h2 class="mt"><span>入场费用:</span><span><img src="../../img2.0/hall/jdzdt_11.png" />&nbsp;{{feeType}}</span></h2>
+   	 <div class="feechose" style="margin-bottom: 0;">
+   	 	<ion-radio ng-click='feechosetype(fee.name)' class="radiolist" ng-repeat="fee in choosedata.entry" ng-value="fee.id" ng-model="choosedRoom.entryId" name='choose_entry_fee' class='num'>
+				  <span class="a-text-color-whitDark">{{fee.name}}</span> 
+		</ion-radio>
+   	 </div>
+   	 <div class="feechose" style="-webkit-justify-content: flex-start;justify-content: flex-start;">
+   	 	<ion-radio ng-click='feechosetype(fee.name)' class="radiolist" ng-repeat="fee in choosedata.list" ng-value="fee.id" ng-model="choosedRoom.entryId" name='choose_entry_fee' class='num'>
+				  <span class="a-text-color-whitDark">{{fee.name}}</span> 
+		</ion-radio>
+   	 </div>
+   	 <div class="pageline"></div>
+   	 <div class="toggle_all">		
+		<ion-toggle ng-click="roomType(choosedRoom.roomType)" ng-model="choosedRoom.roomType" ng-checked="{{choosedRoom.roomType}}" ><!--返回的是布尔值-->
+		  	<span ng-if='!choosedRoom.roomType'>显示已满房间 </span>
+		  	<span ng-if='choosedRoom.roomType' style="color:rgb(52,237,65)">显示已满房间 </span>
+		</ion-toggle>
+		<ion-toggle ng-click="isJoin(choosedRoom.isJoin)" ng-model="choosedRoom.isJoin" ng-checked="choosedRoom.isJoin">
+		  	<span ng-if='!choosedRoom.isJoin'>已参加房间</span>
+		  	<span ng-if='choosedRoom.isJoin' style="color:rgb(52,237,65)">已参加房间</span>
+		</ion-toggle>
+	</div>
+	<div class="pageline"></div>
+	<div class="bnts">
+		<div class="blackroom a-flex-center" ng-click='exitchoose()'><span>恢复默认</span></div>		
+		<div class="greenbg a-flex-center" ng-click = 'commitchoose(choosedRoom,matchList)'><span>确定</span></div>
+	</div>	
+   </div>
+</ion-modal-view>

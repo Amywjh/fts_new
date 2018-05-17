@@ -1,0 +1,43 @@
+<div class="a-flex-center ownTeams" ng-if="!prize.sameMatch">
+	<div class="leftTeam a-flex-center-column">
+		<p>
+			<span class="homeTeam a-font-size-small-s" ng-class="{true:'a-text-color-whit',false:'a-text-color-whitDark'}[prize.leftMatch.homeTeamName==prize.home.teamName]">{{prize.leftMatch.homeTeamName}}</span>
+			<span ng-if="prize.leftMatch.statusDisplay<3"><img class="a-img-size" src="../../../img2.0/lineup2.0/xzqy_qdxz_vs.png"/></span>
+			<span ng-if="prize.leftMatch.statusDisplay>=3" class="a-font-size-small a-text-shawgreen">{{prize.leftMatch.homeScore}}:{{prize.leftMatch.awayScore}}</span>
+			<span class="awayTeam a-font-size-small-s" ng-class="{true:'a-text-color-whit',false:'a-text-color-whitDark'}[prize.leftMatch.awayTeamName==prize.home.teamName]">{{prize.leftMatch.awayTeamName}}</span>
+		</p>
+		<p class="a-font-size-small-s a-text-colorgreen" ng-if="prize.leftMatch.statusDisplay<3">未开始</p>
+		<p class="a-font-size-small-s a-text-color-whitDark" ng-if="prize.leftMatch.statusDisplay>=5">已结束</p>
+		<p class="a-font-size-small-s a-text-color-light" ng-if="prize.leftMatch.statusDisplay>=3 && prize.leftMatch.statusDisplay<5">
+			<i class="ion-ios-clock-outline matchGoing"></i>{{prize.leftMatch.matchLengthWithMinute}}'
+		</p>
+	</div>
+	<div class="rightTeam a-flex-center-column">
+		<p>
+			<span class="homeTeam a-font-size-small-s" ng-class="{true:'a-text-color-whit',false:'a-text-color-whitDark'}[prize.rightMatch.homeTeamName==prize.away.teamName]">{{prize.rightMatch.homeTeamName}}</span>
+			<span ng-if="prize.rightMatch.statusDisplay<3"><img class="a-img-size" src="../../../img2.0/lineup2.0/xzqy_qdxz_vs.png"/></span>
+			<span ng-if="prize.rightMatch.statusDisplay>=3" class="a-font-size-small a-text-shawgreen">{{prize.rightMatch.homeScore}}:{{prize.rightMatch.awayScore}}</span>
+			<span class="awayTeam a-font-size-small-s" ng-class="{true:'a-text-color-whit',false:'a-text-color-whitDark'}[prize.rightMatch.awayTeamName==prize.away.teamName]">{{prize.rightMatch.awayTeamName}}</span>
+		</p>
+		<p class="a-font-size-small-s a-text-colorgreen" ng-if="prize.rightMatch.statusDisplay<3">未开始</p>
+		<p class="a-font-size-small-s a-text-color-whitDark" ng-if="prize.rightMatch.statusDisplay>=5">已结束</p>
+		<p class="a-font-size-small-s a-text-color-light" ng-if="prize.rightMatch.statusDisplay>=3 && prize.rightMatch.statusDisplay<5">
+			<i class="ion-ios-clock-outline matchGoing"></i>{{prize.rightMatch.matchLengthWithMinute}}'
+		</p>
+	</div>
+</div>
+<div class="a-flex-center ownTeams" ng-if="prize.sameMatch">
+	<div class="leftTeam a-flex-center-column">
+		<p>
+			<span class="homeTeam a-font-size-small-s a-text-color-whit">{{prize.leftMatch.homeTeamName}}</span>
+			<span ng-if="prize.leftMatch.statusDisplay<3"><img class="a-img-size" src="../../../img2.0/lineup2.0/xzqy_qdxz_vs.png"/></span>
+			<span ng-if="prize.leftMatch.statusDisplay>=3" class="a-font-size-small a-text-shawgreen">{{prize.leftMatch.homeScore}}:{{prize.leftMatch.awayScore}}</span>
+			<span class="awayTeam a-font-size-small-s a-text-color-whit">{{prize.leftMatch.awayTeamName}}</span>
+		</p>
+		<p class="a-font-size-small-s a-text-colorgreen" ng-if="prize.leftMatch.statusDisplay<3">未开始</p>
+		<p class="a-font-size-small-s a-text-color-whitDark" ng-if="prize.leftMatch.statusDisplay>=5">已结束</p>
+		<p class="a-font-size-small-s a-text-color-light" ng-if="prize.leftMatch.statusDisplay>=3 && prize.leftMatch.statusDisplay<5">
+			<i class="ion-ios-clock-outline matchGoing"></i>{{prize.leftMatch.matchLengthWithMinute}}'
+		</p>
+	</div>
+</div>

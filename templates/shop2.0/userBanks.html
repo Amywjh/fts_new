@@ -1,0 +1,11 @@
+<ion-modal-view  class="phone bgBlue modal">
+<div class="phoneHead bank">
+  	若您使用的银行不在列表中，请及时通过公众号与我们联系，并将您使用的银行告诉我们，我们会尽快处理。
+</div>
+<ion-content class="banktop">
+  <div class="list">
+    <div class="item" ng-repeat = "bank in banks" ng-click="bankBtn(bank.bankId,bank.bankName)">{{bank.bankName}}</div> 	
+  </div>
+</ion-content>
+</ion-modal-view>
+

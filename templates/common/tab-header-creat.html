@@ -1,0 +1,21 @@
+<!--头部-->
+<ion-header-bar align-title="left" class="header bar-positive" >
+		<!--用户信息-->
+	 	<div class="logo_name hasRight">
+		  	<a ng-click="nameGet(userData.userId)" class="left">
+		  		<img ng-if="userData.head_logo_url" ng-src="{{userData.head_logo_url}}" onerror="loadDefaultImg(1)"/>
+		  		<img ng-if="!userData.head_logo_url" src="../../img/common/touxiang_default.png" />
+		  		<span ng-cloak>{{userData.name}}</span>
+		  	</a>
+		</div>
+	 	 <!--个人财富-->
+		<h1 class="wealthStar hasRight">
+			<img src="../../img2.0/common/zs_28.png" alt="" />
+		  	<span ng-cloak>{{userData.dmd}}</span>
+		</h1>
+	  <!--大厅默认显示的头部右侧-->
+	  <div class="buttons buttons-right">
+	  	<button class="left a-button-blue" ng-click="quickRoom()" >快速进房</button>
+    	<button class="right greenbg" ng-click="creatroom()" >创建房间</button>
+	  </div>
+</ion-header-bar>

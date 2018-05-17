@@ -1,0 +1,22 @@
+<ion-view view-title="赛程"  class="wode-sch" hide-tabs>
+	<div class="schhead" >
+		<ion-scroll direction='x' scrollbar-x="false" style="white-space: nowrap">
+			<li  ng-repeat="league in leagueList" ng-click="clkleague(league)" ng-class="{'check':league.check == true}"><img ng-src="{{league.logo_url}}" alt="" /></li>
+		</ion-scroll>
+	</div>
+	<div class='calendar scroll-content-black-up' id='calendar'></div>
+	<ion-content class="schcontent roomwarp teams"  delegate-handle="sch_small">
+		<div ng-if="tongzhi" class="font-weight a-text-color-light a-font-size-small-x" style="text-align: center;height: .4rem;line-height: .4rem;">{{tongzhi}}</div>
+		<ul bg-if="temalist" class="teamlist" style="text-align: center;">
+				<li class="a-flex-between" ng-if='temalist' ng-repeat="team in temalist">
+					<div ng-click="teamBtn(team.homeTeamId)"><img ng-src="{{team.homeLogo}}" /><p>{{team.homeName}}</p></div>
+					<div class="center">
+						<p><span class="a-font-size-small a-text-color-whit" ng-if="team.nextDayFlag">次日</span>{{team.startTimePoint}}</p>
+						<p style="font-size: .24rem;margin-top: .02rem;" class="font-weight a-text-shawgreen" ng-if="team.result && team.status != 0">{{team.result}}</p>
+						<img ng-if="team.status == 0" src="../../img2.0/hall/jdzdt_tc_2.png" />
+					</div>
+					<div ng-click="teamBtn(team.awayTeamId)"><img ng-src="{{team.awayLogo}}" /><p>{{team.awayName}}</p></div>
+				</li>
+		</ul>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-modal-view class='roommodalbg'>
+	<div class="roomwarp teams modelbg">
+		<div class="closem" ng-click='teams.remove()'></div>
+		<ion-content delegate-handle="teamsScroll">
+		<div class="titlet">
+			<h1>比赛列表</h1>
+			<p>{{teamsdate}} (共{{teamsdegree}}场)</p>
+		</div>
+		<div class="pageline"></div>
+			<ul class="teamlist">
+				<li class="a-flex-between" ng-if='temalist' ng-repeat="team in temalist | orderBy:['nextDayFlag','startTimePoint','-focusMatch']">
+					<img class="a-img-size fightLogo" ng-if="team.focusMatch" src="../../img2.0/hall/fight.png"/>
+					<div><img ng-src="{{team.homeLogo}}" /><p>{{team.homeName}}</p></div>
+					<div class="center"><p><span class="a-font-size-small a-text-color-whit" ng-if="team.nextDayFlag">次日</span>{{team.startTimePoint}}</p><img src="../../img2.0/hall/jdzdt_tc_2.png" /></div>
+					<div><img ng-src="{{team.awayLogo}}" /><p>{{team.awayName}}</p></div>
+				</li>
+				<li class="a-flex-between" ng-repeat="team in hallroomall.matchList | orderBy:['date','time','-focusMatch']">
+					<img class="a-img-size fightLogo" ng-if="team.focusMatch" src="../../img2.0/hall/fight.png"/>
+					<div><img ng-src="{{team.homeTeamLogo}}" /><p>{{team.homeTeamName}}</p></div>
+					<div class="center"><p><span class="a-font-size-small a-text-color-whit" ng-if="team.date">{{team.date}}</span>{{team.time}}</p><img src="../../img2.0/hall/jdzdt_tc_2.png" /></div>
+					<div><img ng-src="{{team.awayTeamLogo}}" /><p>{{team.awayTeamName}}</p></div>
+				</li>
+			</ul>
+			</ion-content>
+		</div>
+</ion-modal-view>

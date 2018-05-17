@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width,height=device-height"/>
+	<script src="lib/jq/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		body,html,p{
+			margin: 0px;padding: 0px;border: 0px;
+			line-height: 1.4em;
+		}
+		.bg{
+			width: 100vw;height: 100vh;background-color: #ccc;
+		}
+		.bg >#onlyNewUser{
+			width: 100vw;height: 100vh;
+		}
+		.fromInfo{
+			display: inline-block;
+		    position: absolute;
+		    right: 10%;
+		    top: 6%;
+		}
+		.fromInfo >p{
+			color: #f9dd00;font-size: 0.16rem;text-align: right;
+			margin: 0.04rem 0px;
+		}
+		.fromInfo >img#fromLogo{
+			width: 0.8rem;height: 0.8rem;border-radius: 50%;
+		    box-sizing: border-box;
+		    border: 0.03rem solid #FFFFFF;
+		    background: #FFFFFF;
+		}
+		.fromInfo >#nickName{
+			margin-top: 0.08rem;
+			font-weight: bold;
+			font-size: 0.22rem;color: #FFFFFF;
+		}
+	</style>
+	<body>
+		<div class="bg">
+			<img id="onlyNewUser" src="img2.0/common/fx_ydgzgzh_bg.jpg"/>
+			<div class="fromInfo">
+				<img id="fromLogo" src="img2.0/common/player_default.png"/>
+				<p id="nickName">StarKings</p>
+				<p>邀&nbsp;请&nbsp;您</p>
+			</div>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	document.documentElement.style.fontSize = document.documentElement.clientHeight / 6.67 + 'px';
+	var paramArr = location.search.substring(1).split("&");
+	for(var i=0;i<paramArr.length;i++){
+		var secondArr = paramArr[i].split("=");
+		if(secondArr[0]=="fromId"){
+			var _fromId = secondArr[1];
+			$.ajax({
+				url: "/api/v2/mine/selfInfo",
+				headers: {
+					'uk': _fromId
+				},
+				type: "POST",
+				success:function(data){
+					if(!data.code){
+						$("#fromLogo").attr("src",data.data.head_logo_url);
+						$("#nickName").html(data.data.name);
+					}
+				}
+			});
+		}
+	}
+	
+</script>

@@ -1,0 +1,20 @@
+<!--竞猜战赛况list-->
+<div class="battle_bg" ng-if='totalCount==0'>
+	<img src="../../img2.0/battle/dt_kzt.png" alt="" />
+	<span ng-if='battlestatusAct==0' ng-click="goMain()" ><div>您还没有未开始的竞猜</div><div>立即前往<span>参与竞猜</span></div></span>
+	<span ng-if='battlestatusAct==1' ng-click="goMain()" ><div>您还没有进行中的竞猜</div><div>立即前往<span>参与竞猜</span></div></span>
+	<span ng-if='battlestatusAct==2 && !historyRecord' ng-click="goMain()" ><div>您还没有已结束的竞猜</div><div>立即前往<span>参与竞猜</span></div></span>
+	<span ng-if='battlestatusAct==2 && historyRecord' style="margin-top: .6rem;"><div style="color: rgb(164, 178, 205);font-weight: 100;">他还没参加过此类玩法</div></span>
+</div>
+<ion-content class="has-tt has-tt-battle prizes-room"  delegate-handle="prizeslist" has-bouncing="true"scrollbar-y='false' >
+	<div ng-if='prize.status==0' prizes-item-nostart ng-repeat="prize in battle_prizes track by $index"></div>
+	<div ng-if='prize.status==1' prizes-item-going ng-repeat="prize in battle_prizes track by $index" ng-click="go_detial(prize.id,0,0,1)"></div>
+	<!--<div ng-if='prize.status==2' prizes-item-end ng-repeat="prize in battle_prizes track by $index"  ng-click="go_detial(prize.id,0,0,2,prize.result)"></div>-->		
+	<div ng-if='box.status==2' ng-repeat="box in prizesTimeBox track by $index" >
+		<h2 style="color: #fff;font-size: .13rem;text-align: center;margin: .12rem 0 .06rem;">{{box.timeList}}</h2>
+		<div prizes-item-end ng-repeat="prize in box.data track by $index"  ng-click="go_detial(prize.id,0,0,2,prize.result)"></div>
+	</div>
+  	<ion-infinite-scroll class="prizes_loadmore" immediate-check="false" on-infinite="morePrizesRooms()" distance="20%" style="height: 1px;" ng-if="!hasData"></ion-infinite-scroll>  
+</ion-content>
+<!--<div ng-if='battlestatusAct==0' prizes-vote></div>-->
+<!--<div class="returntop" ng-if="config.showTop" on-tap='hallshow()'></div>-->

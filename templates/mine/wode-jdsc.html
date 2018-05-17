@@ -1,0 +1,52 @@
+
+<ion-view view-title="我的"  class="wode-jdsc" hide-tabs>
+<!--头部-->
+<ion-header-bar align-title="center" class="header_wode wode" >
+  	<!--<div class="buttons" ng-click="goback()" >
+  		<a class="left"><span class="jiantou"></span>返回</a>
+  	</div>-->
+	<h1 class="title">
+			商城
+	</h1>
+	<div class="buttons">
+        <a class="right"><img src="./img/about1.png"></a>
+    </div>	
+</ion-header-bar>
+<!--弹出说明窗-->
+<div class="jq_sm">
+	<div>		
+		<h2>兑换规则</h2>		
+		<p>1、京东E卡为电子卡，将卡号、密码通过微信方式通知用户</p>
+		<p>2、京东E卡通过星币兑换，兑换比例为1:10</p>				
+		<h2>适用范围</h2>		
+		<p>兑换的京东E卡，仅在京东商城使用。</p>				
+		<h2>免责声明</h2>		
+		<p>1、我司所发送的京东E卡均在有效期内，如果用户未在收到后使用，造成的损失，我司不予补偿。</p>
+		<p>2、由用户造成的卡密丢失或使用不当等情况，因此造成的后果由用户自行承担，与我司无关。请用户妥善保管卡号密码。</p>
+	</div>
+</div>
+<div class="wode_jdsc_head">
+    <div class="jdsc_je">
+     	<span><img src="./img/room_new/room_new_coin.png"/>{{userData.dmd}}</span>     		
+    </div>
+</div>
+<!--内容-->
+<ion-content lazy-scroll class="has-tt jdsc_content">     
+     <ul class="wode_jdsc_ul list">
+     	<div class="item" ng-repeat="jdsc in jdsc_data track by $index">
+     		<div>
+     			<img image-lazy-src="{{jdsc.jdicon}}" image-lazy-distance-from-bottom-to-load="100" />
+     		</div>
+     		<div>     		
+     		   <li>{{jdsc.jd_name}}</li>
+     		   <li>面值{{jdsc.jd_mon}}元</li>
+     		   <li>
+     		   	   <span>{{jdsc.jd_xb}}</span>
+     		   </li>
+     		   <li ng-click="wode_jd(jdsc.jd_mon)">{{jdsc.jd_dh}}</li>
+     		</div>
+     	</div>     	
+     </ul>
+</ion-content>
+</ion-view>
+

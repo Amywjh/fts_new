@@ -1,0 +1,55 @@
+<ion-view view-title="商城"  class="mineAll wode-sc bgBlue" hide-tabs >
+<!--头部-->
+<header-shop class="hide_record"></header-shop>
+<!--<style type="text/css">
+	.hide_record >.header>.buttons>.shopExchange{
+		display: none;
+	}
+</style>-->
+<ion-content class="has-tt" scroll="false">
+	<div class="header_bg nheight">
+		<div>
+			<div class="padd act" ng-click="recharge(0)">现金红包</div>
+			<div class="padd" ng-click="recharge(1)">星钻兑换</div>
+		</div>
+	</div>
+	<ion-slide-box class="sc_slide" active-slide="slide_page" disable-scroll="true" delegate-handle="battle_slide" show-pager="false">
+		<ion-slide>
+			<!--<div class="shop_bg">
+				<img src="../../img2.0/shop2.0/sc_2.png" alt="" />
+				<div>
+					<div>
+						<p class="font-weight">现金兑换券</p>
+						<p>最低20元</p>
+					</div>
+					<div class="btn" ng-click="shopExchange()">立即兑换</div>
+				</div>
+			</div>-->
+			<ul class="payment">
+				<!--<li class="a-flex-start" ng-click="shopExchange()"><img src="../../img2.0/shop2.0/sc_2.png" alt="" /><span><h1 class="font-weight">现金兑换券</h1><p>最低20元，最高5万元</p><p>银行卡直接入账，手续费5%</p></span><i class="ion-chevron-right"></i></li>-->
+				<li class="a-flex-start" ng-click="wxPacket()"><img src="../../img2.0/shop2.0/hongbao_wechat.png" alt="" /><span><h1 class="font-weight">微信红包</h1><p>最低20元，最高200元</p></span><i class="ion-chevron-right"></i></li>
+				<li class="a-flex-start" ng-click="zfbPacket()"><img src="../../img2.0/shop2.0/hongbao_alipay.png" alt="" /><span><h1 class="font-weight">支付宝红包</h1><p>最低20元，最高2万元</p></span><i class="ion-chevron-right"></i></li>
+			</ul>
+		</ion-slide>
+		<ion-slide>
+			<div class="convet_head">
+				<div>我的星币：<img src="../../img2.0/shop2.0/home/dh_xb_1.png" alt="" />&nbsp;<span>{{userData.coin}}</span>（可换&nbsp;<img src="../../img2.0/shop2.0/home/dh_xz_2.png" alt="" />&nbsp;<span>{{dmdInt}}</span>）</div>
+			    <div ng-if="dmdInt" class="but" ng-click="Gold({'coin':userData.coin,'jewel':dmdInt},true)">全部兑换</div>
+			</div>
+			<div class="slide_list" ng-repeat="coinList in coin">
+				<div class="slide_col" ng-repeat="coinItem in coinList" ng-click="Gold(coinItem)">
+					<img ng-if="!coinItem.noExchange" src="../../img2.0/shop2.0/print/cz_xz_2.png" alt="" />
+					<img ng-if="coinItem.noExchange" src="../../img2.0/shop2.0/home/dh_xz_1_disabled.png" alt="" />
+					<p ng-class="{true:'font_col'}[coinItem.noExchange]">{{coinItem.jewel}}</p>
+					<div ng-class="{true:'font_col'}[coinItem.noExchange]">
+						<img ng-if="!coinItem.noExchange" src="../../img2.0/shop2.0/home/dh_xb_2.png" alt="" />
+						<img ng-if="coinItem.noExchange" src="../../img2.0/shop2.0/home/dh_xb_2_disabled.png" alt="" />
+						{{coinItem.coin}}
+					</div>
+				</div>
+			</div>
+			<p class="proto"><span class="a-font-size-medium">10</span>星币=<span class="a-font-size-medium">1</span>星钻</p>
+		</ion-slide>
+	</ion-slide-box>
+</ion-content>
+</ion-view>

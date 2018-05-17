@@ -1,0 +1,42 @@
+<ion-view view-title="选择战队图标" class="corpsBack" hide-tabs>
+	<ion-content class="logoChoose" scroll='false' lazy-scroll>
+        <div class="a-flex-between headcss">
+        	<h1 class="a-font-size-medium-x font-weight a-text-color-whit">请选择战队图标</h1>
+        	<button class="a-text-color-whit a-flex-center font-weight a-font-size-small a-buttonSmall-green">
+        		<i class="ion-plus-round"></i>&nbsp;自己上传
+        		<input id="capture" onchange="angular.element(this).scope().imgChange(this)" name="file" type="file" multiple accept="image/jpeg,image/png,image/jpg" style="width: 100%; height:  100%; display:block; border: none;opacity: 0;position: absolute;top: 0;left: 0;" />  
+        	</button>
+        </div>
+        <div class="logoR">
+        	<!--<p class="font-weight a-font-size-medium">
+        		<span class="a-text-color-cloudyBlue" ng-if="kk == 0">英超</span>
+        		<span class="a-text-color-cloudyBlue" ng-if="kk == 1">中超</span>
+        		<span class="a-text-color-cloudyBlue" ng-if="kk == 2">欧冠</span>
+        		<span class="a-text-color-cloudyBlue" ng-if="kk == 3">意甲</span>
+        		<span class="a-text-color-cloudyBlue" ng-if="kk == 4">西甲</span>
+        	</p>-->
+        	<div class="imgChoose">
+        		<ion-radio ng-repeat="item in leagueTeams"
+		                   ng-value="item.id"
+		                   ng-model="data.serverSide"
+		                   ng-change="serverSideChange(item)"
+		                   name="server-side">
+		          <div class="box-six" style="position: relative;margin: auto;width: .74rem;height: .84rem;background: url(../../img2.0/corps/zd_tx_bg_big.png)no-repeat 50% center;background-size: 110%;">
+					<div class="con-show01">  
+				        <div class="con-show02">  
+				          <div class="con-show03"> 
+				          	<img  class="position-center" style="top: 53%;" img-resize image-lazy-src="{{item.logo_url}}" image-lazy-distance-from-bottom-to-load="100" />
+				          	<div class="con-show4"></div>
+				          </div>  
+				        </div>  
+				     </div>  
+			   </div> 
+		        </ion-radio>
+        	</div>
+        </div>
+	</ion-content>
+	<div class="logoChooseSubmit">
+		<button id="bottomBut" ng-click="submitLogo()" class="a-flex-center a-font-size-medium font-weight a-text-color-whit a-buttonBig-purple">确定</button>
+	</div>
+</ion-view>
+

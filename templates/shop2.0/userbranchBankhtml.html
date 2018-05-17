@@ -1,0 +1,14 @@
+<ion-view view-title='银行分行'  class="phone bgBlue modal">
+<div class="shopMsg bgBlue" ng-if="bankMsg">
+	<img src="../../img2.0/shop2.0/newShop/dhjl_4.png" alt="" />
+	<p class="a-text-color-violet a-font-size-small">很抱歉，您使用的银行卡当前地区暂不支持。<br />建议您更换银行卡，使用大型银行时效性更快</p>
+</div>
+<div class="phoneHead" style="font-size: .14rem;">
+  	若您不清楚您的开户行，请选择银行总行或分行
+</div>
+<ion-content class="banktop">
+  <div class="list">
+    <div class="item" ng-repeat = "branch in bankBranchs" ng-click="bankbranchBtn(branch.branchCode,branch.branchName)">{{branch.branchName}}</div> 	
+  </div>
+</ion-content>
+</ion-view>

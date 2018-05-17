@@ -1,0 +1,50 @@
+.iscreatroom-all {
+  width: 88vw;
+  margin: 0px 6vw;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%) !important;
+  -webkit-transform: translateY(-50%) !important;
+  border-radius: 0.02rem;
+}
+.iscreatroom-all .iscreatroom-info {
+  margin-top: 0px;
+  padding-top: 0.16rem;
+  padding-bottom: 0.16rem;
+}
+.iscreatroom-all .iscreatroom-info > ul > .liparent {
+  height: 0.3rem;
+}
+.iscreatroom-all .iscreatroom-info > ul > .liparent > span {
+  width: .9rem;
+  white-space: nowrap;
+}
+.iscreatroom-all .iscreatroom-info > ul > .matchListBox {
+  height: 0.76rem;
+  width: 100%;
+  overflow: hidden;
+}
+.iscreatroom-all .iscreatroom-info > ul > .matchListBox > .scroll-view {
+  height: 100%;
+}
+.iscreatroom-all .iscreatroom-info > ul > .fee_num {
+  padding-bottom: 0.07rem;
+  padding-top: 0.07rem;
+}
+.iscreatroom-all .iscreatroom-info > ul > .fee_num > ul > li {
+  height: 0.3rem;
+}
+.iscreatroom-all .iscreatroom-info > ul > .fee_num > ul > li > span {
+  width: 7.5em;
+}
+.iscreatroom-all .iscreatroom-info > ul > .fee_num > ul > li > img {
+  margin-left: 0px;
+  margin-right: 0.04rem;
+}
+.iscreatroom-all .iscreatroom-info > ul > .remidefee {
+  height: 0.64rem;
+}
+.iscreatroom-all .iscreatroom-info > ul > .remidefee > img {
+  margin-right: 0.04rem;
+}

@@ -1,0 +1,19 @@
+<ion-modal-view class='roommodalbg'>
+	<div class="roomwarp teams modelbg">
+		<div class="closem" ng-click='teamList.hide()'></div>
+		<ion-content delegate-handle="teamsScroll">
+		<div class="titlet">
+			<h1>比赛列表</h1>
+			<p>{{teamsdate}} (共{{games_num}}场)</p>
+		</div>
+		<div class="pageline"></div>
+			<ul class="teamlist">
+				<li class="a-flex-between" ng-if="playId==3" ng-repeat="team in battleRankData_result_other">
+					<div><img ng-src="{{team.homeTeamLogo}}" /><p>{{team.homeTeamName}}</p></div>
+					<div class="center"><span class="fontcolor" style="font-size: .36rem;">{{team.score}}</span></div>
+					<div><img ng-src="{{team.awayTeamLogo}}" /><p>{{team.awayTeamName}}</p></div>
+				</li>
+			</ul>
+			</ion-content>
+		</div>
+</ion-modal-view>

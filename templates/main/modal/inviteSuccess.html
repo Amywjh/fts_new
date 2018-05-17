@@ -1,0 +1,16 @@
+<ion-modal-view class='main_model'>
+	<div class="modelbox bg_img position-center">
+		<div class="closeb" ng-click="inviteSuccessMod.remove()"></div>
+		<div class="modelbody">
+			<div class="textHtml">
+				<div class="a-font-size-small-s invitBox">
+				<p class="a-text-color-whit a-font-size-small-x">您成功邀请好友</p>
+				<img ng-if="!msg.picUrl" class="userHead" src="../../../img2.0/common/touxiang_default.png" alt="" />
+				<img ng-if="msg.picUrl" class="userHead" ng-src="{{msg.picUrl}}" alt="" />
+				<h1 class="font-weight a-font-size-medium-b a-text-color-whit userName">{{msg.tContent}}</h1>
+				<p class="a-font-size-small-x"><span class="a-text-color-whit">{{msg.prizeDmdCount}}</span><img class="zuan" src="../../../img2.0/creatroom/cjfj_3.png" alt="" /><span class="a-text-color-whitDark">奖励已发送给您</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-modal-view>

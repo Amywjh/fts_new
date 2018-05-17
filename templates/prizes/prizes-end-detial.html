@@ -1,0 +1,67 @@
+<ion-view view-title="球星对战" class='prizes-room' hide-tabs>
+	<!--头部-->
+<ion-content class="has-tt has-tt_prizesEnd">
+	<div id="main_prizes_detial_bg">
+		<div ng-if='prize.status==2' class="prizes_end_detial" prizes-item-end></div>	
+		<div class="a-background-item rSupport support_end ">
+			<h2>支持率</h2>
+			<div class="rOne">
+				<span class="leftBar" style="background:#ed1f24;width: {{prize.home.percent}};height: 100%;"></span>
+				<span class="rightBar" style="background:#0084c7;width: {{prize.away.percent}};height: 100%"></span>
+			</div>
+			<div class="rTwo">
+			    <div>
+			    	<span>{{prize.home.percent}}</span>
+			    </div>
+			    <div>
+			    	<span>{{prize.away.percent}}</span>
+			    </div>
+			</div>
+			<h1 class="winTitle">赢奖前三名</h1>
+			<ul class="winCon">
+			    <li class="a-flex-start" ng-repeat="(rankKey,rankThree) in prizeInfo.prize" ng-if="rankThree>0">
+			    	<span class="name">{{rankKey}}</span>赢得 <img src="../../img2.0/prize2.0/zb.png" alt="" /><span class="amount">{{rankThree}}</span>
+			    </li>
+			</ul>
+		</div>
+		<div class="a-background-item rScore">
+			<h2>球员本场表现</h2>
+			<div class="scoreBanner">
+				<div class="homePlayer">
+					<div><img ng-if="!prize.home.headImgUrl" src="./img2.0/common/player_default.png" alt="" /><img ng-if="prize.home.headImgUrl" ng-src="{{prize.home.headImgUrl}}" alt="" /></div>
+					<span>{{prize.home.playerName}}</span>
+				</div>
+				<div class="scoreCon">
+					<span>表现值</span>
+					<div class="score">
+						<div class="homeScore" ng-class="{'scoreWin':prize.home.score<prize.away.score?false:true}">{{prize.home.score}}</div>
+						<div class="mh">:</div>
+						<div class="awayScore" ng-class="{'scoreWin':prize.away.score<prize.home.score?false:true}"> {{prize.away.score}}</div>
+					</div>
+				</div>
+				<div class="awayPlayer">
+					<div><img ng-if="!prize.away.headImgUrl" src="./img2.0/common/player_default.png" alt="" /><img ng-if="prize.away.headImgUrl" ng-src="{{prize.away.headImgUrl}}" alt="" /></div>
+					<span>{{prize.away.playerName}}</span>
+				</div>
+			</div>
+			<ul class="a-parting-line scoreDetial">
+				<li ng-repeat = "(key,dimensionsdata) in prizeInfo.dimensions"  ng-class="{'scoreLow':dimensionsdata<0?true:false}" ng-if="prizeInfo.home[key] || prizeInfo.away[key]">
+					<span class="scoreDetialHome" ng-class="{'scoreDetialWin':prizeInfo.home[key]<prizeInfo.away[key]?false:true}" >
+						<span class="detial_num">{{prizeInfo.home[key]}}</span>
+						<span class="percent_full"><span class="detial_percent" style="width:{{prizeInfo.homeResultPercent[key]}};"></span></span>
+					</span>
+					<span class="lat">
+						<span class="latName">{{key}}</span>
+						<span class="latWeight">x{{dimensionsdata}}</span>
+					</span>
+					<span class="scoreDetialAway" ng-class="{'scoreDetialWin':prizeInfo.away[key]<prizeInfo.home[key]?false:true}">
+						<span class="percent_full"><span class="detial_percent" style="width:{{prizeInfo.awayResultPercent[key]}};"></span></span>
+						<span class="detial_num">{{prizeInfo.away[key]}}</span>
+					</span>
+				</li>
+			</ul>
+			<div class="a-text-color-whitDark a-font-size-small" style="text-align: center;padding: 0.1rem 0px;">无数据的计算维度已隐藏 , 查看完整<a class="a-text-color-light" style="text-decoration: underline;" href="#/tab/wode/help/second/player">表现值计算</a></div>
+		</div>
+	</div>
+</ion-content>
+</ion-view>

@@ -1,0 +1,19 @@
+<div class="lineup-zrxztt battle-lineup-zrxztt battle-lineup-thr-dir">
+    <div class="luduxz addplayer lineupshowthr">
+      	<div class="dfbox" ng-repeat="topLineup in lineup track by $index" ng-if="topLineup" ng-click="playerDetial(topLineup.id)">
+	        <div class="df" style=" background: url('{{topLineup.logo}}') no-repeat center;background-size: 100% 100%;">
+	        	<span class="dfhone"><img ng-src='{{topLineup.numone}}' ng-if='topLineup.numone'></span>
+	        	<span class="dfhtwo"><img ng-src='{{topLineup.numtwo}}' ng-if='topLineup.numtwo'></span>
+	        </div>
+	        <div class="dyms">
+	          <span	 class="dyname" >{{topLineup.name}}</span>
+	          <span class="dygz" ng-if="topLineup.recentExp || topLineup.recentExp===0">近期战力：{{topLineup.recentExp}}</span>
+	          <span class="dygz" ng-if="topLineup.salary">工资：{{topLineup.salary}}</span>
+	        </div>
+      	</div>
+		<div class="dfbox dfbox_default" ng-repeat="topLineup in lineup track by $index" ng-if="!topLineup">
+      		<div class="df going">
+	        </div>
+		</div>
+    </div>
+</div>

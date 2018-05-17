@@ -1,0 +1,162 @@
+
+<!--经典房赛况list-->
+<div class="battle_bg" ng-if='battledata.rooms.length==0'>
+	<img ng-if='battledata.status==0 || battledata.status==2 || battledata.status==1' src="../../img2.0/battle/dt_kzt.png" alt="" />
+	<span ng-if='battledata.status==0' ng-click="goMain()"><div>您还没有未开始的竞猜</div><div>立即前往<span>参与竞猜</span></div></span>
+	<span ng-if='battledata.status==1' ng-click="goMain()"><div>您还没有进行中的竞猜</div><div>立即前往<span>参与竞猜</span></div></span>
+	<span ng-if='battledata.status==2 && !historyRecord' ng-click="goMain()"><div>您还没有已结束的竞猜</div><div>立即前往<span>参与竞猜</span></div></span>
+	<span ng-if='battledata.status==2 && historyRecord' style="margin-top: .6rem;"><div style="color: rgb(164, 178, 205);font-weight: 100;">他还没参加过此类玩法</div></span>
+</div>
+<ion-content class="battle" delegate-handle="deflist" has-bouncing="true" scrollbar-y='false' on-drag-down="searchshow()" on-drag-up="showReturn()" >
+	<div class="a-text-color-whit a-font-size-small-x haveNoLineup" ng-if='battledata.status==0 && battlestatusAct==0 && battleRedHot.unplay.Tradition.showHas'>
+			-&nbsp;&nbsp;您还有房间<span class="a-text-color-whit a-font-size-small-x">未提交阵容</span>，请尽快提交完整阵容！-
+		</div>
+		<style type="text/css">
+			.haveNoLineup{
+				background: #F31100;height: 0.36rem;line-height: 0.36rem;text-align: center;
+			}
+			.haveNoLineup>span{
+				font-weight: bold;
+			}
+		</style>
+	<div class="roomList" ng-if='battledata.status==0' ng-repeat="rooms in nboxrooms track by $index">
+		<h1 class="headtitle"  ng-if='battledata.status==0'>竞猜开始时间:&nbsp;<span class="a-text-color-whit font-weight a-font-size-small-x">{{rooms.today}}&nbsp;&nbsp;{{rooms.todayhour}}</span><img src="../../img2.0/prize2.0/qxdz_djs_1.png" alt="" /><span><span class="a-font-size-medium a-text-color-whit font-weight">{{rooms.timedateup.dates}}&nbsp;</span>日&nbsp;<span class="a-font-size-medium a-text-color-whit font-weight">{{rooms.timedateup.hours}}&nbsp;</span>时&nbsp;<span class="a-font-size-medium a-text-color-whit font-weight">{{rooms.timedateup.minutes}}&nbsp;</span>分</span></h1>
+		<a class="roomItem blackroom"  ng-repeat='room in rooms.roomlist track by $index'  ng-class="room.activity == 1 ?'border-viole':''" ng-if="battledata.status==0" ng-click='showLineup(room.id,playerTypeAct.id,room.lineUp)'>
+			<img class="isJoin" ng-if="room.join && room.lineUp==0" src="../../img2.0/hall/jdzdt_14.png" alt="" />
+			<img class="isJoin" ng-if="room.join && room.lineUp==1" src="../../img2.0/hall/jdzdt_13.png" alt="" />
+			<img class="isactivity" ng-if="room.activity==1"  ng-src="{{room.prize_thing_pic}}" alt="" />
+			
+			<header>
+				<article class="header">
+					<span class="roomtype blackbg"  ng-if="room.roomType=='官方' &&  room.activity==0">
+						<div class="type">{{room.roomType}}</div>
+					</span>
+					<span class="roomtype a-room-black-viole" ng-if="room.roomType=='官方' &&  room.activity==1">
+						<div class="type typewhite">活动</div>
+					</span>
+					<span class="roomtype blackbg" ng-if="room.roomType=='包厢' && room.privacy==0">
+						<div class="type Type0">个人</div>
+					</span>
+					<span class="roomtype blackbg" ng-if="room.roomType=='包厢' &&  room.privacy==1">
+						<div class="type" style="color: #ff8027;">私密</div>
+					</span>
+					<span class="roomname" ng-style="searchstyle(room.id)" >{{room.name}}</span>
+					
+				</article>
+			</header>
+			<div ng-if="true" class="content" >	
+				<div class="roomlist">
+					<img ng-src="../../img2.0/hall/jdzdt_{{room.playType}}.png" />
+					<div><p>{{room.playTypeName}}</p><p>开奖类型</p></div>
+				</div>
+				<div  class="roomlist"><p class="noFee" ng-if="room.entryNum == 0 || !room.entryNum"><img src="../../img2.0/hall/mianfei_biaoqian.png" alt="" /></p><p ng-if="room.entryNum > 0"><img src="../../img2.0/hall/jdzdt_11.png" /><span class="fontcolor">{{room.entry}}</span></p><p>入场券</p></div>
+				<div ng-if="room.activity==0 || room.activity ==null" class="roomlist"><p><img ng-if="room.prizeCurrencyType !=1" src="../../img2.0/hall/jdzdt_12.png" /><img ng-if="room.prizeCurrencyType ==1" src="../../img2.0/hall/jdzdt_11.png" /><span class="fontcolor">{{room.predictPrizePool}}</span></p><p>最高奖池</p></div>
+			    <div class="roomlist" ng-if="room.activity == 1"></div>
+			</div>
+			<div class="hallline experienceline">
+				<span ng-if="room.full==0" ng-class="{0:'ycline',1:'zcline',2:'ogline',3:'yjline',4:'xjline'}[room.league]" style="width:{{room.mark}}%;"></span>
+				<span ng-if="room.full==1" style="width: 100%;height: 2px;border-radius: 2px;background: rgb(133,142,160);"></span>
+			</div>
+			<div class="peoples"><img src="../../img2.0/hall/jdzdt_10.png" alt="" /><span>{{room.currUserNum}}</span><span>&nbsp;/&nbsp;{{room.totalUserCount}}</span><img class="man" ng-if="room.full==1" src="../../img2.0/hall/fjlb_1.png" alt="" />
+			<img class="team" ng-src="../../img2.0/hall/circleLeague_{{room.league}}.png"/>
+			<div ng-if="room.level_limit == 1" style="float: right;" class="a-text-colorgreen a-font-size-small">
+				限等级<span class="a-text-color-whit">Lv.{{room.min_level}}-Lv.{{room.max_level}}</span>
+			</div>
+			</div>
+		</a>
+	</div>
+	<div class="roomList" ng-if='battledata.status==1'>
+		<h2 class="headtitle" style="color: rgb(133,142,160);" ng-if='battledata.status==1'>- 比赛正在进行，点击房间查看实时排名数据 -</h2>
+		<a class="roomItem blackroom"  ng-repeat='room in battledata.rooms'  ng-class="room.activity == 1 ?'border-viole':''" ng-if="battledata.status==1" ng-click="going(room.id,playerTypeAct.id,matchTypeAct.id)">
+			<img class="isJoin" ng-if="room.prizing==1" src="../../img2.0/battle/dkj_bq_1.png" alt="" />
+			<img class="isactivity" ng-if="room.activity==1"  ng-src="{{room.prize_thing_pic}}" alt="" />
+			<header>
+				<article class="header">
+					<span class="roomtype blackbg"  ng-if="room.roomType=='官方' &&  room.activity==0">
+						<!--房间类型-->
+						<div class="type">{{room.roomType}}</div>
+					</span>
+					<span class="roomtype a-room-black-viole" ng-if="room.roomType=='官方' &&  room.activity==1">
+						<div class="type typewhite">活动</div>
+					</span>
+					<span class="roomtype blackbg" ng-if="room.roomType=='包厢' && room.privacy==0">
+						<div class="type Type0">个人</div>
+					</span>
+					<span class="roomtype blackbg" ng-if="room.roomType=='包厢' &&  room.privacy==1">
+						<div class="type" style="color: #ff8027;">私密</div>
+					</span>
+					<span class="roomname" ng-style="searchstyle(room.id)" >{{room.name}}</span>
+					
+				</article>
+			</header>
+			<div ng-if="true" class="content" >	
+				<div class="roomlist">
+					<img ng-src="../../img2.0/hall/jdzdt_{{room.playType}}.png" />
+					<div><p>{{room.playTypeName}}</p><p>开奖类型</p></div>
+				</div>
+				<div  class="roomlist"><p class="noFee" ng-if="room.entryNum == 0 || !room.entryNum"><img src="../../img2.0/hall/mianfei_biaoqian.png" alt="" /></p><p ng-if="room.entryNum>0"><img src="../../img2.0/hall/jdzdt_11.png" /><span class="fontcolor">{{room.entry}}</span></p><p>入场券</p></div>
+				<div ng-if="room.activity == 0 || room.activity ==null" class="roomlist"><p><img ng-if="room.prizeCurrencyType !=1" src="../../img2.0/hall/jdzdt_12.png" /><img ng-if="room.prizeCurrencyType ==1" src="../../img2.0/hall/jdzdt_11.png" /><span class="fontcolor">{{room.predictPrizePool}}</span></p><p>最高奖池</p></div>
+			    <div  class="roomlist" ng-if="room.activity == 1"></div>
+			</div>
+			<div class="hallline experienceline">
+				<span ng-if="room.full==0" ng-class="{0:'ycline',1:'zcline',2:'ogline',3:'yjline',4:'xjline'}[room.league]" class="zcline" style="width:{{room.mark}}%;"></span>
+				<span ng-if="room.full==1" style="width: 100%;height: 2px;border-radius: 2px;background: rgb(133,142,160);"></span>
+			</div>
+			<div class="peoples"><img src="../../img2.0/hall/jdzdt_10.png" alt="" /><span>{{room.currUserNum}}</span><span>&nbsp;/&nbsp;{{room.totalUserCount}}</span><img class="man" ng-if="room.full==1" src="../../img2.0/hall/fjlb_1.png" alt="" />
+			<img class="team" ng-src="../../img2.0/hall/circleLeague_{{room.league}}.png"/>
+			<div ng-if="room.level_limit == 1" style="float: right;" class="a-text-colorgreen a-font-size-small">
+				限等级<span class="a-text-color-whit">Lv.{{room.min_level}}-Lv.{{room.max_level}}</span>
+			</div>			
+			</div>			
+		</a>
+	</div>
+	<div class="roomList" ng-if='battledata.status==2' ng-repeat="(k,roomlist) in boxrooms">
+		<h2 class="headtitle" style="color: #fff;" ng-if='battledata.status==2'>{{k}}</h2> 
+		<a class="roomItem blackroom" ng-repeat='room in roomlist'  ng-class="room.activity == 1 ?'border-viole':''" ng-if="battledata.status==2" ng-click="lineup_end(battledata.status,room.id,room.user,playerTypeAct.id,room.roomUnAvailable)">
+			<img class="isJoin roomUnAvailable" ng-if="room.roomUnAvailable" src="../../img2.0/battle/sk_yjs_jdz_ysx.png" alt="" />
+			<img class="isJoin noUnAvailable" ng-if="!room.roomUnAvailable && room.bonus>0" src="../../img2.0/battle/sk_yjs_jdz_hj_1.png" />
+			<img class="isactivity" ng-if="room.activity==1 && room.roomUnAvailable"  ng-src="{{room.prize_thing_pic}}" alt="" />
+			
+			<div class="isJoin unused" ng-if="room.roomUnAvailable"></div>
+			<header>
+				<article class="header">
+					<span class="roomtype blackbg"  ng-if="room.roomType=='官方' &&  room.activity==0">
+						<div class="type">{{room.roomType}}</div>
+					</span>
+					<span class="roomtype a-room-black-viole" ng-if="room.roomType=='官方' &&  room.activity==1">
+						<div class="type typewhite">活动</div>
+					</span>
+					<span class="roomtype blackbg" ng-if="room.roomType=='包厢' && room.privacy==0">
+						<div class="type Type0">个人</div>
+					</span>
+					<span class="roomtype blackbg" ng-if="room.roomType=='包厢' &&  room.privacy==1">
+						<div class="type" style="color: #ff8027;">私密</div>
+					</span>
+					<span class="roomname" ng-style="searchstyle(room.id)" >{{room.name}}</span>
+				</article>
+			</header>
+			<div ng-if="true" class="content" >	
+				<div class="roomlist completeone">
+					<img ng-src="../../img2.0/hall/jdzdt_{{room.playType}}.png" />
+					<div><p>{{room.playTypeName}}</p><p>开奖类型</p></div>
+				</div>
+				<div  class="roomlist"><p class="noFee" ng-if="room.entryNum == 0 || !room.entryNum"><img src="../../img2.0/hall/mianfei_biaoqian.png" alt="" /></p><p ng-if="room.entryNum>0"><img src="../../img2.0/hall/jdzdt_11.png" /><span class="fontcolor">{{room.entry}}</span></p><p>入场券</p></div>
+				<div ng-if="room.roomUnAvailable"  class="roomlist completeone"><p>&nbsp;</p><p class="nopeople" ng-if="!room.cancelMessage">参与人数不足</p><p class="nopeople" ng-if="room.cancelMessage" style="white-space: nowrap;">{{room.cancelMessage}}</p></div>
+				<div ng-if="!room.roomUnAvailable"  class="roomlist completeone bg"><img class="position-center" src="../../img2.0/battle/sk_yjs_pm_circle.png" alt="" /><p><span class="fontcolor a-font-size-medium-m">{{room.rank}}</span></p><p>排名</p></div>
+				<div ng-if="!room.roomUnAvailable && room.bonus>0 && room.activity == 0" class="roomlist completeone"><p><img ng-if="room.prizeCurrencyType !=1" src="../../img2.0/hall/jdzdt_12.png" /><img ng-if="room.prizeCurrencyType ==1" src="../../img2.0/hall/jdzdt_11.png" /><span class="fontcolor">{{room.bonus}}</span></p><p>获奖</p></div>
+				<div ng-if="!room.roomUnAvailable && room.bonus>0 && room.activity == 1" class="roomlist completeone roomtop"><p><img ng-src="{{room.prize_thing_pic}}" alt="" /></div>
+			</div>
+			<div class="hallline experienceline unused">
+			</div>
+			<div class="peoples"><img src="../../img2.0/hall/jdzdt_10.png" alt="" /><span>{{room.currUserNum}}</span><span>&nbsp;/&nbsp;{{room.totalUserCount}}</span>
+				<img class="team" ng-src="../../img2.0/hall/circleLeague_{{room.league}}.png"/>
+				<div ng-if="room.level_limit == 1" style="float: right;" class="a-text-colorgreen a-font-size-small">
+					限等级<span class="a-text-color-whit">Lv.{{room.min_level}}-Lv.{{room.max_level}}</span>
+				</div>
+			</div>		
+		</a>
+	</div>
+	<ion-infinite-scroll class="prizes_loadmore" immediate-check="false" on-infinite="moreDefRooms()" distance="20%" style="height: 1px;" ng-if="!hasData"></ion-infinite-scroll>
+</ion-content>
+<!--<div class="returntop" ng-if="config.showTop" on-tap='hallshow()' >-->
+</div>

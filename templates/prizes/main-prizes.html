@@ -1,0 +1,12 @@
+<ion-view view-title="球星对战" class='prizes-room tab-return' hide-tabs>
+<div header-rule></div>
+<ion-content class="has-tt" delegate-handle="prizeslist" has-bouncing="true" style="overflow-y:auto;width: 100%;">
+	<ion-refresher pulling-text="" pulling-icon="" on-refresh="doRefresh()"></ion-refresher>
+		<div prizes-item-nostart ng-repeat="prize in prizeall track by $index"></div>
+  	<ion-infinite-scroll class="prizes_loadmore" icon="" immediate-check="false" on-infinite="morePrizesRooms()" distance="10%" style="height: 1px;" ng-if="!hasData"></ion-infinite-scroll>  
+</ion-content>
+<div ng-if="prizeall.length==0">
+	<no-room></no-room>
+</div>
+<div class="prizes-vote"></div>
+</ion-view>

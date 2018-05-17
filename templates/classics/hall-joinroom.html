@@ -1,0 +1,78 @@
+<ion-view title='{{home_title}}' class='hall-joinroom' hide-tabs>
+  <!--加入房间时显示的头部-->
+<div header-rule></div>
+
+<div ng-if="firstEnter" class="onePointing left-center one"><img class="left-center" src="../../img2.0/common/down_jiantou.png" alt="" /><div class="a-flex-center a-text-color-whit font-weight a-font-size-small">点击<span class="a-text-color-light">加入竞猜</span></div></div>
+<!--创建房间-->
+<ion-content class="room_jion" scrollbar-y="false" ng-class="{'moreHeight':hideBtn,room_jion_goods:roomDetial.activity}">
+	<div room-detial-top class="room_detial_bg" ng-if="roomDetial && !roomDetial.activity"></div>
+	<div room-detial-goodstop class="room_detial_bg room_detial_bg_goods" ng-if="roomDetial.activity"></div>
+	<div class="a-ownpm a-background-item a-flex-between roomNum">
+		<div class="a-flex-start start_box">
+			<span class="a-font-size-small a-text-colorgreen">房间号：</span>
+			<span class="a-font-size-medium-x a-font-family-numstd a-text-shawgreen">
+				{{roomDetial.roomNum}}
+			</span>
+		</div>
+		<div class="inviteBtn a-background-help a-text-color-light a-font-size-small" ng-click="showShareModal('shareRoom',2)">
+			邀好友一起加入
+		</div>
+	</div>
+	<div class="a-ownpm a-background-item a-flex-start-column roomTime">
+				<div class="a-flex-start start_box">
+					<span class="a-font-size-small a-text-colorgreen">竞猜开始时间：</span>
+					<span class="a-font-size-small a-text-color-whit startTime">
+						{{roomDetial.matchStartTime}}
+						<span class="djs a-font-size-small-x a-text-color-whit" ng-bind-html="roomDetial.countDown | trustHtml"></span>
+					</span>
+				</div>
+				<!--<div class="a-flex-start start_box">
+					<span class="a-font-size-small a-text-colorgreen">预计开奖时间:</span>
+					<span class="a-font-size-small a-text-color-whit">{{roomDetial.prizeTime}}</span>
+				</div>-->
+	</div>
+	<div class="a-ownpm a-background-item a-flex-start-column players">
+			<div class="a-font-size-small a-text-colorgreen">参与用户：<span class="a-font-size-small a-text-color-whit">{{roomDetial.userCount}}</span>/{{roomDetial.maxUserCount}}</div>
+	 		<a class="a-flex-start playershow" ng-click="playerlist(roomDetial.roomId)" >
+				<div class="players" ng-repeat='users in userList |limitTo:10'>
+					<img ng-if="users.photo" ng-src="{{users.photo}}" onerror="loadDefaultImg(1)"/>
+					<img ng-if="!users.photo" src="../../img2.0/common/touxiang_default.png"/>
+				</div>
+				<div class="players" ><img class="a-img-size" src="../../img2.0/joinroom/jrfj_5.png" alt="" /></div>
+	 		</a>
+	</div>
+	<div class="a-ownpm a-background-item a-flex-start-column rule matchdetial">		
+		<div class="a-font-size-small a-text-colorgreen matchCount" ng-if="roomDetial.matches">
+			比赛列表：<span class="a-font-size-small a-text-color-whit">{{roomDetial.matchStartDate}}</span>（共{{roomDetial.matchCount}}场）
+		</div>
+		<ul class="a-flex-center-column">
+			<li class="a-flex-center game" ng-repeat="rooms in roomDetial.matches | orderBy:['nextDayFlag','startTimePoint','-focusMatch']">
+				<img class="a-img-size fightLogo" ng-if="rooms.focusMatch" src="../../img2.0/hall/fight.png"/>
+				<div class="a-flex-center a-parting-line content">
+					<div class="aside">
+						<img ng-src="{{rooms.homeLogo}}"/>
+						<div class="a-text-colorgreen a-font-size-small aside">{{rooms.homeName}}</div>
+					</div>
+					<center>
+						<div class="time">
+							<span class="a-text-color-whit a-font-size-medium-m">{{rooms.startTimePoint}}</span>
+						</div>
+						<img class="a-img-size" src="../../img2.0/joinroom/jrfj_6.png"/>
+					</center>
+					<div class="aside">
+						<img ng-src="{{rooms.awayLogo}}"/>
+						<div class="a-text-colorgreen a-font-size-small aside">{{rooms.awayName}}</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>	
+</ion-content>
+<div class="a-background-item event" ng-if="!hideBtn">
+	<button class="a-buttonBig-green a-flex-center a-font-size-medium" ng-click = 'isjoin(roomDetial)' ng-if="entryFee != 0">
+		<div class="joinButtonBox"><img class="a-img-size" src="../../img2.0/hall/jdzdt_11.png"/>
+			&nbsp;<span class="a-font-size-medium-x a-font-family-numstd">{{entryFee}}</span>&nbsp;&nbsp;<span class="a-font-size-medium">加入</span></div>	
+	</button>		
+	<button class="a-buttonBig-green a-flex-center a-font-size-medium" ng-click = 'isjoin(roomDetial)' ng-if="entryFee == 0"><div class="joinButtonBox"><span class="a-text-color-whit">加入</span></div></button>		
+</div>
+</ion-view>

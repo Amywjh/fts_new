@@ -1,0 +1,12 @@
+<ion-modal-view style="background: inherit;width: 100%;height: 100%;text-align: center;padding: 5vh 0 0 0;z-index: 40;">
+	<img class="lead" ng-src="{{noticeImg[0].pic1}}" style="display: block;width:83vw;margin: 0 auto;" />
+	<img class="lead" ng-click="welcome_start()" ng-src="{{noticeImg[0].pic2}}" style="display: block;width: 40vw;margin:1.8vh auto 0;" alt="" />
+	<div class="receive" style="display: none;margin-top: 40%;width: 100%;overflow: hidden;position: relative;">
+		<img src="../../img/guide/xzjl_1.png" style="width:83vw;" alt="" />
+		<div id="getIcon">
+			赠送您&nbsp;100&nbsp;星钻
+		</div>
+	</div>
+	<img class="receive" ng-click="welcome_close()" ng-src="{{base64Img}}" style="display:none;margin-top: 0.2rem;width: 40vw;" alt="" />
+	<img class="icon_success" ng-click="icon_success()" src="./img/guide/lqcg_toast.png" style="opacity: 0;position: absolute;top:44%;left:50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);width: 10vw;" />
+</ion-modal-view>

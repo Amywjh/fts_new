@@ -1,0 +1,28 @@
+<ion-content class="a-margin-lr" has-bouncing="true" scrollbar-y="false" style="padding-bottom: .2rem;">
+	<div class="a-background-item matchdetial matchdetial_myroom">
+		<div class="a-font-size-small a-text-colorgreen a-parting-line matchCount" ng-if="roomDetial.matches" style="display: none;">
+			<span class="a-font-size-small a-text-color-light">{{roomDetial.matchStartTime}}</span>（共{{roomDetial.matchCount}}场）
+		</div>
+		<ul>
+			<li class="a-flex-center a-parting-line game" ng-repeat="rooms in roomDetial.matches | orderBy:['nextDayFlag','startTimePoint','-focusMatch']">
+				<img class="a-img-size fightLogo" ng-if="rooms.focusMatch" src="../../img2.0/hall/fight.png"/>
+				<div class="a-flex-center content">
+					<div class="aside">
+						<img ng-src="{{rooms.homeLogo}}"/>
+						<div class="a-text-colorgreen a-font-size-small aside">{{rooms.homeName}}</div>
+					</div>
+					<center>
+						<div class="time">
+							<span class="a-text-color-whit a-font-size-medium">{{rooms.startTimePoint}}</span>
+						</div>
+						<img class="a-img-size" src="../../img2.0/joinroom/jrfj_6.png"/>
+					</center>
+					<div class="aside">
+						<img ng-src="{{rooms.awayLogo}}"/>
+						<div class="a-text-colorgreen a-font-size-small aside">{{rooms.awayName}}</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</ion-content>

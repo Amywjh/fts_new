@@ -1,0 +1,248 @@
+<ion-view view-title="我的房间" class='battle-room' hide-tabs>
+<!--头部-->
+<div align-title="left" class="battle-room-header" >
+	<h1 class="title room" style="line-height: 0.4rem;">
+			{{battleRankData.roomName}}
+	</h1>
+</div>
+<div class="a-con-padding myroom_matchTeams">
+	<ion-scroll direction='x' delegate-handle="small" scrollbar-x="false" class='boxs'>
+		<div class="a-background-item myroom_matchItem" ng-repeat='match in battleRankData_result_other track by $index' ng-click="goEventPath(match.matchId)">
+			<div class="a-flex-center myroom_matchItemBox">
+				<div><img ng-src="{{match.homeTeamLogo}}" alt="" /><div class="a-font-size-small-s a-text-color-whitDark" ng-cloak>{{match.homeTeamName}}</div></div>
+				<div class="matchLive">
+	 				<div class="a-font-size-small a-text-color-whitDark matchLiveTime">已结束</div>
+					<div class="a-font-size-medium-m a-font-family-numstd a-text-shawgreen matchScore">
+						{{match.score}}
+					</div>
+				</div>
+				<div><img ng-src="{{match.awayTeamLogo}}" alt="" /><div class="a-font-size-small-s a-text-color-whitDark" ng-cloak>{{match.awayTeamName}}</div></div>
+			</div>
+		</div>
+ 	</ion-scroll>
+</div>
+<ul class="a-background-item ranktab padd flex-justify-a">
+	<div class="a-text-color-whit" ng-repeat="list in battletotal" ng-click='cktab(list)' ng-class="{'bakcolor':list.class == 'checked'}">{{list.title}}</div>
+</ul>
+<div style="position: absolute;top: 1.85rem;bottom: 0;width: 100%;padding-bottom: .1rem;" class=""  ng-if="tablist==0">
+<div class="flaunt" ng-click="lineupShare(myselfData.id)">
+	<img src="../../img2.0/battle/xyyx_button.png" alt="" />
+</div>
+<div style="padding:  0 .2rem;">
+	<ul class="ranktab" style="border: 0;">
+		<li>排名</li>
+		<li>获得奖励</li>
+		<li>阵容表现值</li>
+	</ul>	
+</div>
+<div class="a-margin-lr a-background-bg myroom_playersLive" style="top: .1rem;height: 4.3rem;padding-bottom: .1rem;">
+		  	<ion-scroll  class="userRanks" direction="y" overflow-scroll='false'  delegate-handle="rankScroll">
+	      	<!--玩家排行 -->
+	  		<div class="a-parting-line ranks" ng-class="{'rankTop':(key==0 || (key<3 && roomDetial.playType!=0 && roomDetial.playType!=4))}" ng-repeat="(key,zh) in ranks | orderBy:zh.rank" ng-click="ownLineup(zh.id)">
+	  			<div class="a-flex-between a-div-height-medium-x rankItem" style="height: auto;">
+					<div class="a-flex-between rankLeft">
+							<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="zh.rank==1"><img src="../img2.0/rank/phb_1.png" alt="" /></div>
+						<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="zh.rank==2"><img src="../img2.0/rank/phb_2.png" alt="" /></div>
+						<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="zh.rank==3"><img src="../img2.0/rank/phb_3.png" alt="" /></div>
+						<div class="a-font-size-small-x a-text-color-whit rankNum" ng-if="zh.rank>3">{{zh.rank}}</div>
+					  	<div class="imgBox">
+						  	<img ng-if="zh.headImageUrl" ng-src="{{zh.headImageUrl}}" onerror="loadDefaultImg(1)">
+						  	<img ng-if="!zh.headImageUrl" src="../../img2.0/common/touxiang_default.png">
+					  	</div>
+						<div class="a-flex-between-column userInfo">
+				      	<h2 class="a-font-size-small-x a-text-color-whit">{{zh.name}}</h2>
+				    </div>
+					</div>
+					<div ng-if="zh.activity == 0" class="a-font-size-medium-x a-text-color-whit a-font-family-special userIcon" ng-class="{'topThreeIcon':zh.rank<4?true:false}" ><img  ng-if="zh.prizeCurrencyType == 1" src="../../img2.0/creatroom/cjfj_3.png" alt=""><img ng-if="zh.prizeCurrencyType != 1" src="../../img2.0/prize2.0/qxdz_yjs_4.png" alt="">&nbsp;{{zh.prize}}</div>
+					<div ng-if="zh.activity == 1 && zh.thingsPrizeUrl" class="a-font-size-medium-x a-text-color-whit a-font-family-special userIcon" style="display:inherit;height: .78rem;position: relative;"><img class="position-center" style="width: auto;height: .78rem;left: 35%;" ng-src="{{zh.thingsPrizeUrl}}" style="height: 100%;width: 100%;" alt="" /></div>
+					<div ng-if="zh.activity == 1 && !zh.thingsPrizeUrl" class="a-font-size-medium-x a-text-color-whit a-font-family-special userIcon" style="text-align: center;">-</div>
+					<div class="a-font-size-medium-x a-text-color-whit a-font-family-special userIcon" ng-class="{'topThreeIcon':zh.rank<4?true:false}" >{{zh.expression}}</div>
+	  			</div>
+			</div>
+	    	<!--<ion-infinite-scroll class="prizes_loadmore" immediate-check="false" on-infinite="getMore(ranktitle.id)" distance="20%" style="height: 1px;" ng-if="!getMoreData"></ion-infinite-scroll>--> 
+	  	</ion-scroll> 
+	</div>
+	<div class="a-background-color-dark myRank" style="bottom: 0;">
+	<div class="a-flex-between a-div-height-medium rankItem" ng-click="ownLineup(myselfData.id)">
+		<div class="a-flex-between rankLeft">
+			<div class="a-font-size-small-x rankNum">{{myselfData.rank}}</div>
+			<div class="imgBox">
+				<img ng-if="myselfData.headImageUrl" ng-src="{{myselfData.headImageUrl}}"  onerror="loadDefaultImg(1)">
+			  	<img ng-if="!myselfData.headImageUrl" src="../../img2.0/common/touxiang_default.png">
+			</div>
+			<div class="a-flex-between-column userInfo">
+	      		<h2 class="a-font-size-small-x a-text-color-dark">{{myselfData.name}}</h2>
+	    	</div>
+		</div>
+		<div class="a-font-size-medium-x a-font-family-special userIcon">{{myselfData.expression}}</div>
+	</div>
+  </div>
+</div>
+ <div style="position: absolute;top: 1.85rem;bottom: 0;width: 100%;" ng-if="tablist==1">
+	<ion-content style='top: 0;' class="scontent">
+	<div class="playerTypeBox blackroom" ng-repeat = "(k,typePlayers) in battlerecord" ng-if="typePlayers.length>0">
+		<header ng-if="k == 'mvpPlayer'" class="a-font-size-small-x font-weight a-flex-center a-text-color-orange">最佳球员</header>
+		<header ng-if="k == 'worstPlayer'" class="a-font-size-small-x font-weight a-flex-center a-text-shawdark">最差首发球员</header>
+		<header ng-if="k == 'costPlayer'" class="a-font-size-small-x font-weight a-flex-center a-text-color-orange">最高性价比球员</header>
+		<header ng-if="k == 'mostPopularPlayer'" class="a-font-size-small-x font-weight a-flex-center a-text-color-orange">最热球员</header>
+		<div ng-repeat = "mvpPlayers in typePlayers" >
+			<div class="schlist">
+				<ul class="schlsbody flex-justify-b">
+					<li class="sleft" ng-class="k == 'worstPlayer'?'lose':''" ng-click="playerDetial(mvpPlayers.playerId)"><img class="headimg" ng-if="!mvpPlayers.logoUrl" src="../../img2.0/common/player_default.png" alt="" /><img ng-if="mvpPlayers.logoUrl" class="headimg" ng-src="{{mvpPlayers.logoUrl}}" onerror="loadDefaultImg(0)" alt="" /></li>
+					<li class="scenter">
+						<ul class="center">
+						    <li><span class="name font-weight a-font-size-medium-m a-text-color-whit">{{mvpPlayers.name}}</span>&nbsp;&nbsp;<span class="a-font-size-medium-m a-font-family-numstd a-text-color-orange">${{mvpPlayers.salary}}</span></li>
+						    <li><img class="teamimg" ng-src="{{mvpPlayers.teamLogo}}" alt="" />&nbsp;<span class="team a-text-color-whitDark a-font-size-small">{{mvpPlayers.teamName}}</span></li>
+						    <li class="a-font-size-small a-text-color-whitDark a-flex-center"><div class="sred " ><span class="top-center" ng-if="mvpPlayers.hot != '0%'" style="width: {{mvpPlayers.hot}}"></span></div>&nbsp;<span class="a-text-color-red">{{mvpPlayers.hot}}</span>的人选他</li>
+					    </ul>
+					</li>
+					<li class="sright" ng-click="toggle(mvpPlayers)">
+						<ul class="schlast">
+							<li class="a-text-color-whitDark a-font-size-small">表现值</li>
+							<li class="a-font-family-numstd a-font-size-medium-v a-text-shawgreen"  ng-class="k == 'worstPlayer' && mvpPlayers.show?'a-text-shawdark':''">{{mvpPlayers.expression}}</li>
+							<li ><i ng-if="!mvpPlayers.show" class="a-font-family-numstd a-text-shawgreen ion-arrow-down-b"></i>
+								<i ng-if="mvpPlayers.show" class="a-font-family-numstd a-text-shawgreen ion-arrow-up-b"></i>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="rHistory" style="width: 100%;margin-top: 0;padding-top: .06rem;margin-bottom: .1rem;box-shadow: initial;;transition: 0.09s all linear;" ng-show="isGroupShown(mvpPlayers)">
+				<div class="Htwo" >
+					<div>
+						<table class="infoLeft" align="center" border="" cellspacing="" cellpadding="">
+							<tr class="headInfo">
+								<th class="a-font-size-small-s a-text-colorgreen">对战</th>
+							</tr>
+							<tr class="listInfo">
+								<td>
+									<div class="a-flex-center listInfoBox">
+										<span class="a-flex-center-column time">
+											<p class="a-font-size-small-s a-text-color-whitDark">{{mvpPlayers.matchResult.startMonth}}</p><p class="line"></p><p class="a-font-size-small-s a-text-color-whitDark">{{mvpPlayers.matchResult.startDay}}</p>
+										</span>
+										<div class="a-flex-center-column teams">
+											<span ng-class="{1:'isHome'}[mvpPlayers.matchResult.home]">{{mvpPlayers.matchResult.homeName}}</span>
+											<span ng-class="{0:'isHome'}[mvpPlayers.matchResult.home]">{{mvpPlayers.matchResult.awayName}}</span>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<ion-scroll direction="x" class="scr">
+						<table class="prizePlayerDetial" border="" cellspacing="" cellpadding="">
+							<tr class="prizePlayerDetialTitle">
+								<th class="a-font-size-small-s a-text-colorgreen">结果</th>
+								<th class="a-font-size-small-s a-text-colorgreen">表现值</th>
+								<th class="a-font-size-small-s a-text-colorgreen" ng-repeat="(kk,val) in mvpPlayers.matchResult.dimensions">{{kk}}</th>
+							</tr>
+							<tr class="prizePlayerDetialItem">
+								<td class="a-font-size-small-s a-text-color-whit">{{mvpPlayers.matchResult.result}}</td>
+								<td class="a-font-size-small-s a-text-color-light">{{mvpPlayers.matchResult.expression}}</td>
+								<td class="a-font-size-small-s" ng-repeat="(kk,val) in mvpPlayers.matchResult.dimensions">{{val}}</td>
+							</tr>
+						</table>
+	
+					</ion-scroll>
+				</div>
+			</div>
+		</div>
+	</div>
+	 	<ul class="sullist blackroom">
+	 		<header class="wj a-font-size-small-x font-weight a-flex-center a-text-color-orange">最佳11人</header>
+	 		<li class="battle-room" style="margin-top: .06rem;box-shadow: none;">
+	 			<div class="dufu_bigbox small">
+		     	<div class="luhk">
+		          	<div class="box">
+			            <div class="dfrow" ng-repeat='lineup in lineupcontentBest'>
+			              <a class="dfbox" ng-repeat='xx in lineup track by $index' ng-click = "playerDetial(xx.id,roomStatus)">
+			                <div class="df" ng-if="!xx.logo_url&&!xx.numone"></div>
+			                <div class="df" ng-if="!xx.logo_url && xx.numone" style="background-image: url(../../img2.0/common/qiuyi_default.png);">
+			                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+			                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+			                </div>
+			                <div class="df" ng-if="xx.logo_url" style="background-image: url('{{xx.logo_url}}');">
+			                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+			                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+			                </div>
+			                <img class="dfbg" src="../../img2.0/lineup2.0/bz_6.png" />
+			                <div class="a-background-playerSign dyms" ng-if="xx.logo_url || xx.name">
+			                	<span class="a-text-color-orange a-font-family-numstd a-font-size-small goingSalary" ng-if="xx.salary || xx.salary===0" ng-cloak>${{xx.salary}}</span>
+			                	<p class="dyname ng-binding" style="color: #A4B2CD;">{{xx.name}}</p>
+						        <p class="a-flex-center dygz">
+				                  	<span ng-if="roomStatus!=1" class="a-text-shawgreen a-font-family-numstd a-font-size-medium-m" ng-cloak>{{xx.perExpression}}</span>
+				                  	<span ng-if="roomStatus==1" class="a-text-shawgreen a-font-family-numstd a-font-size-medium-m" ng-cloak>{{lineupGoingData.players[xx.id]}}</span>
+				               	</p>
+				               	
+			                </div>
+			              </a>
+			            </div>
+			            <div class="btn-linups mod">
+					    	<img ng-src="../../img2.0/lineup2.0/bz_1{{lineup_dataBest.formation.fmt_type-1}}_1.png" />
+					    	<p ng-cloak>{{lineup_dataBest.formation.fmt_name}}</p>
+					    </div>
+					    <div class="goingCircleBox" ng-if="roomStatus==1" runing-circle></div>
+			       </div>
+			    </div>
+	    </div>
+	 		</li>
+	 	</ul>
+	 	<ul class="sullist blackroom">
+	 		<header class="wj a-font-size-small-x font-weight a-flex-center a-text-color-orange">最佳玩家阵容</header>
+	 		<li class="battle-room" style="margin-top: .06rem;box-shadow: none;">
+	 			<header class="lineup-head">
+					<div class='headimg' ng-click="nameGet(lineup_data.userId)">
+						<img ng-if="lineup_data.userLogoUrl" ng-src="{{lineup_data.userLogoUrl}}" onerror="loadDefaultImg(1)"/>
+						<img ng-if="!lineup_data.userLogoUrl" src="../../img2.0/common/touxiang_default.png" alt="" /><p class="a-font-size-small-x a-text-color-whit" ng-cloak>{{lineup_data.nick_name}}</p>
+					</div>
+					<p class="font-weight a-font-size-small-x a-text-color-whit" style="text-align: center;">{{lineup_data.userName}}</p>
+					<ul class="flex-justify-b tab">
+						<li><span class="a-text-colorgreen">剩余工资</span><p class="a-font-family-numstd a-font-size-medium-m font-yellow" ng-cloak>${{lineup_data.surplusSalary}}</p></li>
+						<li><span class="a-text-colorgreen">阵容表现值</span>
+							<p class="a-font-family-numstd a-font-size-medium-m fontcolor" ng-cloak>{{lineup_data.LineUpExp}}</p>
+						</li>
+						<li><span class="a-text-colorgreen">阵容提交时间</span>
+							<p ng-if="lineup_data.lineUpSubmitTime" class="a-font-size-small a-text-color-whit" ng-cloak>{{lineup_data.lineUpSubmitTime}}</p>
+							<p ng-if="!lineup_data.lineUpSubmitTime" class="a-font-size-small a-text-color-whit">未布阵</p>
+						</li>
+					</ul>
+				</header>
+	 			<div class="dufu_bigbox small">
+		     	<div class="luhk">
+		          	<div class="box">
+			            <div class="dfrow" ng-repeat='lineup in lineupcontent'>
+			              <a class="dfbox" ng-repeat='xx in lineup track by $index' ng-click = "playerDetial(xx.id,roomStatus)">
+			                <div class="df" ng-if="!xx.logo_url&&!xx.numone"></div>
+			                <div class="df" ng-if="!xx.logo_url && xx.numone" style="background-image: url(../../img2.0/common/qiuyi_default.png);">
+			                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+			                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+			                </div>
+			                <div class="df" ng-if="xx.logo_url" style="background-image: url('{{xx.logo_url}}');">
+			                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+			                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+			                </div>
+			                <img class="dfbg" src="../../img2.0/lineup2.0/bz_6.png" />
+			                <div class="a-background-playerSign dyms" ng-if="xx.logo_url || xx.name">
+			                	<span class="a-text-color-orange a-font-family-numstd a-font-size-small goingSalary" ng-if="xx.salary || xx.salary===0" ng-cloak>${{xx.salary}}</span>
+			                	<p class="dyname ng-binding" style="color: #A4B2CD;">{{xx.name}}</p>
+						        <p class="a-flex-center dygz">
+				                  	<span ng-if="roomStatus!=1" class="a-text-shawgreen a-font-family-numstd a-font-size-medium-m" ng-cloak>{{xx.perExpression}}</span>
+				                  	<span ng-if="roomStatus==1" class="a-text-shawgreen a-font-family-numstd a-font-size-medium-m" ng-cloak>{{lineupGoingData.players[xx.id]}}</span>
+				               	</p>
+				               	
+			                </div>
+			              </a>
+			            </div>
+			            <div class="btn-linups mod">
+					    	<img ng-src="../../img2.0/lineup2.0/bz_1{{lineup_data.formation.fmt_type-1}}_1.png" />
+					    	<p ng-cloak>{{lineup_data.formation.fmt_name}}</p>
+					    </div>
+					    <div class="goingCircleBox" ng-if="roomStatus==1" runing-circle></div>
+			       </div>
+			    </div>
+	    </div>
+	 		</li>
+	 	</ul>	
+	</ion-content>
+ </div>
+</ion-view>

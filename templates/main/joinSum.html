@@ -1,0 +1,79 @@
+<ion-view title='首页' class='joinSum' hide-tabs>
+	<img class="joinSumBgImg" src="../../img2.0/grade/shjs_bg_yd.jpg"/>
+	<div class="joinSumBg">
+		<div class="joinSumHead">
+			<span class="a-font-size-small-x a-text-color-whit joinMathDay">您参加了
+				<span class='a-font-size-medium a-text-color-orange joinSumDays' ng-cloak>{{joinSum.matchDateStr}}</span>竞猜游戏
+			</span>
+		</div>
+		<div class="matchTypeItemBox">
+			<div class="matchTypeItem">
+				<span class="matchType">
+					<span class="a-text-color-light a-font-size-medium matchTypeStart">球星对战</span>
+				</span>
+				<span class="a-text-color-whit a-font-size-medium matchNum" ng-cloak>{{joinSum.gameStarCount}}个</span>
+			</div>
+			<div class="matchTypeItem">
+				<span class="matchType">
+					<span class="a-text-color-light a-font-size-medium matchTypeStart">经典11人</span>
+				</span>
+				<span class="a-text-color-whit a-font-size-medium matchNum" ng-cloak>{{joinSum.game11v11Count}}个</span>
+			</div>
+			<div class="matchTypeItem" ng-if="joinSum.loseEfficacyCount">
+				<span class="matchType">
+					<span class="a-text-color-light a-font-size-medium matchTypeStart">失效竞猜</span>
+				</span>
+				<span class="a-text-color-whit a-font-size-medium matchNum" ng-cloak>{{joinSum.loseEfficacyCount}}个</span>
+			</div>
+		</div>
+		<div class="pay_get">
+			<div class="a-flex-start a-div-height-medium-s paySum">
+				<span class="a-text-color-whit a-font-size-small-x sumTitle">总投入</span>
+				<span class="a-flex-start a-font-family-numstd a-text-color-whit a-font-size-medium-x sumNum"><img class="a-img-size" src="../../img2.0/common/zs_28.png"/>&nbsp;{{joinSum.customDmdCount}}</span>
+			</div>
+			<div class="a-flex-start a-div-height-medium-s getSum">
+				<span class="a-text-color-whit a-font-size-small-x sumTitle">获得&nbsp;</span>
+				<span class="a-flex-start a-font-family-numstd a-text-color-whit a-font-size-medium-x sumNum"><div class="a-text-color-whit a-font-family-numstd hasReward" ng-repeat="(kkkk,type) in joinSum.earnPrizeCount"><img ng-if="kkkk == 1" class="a-img-size" src="../../img2.0/common/zs_28.png"/><img ng-if="kkkk != 1" class="a-img-size" src="../../img2.0/common/xb_28.png"/>&nbsp;{{type}}</div></span>
+			</div>
+		</div>
+		<div class="getHonor">
+			<div class="guadeDes">
+				<span class="a-font-size-medium-m a-text-color-whit"></span>
+			</div>
+			<div class="a-flex-center guadeImg">
+				<div class="img1">
+					<div class="imgBox">
+						<img ng-if="joinSum.guade>0 && joinSum.guade<5" ng-src="../../img2.0/grade/bspj_{{joinSum.guade}}.png"/>
+					</div>
+				</div>
+				<div class="img2" ng-if="joinSum.bestLineUpCount">
+					<div class="imgBox">
+						<img src="../../img2.0/grade/bspj_zjzr.png"/>
+						<span class="a-font-size-medium-x a-text-color-orange a-font-family-numstd winNum" ng-cloak>x{{joinSum.bestLineUpCount}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="gradeBg">
+		<div class="gradeRule" ng-if="growExp">
+			<div class="a-flex-start a-div-height-medium-s gradeRuleItem" ng-repeat="gradeItem in growExp.growExpDetial">
+				<span class="a-font-size-small a-text-color-light growNeed">{{gradeItem.growFormItem}}</span>
+				<span class="a-font-size-small a-text-color-whit a-flex-between growScore">x{{gradeItem.growCount}}&nbsp;<span class="a-dotted"></span>&nbsp;经验&nbsp;+{{gradeItem.growExp}}</span>
+			</div>
+			<div class="a-flex-start-column gradeRuleItem nowGrade" ng-if="growExp.expDataPrivate">
+				<div class="a-flex-between">
+					<span class="a-font-size-medium-x a-font-family-numstd a-text-color-light a-text-shawgreen">Lv.{{growExp.expDataPrivate.Level}}</span>
+					<div class="a-font-size-small a-text-color-light">
+						<span class="a-font-size-small-s a-text-color-light">{{growExp.expDataPrivate.oldExp}}</span><span class="a-font-size-small-s a-text-color-whit">+{{growExp.expDataPrivate.growExp}}</span><span class="a-font-size-small-s a-text-color-whitDark">/{{growExp.expDataPrivate.maxExp}}</span>
+					</div>
+				</div>
+				<div class="a-flex-start a-progressBg"><div class="a-progressBg-green" style="width:{{growExp.expDataPrivate.expPercent}};"></div><div class="a-progressBg-white growExpAct" style="width:{{growExp.expDataPrivate.growExpPercent}};"></div></div>
+				<span class="a-text-color-goldLight a-font-size-small-x" ng-if="growExp.upgrade"><img class="a-img-size" style="margin: 0px;" src="../../img2.0/grade/sj_icon.png" alt="" /></span>
+			</div>
+		</div>
+	</div>
+	<div class="joinSumBtnBox">
+		<div class="a-buttonSmall-green joinSumBtn" ng-click="nextPage(nowModalId,currentSon)">{{joimSumBtn}}</div>
+	</div>
+</ion-view>

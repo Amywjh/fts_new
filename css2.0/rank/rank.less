@@ -1,0 +1,175 @@
+/*导航*/
+.tab-rank,.rankSlide,.myroom_playersLive,.myRoomDetialView,.bonusPlan,.battle-room{
+    background-image: linear-gradient(-180deg, #222C35 0%, #303845 90%);
+    box-shadow: 0 -10px 15px 0 rgba(0,0,0,0.35), inset 0 -1px 1px 0 rgba(255,255,255,0.15);
+    border-radius: 2px;
+    .rankhead,.planHead{
+        .rankTitle,.bonusTitle{
+            height: 0.48rem;line-height: 0.48rem;background: #26323d;
+            .rankTitleItem,.bonusTitleItem{
+                text-align: center;
+            }
+        }
+        .rankRowTitle,.bonusRowTitle{
+            padding: 0px 0.1rem;
+            background: #26323D;
+            box-shadow: inset 0 0.1rem 0.15rem 0 rgba(0, 0, 0, 0.35);
+            >div{
+                padding: 0px 0.16rem;
+            }
+            .bonusRowTitleRight{
+                >span{
+                    padding: 0px 0.13rem;
+                }
+                >span.titleRightLast{
+                    display: inline-block;width: 7em;text-align: right;
+                    padding-right: 0px;
+                }
+            }
+        }
+    }
+    .myRank,.ranks{
+        width: 100%;padding: 0px 0.2rem;
+        position: absolute;bottom: 0.5rem;
+        >.rankItem{
+            >.rankLeft{
+                position: relative;
+                .rankNum{
+                    width: .5rem; display: flex;display:-webkit-flex;
+                    justify-content: center;-webkit-justify-content: center;
+                    align-items: center;-webkit-align-items: center;
+                    white-space: nowrap;
+                    >img{
+                        width:0.28rem;height:.24rem;vertical-align: middle;
+                    }
+                }
+                >.imgBox{
+                    width: 0.32rem;height: 0.32rem;
+                    border: 1px solid transparent;
+                    margin-left: 0.18rem;
+                    >img{
+                        height: 0.32rem;width: 0.32rem;border-radius: 50%;
+                    }
+                }
+                >div{
+                    display: inline-block;
+                } 
+                .userInfo{
+                    margin-left: 0.1rem;
+                    >p{
+                        line-height: 1.5em;
+                        >img{
+                            width: 0.08rem; margin-right: 0.04rem;
+                        }
+                    }
+                }
+            }
+            >.userIcon{
+                white-space: nowrap;
+                 >img{
+                     width: 0.14rem; vertical-align: initial;
+                 }
+            }
+            >.userGrade{//等级排行
+                height: 100%;padding: 0.1rem 0px;text-align: right;
+                >span{
+                    display: block;white-space: nowrap;line-height: 0.12rem;
+                }
+                >span.grade{
+                    line-height: 0.22rem;
+                }
+            }
+            >.userIcon.bonusNum{
+                padding: 0px 0.13rem;
+                width: 7em;text-align: left;
+            }
+            >.userIcon.bonusNum.bonusNumLast{
+                padding-right: 0px;
+                text-align: right;
+            }
+        }
+        
+    }
+    >.userRanks,>.bonusList{
+        top: 0.9rem;bottom: 1rem;margin: 0px 0.1rem;padding: 0px;
+        .ranks{
+            position: inherit;top: 0px;left: 0px;padding: 0px 0.1rem;
+            >.rankItem{
+                >.userIcon.topThreeIcon{/* 前三名的发光字: */
+                    text-shadow: 0 0 0.06rem #12B01D;
+                }
+            }
+        }
+        .ranks.rankTop{
+            background-color: #394552;
+            >.rankItem{
+                >.userIcon{
+                    text-shadow: 0 0 0.06rem #12B01D;
+                }
+            }
+        }
+        .ranks:last-child{margin-bottom: .2rem;}
+    }
+    
+}
+.tab-rank{
+    >.rankhead{
+        >.onlyRankTitle{
+            >.rankTitleItem{
+                position: relative;
+                width: 50%;flex: 1;-webkit-flex: 1;
+            }
+            >.rankTitleItem.activated{
+                color: #34ED41;opacity: inherit !important;
+                box-shadow: inset 0px 0.05rem 0.1rem 2px rgba(0,0,0,0.3);
+               >span{
+                   position: absolute;bottom: 0px;left: 0px;
+                   height: 1px;width: 100%;background: #12B01D;
+                   box-shadow: 0px -0.04rem 0.1rem 1px rgba(18,176,29,0.5);
+               }
+            }
+        }
+    }
+    >.onlyRankSlide{
+        height: 100vh;padding-bottom: 0.5rem;
+        padding-top: 0.42rem;top: -0.42rem;
+        .rankSlide{
+            background: none;box-shadow: none;
+            >.userRanks{
+                top: 0px;
+                >.scroll{
+                    >.ranks{
+                        >.rankItem{
+//                          >.userGrade{//等级排行
+//                              height: 100%;padding: 0.1rem 0px;text-align: right;
+//                              >span{
+//                                  display: block;line-height: 0.12rem;
+//                              }
+//                              >span.grade{
+//                                  line-height: 0.22rem;
+//                              }
+//                          }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+//奖金分配
+.bonusPlan{
+    >.bonusList{
+        bottom: 0px;padding: 0px 0.17rem;
+        .ranks{
+            padding: 0px;
+            .rankLeft{
+                width: 70vw;margin-right: 0.24rem;white-space: nowrap;overflow: hidden;
+                >.centerLine{
+                    margin-left: 0.24rem;
+                }
+            }
+        }
+    }
+}

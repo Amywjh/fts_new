@@ -1,0 +1,44 @@
+	<!--<div class="prizes-top">-->
+		<div class="prize_sign" ng-if="prize.joined"><img src="../../img2.0/prize2.0/ycj.png" alt="" /></div>
+		<div class="team_img team_img_left">
+			<!--<span>{{prize.home.teamName}}</span>-->
+			<img ng-src="{{prize.home.teamLogo}}" />
+		</div>
+		<div class="team_img team_img_right">
+			<!--<span>{{prize.away.teamName}}</span>-->
+			<img ng-src="{{prize.away.teamLogo}}" />
+		</div>
+		<div class="prizes_span">
+			<div>{{prize.startTime}}&nbsp;截止</div>
+			<!--<div class="timeCount"><img class="a-img-size" src="../../img2.0/prize2.0/qxdz_djs_1.png" alt="" />{{prize.timeCount}}</div>-->
+		</div>		
+		<div class="prizes_one">
+			<img ng-src="../../../img2.0/prize2.0/prizeLeague_{{prize.league}}.png" alt="" />
+		</div>
+		<div class="prizes_two left" ng-click="playerDetialPrizes(prize.home.playerId)">
+			<div class="bg_img">
+				<img class="imgTop" ng-if="!prize.home.headImgUrl" src="../../img2.0/common/player_default.png" alt="" />
+				<img class="imgTop" ng-if="prize.home.headImgUrl" ng-src="{{prize.home.headImgUrl}}" onerror="loadDefaultImg(0)" alt="" />
+			</div>
+			<div class="bg_text">
+				<h2>{{prize.home.playerName}}</h2>
+			</div>
+		</div>
+		<div class="prizes_two right" ng-click="playerDetialPrizes(prize.away.playerId)">
+			<div class="bg_img">
+				<img class="imgTop" ng-if="!prize.away.headImgUrl" src="../../img2.0/common/player_default.png" alt="" />
+				<img class="imgTop" ng-if="prize.away.headImgUrl" ng-src="{{prize.away.headImgUrl}}" onerror="loadDefaultImg(0)" alt="" />
+			</div>
+			<div class="bg_text">
+				<h2>{{prize.away.playerName}}</h2>
+			</div>
+		</div>
+		<div class="prizes_four">
+			<div class="four_text">
+				<h2 ng-if='prize.position==4' style="color: #14D021;">门将</h2>
+				<h2 ng-if='prize.position==2' style="color:#1EB0FA">中场</h2>
+				<h2 ng-if='prize.position==1' style="color:#FF8027">前锋</h2>
+				<h2 ng-if='prize.position==3'>后卫</h2>
+			</div>
+		</div>
+	<!--</div>-->

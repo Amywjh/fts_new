@@ -1,0 +1,19 @@
+<ion-modal-view class='main_model'>
+	<div class="modelbox blackbg position-center" style="box-shadow:none">
+		<div class="closeNow" ng-click="mineNamelnput.remove()">
+			<i class="ion-ios-close-outline"></i>
+		</div>
+		<div class="modelbody">
+			<div class="textHtml nameinput">
+				<h1 class="a-text-color-light a-font-size-medium font-weight nameTitle">修改用户昵称</h1>
+				<p class="a-text-color-whit a-font-size-small-s">可输入2-7个字的名字，无法使用特殊字符</p>
+				<div class="list list-inset nameInput">
+					<label class="item item-input">
+						<input id="nickName"  autofocus="autofocus" ng-model="userName.nickName" type="text" />
+					</label>
+				</div>
+				<button class="a-buttonSmall-green" ng-click="namePush()">确定</button>
+			</div>
+		</div>
+	</div>
+</ion-modal-view>

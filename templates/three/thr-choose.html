@@ -1,0 +1,68 @@
+<ion-modal-view class='hall-choose-all'>
+<ion-content class='hall-choose' scrollbar-y=false>
+	<div class="list">			
+		<h1 class="item item-divider"> 
+	 	请选择赛事
+		</h1>	 
+		<div class="leagues"> 
+			<ion-radio class="league" ng-repeat='league in matchDatas track by $index' ng-value="league.league"
+	           ng-model="choosedRoom.leagueId" name='creat_league' ng-click="choosegame(league.league,$index)">
+				<img ng-src="{{league.logo}}" /><!--src="./img/create_n/room_creat_yingchao.png"-->
+				<span>{{league.name}}</span>
+			</ion-radio>
+		</div>
+	</div>
+	<div class="games">
+		<ul>
+		<div class='gamedetil' >				
+			<ion-radio class='choose_game' ng-repeat="(k,matchMsg) in matchList.matchMap track by $index" ng-if="screen" ng-value="k" ng-model="choosedRoom.matchId" name='creat_game'>
+				<div class="gamedetil_title">						
+					<span>{{k}}</span>					
+					<span></span>
+				</div>
+				<div class="gamedetil_con">
+					<li ng-repeat='game_team in matchMsg track by $index'>
+						<span class="game_time"><i ng-if="game_team.nextDayFlag">次日&nbsp;</i>{{game_team.startTimePoint}}</span>
+						<span>{{game_team.homeName}}</span><span>vs</span><span>{{game_team.awayName}}</span>
+					</li>
+				</div>
+			</ion-radio>
+		</div>
+		</ul>
+	</div>
+	<div class="num_cost">			
+		<ul class="list match_num">
+			<li class="item item-divider">入场人数</li>
+			<li class="list_content">
+			  <ion-radio ng-repeat="creatnum in choosedata.limitNum"
+	           ng-value="creatnum.id"
+	           ng-model="choosedRoom.limitNumId" name='creatroom_entry_num' class='num'>
+				  {{creatnum.name}}
+				</ion-radio>
+			</li>
+		</ul>
+		<ul class="cost list">
+			<li class="item item-divider">入场费<img src="./img/room_new/room_new_diamond.png"/></li>
+			<li class="list_content">
+			  <ion-radio ng-repeat="fee in choosedata.entry"
+	           ng-value="fee.id"
+	           ng-model="choosedRoom.entryId" name='creatroom_entry_fee' class='num'>
+				  {{fee.name}} 
+				</ion-radio>
+			</li>
+		</ul>
+	</div>
+	<div class="toggle_all">		
+		<ion-toggle ng-click="roomType(choosedRoom.roomType)" ng-model="choosedRoom.roomType" ng-checked="choosedRoom.roomType" class='parameter'><!--返回的是布尔值-->
+		  	是否官方 	
+		</ion-toggle>
+		<ion-toggle ng-click="isJoin(choosedRoom.isJoin)" ng-model="choosedRoom.isJoin" ng-checked="choosedRoom.isJoin" class='parameter'><!--返回的是布尔值-->
+		  	已参加房间
+		</ion-toggle>
+	</div>
+	<div class="event">
+		<button ng-click='exitchoose()'>恢&nbsp;复&nbsp;默&nbsp;认</button>		
+		<button ng-click = 'commitchoose(choosedRoom,matchList)'>确&nbsp;定</button>
+	</div>	
+</ion-content>
+</ion-modal-view>

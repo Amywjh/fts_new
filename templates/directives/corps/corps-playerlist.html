@@ -1,0 +1,36 @@
+	<div class="a-flex-between corpsRankHead">
+		<span class="a-text-color-cloudyBlue a-font-size-small" style="width: 60%;">玩家</span>
+		<span class="a-text-color-cloudyBlue a-font-size-small" style="width: 20%;text-align: right;">月活跃度</span>
+		<span class="a-text-color-cloudyBlue a-font-size-small" style="width: 20%;text-align: right;">总活跃度</span>
+	</div>
+	<ion-content class="a-ownpm corpsRank" has-bouncing="true" scrollbar-y="false">  		
+		<a ng-repeat = "list in userList">
+			<img ng-if="list.captain" class="top-center captain" src="../../../img2.0/corps/zd_zy_dzbs.png" alt="" />
+		  	<div class="a-parting-line a-div-height-large-s a-flex-start">
+			  	<div class="a-flex-start corpsList">
+			  		<div class="imgBox" ng-click='nameGet(list.userId)'>
+			  			<img ng-src="{{list.userHeadImg}}" onerror="loadDefaultImg(1)"/>
+			  	    </div>
+			  		<div class="a-flex-start-column corpsName" ng-click='nameGet(list.userId)'>
+			  			<p class="a-font-size-small-x a-text-color-whit playerName">{{list.userName}}</p>
+			  			<span class="a-font-size-small-x a-text-color-cloudyBlue">Lv.{{list.userLevel}}</span>
+			  		</div>
+			  		<div class="operate" ng-if="!list.captain && teamDetail.captain">
+			  			<div class="a-flex-center open" ng-click='handleCheck($event,list)' ng-if="!list.checked"><i class="ion-more"></i></div>
+			  			<div class="a-flex-start off" ng-if='list.checked'>
+			  				<i class="ion-ios-close-outline" ng-click='handleCheck($event,list)'></i>
+			  				<button ng-click="appointBtn($event,list)" class="a-text-color-whit a-font-size-small font-weight a-buttonBig-corblue">任命</button>
+			  				<button ng-click='shotOffBtn($event,list)' class="a-text-color-whit a-font-size-small font-weight a-buttonBig-corRed">移出</button>
+			  			</div>
+			  		</div>
+			  	</div>
+			  	<div class="a-text-color-whit a-font-size-medium-x a-font-family-numstd corpsNum">
+			  		{{list.monthLiveness}}
+			  	</div>
+			  	<div class="a-text-color-whit a-font-size-medium-x a-font-family-numstd corpsNum">
+			  		{{list.liveness}}
+			  	</div>
+		  	</div>
+		</a>
+		<ion-infinite-scroll icon="ion-loading-c" immediate-check="false" ng-if="!moreRecordStop" on-infinite="loadMore(1)" distance="10%"></ion-infinite-scroll>
+	</ion-content>

@@ -1,0 +1,125 @@
+<ion-view view-title="经典战大厅" class='tab-hall tab-hall-ts tab-return' hide-tabs>
+<div class="header-creat"></div>
+	<div class="hallheader">
+		<span id="searchN" class="item item-input" >
+    		<div class="blackbg">
+    			<i ng-if="!searchclear" class="icon ion-search placeholder-icon" ng-click="search()"></i>
+    			<i ng-if="searchclear" class="icon ion-search placeholder-icon" style="color:#fff"></i>
+      			<input class="search" ng-keyup="myKeyup($event)" ng-model="searchclear" type="search" placeholder="搜索房间名称">
+    		    <i ng-click="sclear()" ng-if="searchclear" class="ion-ios-close"></i>
+    		</div>
+    	</span>
+    	<div id='count'>
+			<div class="sort {{sortcss}}" ng-click='clicksort()'>
+				排序&nbsp;<i class="ion-ios-arrow-down"></i>
+			</div>
+			<div class="filter {{filtcss}}" ng-click='clickchoose()'>
+				筛选&nbsp;<i class="ion-ios-arrow-down"></i>
+			</div>
+		</div>
+	</div>
+	<div class="have_none" ng-if="halldata.num<=0">
+		<img src="../../img2.0/hall/dt_kzt.png" alt="" />
+	</div>
+	<div class="date_none" ng-if="dateMsg">
+		<img src="../../img2.0/battle/dt_kzt.png" alt="" />
+		<div class="a-font-size-small-x textBox">
+			<p class="a-text-color-whitDark">很不巧 , 各大联赛正处于休赛期<br />新竞猜将从<span class="font-weight a-text-color-whit">{{dateMsg.newMatchDate}}</span>开始</p>
+			<p class="a-text-color-whitDark timeTitle">- 开赛时间 -</p>
+			<p class="font-weight a-text-color-whit textMar" ng-repeat="(league,MatchDate) in dateMsg.leagueMatchDate">{{league}}&nbsp;&nbsp;{{MatchDate}}</p>
+		</div>
+	</div>
+	<div class="date_none" ng-if="noDateMsg">
+		<img style="margin-top: 30%;" src="../../img2.0/hall/dt_kzt.png" alt="" />
+	</div>
+	</div>
+	<div id="roomcount" ng-if='halldata.num>0' ng-cloak >
+	共{{halldata.num}}房间
+    </div>
+    <div class="returntop" ng-if="config.showTop" on-tap='hallshow()'></div>
+<!--默认大厅内容-->
+<ion-content class="hall" scrollbar-y="false" on-scroll="toTopScroll()" delegate-handle="mainScroll" on-drag-down="searchshow()" on-drag-up="showReturn()">  
+<!--自动滚动，有需要可以添加自动刷新-->
+	<ion-refresher pulling-text="下拉刷新" pullMin="600" pulling-icon="" refreshing-icon="" on-refresh="doRefresh()"></ion-refresher>
+		<div id='rank' style="height:1.3rem">	
+ 		<ion-scroll direction='x' delegate-handle="small" scrollbar-x="false" class='boxs'>
+ 			<!--管道写法-->
+ 			<div class="box blackroom" ng-repeat='box in boxDate track by $index' ng-class="{'true':'greenborder'}[box.choose_css]">
+ 				<div class="warp" ng-click='choose_wf($index)'>
+ 				<h2><span ng-class="{'true':'color'}[box.choose_css]">{{box.matchDay}}</span><span ng-class="{'true':'color'}[box.choose_css]">{{box.dateDescription}}</span>
+ 					<img ng-src="../../img2.0/hall/listLeague_{{box.league}}.png" />
+ 				</h2>
+ 				<div class="by">
+ 					<div>
+ 						<img ng-src="{{box.matchList[0].homeLogo}}" />
+ 						<p class="left-center" ng-class="{'true':'color'}[box.choose_css]">{{box.matchList[0].homeName}}</p>
+ 					</div>
+ 					<div class="centerDate left-center">
+ 						<p class="choose_css" ng-class="{'true':'color'}[box.choose_css]" ng-if="box.matchList[0].nextDayFlag">次日</p>
+ 					    <span ng-class="{'true':'color'}[box.choose_css]" ng-if="!box.matchList[0].nextDayFlag">{{box.matchList[0].startTimePoint}}</span>
+ 					    <span ng-class="{'true':'color'}[box.choose_css]" style="position: relative;top: -4px;" ng-if="box.matchList[0].nextDayFlag">{{box.matchList[0].startTimePoint}}</span>
+ 					</div>
+ 					<div>
+ 						<img ng-src="{{box.matchList[0].awayLogo}}" />
+ 						<p class="left-center" ng-class="{'true':'color'}[box.choose_css]">{{box.matchList[0].awayName}}</p>
+ 					</div>
+ 				</div>
+ 				</div>
+ 				<div class="linebg pageline"></div>
+ 				<div ng-click='btnteamshow($index)' class="title" ng-class="{'true':'color'}[box.choose_css]">共{{box.matchCount}}场&nbsp;<i class="ion-ios-arrow-down"></i></div>
+ 			    <img ng-if="box.activity == 1" ng-style="imgBiao()" src="../../img2.0/hall/jdzdt_hdf_jb.png" alt="" />
+ 			    <img ng-if="box.activity != 1 && box.focusMatch" ng-style="imgBiao()" src="../../img2.0/hall/jdzdt_jddj_jb.png" alt="" />
+ 			</div>
+ 			<div style="width: .12rem;height: 100%;background: red;display: inline-block;"></div>
+	  </ion-scroll>
+	</div>
+	<!--搜索-->
+	<!--房间详情开始-->		
+	<div class="roomList" >
+	<h1 class="headtitle padd"  ng-if="halldata.num>0">距竞猜开始:&nbsp;<span class="a-text-color-whit font-weight a-font-size-small-x"></span><img src="../../img2.0/prize2.0/qxdz_djs_1.png" alt="" /><span><span class="a-font-size-medium a-text-color-whit font-weight">{{timedateup.dates}}&nbsp;</span>日&nbsp;<span class="a-font-size-medium a-text-color-whit font-weight">{{timedateup.hours}}&nbsp;</span>时&nbsp;<span class="a-font-size-medium a-text-color-whit font-weight">{{timedateup.minutes}}&nbsp;</span>分</span></h1>
+	<a class="roomItem blackroom" ng-repeat='room in halldata.room track by $index' ng-click="joinroom(room,1)"  ng-class="room.activity == 1 ?'border-viole':''" >
+		<img class="isJoin" ng-if="room.join && room.lineUp==0" src="../../img2.0/hall/jdzdt_14.png" alt="" />
+		<img class="isJoin" ng-if="room.join && room.lineUp==1" src="../../img2.0/hall/jdzdt_13.png" alt="" />
+		<img class="isactivity" ng-if="room.activity==1 && room.level_limit==0" ng-src="{{room.prize_thing_pic}}" alt="" />
+		
+		<header>
+			<article class="header">
+				<span class="roomtype blackbg"  ng-if="room.roomType=='官方' && room.activity==0">
+					<div class="type">{{room.roomType}}</div>
+				</span>
+				<span class="roomtype blackbg" ng-if="room.roomType=='包厢'">
+					<div class="type Type0">个人</div>
+				</span>
+				
+				<span class="roomtype a-room-black-viole" ng-if="room.roomType=='官方' &&  room.activity==1">
+					<div class="type typewhite">活动</div>
+				</span>
+				
+				<span class="roomname" ng-style="searchstyle(room.id)" >{{room.name}}</span>
+			</article>
+		</header>
+		<div ng-if="true" class="content" >	
+			<div class="roomlist">
+				<img ng-src="../../img2.0/hall/jdzdt_{{room.playType}}.png" />
+				<div><p>{{room.playTypeName}}</p><p>开奖类型</p></div>
+			</div>
+			<div  class="roomlist"><p class="noFee" ng-if="room.entryNum == 0 || !room.entryNum"><img src="../../img2.0/hall/mianfei_biaoqian.png" alt="" /></p><p ng-if="room.entryNum>0"><img src="../../img2.0/hall/jdzdt_11.png" /><span class="fontcolor">{{room.entry}}</span></p><p>入场券</p></div>
+			<div  class="roomlist" ng-if="room.activity == 0 || room.activity == null"><p><img ng-if="room.prizeCurrencyType != 1" src="../../img2.0/hall/jdzdt_12.png" /><img ng-if="room.prizeCurrencyType == 1" src="../../img2.0/hall/jdzdt_11.png" /><span class="fontcolor">{{room.predictPrizePool}}</span></p><p>最高奖池</p></div>
+		    <div  class="roomlist" ng-if="room.activity == 1 && room.level_limit== 0"></div>
+		    <div  class="roomlist roomtop" ng-if="room.activity == 1 && room.level_limit== 1"><p><img ng-src="{{room.prize_thing_pic}}" alt="" /></div>
+		</div>
+		<div class="hallline experienceline">
+			<span ng-if="room.full==0" ng-class="{0:'ycline',1:'zcline',2:'ogline',3:'yjline',4:'xjline'}[room.league]" style="width:{{room.mark}}%;"></span>
+			<span ng-if="room.full==1" style="width: 100%;height: 2px;border-radius: 2px;background: rgb(133,142,160);"></span>
+		</div>
+		<div class="peoples"><img src="../../img2.0/hall/jdzdt_10.png" alt="" /><span>{{room.currUserNum}}</span><span>&nbsp;/&nbsp;{{room.totalUserCount}}</span><img class="man" ng-if="room.full==1" src="../../img2.0/hall/fjlb_1.png" alt="" />
+		<img class="team" ng-src="../../img2.0/hall/circleLeague_{{room.league}}.png"/>
+		<div ng-if="room.level_limit == 1" style="float: right;" class="a-text-colorgreen a-font-size-small">
+				限等级<span class="a-text-color-whit">Lv.{{room.min_level}}-Lv.{{room.max_level}}</span>
+		</div>
+		</div>
+	</a>
+	<div id="infinite_end" ng-if="more_end && halldata.num!==0">住手，没有更多了</div>
+    <ion-infinite-scroll icon="ion-loading-c" immediate-check="false" ng-if="!moreDataCanBeLoaded" on-infinite="loadMore(searchGoing)" distance="10%"></ion-infinite-scroll>
+</ion-content>
+</ion-view>

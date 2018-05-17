@@ -1,0 +1,29 @@
+<div class="a-ownpm a-background-item a-flex-start-column room_detial">
+	<div class="leagueLogo">
+		<img class="a-img-size" ng-src="../../img2.0/joinroom/joinLeague_{{roomDetial.league}}.png"/>
+	</div>
+	<div class="a-flex-start room_head">
+		<span class="a-roomType a-room-black-viole">
+			<div class="a-text-color-whit">活动</div>					
+		</span>
+		<span class="a-font-size-small-x a-text-color-light roomName">{{roomDetial.name}}</span>
+	</div>
+	<div class="a-flex-between reward_box reward_box_goods">
+		<div class="a-flex-start-top reward_box_left">
+			<img class="a-img-size" ng-src="../../img2.0/creatroom/cjfjl_{{roomDetial.playType}}.png" alt="" />
+			<div class="a-flex-start-column">
+				<span class="a-font-size-small a-text-color-whit">{{roomDetial.playTypeName}}</span>
+				<span class=" a-font-size-small-s a-text-color-whitDark">开奖类型</span>
+				<span class="a-parting-lineTop a-font-size-small-s a-text-color-whit goodsAccount">
+					<span class="a-font-size-small-s a-text-color-whit" style="font-weight: bold;">领奖说明</span>：开奖后获奖的玩家客服会主动联系您领取奖品并快递给您
+				</span>
+			</div>
+		</div>
+		<div class="reward_box_right">
+			<img ng-src="{{roomDetial.prize_thing_pic}}" onerror=""/>
+		</div>
+	</div>
+	<div class="bonus_box">
+		
+	</div>
+</div>

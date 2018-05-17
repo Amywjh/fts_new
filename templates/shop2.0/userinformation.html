@@ -1,0 +1,26 @@
+<ion-view view-title="个人信息"  class="phone bgBlue" hide-tabs >
+<!--头部-->
+<ion-content class="info" scroll="false">
+	<div class="header_bg">
+		<div class="header">
+			<img ng-if="userData.head_logo_url" ng-src="{{userData.head_logo_url}}">
+        	<img ng-if="!userData.head_logo_url" src="./img/play-resalt/head.png">
+		</div>
+		<div class="username">
+			<span>{{userData.name}}</span>
+		</div>
+	</div>
+	<div class="list">
+    	<div class="item" ng-click="phonebtn(phonem)">
+    		<div>手机号:</div>
+    		<div ng-if="!phonehave"><span class="ff">未绑定</span>&nbsp;&nbsp;<i class="ion-ios-arrow-right"></i></div>
+    		<div ng-if="phonehave"><span class="tt">{{phonem}}</span>&nbsp;&nbsp;<i class="ion-ios-arrow-right"></i></div>
+    	</div> 
+    	<div class="item" ng-click="userbank()">
+    		<div>账户信息:</div>
+    		<div ng-if="!bankhave"><span class="ff">未绑定</span>&nbsp;&nbsp;<i class="ion-ios-arrow-right"></i></div>
+    		<div ng-if="bankhave"><span class="tt">已绑定</span>&nbsp;&nbsp;<i class="ion-ios-arrow-right"></i></div>
+    	</div>
+    </div>
+</ion-content>
+</ion-view>

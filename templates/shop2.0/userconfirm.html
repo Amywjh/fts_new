@@ -1,0 +1,31 @@
+<ion-view view-title="兑换确认"  class="phone bgBlue" hide-tabs>
+<ion-content scroll="false">
+<div class="warp">
+	<div><span>兑换金额:</span><span>￥{{sum}}</span></div>
+	<div><span>账户信息:</span><span ng-click="changeUser()" class="a-flex-around"><span style="color: inherit;">更改&nbsp;&nbsp;<i class="ion-ios-arrow-right"></i></span></span></div>
+</div>
+<div class="nowarp">
+<div>
+	<div>
+		<div><p>持卡人</p><span class="name">{{name}}</span></div>
+		<div><p>银行</p><span class="bank">{{bank}}</span></div>
+	</div>
+	<div><p>卡号</p><span style="font-family: inherit;">{{card}}</span></div>
+</div>	
+</div>
+<div class="warp">
+	<li class="tindex">
+		<p>· 兑换确认即默认同意将现金券转让给第三方，并获得与现金券金额相等的现金。</p>
+	</li>
+	<li class="tindex">
+		<p>· 工作日期间会在24小时内到账，如遇节假日顺延处理</p>
+	</li>
+	<li class="tindex">
+		<p>· 如有问题请及时通过公众号与我们联系</p>
+	</li>
+</div>
+</ion-content>
+<div class="btn bg" ng-click="conClick()">
+	确定
+</div>
+</ion-view>

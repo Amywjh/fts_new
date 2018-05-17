@@ -1,0 +1,25 @@
+<ion-view view-title="历史战绩" class='tab-battle' hide-tabs>
+<div class="battle_type tab-itembg">
+	<div class="a-flex-center type_tab {{playerTypes.activated}}" ng-if="key!=2" ng-repeat="(key,playerTypes) in playerType.data" ng-click="roomFilter(key,$event)">
+		<span class="type_tab_sign"></span>
+		<span>
+			{{playerTypes.name}}
+		</span>
+	</div>
+</div>
+<style type="text/css">
+</style>
+<!--disable-scroll禁止滑动-->
+<ion-slide-box class="battle_slide" style="height:90%" active-slide="slide_page" disable-scroll="true" does-continue="false"  auto-play="false" delegate-handle="battle_slide" show-pager="false"  animation="slide-left-right-ios7">
+	<ion-slide class="">
+		<battle-prizes></battle-prizes>
+	</ion-slide>
+	<ion-slide class="">
+		<!--<battle-thr></battle-thr>-->
+	</ion-slide>
+	<ion-slide class="">
+		<battle-default></battle-default>
+	</ion-slide>
+</ion-slide-box>
+
+</ion-view>

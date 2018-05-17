@@ -1,0 +1,46 @@
+<ion-modal-view class="team_viewthr">
+<ion-header-bar class="team_head">
+	<div class="title">
+		<span>阵容详情</span>
+	</div>
+	<div class="bnt" style="top:5px" ng-click="lineup_bnt()"><i class="icon ion-close-circled"></i></div>
+</ion-header-bar>
+<ion-content class="team_content">
+	<div class="lineup_headlist">
+		<div>
+			<img ng-if="thr_datalist.userLogoUrl" ng-src="{{thr_datalist.userLogoUrl}}"/><img ng-if="playId == 2 && !thr_datalist.userLogoUrl" src="../../img2.0/common/touxiang_default.png">
+			<div>
+				<span>{{thr_datalist.userName}}</span>
+				<p>提交时间:{{thr_datalist.lineUpSubmitTime}}</p>	
+			</div>
+		</div>
+		<div>
+			<div></div>
+			<div>
+			    <p>阵容表现值</p>
+			    <span>{{thr_datalist.LineUpExp}}</span>
+			</div>	
+		</div>
+	</div>   
+	<!--3v3-->
+<div ng-if="playId == 2" class="lineup-zrxz">
+    <div class="lineup-zrxztt battle-lineup-zrxztt battle-lineup-thr-dir" style="position: inherit;">
+    <div class="luduxz addplayer lineupshowthr" style="width: 100%;margin: 0;justify-content: space-between;-webkit-justify-content: space-between;">
+      	<div class="dfbox" ng-repeat="topLineup in lineup.data track by $index"  ng-if="topLineup"  ng-click="playerDetial(topLineup.id)">
+	        <div class="df" style=" background: url('{{topLineup.logo}}') no-repeat center;background-size: 100% 100%;">
+	        	<span class="dfhone"><img ng-src='{{topLineup.numone}}' ng-if='topLineup.numone'></span>
+	        	<span class="dfhtwo"><img ng-src='{{topLineup.numtwo}}' ng-if='topLineup.numtwo'></span>
+	        </div>
+	        <div class="dyms">
+	          <span	 class="dyname" >{{topLineup.name}}</span>
+	          <span class="dygz" ng-if="topLineup.expression || topLineup.expression===0">表现值：{{topLineup.expression}}</span>
+	        </div>
+      	</div>
+		<div class="dfbox dfbox_default" ng-repeat="topLineup in lineup.data track by $index" ng-if="!topLineup">
+      		<div class="df">
+		</div>
+    </div>
+   </div>
+</div>
+</ion-content>
+</ion-modal-view>

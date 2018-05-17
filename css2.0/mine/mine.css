@@ -1,0 +1,328 @@
+.tab-wode {
+  /* 背景: */
+}
+.tab-wode > .mineBg {
+  background-image: linear-gradient(-180deg, #19232B 0%, #252d38 100%);
+  box-shadow: inset 0 -10px 10px 0 rgba(0, 0, 0, 0.3);
+}
+.tab-wode > .mineBg .mineHeader {
+  width: 100vw;
+  background: url(../../img2.0/rank/wd_1_new.png) no-repeat top;
+  background-size: cover;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName {
+  padding: .3rem .3rem 0 .3rem;
+  position: relative;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .headBox {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .headBox > .headImg {
+  position: relative;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .headBox > .headImg > img {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: .3rem;
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid white;
+  overflow: hidden;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .headBox > .headImg:after {
+  content: '';
+  width: .32rem;
+  height: .32rem;
+  position: absolute;
+  bottom: -0.09rem;
+  right: -0.09rem;
+  background: url(../../img2.0/wode/grxx_xgtx_button.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .headBox > .headName {
+  font-size: 0.12rem;
+  color: #FFFFFF;
+  margin-left: .2rem;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .headBox > .headName h3 {
+  margin-bottom: .1rem;
+  position: relative;
+  text-align: left;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .headBox > .headName h3 img {
+  position: absolute;
+  width: .32rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: -0.3rem;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .grade {
+  margin-top: .23rem;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .grade img {
+  width: .2rem;
+  margin-left: .06rem;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .headline {
+  height: 4px;
+  width: 100%;
+  margin-top: .1rem;
+  position: relative;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .headline span {
+  height: 60%;
+  max-width: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .rightArrow {
+  position: absolute;
+  right: 0;
+  top: 30%;
+  width: 80px;
+  text-align: right;
+  padding-right: .2rem;
+}
+.tab-wode > .mineBg .mineHeader > .headImgName .rightArrow i {
+  color: #fff;
+  font-size: .3rem;
+}
+.tab-wode > .mineBg .mineHeader > .userExper {
+  margin: auto 0.3rem;
+}
+.tab-wode > .mineBg .mineHeader > .userExper > .experInfo {
+  margin: 0.12rem 0px 0.08rem 0px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.tab-wode > .mineBg .mineHeader > .userExper > .experInfo > .experInfoLeft > img {
+  height: 0.11rem;
+}
+.tab-wode > .mineBg .mineHeader > .userExper > .experInfo > .experInfoLeft > span {
+  color: #34ed41;
+}
+.tab-wode > .mineBg .mineHeader > .userExper > .experInfo > .experInfoRight {
+  float: right;
+  font-size: 0.12rem;
+  color: #858ea0;
+}
+.tab-wode > .mineBg .mineHeader > .userExper > .experInfo > .experInfoRight > i {
+  color: #33ef32;
+}
+.tab-wode > .mineBg .mineHeader > .userExper > .experRate {
+  height: 0.04rem;
+  border-radius: 0.03rem;
+  background-color: #1e2631;
+}
+.tab-wode > .mineBg .mineHeader > .userExper > .experRate > .experRateNow {
+  display: block;
+  height: 0.02rem;
+  background-color: #34ED41;
+  border-radius: 0.08rem;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 6px 2px rgba(52, 237, 65, 0.5);
+}
+.tab-wode > .mineBg .mineHeader > .property {
+  padding: 0.18rem 0px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+}
+.tab-wode > .mineBg .mineHeader > .property > div {
+  width: 100vw;
+  flex-shrink: 1;
+  -webkit-flex-shrink: 1;
+  text-align: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+.tab-wode > .mineBg .mineHeader > .property > div > img {
+  width: 0.14rem;
+}
+.tab-wode > .mineBg .mineHeader > .property > div > p {
+  font-size: 0.2rem;
+  color: #fff;
+}
+.tab-wode > .mineBg .mineHeader > .property > div:last-child {
+  border-right: none;
+}
+.tab-wode > .mineBg .mineOtherCon {
+  padding-top: 0.12rem;
+  background-color: #252d38;
+  border-top: 0.10rem solid #19232B;
+}
+.tab-wode > .mineBg .mineOtherCon .hotItemBox {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  align-items: center;
+  -webkit-align-items: center;
+  padding: 0px 0.2rem;
+}
+.tab-wode > .mineBg .mineOtherCon .hotItemBox > .hotItem {
+  text-align: center;
+  height: 0.54rem;
+  width: 1.46rem;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.tab-wode > .mineBg .mineOtherCon .hotItemBox > .hotItem > img {
+  width: 0.3rem;
+  vertical-align: middle;
+}
+.tab-wode > .mineBg .mineOtherCon .hotItemBox > .hotItem > span {
+  font-size: 0.14rem;
+  margin-left: 0.1rem;
+  font-weight: bold;
+}
+.tab-wode > .mineBg .mineOtherCon .hotItemBox > .hotItem.charge {
+  /* 充值按钮: */
+  background-image: linear-gradient(-180deg, #FFF384 17%, #B39200 100%);
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  position: relative;
+}
+.tab-wode > .mineBg .mineOtherCon .hotItemBox > .hotItem.charge > span {
+  color: #7a6322;
+}
+.tab-wode > .mineBg .mineOtherCon .hotItemBox > .hotItem.charge > .firstCharge {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 0.44rem;
+  height: auto;
+}
+.tab-wode > .mineBg .mineOtherCon .hotItemBox > .hotItem.store {
+  /* 商城按钮: */
+  background-image: linear-gradient(-179deg, #FEA74A 0%, #FF3232 100%);
+  box-shadow: 0 10px 15px 1px rgba(0, 0, 0, 0.56), inset 0 1px 1px 0 rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+.tab-wode > .mineBg .mineOtherCon .hotItemBox > .hotItem.store > span {
+  color: #FFF;
+}
+.tab-wode > .mineBg .mineOtherCon .otherItemBox {
+  padding: 0px 0.1rem;
+  margin-top: 0.04rem;
+}
+.tab-wode > .mineBg .mineOtherCon .otherItemBox > a > .otherItem {
+  height: 0.72rem;
+  line-height: 0.5rem;
+  padding: 0px 0.1rem;
+  background-color: transparent;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.tab-wode > .mineBg .mineOtherCon .otherItemBox > a > .otherItem > .otherItemLeft {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  align-items: center;
+  -webkit-align-items: center;
+}
+.tab-wode > .mineBg .mineOtherCon .otherItemBox > a > .otherItem > .otherItemLeft > img {
+  margin: 0px;
+}
+.tab-wode > .mineBg .mineOtherCon .otherItemBox > a > .otherItem > .otherItemLeft > p {
+  font-size: 0.14rem;
+  color: #8fea96;
+  margin: 0px;
+  margin-left: 0.08rem;
+}
+.tab-wode > .mineBg .mineOtherCon .otherItemBox > a > .otherItem > i:before {
+  color: #88dd8f;
+}
+.tab-wode > .mineBg .mineOtherCon .otherItemBox > a:last-child > .otherItem {
+  border-bottom: none;
+}
+.wodexy .wodexyCon {
+  padding: 0px 0.23rem 0.2rem;
+}
+.wodexy .wodexyCon > .wodexyTitle {
+  text-align: center;
+  line-height: 0.56rem;
+}
+.wodexy .wodexyCon > div.wodexyList {
+  line-height: 2em;
+  font-size: 0.14rem;
+  color: #FFFFFF;
+}
+.wodexy .wodexyCon > div.wodexyList > span {
+  margin-bottom: 0.1rem;
+  padding-left: 0.04rem;
+  line-height: 1.6em;
+  font-size: 0.12rem;
+  color: #FFFFFF;
+  display: block;
+}
+.wodexy .rule_box .rule_con {
+  padding-bottom: 0.2rem;
+}
+.header_bg > div.wealthStar {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: auto !important;
+  -webkit-transform: initial !important;
+  width: auto !important;
+  padding: 0.14rem 0px 0.1rem;
+}
+.header_bg > div.wealthStar > p {
+  line-height: 1.6em;
+}
+.hallmodelbox .minemodelbody {
+  font-size: .12rem;
+}
+.hallmodelbox .minemodelbody div.listLine {
+  margin-top: .16rem;
+  position: relative;
+  z-index: 20;
+}
+.hallmodelbox .minemodelbody div.listLine span {
+  white-space: nowrap;
+}
+.hallmodelbox .minemodelbody div.listLine span.dotted {
+  border-top: 2px dotted rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  width: 100%;
+  margin-left: .06rem;
+  margin-right: .06rem;
+}
+.hallmodelbox .minemodelbody div.listLine:first-child {
+  margin: 0;
+}
+.hallmodelbox .minemodelbody div.tail {
+  text-align: right;
+}
+.hallmodelbox .minemodelbody p {
+  margin-top: .3rem;
+}
+.hallmodelbox .minemodelbody.maxHeight {
+  position: relative;
+  height: 4.36rem;
+}
+.hallmodelbox .minemodelbody.maxHeight .scroll {
+  padding: 0 .05rem;
+}

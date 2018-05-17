@@ -1,0 +1,41 @@
+<ion-view view-title="充值记录"  class="wode-dhjl bgBlue" hide-tabs>
+<!--蒙版-->
+<div class="dhjl_msg" ng-if="noRecord">
+	 <img src="../../img2.0/shop2.0/newShop/dhjl_4.png" alt="" />
+	 <p>暂无记录</p>	
+</div>
+<!--内容-->
+<ion-content class="dhjl">
+    <!--加载数据-->
+    <ul class="list list_dhjl" ng-if="noRecord===false">
+        <li class="item">        	
+            <div class="row">
+                <div class="col col-20">时间</div>
+                <div class="col col-55">充值方式</div>
+                <div class="col col-25">星钻</div>
+            </div>
+        </li>
+        <li class="item repeat" ng-repeat="recordItem in chargeRecord">        	
+            <div class="row recharge">
+                <div class="col col-20">
+                	<p>{{recordItem.createMonth}}</p>
+                	<p>{{recordItem.createYear}}</p>
+                </div>
+                <div class="col col-55" ng-if="recordItem.money_op_type==1">
+                	<img src="../../img2.0/shop2.0/record/czjl_gm.png" alt="" />
+                	购买
+                </div>
+                 <div class="col col-55" ng-if="recordItem.money_op_type==0">
+                	<img src="../../img2.0/shop2.0/record/czjl_dh.png" alt="" />
+                	{{recordItem.mark}}
+                </div>
+                <div class="col col-25">
+                	<img src="../../img2.0/shop2.0/home/dh_xz_2.png" alt="" />
+                	{{recordItem.dmd_count}}
+                </div>
+            </div>
+        </li> 
+    </ul>
+    <ion-infinite-scroll class="moreRecord" immediate-check="false" on-infinite="moreRecord()" distance="20%" style="height: 1px;" ng-if="!moreData"></ion-infinite-scroll>  
+</ion-content>
+</ion-view>

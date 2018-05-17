@@ -1,0 +1,43 @@
+<ion-view title='首页' class='matchHint' hide-tabs>
+	<div class="matchHintScroll">
+		<div class="topHalf">
+			<div class="a-font-size-medium-m a-text-color-whit matchHintHeader">新一波竞猜来袭，星币“刷”起来</div>
+			<div class="starDual prizes-room" ng-if="matchHint.game1v1" ng-click="goHall('/tab/main/prizes')">
+				<div class="playTitle" style="background-image: url(../../img2.0/grade/jctj_qxdz_bt.png);">
+				</div>
+				<div class="prizes">
+					<div prizes-nostart-head-top class="prizes-top" ng-repeat="prize in matchHint.game1v1.gameMatchList|limitTo:2"></div>
+				</div>
+				<div class="goHall">
+					<div class="a-havemore-font a-color-blueLight">点击前往竞猜<i class="ion-ios-arrow-right a-color-blueLight"></i></div>
+				</div>
+			</div>
+		</div>
+		<div class="footerHalf">
+			<div class="classics" ng-if="matchHint.game11v11" ng-click="goHall('/tab/hall/0')">
+				<div class="boxLight"></div>
+				<div class="playTitle" style="background-image: url(../../img2.0/grade/jctj_jdz_bt.png);">
+				</div>
+				<div class="hintMatchDate">
+					<span class="a-font-size-small-x a-text-color-whit" style="font-weight:bold;">{{matchHint.game11v11.matchDay}}&nbsp;&nbsp;{{matchHint.game11v11.matchDayDisplay}}</span>
+				</div>
+				<ion-scroll direction="y" scrollbar-y="false" class="allMatchScroll">
+					<div class="hintMatchItem" ng-repeat="(matchKey,gameMatchListItem) in matchHint.game11v11.gameMatchList">
+						<div class="a-font-size-small-x a-flex-start a-color-blueMid league"><img class="a-img-size" ng-src="../../img2.0/grade/jctj_bq_{{matchKey}}.png" alt="" />&nbsp;{{gameMatchListItem.length}}场</div>
+						<ion-scroll direction="x" scrollbar-x="false" class="allMatch">
+							<div class="allMatchX">
+								<span ng-class="{'a-color-blueMid':!matchListItem.focusMatch,'a-color-blueLight':matchListItem.focusMatch}" ng-repeat="matchListItem in gameMatchListItem">{{matchListItem.homeName}}<img class="a-img-size" src="../../img2.0/lineup2.0/xzqy_qdxz_vs.png" alt="" />{{matchListItem.awayName}}</span>
+							</div>
+						</ion-scroll>
+					</div>
+				</ion-scroll>
+				<div class="goHall">
+					<div class="a-havemore-font a-color-blueLight">点击前往竞猜<i class="ion-ios-arrow-right a-color-blueLight"></i></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="a-text-color-light a-font-size-small-x goOther" ng-click="goMain()">
+		先看看别的<i class="ion-arrow-right-b"></i><i class="ion-arrow-right-b light"></i>
+	</div>
+</ion-view>

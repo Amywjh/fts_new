@@ -1,0 +1,41 @@
+.lineup-ksbz .hom{
+	height: .05rem;
+	top: .4rem;
+	z-index: 10;
+}
+.lineuphead.dzsm{
+    top: .45rem;
+    width: 98%;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    z-index: 10;
+}
+.lineuphead.dzsm.mod{
+	width: 100%;
+	height: .46rem;
+	line-height: .46rem;
+	justify-content: center;
+    -webkit-justify-content: center;
+}
+.lineuphead.dzsm.mod>.dzsmsm:last-child{
+	margin-left: .12rem;
+}
+.lineuphead.dzsm>.dzsmsm{
+    color: #A4B2CD;
+    font-size: 0.12rem;
+}
+.lineuphead.dzsm>.dzsmsm>span{
+    color: rgb(255,216,65);
+    font-family:'DINEngschriftStd';
+    font-size: .16rem;
+}
+.lineuphead.dzsm>.dzsmsm>span.useNum{
+	color: rgb(52,237,65);
+}
+.lineuphead.dzsm>.dzsmsm>span.usecol{
+	color: rgb(255,0,22);
+}

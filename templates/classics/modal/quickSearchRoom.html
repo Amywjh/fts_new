@@ -1,0 +1,20 @@
+<ion-modal-view class='ksbz-model' id="quickBtn">
+	<div class="hallmodelbox blackbg position-center">
+		<div class="closeb" ng-click="quickSearchRoom.remove()"></div>
+		<div class="hallmodelbody">
+			<h1 class="a-font-size-medium a-text-color-light">请输入5位数房间号</h1>
+			<p class="text a-font-size-small a-text-color-whit" style="margin-top: .1rem;">房间号可从房间详情中得知</p>
+			<div class="inputBoxContainer" id="inputBoxContainer">
+		        <input type="number" class="realInput" id="realInput" disabled />
+		        <div class="bogusInput">
+		            <input class="a-font-family-numstd" type="number" maxlength="5" disabled/>
+		            <input class="a-font-family-numstd" type="number" maxlength="5" disabled/>
+		            <input class="a-font-family-numstd" type="number" maxlength="5" disabled/>
+		            <input class="a-font-family-numstd" type="number" maxlength="5" disabled/>
+		            <input class="a-font-family-numstd" type="number" maxlength="5" disabled/>
+		        </div>
+		    </div>
+			<div class="searchbtn a-flex-center greenbg" ng-click="quickRoomShow()">搜索房间</div>
+		</div>
+	</div>
+</ion-modal-view>

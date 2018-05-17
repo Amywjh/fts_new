@@ -1,0 +1,80 @@
+<ion-view view-title="阵容" class="lineup-zrxz thr-lineupshow" hide-tabs>
+	<div class="" header-title></div>
+  <div class="lineuphead dzsm zr">
+    <div class="lineuphead dzsmsm gz">工资位置不限</span></div>
+    <div class="lineuphead dzsmsm gz">仅可选择{{lineupshow.maxNum}}人上场</div>
+    <div class="lineuphead dzsmsm ry">人员：&nbsp;&nbsp;<span><span class="useNum">{{lineupshow.num}}</span>/{{lineupshow.maxNum}}</span></div>
+  </div>
+  <div class="lineup-zrxztt">
+    <div class="luduxz addplayer lineupshowthr" ng-click="modifyLineup()">
+      	<div class="dfbox" ng-repeat="topLineup in lineupshow.data track by $index" ng-if="topLineup">
+	        <div class="df" style=" background: url('{{topLineup.logo}}') no-repeat center;background-size: 100% 100%;">
+	        	<span class="dfhone"><img ng-src='{{topLineup.numone}}' ng-if='topLineup.numone'></span>
+	        	<span class="dfhtwo"><img ng-src='{{topLineup.numtwo}}' ng-if='topLineup.numtwo'></span>
+	        </div>
+	        <div class="dyms">
+	          <span	 class="dyname" >{{topLineup.name}}</span>
+	          <span class="dygz">近期战力：{{topLineup.recentExp}}</span>
+	          <span class="dygz">工资：{{topLineup.salary}}</span>
+	        </div>
+      	</div>
+		<div class="dfbox dfbox_default" ng-repeat="topLineup in lineupshow.data track by $index" ng-if="!topLineup">
+			<div class="df">
+	        </div>
+      	</div>
+    </div>
+    <!--按钮通道-->
+    <div class="reminder" ng-if="!lineupshow.data[0]">
+    	<div class="hint">友情提示</div>
+    	<div>1.此玩法在经典战的基础上减少了球员的数量，操作更为简单容易。</div>
+    	<div>2.所选球员的位置不限，工资不限，球员数量最多为3。</div>
+    	<div>3.结算时以球员所在位置对应的数据维度进行统计，3名球员数据之和即为成绩。</div>
+    </div>
+  </div>
+    <!--内容页-->
+  <ion-content class="zrxz_nrcon zrxz_nrconshow"  scroll=false>
+    <div class="zrxz_nr">
+      <div class="zrxz_nr_box" ng-repeat="zrxz in lineupshow.data track by $index" ng-if="zrxz">
+       <a class="revise" ng-click="playerDetialThr(zrxz.id)">
+         <div class="zrxz_nr_one" style="background:url('{{zrxz.logo}}')no-repeat center 0.1rem;background-size: 80% 70%;">
+          <span ><img ng-src="{{zrxz.numone}}"><img class="zrxz_df_sz2" ng-src="{{zrxz.numtwo}}" ng-if="zrxz.numtwo"></span>
+          </div>
+         <div class="zrxz_nr_two">
+          <h1>{{zrxz.name}}</h1>
+          <div>
+            <div class="zrxz_vs">
+              <img src="img/lineup/lineup_default/lineup_default_vs.png" alt="">
+            </div>
+            <div class="zrxz_wz">
+              <div class="zrxz_wz_q1">{{zrxz.teamName}}</div>
+              <div class="zrxz_wz_q2">{{zrxz.againstTeamName}}</div>
+            </div>
+            <div style="clear: both"></div>
+          </div>
+        </div>
+        <div class="zrxz_nr_thr">
+          <div class="zrxz_div">
+            <div class="zrxz_nr_thr_box">
+              <div class="zrxz_left zrxz_nr_thr_img"><img src="img/lineup/lineup_default/lineup_default_$.png"></div>
+              <div class="zrxz_num">{{zrxz.salary}}</div>
+            </div>
+            <div class="zrxz_nr_thr_box">
+              <div class="zrxz_left">近期战力</div>
+              <div class="zrxz_num">{{zrxz.recentExp}}</div>
+            </div>
+            <div class="zrxz_nr_thr_box">
+              <div class="zrxz_left thr">热度</div>
+              <div class="zrxz_num thr"><span ng-repeat="v in zrxz.torch"></span></div>
+            </div>
+          </div>
+        </div>
+         </a>       
+      </div>
+    </div>
+  </ion-content>
+  <div class="zrxz_bnt add">
+    <div class="lineup-ctqd bntadd red" style="visibility: hidden;" ng-click="bz_sys()">快速布阵</div>
+    <div class="lineup-ctqd bntadd warning" ng-if="lineupshow.data[0]" ng-click="zrxz_clear()">一键清空</div>
+    <div class="lineup-ctqd bntadd green" ng-click="sub_lineup()">确定布阵</div>
+  </div>
+</ion-view>

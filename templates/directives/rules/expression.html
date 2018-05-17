@@ -1,0 +1,12 @@
+<p class="content expContent">足球场上不同位置的球员在比赛中的表现情况有着不同的评定标准，我们对前锋和中场、后卫、门将分别采用了不同的表现值计算维度，表现值即所有维度的分数总和而来。具体参照下表：</p>
+<div class="expCon" style="margin-top: 0.2rem;">
+	<div class="positionAll">
+		<span class="pos">前锋/中场</span>
+		<span class="pos">后卫</span>
+		<span class="pos">门将</span>
+	</div>
+	<ul class="dimension">
+		<li class="title"><span>表现</span><span>分值</span></li>
+		<li class="dimContent" ng-repeat="dis in dimensionActivated"><span>{{dis.name}}</span><span>{{dis.value}}</span></li>
+	</ul>
+</div>

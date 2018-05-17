@@ -1,0 +1,20 @@
+<div class="input_bg input_num_bg">
+	<div class="enter_c enter_c_num">
+		<div class="enter_c_content">
+		    <div class="a-flex-center-column enter_c_contentTop enter_c_contentTop_num">
+		    	<span class="inputTitle">{{titleName}}</span>
+		    	<div class="vote_num_all">
+				  	<article class="item item-input vote_num">
+					    <i class="icon ion-minus-round minus" ng-click="changeInput(1)"></i>
+					    <input class="a-font-family-inputblod" id="vote_num"  type="number" pattern="[0-9]*" name="num" value="1">
+				    	<i class="icon ion-plus-round plus" ng-click="changeInput(2)"></i>
+				  	</article>
+				</div>
+		    </div>
+		</div>
+	    <div class="a-buttons a-flex-between inputNumButtons">
+	    	<button class="a-buttonThin-black" ng-click="exit_enter_c()">取消</button>
+			<button class="a-buttonThin-green" ng-click="commit_enter_c(titleId)">确定</button>
+	    </div>
+	</div>
+</div>

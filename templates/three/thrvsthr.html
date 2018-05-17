@@ -1,0 +1,117 @@
+<ion-view view-title="三人战大厅" class='tab-hall tab-thr-ts tab-return' hide-tabs>
+<div class="header-creat"></div>
+<!--排名奖励部分-->
+	<div id='rank' class="">	
+ 		<ion-scroll direction='x' delegate-handle="small" scrollbar-x="false" class='boxs'>
+ 			<!--管道写法-->
+ 			<div class="box {{rank.class}}"  ng-repeat="rank in contestType track by $index" ng-model="contestType.code" ng-click='choose_wf(rank.code)'>
+ 				<div class="sy"></div>
+ 				{{rank.name}}
+ 			</div>
+	  </ion-scroll>
+	</div>
+	<ul id='count'>
+		<div class="filter" ng-click='clickchoose()'>
+			筛选
+		</div>
+		<div id="px_thr" class="sort">
+    	排序 <!--  ng-click="clicksort()"-->
+			<ul id="pxDetial_thr"class="demo-main-cont demo-comp-image demo-display-bottom demo-theme-mobiscroll">
+		    <li data-val="0">
+		        <p>默认排序</p>
+		    </li>
+		    <li data-val="1">
+		        <p>参与人数（从高到低）</p>
+		    </li>
+		    <!--<li data-val="2">
+		        <p>参与人数（从低到高）</p>
+		    </li>-->
+		    <li data-val="3">
+		        <p>最高奖金（从高到低）</p>
+		    </li>
+		    <!--<li data-val="4">
+		        <p>最高奖金（从低到高）</p>
+		    </li>-->
+		    <li data-val="5">
+		        <p>入场费（从高到低）</p>
+		    </li>
+		    <li data-val="6">
+		        <p>入场费（从低到高）</p>
+		    </li>
+			</ul>  
+		</div>
+	</ul>
+<!--默认大厅内容-->
+<ion-content class="hall" scrollbar-y="false" delegate-handle="mainScroll" on-swipe-down="searchshow()" on-swipe-up="showReturn()">  
+<!--自动滚动，有需要可以添加自动刷新-->
+	<ion-refresher pulling-text="下拉刷新" pullMin="600" pulling-icon="" refreshing-text="" refreshing-icon="" on-refresh="doRefresh()"></ion-refresher>
+	<!--搜索-->
+	<label id="searchN" class="item item-input" >
+    		<i class="icon ion-search placeholder-icon" ng-click="search()"></i>
+      		<input class="search" ng-keyup="myKeyup($event)" ng-model="searchText" type="search" placeholder="搜索房间名称">
+    </label>
+	<!--房间详情开始-->		
+	<div class="roomList" >
+	<a class="roomItem" ng-repeat='room in halldata.room' ng-click="joinroom(room.id,room.fee,room.join)">
+		<img ng-if="room.join" class="isJoin" src="../img/room_new/fjlb_4.png" alt="" />
+		<header>
+			<article class="header">
+				<span class="roomtype roomType{{room.officialDisplay}}">
+					<div class="type" ng-if="room.officialDisplay==1">官方</div>
+					<div class="type" ng-if="room.officialDisplay==0">包厢</div>	
+				</span>
+				<span class="roomname" ng-style="searchstyle(room.id)" >{{room.name}}</span>
+			</article>
+		</header>
+		<div ng-if="true" class="content" >	
+			<ul>
+				<li class="reward_box">
+					<span class="reward">
+						{{room.playTypeName}}有奖,最高奖<img src="./img/room_new/room_new_coin.png"/><span >{{room.firstPrize}}</span>
+					</span>
+				</li>
+				<li class="fee_time_num">
+					<span class="fee" ng-if="room.fee && room.fee!=0">
+						入场费<img src="./img/room_new/room_new_diamond.png"/><span>	{{room.fee}}</span> 
+					</span>
+					<span class="fee" ng-if="!room.fee || room.fee==0">
+						免费
+					</span>
+					<span class="point">.</span>
+					<span class="time">
+						<i class="ion-ios-clock"></i><span>{{room.deadTimeDisplay}}</span>
+					</span>
+					<span class="point">.</span>
+				    <span class="num">
+						<i class="ion-android-person"></i>
+						<span ng-if="!room.maxUserCountOffiDisplay">{{room.currentUserCount}}/{{room.maxUserCount}}</span>
+						<span ng-if="room.maxUserCountOffiDisplay">{{room.currentUserCount}}/{{room.maxUserCountOffiDisplay}}</span>
+						<img ng-if="room.currentUserCount==room.maxUserCount" src="../img/room_new/fjlb_1.png"/>
+					</span>
+				</li>
+			</ul>
+			<aside>
+				<div class="league_box">
+					<img class="leagueLogo" ng-src="{{room.leagueLogo}}"/>
+					<span class="league{{room.league}}">{{room.leagueName}}</span>
+				</div>
+			</aside>
+		</div>
+	</a>
+	<div class="have_none" ng-if="halldata.num===0">
+		<img src="./img/room_new/no_room.png" alt="" />
+		<span>暂无比赛房间</span>
+	</div>
+	</div>
+	<!--<div class="sss" ng-if="!room_ts">没有更多房间了~~</div>-->
+	  <!--</ion-infinite-scroll>-->
+	   <!--上拉更多 ng-if="moreDataCanBeLoaded()"-->
+	<div id="infinite_end" ng-if="more_end && halldata.num!==0">住手，没有更多了</div>
+    <ion-infinite-scroll icon="ion-loading-c" immediate-check="false" ng-if="!moreDataCanBeLoaded" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+</ion-content>
+<div class="returntop" on-tap='hallshow()'>	
+</div>
+<div class="roomcount" ng-cloak ng-if="halldata.num">
+	共{{halldata.num}}房间
+</div>
+</ion-view>

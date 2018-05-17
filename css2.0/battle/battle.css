@@ -1,0 +1,297 @@
+.tab-battle {
+  background-color: #1d232c;
+  -webkit-animation: tmd 0.5s ease-out 0s forwards;
+}
+.tab-battle .battle_status {
+  width: 100vw;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.tab-battle .battle_status .tab {
+  flex: 1;
+  height: 0.48rem;
+  text-align: center;
+  background: #26323D;
+  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+}
+.tab-battle .battle_status .tab span {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: #8fea96;
+  font-size: 0.16rem;
+  line-height: 0.48rem;
+}
+.tab-battle .battle_status .tab span > .redSign {
+  position: absolute;
+  top: -0.8em;
+  color: #FF0016;
+}
+.tab-battle .battle_status .tab span > .redSign:before {
+  font-size: 0.14rem;
+}
+.tab-battle .battle_status .tab span.activated {
+  color: #34ed41;
+  border-bottom: 2px solid #34ED41;
+  height: 100%;
+  opacity: 1 !important;
+  font-weight: bold;
+  box-sizing: border-box;
+  background-color: #26323D;
+  box-shadow: inset 1px 5px 28px 2px #000000, inset 0 -5px 11px 2px rgba(52, 237, 65, 0.5);
+}
+.tab-battle .battle_status .tab:last-child {
+  margin-right: 0px;
+}
+.tab-battle .battle_type {
+  display: -webkit-flex;
+  display: flex;
+}
+.tab-battle .battle_type .type_tab {
+  height: 0.48rem;
+  line-height: .48rem;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.tab-battle .battle_type .type_tab > .type_tab_sign {
+  width: 0.2rem;
+  margin-right: 0.05rem;
+  background: url(../../img2.0/hall/sx_4.png) no-repeat center;
+  background-size: .22rem;
+}
+.tab-battle .battle_type .type_tab > span {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  line-height: 0.48rem;
+  color: #a4b2cd;
+  font-size: 0.14rem;
+}
+.tab-battle .battle_type .type_tab > span > .redSign {
+  position: absolute;
+  top: -0.8em;
+  color: red;
+  right: -0.5em;
+}
+.tab-battle .battle_type .type_tab > span > .redSign:before {
+  font-size: 0.14rem;
+}
+.tab-battle .battle_type .type_tab.type_tab_activated > .type_tab_sign {
+  background: url(../../img2.0/hall/sx_3.png) no-repeat center;
+  color: #fff;
+  background-size: .22rem;
+}
+.tab-battle .battle_type .type_tab.type_tab_activated > span:last-child {
+  color: #fff;
+  font-weight: bold;
+}
+.tab-battle .battle_bg {
+  width: 100vw;
+  height: 8.6rem;
+  background: #232932;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+.tab-battle .battle_bg > img {
+  margin: auto;
+  transform: translateY(80%);
+  -webkit-transform: translateY(80%);
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.tab-battle .battle_bg > span {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin: auto;
+  transform: translateY(300%);
+  -webkit-transform: translateY(300%);
+}
+.tab-battle .battle_bg > span div {
+  color: #fff;
+  font-size: 0.14rem;
+}
+.tab-battle .battle_bg > span div > span {
+  color: #34ed41;
+}
+.tab-battle .battle_slide {
+  height: 5.2rem;
+}
+.tab-battle .battle {
+  position: absolute;
+  bottom: 0rem!important;
+  margin: 0px;
+  overflow-y: auto;
+}
+.tab-battle .battle #allteam {
+  overflow: auto;
+  width: 100%;
+}
+.tab-battle .battle #allteam .team {
+  margin: 0 auto;
+  width: 95vw;
+  display: block;
+  margin-bottom: 0.3rem;
+  padding: 0.18rem 4vw;
+  border: 1px solid #e2ddd7;
+}
+.tab-battle .battle #allteam .team .content {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+}
+.tab-battle .battle #allteam .team .content aside #people span:last-child {
+  color: #484749;
+  font-weight: bold;
+  font-size: 0.36rem;
+}
+.tab-battle .battle #allteam .team .content aside #jc .jc_t {
+  float: left;
+}
+.tab-battle .battle #allteam .team .content aside #jc .jc_num {
+  font-size: 0.48rem;
+  position: relative;
+}
+.tab-battle .battle #allteam .team .content aside #jc .jc_num img {
+  display: block;
+  height: 0.26rem;
+  position: absolute;
+  left: -0.46rem;
+  top: 50%;
+  margin-top: -0.13rem;
+}
+.tab-battle .battle #allteam .team .content article {
+  width: 50vw;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.tab-battle .battle #allteam .team .content article .price,
+.tab-battle .battle #allteam .team .content article .prizes {
+  width: 20vw;
+  text-align: center;
+}
+.tab-battle .battle #allteam .team .content article .price .ongoing_p,
+.tab-battle .battle #allteam .team .content article .prizes .ongoing_p {
+  display: block;
+  text-align: center;
+  position: relative;
+  left: -0.4em;
+  color: #A3A1A3;
+  font-size: 0.3rem;
+  line-height: 0.6rem;
+  white-space: nowrap;
+}
+.tab-battle .battle #allteam .team .content article .price .ongoing_p .ongoing,
+.tab-battle .battle #allteam .team .content article .prizes .ongoing_p .ongoing {
+  display: inline-block;
+}
+.tab-battle .battle #allteam .team .content article .price span:nth-child(2),
+.tab-battle .battle #allteam .team .content article .prizes span:nth-child(2) {
+  display: block;
+  height: 0.6rem;
+}
+.tab-battle .battle #allteam .team .content article .price span:nth-child(2) li,
+.tab-battle .battle #allteam .team .content article .prizes span:nth-child(2) li {
+  display: inline-block;
+  position: relative;
+  font-size: 0.6rem;
+  line-height: 0.6rem;
+  color: #484749;
+  font-weight: bold;
+}
+.tab-battle .battle #allteam .team .content article .price span:nth-child(2) li img,
+.tab-battle .battle #allteam .team .content article .prizes span:nth-child(2) li img {
+  display: block;
+  height: 0.26rem;
+  position: absolute;
+  left: -0.46rem;
+  top: 50%;
+  margin-top: -0.13rem;
+}
+.tab-battle .battle #allteam .team .content article .prizes span:nth-child(2) li {
+  color: #57A900;
+}
+.tab-battle .battle #allteam .team .content article .prizes .roomtype {
+  display: inline-block;
+  border-radius: 0.04rem;
+  font-size: 0.24rem;
+  letter-spacing: 0.1rem;
+  line-height: normal;
+  padding: 0rem 0.1rem 0rem 0.2rem;
+}
+.tab-battle .battle #allteam .team .content article .prizes .official {
+  background: #FFD20C;
+  color: #000000;
+}
+.tab-battle .battle #allteam .team .content article .prizes .baoxiang {
+  background: #B2B2E0;
+  color: #FFFFFE;
+}
+.tab-battle .battle #allteam .team .content article .prizes_end {
+  text-align: left;
+  width: 22vw;
+  white-space: nowrap;
+}
+.tab-battle .battle #allteam .team .content article .prizes_end > .end_rank,
+.tab-battle .battle #allteam .team .content article .prizes_end > .end_reward {
+  text-align: left;
+  padding-left: 0.6rem;
+  position: relative;
+  height: 0.6rem;
+}
+.tab-battle .battle #allteam .team .content article .prizes_end > .end_rank img,
+.tab-battle .battle #allteam .team .content article .prizes_end > .end_reward img {
+  display: block;
+  height: 0.26rem;
+  position: absolute;
+  left: 0.14rem;
+  top: 50%;
+  margin-top: -0.13rem;
+}
+.tab-battle .battle #allteam .team .content article .prizes_end > .end_rank .end_title,
+.tab-battle .battle #allteam .team .content article .prizes_end > .end_reward .end_title {
+  display: inline;
+  float: left;
+  font-size: 0.3rem;
+  margin-right: 0.6em;
+  color: #484749;
+  font-weight: normal;
+}
+.tab-battle .battle #allteam .team .content article .prizes_end > .end_rank .end_zhi,
+.tab-battle .battle #allteam .team .content article .prizes_end > .end_reward .end_zhi {
+  display: inline-block;
+  font-size: 0.6rem;
+  color: #57A900;
+  font-weight: bold;
+}
+.tab-battle .battle #allteam .team .content article .prizes_end > .roomtype {
+  text-align: center;
+  margin-left: 0.9rem;
+}
+.tab-battle .battle #allteam .team.activated {
+  transform: scale(1.03, 1);
+  -webkit-transform: scale(1.03, 1);
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+.tab-battle .has-tt-battle {
+  top: 0rem;
+}
+.tab-battle .has-tt-battle .prizes_loadmore > .spinner {
+  display: none;
+}
+.tab-battle #default {
+  animation-duration: 1s;
+}

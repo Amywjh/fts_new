@@ -1,0 +1,493 @@
+.prizes-room .rSupport,
+.scontent .rSupport,
+.prizes-room .rConvas,
+.scontent .rConvas,
+.prizes-room .rScore,
+.scontent .rScore,
+.prizes-room .rHistory,
+.scontent .rHistory {
+  width: 95.6vw;
+  padding: 0 0.22rem;
+  margin: 0.12rem auto 0.12rem;
+  border-radius: 0.03rem;
+}
+.prizes-room .rSupport > h2,
+.scontent .rSupport > h2,
+.prizes-room .rConvas > h2,
+.scontent .rConvas > h2,
+.prizes-room .rScore > h2,
+.scontent .rScore > h2,
+.prizes-room .rHistory > h2,
+.scontent .rHistory > h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 0.12rem;
+  color: #34ed41;
+  height: 0.3rem;
+  line-height: 0.3rem;
+}
+.prizes-room .rSupport > .rTwo,
+.scontent .rSupport > .rTwo,
+.prizes-room .rConvas > .rTwo,
+.scontent .rConvas > .rTwo,
+.prizes-room .rScore > .rTwo,
+.scontent .rScore > .rTwo,
+.prizes-room .rHistory > .rTwo,
+.scontent .rHistory > .rTwo {
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 0.1rem;
+}
+.prizes-room .rSupport > .rTwo > div,
+.scontent .rSupport > .rTwo > div,
+.prizes-room .rConvas > .rTwo > div,
+.scontent .rConvas > .rTwo > div,
+.prizes-room .rScore > .rTwo > div,
+.scontent .rScore > .rTwo > div,
+.prizes-room .rHistory > .rTwo > div,
+.scontent .rHistory > .rTwo > div {
+  -webkit-flex: 1;
+  flex: 1;
+}
+.prizes-room .rSupport > .rTwo > div > span,
+.scontent .rSupport > .rTwo > div > span,
+.prizes-room .rConvas > .rTwo > div > span,
+.scontent .rConvas > .rTwo > div > span,
+.prizes-room .rScore > .rTwo > div > span,
+.scontent .rScore > .rTwo > div > span,
+.prizes-room .rHistory > .rTwo > div > span,
+.scontent .rHistory > .rTwo > div > span {
+  display: block;
+  height: 0.2rem;
+  line-height: 0.1rem;
+}
+.prizes-room .rSupport > .rTwo > div > div > span,
+.scontent .rSupport > .rTwo > div > div > span,
+.prizes-room .rConvas > .rTwo > div > div > span,
+.scontent .rConvas > .rTwo > div > div > span,
+.prizes-room .rScore > .rTwo > div > div > span,
+.scontent .rScore > .rTwo > div > div > span,
+.prizes-room .rHistory > .rTwo > div > div > span,
+.scontent .rHistory > .rTwo > div > div > span {
+  font-size: 0.1rem;
+  color: #858ea0;
+}
+.prizes-room .rSupport > .rTwo > div > div > span.ts,
+.scontent .rSupport > .rTwo > div > div > span.ts,
+.prizes-room .rConvas > .rTwo > div > div > span.ts,
+.scontent .rConvas > .rTwo > div > div > span.ts,
+.prizes-room .rScore > .rTwo > div > div > span.ts,
+.scontent .rScore > .rTwo > div > div > span.ts,
+.prizes-room .rHistory > .rTwo > div > div > span.ts,
+.scontent .rHistory > .rTwo > div > div > span.ts {
+  color: #fff;
+  font-size: 0.12rem;
+}
+.prizes-room .rSupport > .rTwo > div img,
+.scontent .rSupport > .rTwo > div img,
+.prizes-room .rConvas > .rTwo > div img,
+.scontent .rConvas > .rTwo > div img,
+.prizes-room .rScore > .rTwo > div img,
+.scontent .rScore > .rTwo > div img,
+.prizes-room .rHistory > .rTwo > div img,
+.scontent .rHistory > .rTwo > div img {
+  vertical-align: middle;
+  height: .12rem;
+}
+.prizes-room .rSupport > .rTwo > div:last-child,
+.scontent .rSupport > .rTwo > div:last-child,
+.prizes-room .rConvas > .rTwo > div:last-child,
+.scontent .rConvas > .rTwo > div:last-child,
+.prizes-room .rScore > .rTwo > div:last-child,
+.scontent .rScore > .rTwo > div:last-child,
+.prizes-room .rHistory > .rTwo > div:last-child,
+.scontent .rHistory > .rTwo > div:last-child {
+  text-align: right;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+.prizes-room .rSupport > .rTwo > div:last-child > span,
+.scontent .rSupport > .rTwo > div:last-child > span,
+.prizes-room .rConvas > .rTwo > div:last-child > span,
+.scontent .rConvas > .rTwo > div:last-child > span,
+.prizes-room .rScore > .rTwo > div:last-child > span,
+.scontent .rScore > .rTwo > div:last-child > span,
+.prizes-room .rHistory > .rTwo > div:last-child > span,
+.scontent .rHistory > .rTwo > div:last-child > span {
+  text-align: right;
+}
+.prizes-room .myroomPrize_noSendPirze,
+.scontent .myroomPrize_noSendPirze {
+  position: relative;
+  height: 0.7rem;
+}
+.prizes-room .myroomPrize_noSendPirze > .myroom_noSendPirze,
+.scontent .myroomPrize_noSendPirze > .myroom_noSendPirze {
+  position: relative;
+  top: 0.09rem;
+  margin-right: 0.7rem;
+}
+.prizes-room .myroomPrize_noSendPirze > .goingCircleBox,
+.scontent .myroomPrize_noSendPirze > .goingCircleBox {
+  position: absolute;
+  right: 0.13rem;
+  top: 0px;
+  height: 0.7rem;
+}
+.prizes-room .myroomPrize_noSendPirze > .goingCircleBox > .goingCircle,
+.scontent .myroomPrize_noSendPirze > .goingCircleBox > .goingCircle {
+  opacity: 1;
+}
+.prizes-room .myroomPrize_noSendPirze > .goingCircleBox > .goingCircle > img,
+.scontent .myroomPrize_noSendPirze > .goingCircleBox > .goingCircle > img {
+  height: 0.7rem;
+}
+.prizes-room .rScore.rScoreGoing,
+.scontent .rScore.rScoreGoing {
+  margin-top: 0.48rem;
+  position: relative;
+}
+.prizes-room .rScore.rScoreGoing > .goingCircleBox,
+.scontent .rScore.rScoreGoing > .goingCircleBox {
+  position: relative;
+}
+.prizes-room .rScore.rScoreGoing > .goingCircleBox > .goingCircle,
+.scontent .rScore.rScoreGoing > .goingCircleBox > .goingCircle {
+  position: absolute;
+  bottom: -0.36rem;
+  right: 0rem;
+}
+.prizes-room .rSupport,
+.scontent .rSupport {
+  padding-bottom: 0.12rem;
+}
+.prizes-room .rConvas,
+.scontent .rConvas {
+  height: auto;
+}
+.prizes-room .rConvas > h2,
+.scontent .rConvas > h2 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.prizes-room .rConvas > h2.exp,
+.scontent .rConvas > h2.exp {
+  color: #858ea0;
+  border: 0;
+}
+.prizes-room .rConvas > .headC,
+.scontent .rConvas > .headC {
+  display: -webkit-flex;
+  display: flex;
+  height: 0.36rem;
+  line-height: 0.36rem;
+  margin-top: 0.12rem;
+}
+.prizes-room .rConvas > .headC > div,
+.scontent .rConvas > .headC > div {
+  height: 100%;
+  text-align: right;
+  padding: 0 0.3rem 0 0;
+  white-space: nowrap;
+  width: 50%;
+}
+.prizes-room .rConvas > .headC > div > span,
+.scontent .rConvas > .headC > div > span {
+  font-size: 0.14rem;
+  color: #fff;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: right;
+  margin-right: .04rem;
+}
+.prizes-room .rConvas > .headC > div > div,
+.scontent .rConvas > .headC > div > div {
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+.prizes-room .rConvas > .headC > div > div > img,
+.scontent .rConvas > .headC > div > div > img {
+  width: 0.36rem;
+  border: 0.02rem solid #ed1f24;
+  border-radius: 50%;
+  display: block;
+}
+.prizes-room .rConvas > .headC > div:nth-child(2),
+.scontent .rConvas > .headC > div:nth-child(2) {
+  padding: 0 0 0 0.3rem;
+  text-align: left;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+.prizes-room .rConvas > .headC > div:nth-child(2) > span,
+.scontent .rConvas > .headC > div:nth-child(2) > span {
+  text-align: left;
+  margin: 0;
+  margin-left: .04rem;
+}
+.prizes-room .rConvas > .headC > div:nth-child(2) > div,
+.scontent .rConvas > .headC > div:nth-child(2) > div {
+  margin: 0;
+}
+.prizes-room .rConvas > .headC > div:nth-child(2) > div > img,
+.scontent .rConvas > .headC > div:nth-child(2) > div > img {
+  border: 0.02rem solid #0084c7;
+}
+.prizes-room .rConvas .bodyC,
+.scontent .rConvas .bodyC {
+  border-bottom: 0.01rem solid rgba(0, 0, 0, 0.3);
+}
+.prizes-room .rConvas .bodyC > div,
+.scontent .rConvas .bodyC > div {
+  width: 100%;
+  font-size: 0.12rem;
+  height: 0.3rem;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.prizes-room .rConvas .bodyC > div > .num,
+.scontent .rConvas .bodyC > div > .num {
+  font-size: inherit;
+  color: #34ed41;
+  width: 0.34rem;
+}
+.prizes-room .rConvas .bodyC > div > .bg_line,
+.scontent .rConvas .bodyC > div > .bg_line {
+  position: relative;
+  height: 0.04rem;
+  width: 0.97rem;
+  background: #1e2631;
+  border-radius: 3px;
+}
+.prizes-room .rConvas .bodyC > div > .bg_line > span,
+.scontent .rConvas .bodyC > div > .bg_line > span {
+  right: 0;
+  height: 2px;
+  border-radius: 3px;
+  background: #ed1f24;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 6px 2px rgba(255, 0, 22, 0.5);
+  display: inline-block;
+}
+.prizes-room .rConvas .bodyC > div > .bg_line.right > span,
+.scontent .rConvas .bodyC > div > .bg_line.right > span {
+  left: 0;
+  background: #00AAFF;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 6px 2px rgba(0, 170, 255, 0.5);
+}
+.prizes-room .rConvas .bodyC > div > .center,
+.scontent .rConvas .bodyC > div > .center {
+  width: 0.5rem;
+  font-size: 0.12rem;
+  color: #858ea0;
+}
+.prizes-room .rHistory,
+.scontent .rHistory {
+  margin-bottom: 0.16rem;
+  padding: 0 1%;
+  padding-bottom: 0.14rem;
+}
+.prizes-room .rHistory > .Hone,
+.scontent .rHistory > .Hone {
+  display: -webkitflex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  position: relative;
+}
+.prizes-room .rHistory > .Hone > div:first-child,
+.scontent .rHistory > .Hone > div:first-child {
+  width: 10%;
+  text-align: center;
+  height: 0.48rem;
+}
+.prizes-room .rHistory > .Hone > div.headImg,
+.scontent .rHistory > .Hone > div.headImg {
+  height: 0.48rem;
+  width: 0.48rem;
+  position: absolute;
+  left: 4%;
+  top: 0;
+  display: inline-block;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 0.02rem solid #ed1f24;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.prizes-room .rHistory > .Hone > div.headImg > img,
+.scontent .rHistory > .Hone > div.headImg > img {
+  width: 100%;
+  height: 100%;
+}
+.prizes-room .rHistory > .Hone > .historyPlayerName,
+.scontent .rHistory > .Hone > .historyPlayerName {
+  width: 90%;
+  font-size: 0.14rem;
+  color: #fff;
+  display: inline-block;
+  padding: 0.05rem 0 0.05rem 15%;
+  background: -webkit-linear-gradient(left, rgba(255, 0, 22, 0.5) 0%, rgba(255, 0, 22, 0) 100%);
+  background: linear-gradient(left, rgba(255, 0, 22, 0.5) 0%, rgba(255, 0, 22, 0) 100%);
+}
+.prizes-room .rHistory > .Hone > .historyPlayerName.bottom,
+.scontent .rHistory > .Hone > .historyPlayerName.bottom {
+  background-image: -webkit-linear-gradient(left, rgba(0, 170, 255, 0.5) 0%, rgba(0, 170, 255, 0) 100%);
+  background-image: linear-gradient(left, rgba(0, 170, 255, 0.5) 0%, rgba(0, 170, 255, 0) 100%);
+}
+.prizes-room .rHistory > .Hone > .historyMore,
+.scontent .rHistory > .Hone > .historyMore {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.prizes-room .rHistory > .Hone > .historyMore > i,
+.scontent .rHistory > .Hone > .historyMore > i {
+  vertical-align: middle;
+}
+.prizes-room .rHistory > .Hone.HoneAway,
+.scontent .rHistory > .Hone.HoneAway {
+  margin-top: 0.18rem;
+}
+.prizes-room .rHistory > .Hone.HoneAway > div.headImg,
+.scontent .rHistory > .Hone.HoneAway > div.headImg {
+  border: 0.02rem solid #0084c7;
+}
+.prizes-room .rHistory > .Hone.HoneAway > span:last-child,
+.scontent .rHistory > .Hone.HoneAway > span:last-child {
+  width: 90%;
+  font-size: 0.14rem;
+  color: #fff;
+  display: inline-block;
+  padding: 0.05rem 0 0.05rem 15%;
+  background: -webkit-linear-gradient(left, rgba(0, 170, 255, 0.5) 0%, rgba(0, 170, 255, 0) 100%);
+  background: linear-gradient(left, rgba(0, 170, 255, 0.5) 0%, rgba(0, 170, 255, 0) 100%);
+}
+.prizes-room .rHistory > .Htwo,
+.scontent .rHistory > .Htwo {
+  display: -webkit-flex;
+  display: flex;
+}
+.prizes-room .rHistory > .Htwo > div:first-child,
+.scontent .rHistory > .Htwo > div:first-child {
+  width: 25%;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft {
+  width: 98%;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .listInfo,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .listInfo {
+  width: 100%;
+  height: .36rem;
+  color: #fff;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td {
+  text-align: center;
+  height: 0.34rem;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox {
+  width: 100%;
+  height: 100%;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .time,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .time {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  color: #858ea0;
+  margin-right: 0.05rem;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .time > p,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .time > p {
+  line-height: 1em;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .time > .line,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .time > .line {
+  border: none;
+  border-bottom: 1px solid #858ea0;
+  transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  width: 1.2em;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .teams,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .teams {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .teams > span,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .teams > span {
+  display: block;
+  font-size: 0.1rem;
+  line-height: 0.14rem;
+  text-align: center;
+  white-space: nowrap;
+  color: #858ea0;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .teams > .isHome,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .listInfo > td > .listInfoBox > .teams > .isHome {
+  color: #fff;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .headInfo,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .headInfo {
+  width: 100%;
+  height: .24rem;
+  line-height: .24rem;
+}
+.prizes-room .rHistory > .Htwo > div:first-child > .infoLeft .headInfo > th,
+.scontent .rHistory > .Htwo > div:first-child > .infoLeft .headInfo > th {
+  color: #8fea96;
+  font-size: .12rem;
+  text-align: center;
+}
+.prizes-room .rHistory > .Htwo > .scr,
+.scontent .rHistory > .Htwo > .scr {
+  width: 75vw;
+  box-shadow: #000 0px 0px 0.5rem inset;
+}
+.prizes-room .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem > td,
+.scontent .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem > td {
+  line-height: 0.36rem;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+}
+.prizes-room .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem > td:nth-child(2),
+.scontent .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem > td:nth-child(2) {
+  color: #34ed41;
+}
+.prizes-room .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem:nth-child(2n),
+.scontent .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem:nth-child(2n) {
+  background-color: rgba(133, 142, 160, 0.1);
+}
+.prizes-room .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem:nth-child(2n+1),
+.scontent .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialItem:nth-child(2n+1) {
+  background-color: rgba(133, 142, 160, 0.05);
+}
+.prizes-room .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialTitle,
+.scontent .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialTitle {
+  height: 0.26rem;
+}
+.prizes-room .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialTitle > th,
+.scontent .rHistory > .Htwo > .scr .prizePlayerDetial .prizePlayerDetialTitle > th {
+  line-height: 0.26rem;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0px 0.5em;
+}
+#chart1,
+#chart2 {
+  margin: 0 auto;
+}
+.highcharts-container {
+  background: none!important;
+}

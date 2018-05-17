@@ -1,0 +1,11 @@
+<ion-modal-view class="main_model">
+	<div class="modelbox position-center">
+		<div class="closeNow" ng-click="notice_close(modalShowId,moreInfo)">
+			<i class="ion-ios-close-outline"></i>
+		</div>
+		<div class="modelbody">
+			<img ng-if="noticeType" ng-src="{{noticeShow.pic1}}" style="display: block;width:83vw;margin: 0 auto;" />
+			<img ng-if="!noticeType" ng-src="{{noticeShow.jumpLink}}" style="display: block;width:83vw;margin: 0 auto;" />
+		</div>	
+	</div>		
+</ion-modal-view>

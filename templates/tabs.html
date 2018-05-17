@@ -1,0 +1,33 @@
+<ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-class="{'tabs-item-hide':$root.hideTabs}">
+  <ion-tab title="" ng-click="rankUrl('/tab/main')">
+    <ion-nav-view name="tab-main">
+    </ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="<i class='ion-record redSignBattle'></i>" class="battleTab" ng-click="rankUrl('/tab/battle/3/0/0')">
+    <ion-nav-view name="tab-battle">
+    </ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title='' ng-click="rankUrl('/tab/rank')">
+    <ion-nav-view name="tab-rank">
+
+    </ion-nav-view>
+  </ion-tab>
+   <ion-tab title='' ng-click="rankUrl('/tab/wode')">
+    <ion-nav-view name="tab-wode">
+
+    </ion-nav-view>
+  </ion-tab>
+  
+</ion-tabs>
+<style type="text/css">
+	.battleTabHot>.tab-title>.redSignBattle{
+		display: block;
+	}
+	.redSignBattle{
+		display: none;
+		color: #FF0016;position: absolute;bottom: 0.30rem;z-index: 100;left: 70%;font-size: 0.14rem;
+	}
+</style>
+

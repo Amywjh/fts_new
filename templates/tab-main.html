@@ -1,0 +1,88 @@
+<ion-view view-title="主页" class='tab-hall tab-main' hide-tabs-t>
+<div header-default></div>
+<div class="mainCon">
+		<!--轮播图部分-->
+	<div class="lb">
+		<ion-slide-box repeat-done="repeatDone()" class="expand_box" slide-interval='3000' auto-play="true"  delegate-handle="expand" does-continue="true" active-slide="0" show-pager="true"  animation="slide-left-right-ios7" on-slide-changed="slideHasChanged(index)">
+	 	 <ion-slide class="expand" ng-if="mainImg.length" ng-repeat="bgimg in mainImg track by $index" repeat-done="repeatDone()">
+	 		<div class="box">
+	 			<a href="javascript:void(0)" ng-click="lbEvent(bgimg)"><img imgId="{{bgimg.id}}" ng-src="{{bgimg.url}}"/></a>
+	 		</div>
+	  	</ion-slide>
+		</ion-slide-box>
+	</div>
+	<!--导航部分-->
+	<div class="headline">
+		<div class="headline_con" ng-click="head_pro('/tab/wode/schedule')">
+			<img src="../img2.0/main/zy_green_3.png"/>
+			<span>赛程数据</span>
+		</div>
+		<div class="headline_con" ng-click="head_pro()">
+			<img src="../img2.0/main/zy_green_3.png"/>
+			<span>消息<span class="newNum"><i>3</i></span></span>
+			
+		</div>
+	</div>
+</div>
+<!--默认大厅内容-->
+<ion-content class="main" lazy-scroll scroll=false has-bouncing="true" scrollbar-y="false">
+	<div class="main_rooms">
+		<div class="play_room_item" style="border-bottom-color: #478aff;">
+			<div class="room_item_bgbox" ng-click="entry_rooms('/tab/main/prizes')" image-lazy-src="{{hotFightBg}}" image-lazy-background-image="true">
+				<!--<div class="tag tag_hot"></div>-->
+				<div class="a-flex-center hotFight" ng-if="hotFight">
+					<div class="a-flex-center-column leftPlayer">
+						<div class="imgBox">
+							<img ng-src="{{hotFight.home.headImgUrl}}" alt="" />
+							<img class="teamLogo" ng-src="{{hotFight.home.teamLogo}}"/>
+						</div>
+						<span class="a-text-color-whit a-font-size-small-x">{{hotFight.home.playerName}}</span>
+					</div>
+					<img class="a-img-size fightVS" src="../img2.0/main/zy_qxdz_vs.png"/>
+					<div class="a-flex-center-column rightPlayer">
+						<div class="imgBox">	
+							<img ng-src="{{hotFight.away.headImgUrl}}"/>
+							<img class="teamLogo" ng-src="{{hotFight.away.teamLogo}}"/>
+						</div>
+						<span class="a-text-color-whit a-font-size-small-x">{{hotFight.away.playerName}}</span>
+					</div>
+				</div>
+				<div class="state">
+					<span class="title">球星对战</span>
+					<span class="des">压球星，赢大奖</span>
+				</div>
+			</div>
+		</div>
+		<div class="play_room_item" style="border-bottom-color: #2ed39a;">
+			<div class="room_item_bgbox" ng-click="entry_rooms('/tab/hall/0')" image-lazy-src="./img2.0/main/zy_5.jpg"  image-lazy-background-image="true">
+				<div class="tag tag_new"></div>
+				<div class="state stateLeft">
+					<span class="title">经典8人</span>
+					<span class="des">足球迷必玩</span>
+				</div>
+			</div>
+		</div>
+		<div class="play_room_item" style="border-bottom-color: #ffea00;">
+			<div class="room_item_bgbox" ng-click="entry_rooms('/tab/hall/0')" image-lazy-src="./img2.0/main/zy_5.jpg"  image-lazy-background-image="true">
+				<div class="tag tag_new"></div>
+				<div class="state">
+					<span class="title">精彩世界杯</span>
+					<span class="des">章鱼保罗就是你</span>
+				</div>
+			</div>
+		</div>
+		<!--<div class="main_room_box a-flex-between">
+			<div class="main_room main_room_fal" image-lazy-src="./img2.0/main/zy_7.png" image-lazy-background-image="true">
+				<span class="fal_area"><p>暂未开放</p> <p>敬请期待</p> </span>
+			</div>
+			<div class="main_room main_room_fal" image-lazy-src="./img2.0/main/zy_7.png" image-lazy-background-image="true">
+				<span class="fal_area"><input style="float: right;" type="text" id="" value="" /></span>
+			</div>
+		</div>-->
+	</div>
+	<!--<div class="textDescribe"></div>-->
+</ion-content>
+
+
+<!--</div>-->
+</ion-view>

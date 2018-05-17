@@ -1,0 +1,144 @@
+<ion-view view-title="赛况" class='battle-room' hide-tabs>
+<!--头部-->
+<ion-header-bar align-title="left" class="battle-room-header" >
+  <!--足球房间头部-->
+  	<!--<div class="buttons" ng-click="return(0,2)">
+  		<a  class="left"><span class="jiantou"></span>赛况</a>
+  	</div>-->
+	<h1 class="title room">
+			{{battleRankData.name}}
+	</h1>
+</ion-header-bar>
+<div class="rooms">
+		<div class="events" ng-click="events()">
+			<div class='event battle_room_team'>				
+				<div class="event_team"><img ng-src="{{battleRankData_result_one.homeLogo}}"/><span >{{battleRankData_result_one.homeName}}</span></div>
+				<div class="score"><span>{{battleRankData_result_one.result}}</span></div>
+				<div class="event_team"><img ng-src="{{battleRankData_result_one.awayLogo}}"/><span>{{battleRankData_result_one.awayName}}</span></div>
+			</div>
+			<div style="font-size: 0.24rem;color:2b2a2c;position: absolute;top: 50%;right:0.4rem;transform: translate(0,-50%);">共{{games_num}}场&nbsp;<i class="icon ion-ios-arrow-right"></i></div>
+		</div>
+</div>
+
+<ul class="battledetial battledetial-thr" >
+	<li ng-repeat='total in battletotal' ng-click='showdetial({{total.id}})'>
+		<span class="{{total.class}}">{{total.title}}</span>
+	</li>
+</ul>
+<!--排名部分-->
+<div class="player_rank_all" ng-repeat='total in battletotal' ng-if='total.class && total.id==0'>
+<div class="player_rank_top">	
+	<div class="top_three " >
+		<div class="top_three_c">
+			<div class="rank_box">
+				<ul ng-repeat = 'detial in topthree' ng-if="detial.rank == 2" ng-click="showLineup(detial)">
+					<li ng-if="detial.rank == 2">{{detial.name}}</li>
+					<li ng-if="detial.rank == 2"><img ng-if="detial.photo" ng-src="{{detial.photo}}"/><img ng-if="!detial.photo" src="../../img2.0/common/touxiang_default.png"></li>
+					<li ng-if="detial.rank == 2"><img src="./img/live/silver.png" alt="" /></li>
+				</ul>
+			</div>
+			<div class="rank_box">
+				<ul ng-repeat = 'detial in topthree' ng-if="detial.rank == 1" ng-click="showLineup(detial)">
+					<li ng-show="detial.rank == 1">{{detial.name}}</li>
+					<li ng-show="detial.rank == 1"><img ng-if="detial.photo" ng-src="{{detial.photo}}"/><img ng-if="!detial.photo" src="../../img2.0/common/touxiang_default.png"></li>
+					<li ng-if="detial.rank == 1"><img src="./img/live/gold.png" alt="" /></li>
+				</ul>
+			</div>
+			<div class="rank_box">
+				<ul ng-repeat = 'detial in topthree' ng-if="detial.rank == 3" ng-click="showLineup(detial)">
+					<li ng-show="detial.rank == 3">{{detial.name}}</li>
+					<li ng-show="detial.rank == 3"><img ng-if="detial.photo" ng-src="{{detial.photo}}"/><img ng-if="!detial.photo" src="../../img2.0/common/touxiang_default.png"></li>
+					<li ng-if="detial.rank == 3"><img src="./img/live/copper.png" alt="" /></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="player_rank_content">
+	<div class="player_rank_content_title row">
+		<span class="col col-25">排名</span>
+		<span class="col col-25">玩家</span>
+		<span class="col col-30">奖励</span>
+		<span class="col col-20">阵容表现值</span>
+	</div>	
+	<ion-content class="player_rank box" has-bouncing="true" scrollbar-y=false>  		
+		<div class="other_rank list">
+			<a class="row" ng-repeat='otherdetial in ranks | orderBy:otherdetial.rank' ng-click="showLineup(otherdetial)">
+				<div class="players_rank col col-25">
+					<span class="rank_s">{{otherdetial.rank}}</span>
+					<span class="img"><img ng-if="otherdetial.photo" ng-src="{{otherdetial.photo}}"><img ng-if="!otherdetial.photo" src="../../img2.0/common/touxiang_default.png"></span>
+				</div>
+				<div class='level col col-25'><span>{{otherdetial.name}}</span><span class="level_s">{{otherdetial.achievement}}{{otherdetial.stage}}</span></div>
+				<div class="golds col col-30">
+					<div class="img">						
+						<img src="./img/room_new/room_new_coin.png"/>
+					</div>
+	      	<span>{{otherdetial.realPrize}}</span>
+				</div>
+				<div class="score col col-20">{{otherdetial.expression}}</div>
+			</a>
+		</div>
+	</ion-content>
+	<div class="player_rank_bottom ">
+		<div class="other_rank">
+			<a class="row" ng-if="myselfData">
+			  <div class="players_rank col col-25"><span class="rank_s">{{myselfData.rank}}</span><span class="img"><img ng-if="myselfData.photo" ng-src="{{myselfData.photo}}"><img ng-if="!myselfData.photo" src="../../img2.0/common/touxiang_default.png"></span></div>
+				<div class='level col col-25'><span>{{myselfData.name}}</span><span class="level_s">{{myselfData.achievement}}{{myselfData.stage}}</span></div>
+				<div class="golds col col-30">
+					<div class="img">						
+						<img src="./img/room_new/room_new_coin.png"/>
+					</div>
+	      	<span>{{myselfData.realPrize}}</span>
+				</div>
+				<div class="score col col-20">{{myselfData.expression}}</div>
+			</a>
+		</div>
+	</div>
+</div>
+</div>
+<!--阵容部分-->
+<div class="battle_lineup_all" ng-repeat='total in battletotal' ng-if='total.class && total.id==1'>
+<ion-content class="lineup-ksbz" style="background: transparent;" >
+	<div class="lineup-zrxz" lineup-three></div>
+</ion-content>	
+</div>
+<!--数据部分-->
+<div class="battle_data_all" ng-repeat='total in battletotal' ng-if='total.class && total.id==2'>
+<div class="battle_data">
+	<ion-scroll direction='x' scrollbar-x="false" class='boxs'>
+  	<div class="tab box " ng-repeat='data in battledata track by $index'  ng-click='chooseplayer({{$index}})'>
+  		<div class="name">
+  			<span>{{data.name}}</span>
+  		</div>
+  		<div class="img {{data.class}}">		  			
+	  		<img ng-src="{{data.logo}}" alt="" />
+  		</div>
+  	</div>
+	</ion-scroll>
+</div>
+<div class="footballer_data_all">
+	<div class="footballer_data_all_title row">
+		<span class="col col-30">维度</span>
+		<span class="col col-20">分值</span>
+		<span class="col col-30">比赛数据</span>
+		<span class="col col-20">表现值</span>
+	</div>	
+	<ion-content class="footballer_data" has-bouncing="true" scrollbar-y=false>  		
+		<div class="footballer_data_list list">
+			<a class="row" ng-repeat='actData in datadetial.dimensionList'>
+				<div class=" col col-30">{{actData.name}}</div>
+				<div class='footballer_score col col-20'>{{actData.point}}</div>
+				<div class="footballer_record col col-30">{{actData.count}}</div>
+				<div class="footballer_showd col col-20">{{actData.expression}}</div>
+			</a>
+		</div>
+	</ion-content>
+</div>
+<div class="playercount">
+	<span>
+		{{datadetial.name}}
+	</span>
+	<span>表现值总计：<h5>{{datadetial.expression}}</h5></span>	
+</div>	
+</div>
+</ion-view>

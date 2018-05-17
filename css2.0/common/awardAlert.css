@@ -1,0 +1,43 @@
+#awardAlert .awardAlertBg {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+}
+#awardAlert .awardAlertBg .awardAlert {
+  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+  position: relative;
+  width: 100%;
+}
+#awardAlert .awardAlertBg .awardAlert > img {
+  height: 3rem;
+}
+#awardAlert .awardAlertBg .awardAlert > .awardInfo {
+  transform: translateY(-1.2rem);
+  -webkit-transform: translateY(-1.2rem);
+  color: #858ea0;
+  font-size: 0.16rem;
+}
+#awardAlert .awardAlertBg .awardAlert > .awardInfo > span {
+  color: #fff;
+}
+#awardAlert .awardAlertBg .awardAlert > .awardInfo > img {
+  vertical-align: middle;
+  height: .14rem;
+}
+#awardAlert .awardAlertBg .awardAlert > .buttons {
+  transform: translateY(-1rem);
+  -webkit-transform: translateY(-1rem);
+}
+#awardAlert .awardAlertBg .awardAlert > .buttons > .commit {
+  color: #fff;
+  font-size: 0.14rem;
+  background: none;
+  border: none;
+  width: 0.9rem;
+  height: 0.36rem;
+  border-radius: 2px;
+  background: -webkit-radial-gradient(#12b01d 10%, #6ee00a 100%);
+}

@@ -1,0 +1,23 @@
+<ion-modal-view class="pctmodel">
+    <ion-header-bar class="bar-balanced">
+      <div class="buttons" ng-show="showBackBtn">
+        <button ng-click="goBackSlide()" class="button button-clear">
+          返回
+        </button>
+      </div>
+      <h1 class="title">选择银行地址</h1>
+      <div class="buttons">
+        <button ng-click="PCTModal.hide();" class="button button-clear">
+          取消
+        </button>
+      </div>
+    </ion-header-bar>
+    <ion-content scroll='false' overflow-scroll="false" style="overflow: hidden">
+        	<ion-scroll style="width: 30%;height: 100%;float: left;">
+        	<div ng-click='priMol(pri.provinceId,pri.provinceName)' ng-repeat="pri in privinceList" class="item">{{pri.provinceName}}</div>
+         </ion-scroll>
+        	<ion-scroll style="width: 70%;height: 100%;float: right;">
+        	<div ng-click='cityMol(city.cityId,city.cityName)' ng-repeat="city in citys" class="item">{{city.cityName}}</div>
+         </ion-scroll>
+    </ion-content>
+  </ion-modal-view>

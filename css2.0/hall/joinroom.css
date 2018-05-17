@@ -1,0 +1,357 @@
+.room_jion {
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.8rem;
+  box-shadow: none;
+}
+.room_jion .room_detial_bg {
+  width: 100vw;
+  padding-top: 0.14rem;
+  background: url(../../img2.0/rank/wd_1.png) no-repeat top;
+  background-size: 100%;
+}
+.room_jion .room_detial_bg .room_detial {
+  width: auto;
+  position: relative;
+}
+.room_jion .room_detial_bg .room_detial > div.leagueLogo {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.room_jion .room_detial_bg .room_detial > div.room_head {
+  height: 0.2rem;
+}
+.room_jion .room_detial_bg .room_detial > div.room_head > .roomName {
+  padding-left: 0.8em;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 60vw;
+  text-overflow: ellipsis;
+}
+.room_jion .room_detial_bg .room_detial > div.top {
+  position: relative;
+  top: -0.4rem;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box,
+.room_jion .room_detial_bg .room_detial div.bonus_box,
+.room_jion .room_detial_bg .room_detial div.start_box {
+  line-height: 0.24rem;
+  width: 100%;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box > img,
+.room_jion .room_detial_bg .room_detial div.bonus_box > img,
+.room_jion .room_detial_bg .room_detial div.start_box > img {
+  margin: 0px;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box > span:nth-of-type(1),
+.room_jion .room_detial_bg .room_detial div.bonus_box > span:nth-of-type(1),
+.room_jion .room_detial_bg .room_detial div.start_box > span:nth-of-type(1) {
+  padding-right: 0.12rem;
+  white-space: nowrap;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box > .startTime,
+.room_jion .room_detial_bg .room_detial div.bonus_box > .startTime,
+.room_jion .room_detial_bg .room_detial div.start_box > .startTime {
+  display: block;
+  width: 100%;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box > .startTime > .djs,
+.room_jion .room_detial_bg .room_detial div.bonus_box > .startTime > .djs,
+.room_jion .room_detial_bg .room_detial div.start_box > .startTime > .djs {
+  float: right;
+  font-weight: bold;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box > .startTime > .djs > img,
+.room_jion .room_detial_bg .room_detial div.bonus_box > .startTime > .djs > img,
+.room_jion .room_detial_bg .room_detial div.start_box > .startTime > .djs > img {
+  vertical-align: initial;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box {
+  padding: 0.06rem 0px 0.07rem;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box > .reward_box_left > img {
+  margin: 0px;
+  margin-right: 0.06rem;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box > .reward_box_left > div > span {
+  line-height: 1.4em;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box > .reward_box_right > span {
+  display: block;
+  white-space: nowrap;
+  line-height: 1.4em;
+  text-align: center;
+}
+.room_jion .room_detial_bg .room_detial > div.reward_box > .reward_box_right img {
+  margin: 0px;
+}
+.room_jion .room_detial_bg .room_detial > div.bonus_box > div > .help {
+  background: transparent;
+  color: #BBBBBB;
+  font-size: 0.2rem;
+  vertical-align: middle;
+  margin-left: 0.5em;
+}
+.room_jion .room_detial_bg .room_detial > div.bonus_box > div > .bonusDetial {
+  width: 100%;
+}
+.room_jion .room_detial_bg .room_detial > div.bonus_box > div > .bonusDetial > tbody > tr > th,
+.room_jion .room_detial_bg .room_detial > div.bonus_box > div > .bonusDetial > tbody > tr td {
+  vertical-align: middle;
+  padding: 0px 0.1rem;
+  white-space: nowrap;
+  position: relative;
+}
+.room_jion .room_detial_bg .room_detial > div.bonus_box > div > .bonusDetial > tbody > tr > th > span,
+.room_jion .room_detial_bg .room_detial > div.bonus_box > div > .bonusDetial > tbody > tr td > span {
+  white-space: nowrap;
+}
+.room_jion .room_detial_bg .room_detial > div.bonus_box > div > .bonusDetial > tbody > tr > th.xb_td {
+  padding: 0px;
+  text-align: right;
+}
+.room_jion .room_detial_bg .room_detial > div.bonus_box > div > .bonusDetial > tbody > tr > th.xb_td > img {
+  position: relative;
+  top: -2px;
+  right: -0.1rem;
+}
+.room_jion .room_detial_bg .room_detial > div.bonus_box > div > .bonusDetial > tbody > tr > .firstItem {
+  padding: 0px;
+  width: 200%;
+  overflow: hidden;
+}
+.room_jion .room_detial_bg .room_detial > div.bonus_box > div > .bonusDetial > tbody > tr > .firstItem > .rank {
+  margin-right: 1em;
+}
+.room_jion .matchdetial {
+  width: auto;
+}
+.room_jion .matchdetial .game {
+  position: relative;
+  padding-top: 0.1rem;
+}
+.room_jion .matchdetial .game > .fightLogo {
+  position: absolute;
+  top: 0px;
+  left: -0.1rem;
+  margin: 0;
+}
+.room_jion .matchdetial .game > .content {
+  padding: 0.1rem 0px 0.08rem;
+}
+.room_jion .matchdetial .game > .content > .aside {
+  text-align: center;
+  flex: 1;
+  -webkit-flex: 1;
+}
+.room_jion .matchdetial .game > .content > .aside > img {
+  width: 0.48rem;
+}
+.room_jion .matchdetial .game > .content > center {
+  width: 1.3rem;
+  flex: 0.5;
+  -webkit-flex: 0.5;
+}
+.room_jion .matchdetial .game > .content > center > img {
+  margin-left: 0px;
+}
+.room_jion .matchdetial .game > .content > center > .time {
+  font-weight: bold;
+}
+.room_jion .matchdetial .game:first-child > .fightLogo {
+  top: 0.1rem;
+}
+.room_jion .matchdetial .game:first-child > .content {
+  padding-top: none;
+}
+.room_jion .roomNum {
+  position: relative;
+  width: auto;
+}
+.room_jion .roomNum > .inviteBtn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  padding: 0.1rem 0.14rem;
+  white-space: nowrap;
+}
+.room_jion .roomTime {
+  width: auto;
+}
+.room_jion .roomTime div.start_box {
+  line-height: 0.24rem;
+  width: 100%;
+}
+.room_jion .roomTime div.start_box > img {
+  margin: 0px;
+}
+.room_jion .roomTime div.start_box > span:nth-of-type(1) {
+  white-space: nowrap;
+}
+.room_jion .roomTime div.start_box > .startTime {
+  display: block;
+  width: 100%;
+}
+.room_jion .roomTime div.start_box > .startTime > .djs {
+  float: right;
+  font-weight: bold;
+}
+.room_jion .roomTime div.start_box > .startTime > .djs > img {
+  vertical-align: initial;
+}
+.room_jion .players {
+  width: auto;
+}
+.room_jion .players .playershow {
+  margin-top: 0.06rem;
+}
+.room_jion .players .playershow > div.players > img {
+  width: 0.32rem;
+  height: .32rem;
+  display: block;
+  border-radius: 50%;
+  margin-left: -0.02rem;
+}
+.room_jion .players .playershow > div.players:first-child > img {
+  margin-left: 0px;
+}
+.room_jion .reminder {
+  width: 100%;
+  height: 0px;
+  position: relative;
+}
+.room_jion.room_jion_goods {
+  background-image: linear-gradient(0deg, #1B003E 0%, #220435 100%);
+}
+.room_jion.room_jion_goods .room_detial_bg.room_detial_bg_goods {
+  background: url(../../img2.0/joinroom/hdf_fjxq_bg.png) no-repeat top;
+  background-size: 100%;
+}
+.room_jion.room_jion_goods .room_detial_bg.room_detial_bg_goods > .room_detial {
+  outline: #6023FF solid 0.02rem;
+  outline-offset: -0.02rem;
+}
+.reward_box.reward_box_goods > .reward_box_left > div > span {
+  margin-bottom: 0.10rem;
+}
+.reward_box.reward_box_goods > .reward_box_left > div > .goodsAccount {
+  margin: 0;
+  padding-top: 0.06rem;
+  margin-right: 0.18rem;
+}
+.reward_box.reward_box_goods > .reward_box_right {
+  position: relative;
+  right: -0.1rem;
+  max-width: 0.92rem;
+}
+.reward_box.reward_box_goods > .reward_box_right > img {
+  height: 0.78rem;
+}
+.room_jion.moreHeight {
+  bottom: 0.1rem;
+}
+.event {
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  padding: 0px 0.1rem 0px;
+  height: 0.76rem;
+  padding-top: 0.14rem;
+}
+.event button {
+  color: #FFFFFF;
+}
+.event button > .joinButtonBox {
+  display: inline-block;
+  margin: auto;
+}
+.event button > .joinButtonBox > img {
+  margin-left: 0px;
+  vertical-align: middle;
+}
+.event button > .joinButtonBox > span {
+  color: #FFFFFF;
+  vertical-align: middle;
+}
+.myRoomDetialView .myRoomDetial {
+  top: 0px;
+  bottom: 0px;
+}
+.myRoomDetialView .myRoomDetial > .room_detial_bg {
+  padding-top: 0;
+}
+.myRoomDetialView .myRoomDetial > .room_detial_bg > .room_detial_own > .room_detial {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  border-radius: 0;
+  background-image: linear-gradient(-180deg, #222C35 0%, #303845 90%);
+}
+.myRoomDetialView .myRoomDetial > .room_detial_bg > .roomTime {
+  width: 100%;
+  margin: 0px;
+  margin-top: 0.06rem;
+  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+.myRoomDetialView .myRoomDetial > .room_detial_bg > .myroom_detial_tabs {
+  display: flex;
+  display: -webkit-flex;
+}
+.myRoomDetialView .myRoomDetial > .room_detial_bg > .myroom_detial_tabs .myroom_detial_tabItem {
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.35);
+  position: relative;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.myRoomDetialView .myRoomDetial > .room_detial_bg > .myroom_detial_tabs .myroom_detial_tabItem > li {
+  text-align: center;
+}
+.myRoomDetialView .myRoomDetial > .room_detial_bg > .myroom_detial_tabs .myroom_detial_tabItem:first-child {
+  position: relative;
+}
+.myRoomDetialView .myRoomDetial > .room_detial_bg > .myroom_detial_tabs .myroom_detial_tabItem:first-child > li {
+  display: block;
+  width: 100%;
+  line-height: 1em;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+}
+.myRoomDetialView .myRoomDetial > .room_detial_bg > .myroom_detial_tabs .myroom_detial_tabItem.activat {
+  border-bottom: 2px solid #34ED41;
+  box-sizing: border-box;
+  background-color: #26323D;
+  box-shadow: inset 1px 5px 28px 2px #000000, inset 0 -5px 11px 2px rgba(52, 237, 65, 0.5);
+}
+.myRoomDetialView .myRoomDetial > .room_detial_bg > .myroom_detial_tabs .myroom_detial_tabItem.activat > li {
+  color: #34ed41;
+}
+.myRoomDetialView .myRoomDetial .join_playerlist.list_join .player-rank {
+  top: 0px;
+}
+.myRoomDetialView .myRoomDetial .matchdetial.matchdetial_myroom {
+  padding: 0px 0.1rem;
+}
+.myRoomDetialView .myRoomDetial .matchdetial.matchdetial_myroom > .matchCount {
+  text-align: center;
+  padding: 0.08rem 0px;
+}
+.myRoomDetialView .myRoomDetial .matchdetial.matchdetial_myroom > ul > .game {
+  padding: 0.08rem 0px;
+}
+.myRoomDetialView .myRoomDetial .matchdetial.matchdetial_myroom > ul > .game:last-child {
+  border-bottom: none;
+}
+.myRoomDetialView .myRoomDetialGoing > .room_detial_bg {
+  background: none;
+}
+.myRoomDetialView .myRoomDetialGoing > .room_detial_bg .room_detial {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  border-radius: 0;
+  background-image: linear-gradient(-180deg, #222C35 0%, #303845 90%);
+}

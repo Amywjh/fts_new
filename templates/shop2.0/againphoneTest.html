@@ -1,0 +1,21 @@
+<ion-view view-title="手机号验证"  class="phone bgBlue" hide-tabs>
+<ion-content scroll="false">
+  <div class="phoneHead" style="font-size: .14rem;">
+  	请输入手机号{{mphone}}收到的短信验证码：
+  </div>
+  <div class="warnAlt" style="display: none;"><i class="ion-ios-information-outline"></i>{{alt}}</div>
+  <div class="list">
+  	<span class="item item-input">
+    	<input type="number" ng-model="newUser.pTest" placeholder="请输入验证码" />
+    	<span id="timeStart" ng-click="testGet()">获取验证码</span>
+    	<span class="bg" id="timeDown" ><span></span>s</span>
+  	</span>
+  </div>
+</ion-content>
+<div class="btn">
+	{{msg}}
+</div>
+<div class="btn bg" ng-click="phoneClick()" ng-if="newUser.pTest">
+	{{msg}}
+</div>
+</ion-view>

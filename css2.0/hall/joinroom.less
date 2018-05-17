@@ -1,0 +1,320 @@
+//创建房间开始*************************************************************************
+.room_jion{
+    position: absolute;top: 0.4rem;bottom: 0.8rem;box-shadow: none;//0.86rem
+    .room_detial_bg{//房间基本信息
+        width: 100vw;padding-top: 0.14rem;
+        background: url(../../img2.0/rank/wd_1.png) no-repeat top;
+        background-size: 100%;
+        .room_detial{
+            width: auto;position: relative;
+            >div.leagueLogo{
+                position: absolute;right: 0px;top: 0px;
+            }
+            >div.room_head{
+                height: 0.2rem;          
+                >.roomName{
+                    padding-left: 0.8em;overflow: hidden;
+                    white-space: nowrap;width: 60vw; text-overflow: ellipsis;//13em
+                }
+            }
+            >div.top{position: relative;top: -.4rem;}
+            >div.reward_box,div.bonus_box,div.start_box{
+                line-height: 0.24rem;width: 100%;
+                >img{
+                    margin: 0px;
+                }
+                >span:nth-of-type(1){
+                    padding-right: 0.12rem;white-space: nowrap;
+                }
+                >.startTime{
+                  display: block;width: 100%;
+                  >.djs{
+                      float: right;font-weight: bold;
+                      >img{
+                          vertical-align: initial;
+                      }
+                  } 
+                }
+            }
+            >div.reward_box{
+                padding: 0.06rem 0px 0.07rem;
+                >.reward_box_left{
+                    >img{
+                        margin: 0px;margin-right: 0.06rem;
+                    }
+                    >div{
+                        >span{
+                            line-height: 1.4em;
+                        }
+                    }
+                }
+                >.reward_box_right{
+                    >span{
+                        display: block;white-space: nowrap;line-height: 1.4em;text-align: center;
+                    }
+                    img{
+                        margin: 0px;
+                    }
+                }
+            }
+            >div.bonus_box{//奖励分配
+                >div{
+                    >.help{
+                        background: transparent;
+                        color: #BBBBBB;font-size:0.2rem;vertical-align: middle;margin-left: 0.5em;
+                    }
+                    >.bonusDetial{
+                        width: 100%;
+                        >tbody{
+                            >tr{
+                                >th,td{
+                                    vertical-align: middle;
+                                    padding: 0px 0.1rem;white-space: nowrap;position: relative;
+                                    >span{
+                                        white-space: nowrap;
+                                    }
+                                }
+                                >th.xb_td{
+                                    padding: 0px;text-align: right;
+                                    >img{
+                                        position: relative;top: -2px;right: -0.1rem;
+                                    }
+                                }
+                                >.firstItem{
+                                    padding: 0px;width: 200%;overflow: hidden;
+                                    >.rank{
+                                        margin-right: 1em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .matchdetial{//比赛列表
+        width: auto;
+        .game{
+            position: relative;padding-top: 0.1rem;
+//          margin-bottom: 0.06rem;
+            >.fightLogo{
+                position: absolute;top: 0px;left: -0.1rem;margin: 0;
+            }
+            >.content{
+                padding: 0.1rem 0px 0.08rem;
+                >.aside{
+                    text-align: center;flex: 1;-webkit-flex: 1;
+                    >img{
+                        width:0.48rem;
+                    }
+                }
+                >center{
+                    width: 1.3rem;flex: 0.5;-webkit-flex: 0.5;
+                    >img{
+                        margin-left: 0px;
+                    }
+                    >.time{
+                        font-weight: bold;
+                    }
+                }
+            }
+            >.content:last-child{
+//              border-bottom: none;
+            }
+        }
+//      .game:last-child{
+//          >.content{
+//              border-bottom: none;
+//          }
+//      }
+        .game:first-child{
+            >.fightLogo{
+                top: 0.1rem;
+            }
+            >.content{
+                padding-top: none;
+            }
+        }
+    }
+    .roomNum{
+        position: relative;width: auto;
+        >.inviteBtn{
+            position: absolute;top: 0px;right: 0px;height: 100%;padding: 0.1rem 0.14rem;white-space: nowrap;
+        }
+    }
+    .roomTime{
+        width: auto;
+        div.start_box{
+            line-height: 0.24rem;width: 100%;
+            >img{
+                margin: 0px;
+            }
+            >span:nth-of-type(1){
+                white-space: nowrap;//padding-right: 0.12rem;
+            }
+            >.startTime{
+              display: block;width: 100%;
+              >.djs{
+                  float: right;font-weight: bold;
+                  >img{
+                      vertical-align: initial;
+                  }
+              } 
+            }
+        }
+    }
+    .players{//玩家
+        width: auto;
+        .playershow{
+            margin-top: 0.06rem;
+            >div.players{      
+                >img{
+                    width: 0.32rem;height:.32rem;display:block;border-radius: 50%;margin-left: -0.02rem;
+                }
+            }
+            >div.players:first-child{      
+                >img{
+                    margin-left: 0px;
+                }
+            }
+        }
+    }
+    .reminder{
+        width: 100%;height: 0px;position: relative; 
+    } 
+     
+}
+.room_jion.room_jion_goods{//活动房加入房间bg
+    background-image:linear-gradient(0deg, #1B003E 0%, #220435 100%) ;
+    .room_detial_bg.room_detial_bg_goods{
+        background: url(../../img2.0/joinroom/hdf_fjxq_bg.png) no-repeat top;
+        background-size: 100%;
+        >.room_detial{
+            outline: #6023FF solid 0.02rem;
+            outline-offset: -0.02rem;
+//          box-shadow:inset 0px 0px 0px 2px #6023FF;
+        }
+    }
+}
+.reward_box.reward_box_goods{//活动房样式
+    >.reward_box_left{
+        >div{
+            >span{
+                margin-bottom: 0.10rem;
+            }
+            >.goodsAccount{
+                margin: 0;padding-top: 0.06rem;margin-right: 0.18rem;
+            }
+        }
+    }
+    >.reward_box_right{
+        position: relative;right: -0.1rem;max-width: 0.92rem;
+        >img{
+            height: 0.78rem;
+        }
+    }
+}
+.room_jion.moreHeight{
+    bottom: 0.1rem;
+}
+.event{//确定按钮
+    position: fixed;bottom: 0px;width: 100vw;
+    padding: 0px 0.1rem 0px;height: 0.76rem;padding-top: 0.14rem;
+    button{
+        color: #FFFFFF;
+        >.joinButtonBox{
+            display: inline-block;margin: auto;
+            >img{
+                margin-left: 0px;vertical-align: middle;
+            }
+            >span{
+                color: #FFFFFF;vertical-align: middle;
+            }
+        }
+    }
+}
+//我的房间详情***********************************************************************************
+.myRoomDetialView{
+    .myRoomDetial{
+        top: 0px;bottom: 0px;
+        >.room_detial_bg{
+            padding-top: 0;
+            >.room_detial_own{
+                >.room_detial{//头部
+                    margin-left: 0px;margin-right: 0px;margin-bottom: 0px;
+                    border-radius: 0;background-image: linear-gradient(-180deg, #222C35 0%, #303845 90%);
+                }
+            }
+            >.roomTime{
+                width: 100%;margin: 0px;margin-top: 0.06rem;
+                box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+            }
+            >.myroom_detial_tabs{//tab切换
+                display: flex;display: -webkit-flex;
+                .myroom_detial_tabItem{
+                    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.35);
+                    position: relative;
+                    -webkit-flex: 1;flex: 1;
+                    >li{
+                        text-align: center;
+                    }
+                }
+                .myroom_detial_tabItem:first-child{
+                    position: relative;
+                    >li{
+                        display: block;width: 100%;
+                        line-height: 1em;transform: translateY(-50%);-webkit-transform: translateY(-50%);
+                        position: absolute;top: 50%;
+                    }
+                }
+                .myroom_detial_tabItem.activat{
+                        border-bottom: 2px solid #34ED41;
+                        box-sizing: border-box;
+                        background-color: #26323D;
+                        box-shadow: inset 1px 5px 28px 2px rgba(0,0,0,1),
+                        inset 0 -5px 11px 2px rgba(52,237,65,0.50);
+                    >li{
+                        color: #34ed41;
+                    }
+//                  >.choosedLine{
+//                      position: absolute;bottom: -1px;
+//                      height: 1px;width: 100%;background-color:#12b01d;
+//                      box-shadow: 0px -4px 10px 1px rgba(18,176,29,0.5);
+//                  }
+                }
+            }
+        }
+        .join_playerlist.list_join{
+            .player-rank{ 
+                top: 0px;
+            }
+        }
+        .matchdetial.matchdetial_myroom{
+            padding: 0px 0.1rem;
+            >.matchCount{
+                text-align: center;
+                padding: 0.08rem 0px;
+            }
+            >ul{
+                >.game{
+                    padding: 0.08rem 0px;
+                }
+                >.game:last-child{
+                    border-bottom: none;
+                }
+            }
+            
+        }
+    }
+    .myRoomDetialGoing{
+        >.room_detial_bg{
+            background: none;
+            .room_detial{
+                margin-left: 0px;margin-right: 0px;margin-bottom: 0px;
+                border-radius: 0;background-image: linear-gradient(-180deg, #222C35 0%, #303845 90%);
+            }
+        }
+    }
+
+}

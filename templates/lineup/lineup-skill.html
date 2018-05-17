@@ -1,0 +1,59 @@
+<ion-modal-view class='chooseSkillModalBg'>
+	<div class="SkillModalHide">
+		<div class="SkillModalHideCircle"></div>
+	</div>
+	<div class="SkillModalShow">
+		<div class="modalShut">
+			<img class="a-img-size" src="../../img2.0/common/shut.png" ng-click="shutModal()" />
+		</div>
+		<div class="chooseSkillModal a-background-bg ">
+			<div class="chooseSkillTitle a-div-height-small-x a-background-item">
+				<img class="a-img-size" src="../../img2.0/lineup2.0/xrgl_title.png"/>
+			</div>
+			<ion-slide-box class="chooseSkillSlideBox" active-slide="skillSlideIndex" disable-scroll="true" delegate-handle="" show-pager="false"  animation="slide-left-right-ios7">
+				<ion-slide class="chooseSkillSlide">
+					<div class="chooseSkillCon">
+						<div class="a-text-color-light a-font-size-medium">参照比赛的首发阵容</div>
+						<div class="a-text-color-whit a-font-size-small">
+							我们会在比赛开始前给出率先开始比赛的 <br />首发名单
+						</div>
+						<div class="skillImg">
+							<img class="a-img-size" src="../../img2.0/lineup2.0/xrgl_pg1.png"/>
+						</div>
+					</div>
+					<div class="buttonBox">
+						<button class="a-buttonSmall-green" ng-click="nextSkill(1)">下一步</button>
+					</div>
+				</ion-slide>
+				<ion-slide class="chooseSkillSlide">
+					<div class="chooseSkillCon">
+						<div class="a-text-color-light a-font-size-medium">参照近期战力</div>
+						<div class="a-text-color-whit a-font-size-small">
+							近期战力越高说明该球员近期状态火热， <br />表现可期
+						</div>
+						<div class="skillImg">
+							<img class="a-img-size" src="../../img2.0/lineup2.0/xrgl_pg2.png"/>
+						</div>
+					</div>
+					<div class="buttonBox">
+						<button class="a-buttonSmall-green" ng-click="nextSkill(2)">下一步</button>
+					</div>
+				</ion-slide>
+				<ion-slide class="chooseSkillSlide">
+					<div class="chooseSkillCon">
+						<div class="a-text-color-light a-font-size-medium">考虑强弱对阵和主客场因素</div>
+						<div class="a-text-color-whit a-font-size-small">
+							通常来说，主场作战或强队的球员<br />表现相对会较好。 
+						</div>
+						<div class="skillImg">
+							<img class="a-img-size" src="../../img2.0/lineup2.0/xrgl_pg3.png"/>
+						</div>
+					</div>
+					<div class="buttonBox">
+						<button class="a-buttonSmall-green"  ng-click="nextSkill()">完成</button>
+					</div>
+				</ion-slide>
+			</ion-slide-box>
+		</div>
+	</div>
+</ion-modal-view>

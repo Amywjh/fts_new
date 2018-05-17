@@ -1,0 +1,100 @@
+<div id="lineupClassics" class="battle-lineup">	
+	<div class="lineup-ksbz position" style="width: 100%;">
+		<div class="lineup_tzan lineupaniu ksbz">
+		   <span>{{battle_lineuplist}}</span>       
+	   </div>
+	     <!--固定页-->
+	     <div class="dufu_bigbox">
+	     	<div class="luhk">
+	          <div class="box" >
+	           <!--第一行-->
+	            <div class="dfrow" >
+	              <a class="dfbox" ng-repeat='xx in lineupcontent.one track by $index' style="background: url('{{xx.bjIcon}}')no-repeat center;background-size: 100% 100%;" ng-click='playerDetial(xx.id,ids)'>
+	                <div class="qygz" style=" background: url('{{xx.dfIcon}}') no-repeat center;background-size: 100% 100%;">
+	                	{{xx.recentExp}}
+	                </div>
+	                <p class="text" ng-if="xx.recentExp || xx.recentExp===0">战力</p>
+	                <div class="df" style="background: url('{{xx.logo_url}}')no-repeat center;background-size: 100% 100%;">
+	                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+	                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+	                </div>
+	                <div class="a-background-playerSign dyms">
+	                  <p class="dyname">{{xx.name}}</p>
+	                  <p class="a-flex-center dygz">
+	                  	<span class="a-text-color-orange a-font-family-numstd" ng-if="xx.salary || xx.salary===0">${{xx.salary}}</span>
+	                  	<span class="a-text-color-light a-font-family-numstd">{{xx.recentExp}}</span>
+	                  </p>
+	                </div>
+	                <div class="dycj">
+	                    <img ng-src='{{xx.jb}}'>
+	               </div>
+	              </a>
+	              
+	            </div>
+	            <!--第二行-->
+	            <div class="dfrow" >
+	              <a class="dfbox" ng-repeat='xx in lineupcontent.two track by $index' style="background: url('{{xx.bjIcon}}')no-repeat center;background-size: 100% 100%;" ng-click='playerDetial(xx.id,ids)'>
+	                <div class="qygz" style=" background: url('{{xx.dfIcon}}') no-repeat center;background-size: 100% 100%;">
+	                	{{xx.recentExp}}
+	                </div>
+	                <p class="text" ng-if="xx.recentExp || xx.recentExp===0">战力</p>
+	                <div class="df" style="background: url('{{xx.logo_url}}')no-repeat center;background-size: 100% 100%;">
+	                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+	                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+	                </div>
+	                <div class="dyms">
+	                  <p class="dyname">{{xx.name}}</p>
+	                  <p class="dygz" ng-if="xx.salary || xx.salary===0">工资：{{xx.salary}}</p>
+	                </div>
+	                <div class="dycj">
+	                    <img ng-src='{{xx.jb}}'>
+	               </div>
+	              </a>
+	              
+	            </div>
+	            <!--第三行-->
+	            <div class="dfrow" >
+	              <a class="dfbox" ng-repeat='xx in lineupcontent.thr track by $index' style="background: url('{{xx.bjIcon}}')no-repeat center;background-size: 100% 100%;" ng-click='playerDetial(xx.id,ids)'>
+	                <div class="qygz" style=" background: url('{{xx.dfIcon}}') no-repeat center;background-size: 100% 100%;">
+	                	{{xx.recentExp}}
+	                </div>
+	                <p class="text" ng-if="xx.recentExp || xx.recentExp===0">战力</p>
+	                <div class="df" style="background: url('{{xx.logo_url}}')no-repeat center;background-size: 100% 100%;">
+	                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+	                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+	                </div>
+	                <div class="dyms">
+	                  <p class="dyname">{{xx.name}}</p>
+	                  <p class="dygz" ng-if="xx.salary || xx.salary===0">工资：{{xx.salary}}</p>
+	                </div>
+	                <div class="dycj">
+	                    <img ng-src='{{xx.jb}}'>
+	               </div>
+	              </a>
+	              
+	            </div>
+	            <!--第四行-->
+	           <div class="dfrow" >
+	              <a class="dfbox" ng-repeat='xx in lineupcontent.for track by $index' style="background: url('{{xx.bjIcon}}')no-repeat center;background-size: 100% 100%;" ng-click='playerDetial(xx.id,ids)'>
+	                <div class="qygz" style=" background: url('{{xx.dfIcon}}') no-repeat center;background-size: 100% 100%;">
+	                	{{xx.recentExp}}
+	                </div>
+	                <p class="text" ng-if="xx.recentExp || xx.recentExp===0">战力</p>
+	                <div class="df" style="background: url('{{xx.logo_url}}')no-repeat center;background-size: 100% 100%;">
+	                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+	                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+	                </div>
+	                <div class="dyms">
+	                  <p class="dyname">{{xx.name}}</p>
+	                  <p class="dygz" ng-if="xx.salary || xx.salary===0">工资：{{xx.salary}}</p>
+	                </div>
+	                <div class="dycj">
+	                    <img ng-src='{{xx.jb}}'>
+	               </div>
+	              </a>
+	            </div>
+	          </div>  
+	       </div>
+	    </div>
+     </div>
+  </div>

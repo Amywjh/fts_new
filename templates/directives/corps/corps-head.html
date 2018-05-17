@@ -1,0 +1,8 @@
+<!--头部-->
+<ion-header-bar align-title="left" class="header corpsHeaderCss bar-positive a-flex-between">
+	<div class="a-flex-start">
+		<img ng-if="userData.head_logo_url" ng-src="{{userData.head_logo_url}}" onerror="this.src='../../img2.0/common/touxiang_default.png'"/><img ng-if="!userData.head_logo_url" src="../../img2.0/common/touxiang_default.png" />
+		<span class="a-font-size-small-x a-text-color-whit font-weight">{{userData.name}}</span>
+	</div>
+	<button ng-click="creamCorsp()" class="a-font-size-small-x a-text-color-whit font-weight a-flex-center a-buttonSmall-green">创建战队</button>
+</ion-header-bar>

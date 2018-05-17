@@ -1,0 +1,14 @@
+<ion-modal-view class='main_model'>
+	<div class="modelbox a-background-darkBlue position-center">
+		<div class="closeNow" ng-click="textEditModal.remove()">
+			<i class="ion-ios-close-outline"></i>
+		</div>
+		<div class="modelbody corps">
+			<h1 class="a-text-color-whit a-font-size-medium font-weight corps-h">编辑新公告</h1>
+			<label for="" class="item item-input corps-text">
+				<textarea class="a-text-color-whit" maxlength="50" ng-model="edit.texts" type="text" placeholder="限50字以内" rows="5"></textarea>
+			</label>
+			<button ng-click="editBtn()" class="a-buttonBig-purple a-text-color-whit">确定</button>
+		</div>
+	</div>
+</ion-modal-view>

@@ -1,0 +1,27 @@
+<ion-view view-title="{{titles}}"  class="phone bgBlue" hide-tabs>
+<ion-content scroll="false">
+  <div class="phoneHead" ng-class='{true:"pfont",false:""}[headcss]'>
+  	{{heads}}
+  </div>
+  <div class="warnAlt" style="display: none;"><i class="ion-ios-information-outline"></i>{{alt}}</div>
+  <div class="list">
+  	<span class="item item-input">
+    	<input type="number" ng-model="newUser.pValue" placeholder="请输入手机号" />
+    	<i ng-click="pValueval()" ng-if="newUser.pValue" class="ion-ios-close"></i>
+    	<span id="timeStart" ng-click="testGet()">获取验证码</span>
+    	<span class="bg" id="timeDown" ><span></span>s</span>
+  	</span>
+	<span class="item item-input">
+  		<input type="number" ng-model="newUser.pTest" placeholder="验证码" />
+  		<i ng-click="newUser.pTest=''" ng-if="newUser.pTest" class="ion-ios-close"></i>
+  	</span>
+  </div>
+</ion-content>
+<div class="btn">
+	下一步
+</div>
+<div class="btn bg" ng-click="phoneClick()" ng-if="newUser.pValue && newUser.pTest">
+	下一步
+</div>
+</ion-view>
+

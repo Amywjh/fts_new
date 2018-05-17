@@ -1,0 +1,71 @@
+<ion-view view-title="我的竞猜" class='battle-room lineupShare' hide-tabs>
+	<div class="shareRemider">
+		<img class="a-img-size" src="../../img2.0/common/sgfx_fc_td.png"/>
+	</div>
+	<div class="lineupCenter">
+		<header class="lineup-head">
+			<div class="roomTitle a-font-size-medium-x a-text-color-whit" ng-cloak>{{_userInfo.lineupTitle}}</div>
+			<div class="lineupOwner a-flex-between">
+				<div class="userHead a-flex-start">
+					<img ng-if="_userInfo.userInfo.logo_url" ng-src="{{_userInfo.userInfo.logo_url}}" onerror="loadDefaultImg(1)"/><!---->
+					<img ng-if="!_userInfo.userInfo.logo_url" src="../../img2.0/common/touxiang_default.png" alt="" />
+					<span class="a-font-size-small a-text-color-orange">&nbsp;&nbsp;{{_userInfo.userInfo.nick_name}}</span>
+					<span class="a-font-size-small a-text-color-whit">的阵容</span>
+				</div>
+				<div class="lineupExp a-flex-start" style="display: none;">
+					<span class="a-font-size-small-s a-text-color-whit">阵容表现值：</span>
+					<span class="a-font-family-numstd a-font-size-medium-m a-text-shawgreen" ng-cloak>{{_userInfo.LineUpExp}}</span>
+				</div>
+			</div>
+			<div class="lineupResult a-flex-between">
+				<div class="lineupRank">
+					<p class="a-font-size-small-x a-text-color-whit">战胜了</p>
+					<p class="a-font-size-medium-b a-text-color-whit importShow" ng-cloak>{{_userInfo.winRate}}</p>
+					<p class="a-font-size-small-x a-text-color-whit">的玩家</p>
+				</div>
+				<div class="lineupWin">
+					<p class="a-font-size-small-x a-text-color-whit">赢得星<span ng-if="_userInfo.prizeType == 1" class="a-text-color-whit">钻</span><span ng-if="_userInfo.prizeType != 1" class="a-text-color-whit">币</span></p>
+					<p class="a-flex-center importShow">
+						<img class="a-img-size" ng-if="_userInfo.prizeType == 1" style="margin-left: 0px;" src="../../img2.0/hall/jdzdt_11.png"/>
+						<img class="a-img-size" ng-if="_userInfo.prizeType != 1" style="margin-left: 0px;" src="../../img2.0/common/xb_28.png"/>
+						<span class="a-font-size-medium-b a-text-color-whit" ng-cloak>&nbsp;{{_userInfo.coin}}</span>
+					</p>
+					<p class="a-font-size-small-x a-text-color-whit">价值{{_userInfo.prize}}元</p>
+				</div>
+			</div>
+		</header>
+		<div class="dufu_bigbox small">
+	     	<div class="luhk">
+	          	<div class="box">
+		            <div class="dfrow" ng-repeat='lineup in _lineupInfo.lineupcontent'>
+		              <a class="dfbox" ng-repeat='xx in lineup track by $index' ng-click = "goPlayerDetial(xx.id)">
+		                <div class="df notHave" ng-if="!xx.logo_url && !xx.numone"></div>
+		                 <div class="df" ng-if="!xx.logo_url && xx.numone" style="background-image: url(../../img2.0/common/qiuyi_default.png);">
+		                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+		                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+		                </div>
+		                <div class="df" ng-if="xx.logo_url" style="background-image: url('{{xx.logo_url}}');">
+		                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+		                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+		                </div>
+		                <img class="dfbg" src="../../img2.0/lineup2.0/bz_6.png" />
+		                <div class="a-background-playerSign dyms" ng-if="xx.logo_url || xx.name">
+		                	<span class="a-text-color-orange a-font-family-numstd a-font-size-small goingSalary" ng-if="xx.salary || xx.salary===0" ng-cloak>${{xx.salary}}</span>
+		                	<p class="dyname ng-binding" style="line-height: 1.4em;">{{xx.name}}</p>
+					        <p class="a-flex-center dygz">
+					        	<span class="a-font-size-small-s a-text-color-whitDark" style="text-align: right;">表现值</span>
+			                  	<span class="a-text-shawgreen a-font-family-numstd a-font-size-medium" ng-cloak>{{xx.perExpression}}</span>
+			               	</p>
+			               	
+		                </div>
+		              </a>
+		            </div>
+		            <div class="btn-linups mod">
+				    	<img ng-src="../../img2.0/lineup2.0/bz_1{{_lineupInfo.lineup_data.lineup_nameId-1}}_1.png" />
+				    	<p ng-cloak>{{_lineupInfo.lineup_data.lineup_name}}</p>
+				    </div>
+		       </div>
+		    </div>
+	    </div>
+	</div>
+</ion-view>

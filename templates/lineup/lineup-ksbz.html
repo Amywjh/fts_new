@@ -1,0 +1,136 @@
+<ion-view view-title="阵容" class="lineup-ksbz" hide-tabs>
+<ion-header-bar align-title="left" class="header helpHeader bar-positive">
+ 	 <!--星币和星钻-->
+	<h1 class="title">
+		<div class="dat_box">
+			<span class="a-text-colorgreen a-font-size-small">剩余资金:&nbsp;</span><span class="a-text-color-orange a-font-size-small">${{restSalary}}</span>	
+  		</div>
+		<div class="dat_box">
+			<span class="a-text-colorgreen a-font-size-small">剩余人均:&nbsp;</span><span class="a-text-color-orange a-font-size-small">${{salarySum}}</span>
+		</div>	
+	</h1>
+	<div class="a-background-help buttons-right buttons-right-rule" ng-click="showRule()" >
+       	<div class="a-text-color-light a-font-size-small">竞技规则</div>
+   	</div>
+</ion-header-bar>
+  <div class="lineupInfo">
+    <div class="dzsmsm">阵容战斗力:&nbsp;<span class="useNum">{{power}}</span></div>
+    <div class="pageline" style="width:1px ;height: 100%;"></div>
+    <div class="dzsmsm">人员:&nbsp;<span class="useNum">1/8</span></div>
+  </div>
+  <div class="lineupBox">
+  	<div class="title">
+  		<span class="pos">位置</span>
+  		<span class="name">姓名(所在队)</span>
+  		<span class="salary">工资</span>
+  		<span class="exp">表现值</span>
+  		<span class="atcion">增减修改</span>
+  	</div>
+    <ion-content class="lineupCon">
+    	<div class="lineupPosCon" ng-repeat="lineupPosItem in lineupcontent">
+	    	<div class="a-flex-between a-parting-line lineupItem" ng-repeat="lineupItem in lineupPosItem track by $index" ng-click='loadplayer(lineupItem.positionDisplay,restSalary,dataLi)'>
+				<span class="a-text-color-whit a-font-size-small playerTag" ng-if="(lineupItem.detailStatusDisplay || lineupItem.detailStatusDisplay==0) && lineupItem.detailStatusDisplay!='-10'" 
+					ng-class="{'0':'a-tag-neutral','1':'a-tag-danger','2':'a-tag-danger','3':'a-tag-danger','-2':'a-tag-default','-1':'a-tag-gold'}[lineupItem.detailStatusDisplay]">
+					<i ng-if="lineupItem.detailStatusDisplay==0">? </i>{{lineupItem.detailStatusShow}}
+				</span>
+				<a class="a-flex-start" ng-if="lineupItem.id">
+					<div class="playerSign">
+						<img class="poloShirt" ng-if="lineupItem.logo_url" ng-src="{{lineupItem.logo_url}}" alt="" />
+						<img class="poloShirt" ng-if="!lineupItem.logo_url" src="../../img2.0/common/qiuyi_default.png" alt="" />
+						<img class="a-img-size poloShirtShadow" src="../../img2.0/lineup2.0/bz_6.png" alt="" />
+						<div class="a-flex-center poloShirtNum">
+							<img ng-src='{{lineupItem.numone}}' ng-if='lineupItem.numone'>
+							<img ng-src='{{lineupItem.numtwo}}' ng-if='lineupItem.numtwo'>
+						</div>
+						<img ng-if="lineupItem.recommendDisplay && lineupItem.detailStatusDisplay<0" class="a-img-size lineupItem_recommend" style="" src="../../img2.0/lineup2.0/xzqy_tj_new.png"/>
+					</div>
+					<div class="playerInfo">
+						<div class="a-flex-start playerData">
+							<div class="a-flex-start teamFight">
+								<!--<img class="a-img-size" src="../../img2.0/joinroom/VS_cjfj.png" alt="" />-->
+								<div class="fightGroup">
+									<div class="a-font-size-small-x a-text-color-whit playerName" ng-class="{'a-choosed-color-gold':lineupItem.detailStatusDisplay=='-1'}">{{lineupItem.name}}</div>
+									<!--<div class="a-font-size-small a-text-color-whitDark" ng-bind="(lineupItem.homePlay)?lineupItem.homeTeamName:lineupItem.awayTeamName"></div>-->
+									<div class="a-font-size-small a-text-color-whitDark">{{lineupItem.teamName}}</div>
+								</div>
+							</div>
+							<div class="a-flex-start playerDetial">
+								<div class="a-flex-start">
+									<span class="a-font-size-small a-text-color-whitDark playerDetialSalary"><span class="a-font-size-medium-m a-text-color-orange a-font-family-numstd">${{lineupItem.salary}}</span></span>
+									<span class="a-font-size-small a-text-color-whitDark playerDetialExp"><span class="a-font-size-medium-m a-text-color-light a-font-family-numstd">{{lineupItem.recentExp}}</span> </span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a class="a-flex-start" ng-if="lineupItem && !lineupItem.id">
+					<div class="playerSign">
+						<img class="poloShirt" src="../../img2.0/lineup2.0/bz_4.png" alt="" />
+						<img class="a-img-size poloShirtShadow" src="../../img2.0/lineup2.0/bz_6.png" alt="" />
+					</div>
+					<div class="playerInfo">
+						<div class="a-flex-start playerData">
+							<div class="a-flex-start teamFight">
+								<div class="fightGroup">
+									<div class="a-font-size-small-x a-text-color-whit playerName">请选择一名球员</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				<div class="check_mp check_mp_box" ng-class="{'needAdd':!lineupItem.id}">
+					<img  ng-src="{{lineupItem.id?'../../img2.0/lineup2.0/bz_xzqy_2.png':'../../img2.0/lineup2.0/bz_xzqy_1.png'}}"/>
+				</div>
+			</div>
+    	</div>
+    </ion-content>
+  	
+  </div>
+  <!--<div class="lineup-ksbz tt">
+     <div class="dufu_bigbox">
+     	<div class="luhk">
+          <div class="box">
+            <div class="dfrow" ng-repeat='lineup in lineupcontent'>
+              <a class="dfbox" ng-repeat='xx in lineup track by $index' ng-click='loadplayer(xx.positionDisplay,restSalary,dataLi)'>
+                 <div class="df" ng-if="!xx.logo_url&&!xx.numone">
+                 	<div ng-if="firstEnter" class="onePointing two"><img class="left-center" src="../../img2.0/common/up_jiantou.png" alt="" /><div class="a-flex-center a-text-color-whit font-weight a-font-size-small">点击加号<span class="a-text-color-light">选择球员</span></div></div>
+                 </div>
+                <div class="df" ng-if="!xx.logo_url && xx.numone" style="background-image: url(../../img2.0/common/qiuyi_default.png);">
+                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+                </div>
+                <div class="df" ng-if="xx.logo_url" style="background-image: url('{{xx.logo_url}}');">
+                	<span class="dfhxx"><img ng-src='{{xx.numone}}' ng-if='xx.numone'></span>
+                	<span class="dfhtwo"><img ng-src='{{xx.numtwo}}' ng-if='xx.numtwo'></span>
+                </div>
+                <img class="dfbg" src="../../img2.0/lineup2.0/bz_6.png" />
+                <div class="a-background-playerSign dyms" ng-if="xx.logo_url || xx.name">
+                  <p class="dyname">{{xx.name}}</p>
+                  <p class="a-flex-center dygz">
+                  	<span class="a-text-color-orange a-font-family-numstd" ng-if="xx.salary || xx.salary===0">${{xx.salary}}</span>
+                  	<span class="a-text-color-light a-font-family-numstd">{{xx.recentExp}}</span>
+                  </p>
+                </div>
+              </a>
+            </div>
+       </div>
+    </div>
+    </div>-->
+    <!--<div class="btn-linups" ng-click="lineup_fam()">
+    	<h1><img src="../../img2.0/lineup2.0/bz_8.png" /></h1>
+    	<img ng-src="../../img2.0/lineup2.0/bz_1{{liupimg}}.png" />
+    	<p>{{lineupName}}</p>
+    </div>
+    <div class="ksbz_clear" ng-class="{'goed':lineupNow.lineupMsg.chooseNum == 11}" ng-click="bz_empty()"></div>
+    <div class="ksbz_bntbz" ng-if="lineupNow.lineupMsg.chooseNum != 11" ng-click="bz_sys()"></div>-->
+  <!--按钮组-->
+    <div class="lineup_btns">
+      <div class="lineup_btn left_btn" ng-disabled="!copylength" ng-click="bz_everonce()">
+      	<span>历史阵容</span><div ng-if='copylength' class="ownLineup">{{copylength}}</div>
+      </div>
+      <div class="lineup_btn center_btn" ng-click="bz_sys()" ng-bind-html="lineupNow.lineupMsg.chooseNum == 11?'一键清空':'自动添加'" | trustHtml></div>
+      <div class="lineup_btn commit_btn" ng-disabled='true' ng-click="bz_commit(restSalary,power)"><span>提交</span></div>
+    </div>
+  </div>
+</ion-view>
+	

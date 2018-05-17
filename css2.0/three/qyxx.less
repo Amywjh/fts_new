@@ -1,0 +1,180 @@
+.qyxx{
+    top: 0rem;
+    .qyxxTitle{
+        >.header.bar{
+            position: relative;
+        }
+    }
+    .qyxx_header{
+        width: 100vw;padding: 0.12rem 0.2rem;
+        background:#2c3440 url(../../img2.0/battle/sk_yjs_jdz_1.png) no-repeat top;
+        background-size: 100%;
+        >.qyxx_headerInfo{
+            >.qyxx_headerInfo-left{
+                >.headerImg{
+                    >img{
+                        width: 0.72rem;border-radius: 50%; border: 0.02rem solid #34ed41;
+                    }
+                }
+                >.headerInfo{
+                    margin-left: 0.12rem; 
+                    >div:first-child{
+                        margin-bottom: 0.12rem;
+                        >span:first-child{
+                            margin-right: 0.1rem;
+                        }
+                    }
+                    >div:nth-child(2){
+                        >span:first-child{
+                            margin-right: 0.06rem;
+                        }
+                        >.playerPos{
+                           width: 0.32rem;height: 0.18rem;
+                           >div{
+                               font-size: 0.12rem;
+                           }
+                       }
+                    }
+                }
+            }
+            >.qyxx_headerInfo_right{
+                text-align: center;
+                >img{
+                    width: 0.52rem;
+                }
+                >span{
+                    display: block;white-space: nowrap;
+                }
+            }
+        }
+        >.qyxx_headerDetial{
+            padding: 0.16rem 0.26rem 0px;
+            >.radialItem{
+                width: auto;
+                >.radial{
+                    display: inline-block;position: relative;
+                    width: 0.58rem;
+                    height: 0.58rem;
+                    box-sizing: content-box;
+                    border: 3px solid #3b434f;
+                    border-radius: 50%;
+                    box-shadow: inset 0px 4px 12px 0px rgba(0,0,0,0.5);
+                    >.centerCon{
+                        width: 100%;height: 100%;position: absolute;top: 0;left: 0px;text-align: center;line-height: 0.6rem;
+                    }
+                    canvas{
+                        width: 0.58rem;height:0.58rem;
+                    }
+                }
+            }
+        }
+    }
+    .playerStatus{
+        margin: 0.13rem 0.1rem 0.12rem;padding: 0.1rem 0px;
+        >h1{
+            text-align: center;padding-bottom: 0.1rem;
+        }
+    }
+    .matchRecord{
+        margin: 0.13rem 0.1rem 0.12rem;padding: 0.1rem 0px;
+        position: relative;
+        >h1{
+           text-align: center;padding-bottom: 0.1rem; margin: 0px 0.12rem;
+        }
+        >.onlyActive{
+            display: block;padding: 0.1rem;
+            >.a-toggle{
+                white-space: nowrap;height: auto;
+                .qyxx_toggle_font{
+                    font-weight: bold;
+                }
+            }
+        }
+        >.Htwo{
+            padding: 0px 0.06rem;
+            display: -webkit-flex;display: flex;
+                >div:first-child{
+                    width:25%;
+                    >.infoLeft{
+                        width: 98%;
+                        .listInfo{
+                           width: 100%;height: .36rem;color: #fff;
+                           >td{
+                               text-align: center;height: 0.34rem;
+                               border-top: 0.016rem solid rgba(0,0,0,0.2);
+                               >.listInfoBox{
+                                   width: 100%;height: 100%;
+                                   >.time{
+                                       width: auto;
+                                       display: inline-block;vertical-align: middle;
+                                       color: #858ea0; margin-right: 0.05rem;
+                                       >p{
+                                           line-height: 1.2em;
+                                       }
+                                       >.line{
+                                           border: none;border-bottom: 1px solid #858ea0;
+                                           transform: rotate(-10deg);-webkit-transform: rotate(-10deg);width: 1.2em;
+                                       }
+                                   }
+                                   >.teams{
+                                       width: 100%;
+                                       display: inline-block;vertical-align: middle;
+                                       >span{
+                                           display: block;font-size: 0.12rem;line-height: 0.14rem;text-align: center;white-space: nowrap;color: #858ea0;
+                                       }
+                                       >span.isLight{
+                                           color: #fff;
+                                       }
+                                   }
+                               }
+                           }
+                        }
+                        .headInfo{
+                           width: 100%;height: .24rem;line-height: .24rem;
+                           >th{
+                               color: rgb(143,234,150); 
+                               font-size: .12rem;
+                               text-align: center;
+                           }
+                        }
+                    }
+                }
+                >.scr{
+                    width: 75%;height: 100%; left: inherit; box-shadow: #000 0px 0px 0.5rem inset;
+                    .prizePlayerDetial{
+                        .prizePlayerDetialItem{
+                            height: 0.36rem;
+                            >td{
+                                line-height: 0.36rem;text-align: center;
+                                white-space: nowrap;//padding: 0px 1em;
+                                color: #fff;
+                            }
+                            >td:nth-child(2){
+                                color: #34ed41;
+                            }
+                        }
+                        .prizePlayerDetialItem:nth-child(2n){
+                            background-color: rgba(133,142,160,0.1);
+                        }
+                        .prizePlayerDetialItem:nth-child(2n+1){
+                            background-color: rgba(133,142,160,0.05);
+                        }
+                        .prizePlayerDetialTitle{
+                            height: 0.24rem;
+                            >th{
+                                line-height: 0.24rem;text-align: center;
+                                white-space: nowrap;padding: 0px 0.5em;
+                            }
+                        }
+                    }
+                }
+        }
+    }
+    
+}
+.qyxx.hasBtn{
+    bottom: 0.76rem;
+}
+.qyxxBtn{
+    position: fixed;bottom: 0px;width: 100%;padding: 0rem 0.1rem;
+}

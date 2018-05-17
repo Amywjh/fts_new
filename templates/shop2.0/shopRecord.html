@@ -1,0 +1,91 @@
+<ion-view view-title="商品兑换记录"  class="Record bgBlue" hide-tabs>
+	<div class="a-flex-between recordTypesBox">
+		<!--<div class="recordTypesBox">-->
+			<div class="recordTypes" ng-class="{'recordTypesAct':recordItem.activated}" ng-repeat="recordItem in recordTypes" ng-cloak ng-click="recordTab(recordItem)">
+				<span class="a-font-size-medium">{{recordItem.name}}</span>
+			</div>
+		<!--</div>-->
+    	<style type="text/css">
+    		/*.recordTypes{
+    			width: 50%;text-align: center;border: 1px solid #ccc;line-height: 3em;position: relative;
+    		}
+    		.recordTypes.recordTypesAct >span{
+    			position: absolute;bottom: 0px;left:0;height: 2px;width: 100%;background: greenyellow;
+    		}*/
+    	</style>
+	</div>
+	<ion-slide-box class="" style="height: 100%;" active-slide="recordTypeIndex" disable-scroll="true" delegate-handle="recordSlide" show-pager="false"  animation="slide-left-right-ios7">
+		<ion-slide class="">
+			<div class="Recordmsg bgBlue" ng-if="msgCash">
+				<img src="../../img2.0/shop2.0/newShop/dhjl_4.png" alt="" />
+				<div>暂无记录</div>
+			</div>
+			<div ng-if="msgCash===false">
+				<ion-content class="shoptop" delegate-handle="recordCon">
+					<div class="Recordbox RecordboxTitle">
+						<div class="Rone">时间</div>
+						<div class="Rtwo" style="text-align: left;">商品</div>
+						<div class="Rthr"></div>
+						<div class="Rfor">状态</div>
+					</div>
+					<div class="Recordbox" ng-repeat="sale in saleWallets track by $index">
+						<div class="Rone">
+							<p class="a-font-size-small RoneYear" style="color: rgb(187,161,255);">{{sale.years}}</p>
+							<p class="a-text-color-whit a-font-size-small font-weight">{{sale.month}}</p>
+							<p class="a-text-color-whit a-font-size-small">{{sale.hours}}</p>
+						</div>
+						<div class="Rtwo">
+							<img ng-src="../../img2.0/shop2.0/dhjl_{{sale.withdrawType}}.png" alt="" />
+						</div>
+						<div ng-if="sale.withdrawType == 0" class="Rthr"><p style="margin-bottom: .1rem;">¥{{sale.redeemAmt}}微信红包</p><p><img class="a-img-size" src="../../img2.0/shop2.0/shopchange/dh_xb_2.png" alt="" />{{sale.customedCoinCount}}</p></div>
+						<div ng-if="sale.withdrawType == 1" class="Rthr"><p style="margin-bottom: .1rem;">¥{{sale.redeemAmt}}支付宝红包</p><p><img class="a-img-size" src="../../img2.0/shop2.0/shopchange/dh_xb_2.png" alt="" />{{sale.customedCoinCount}}</p></div>
+						<div ng-if="sale.withdrawType == 2" class="Rthr"><p style="margin-bottom: .1rem;">¥{{sale.redeemAmt}}现金兑换券</p><p><img class="a-img-size" src="../../img2.0/shop2.0/shopchange/dh_xb_2.png" alt="" />{{sale.customedCoinCount}}</p></div>
+						<div class="Rfor">
+							<span ng-if="sale.status=='1'" style="color: rgb(52,237,65);">成功</span>
+							<span ng-if="sale.status=='0'||sale.status=='4'" style="color:rgb(255,216,65);">处理中</span>
+							<span ng-if="sale.status=='2'" style="color:rgb(255,0,22);">失败</span>
+							<p ng-if="sale.status=='2'" ng-click="exError($index,sale.withdrawType,sale.resultMsg)">查看详情&nbsp;<i class="ion-chevron-right a-text-color-whit"></i></p>
+						</div>
+					</div>
+					<ion-infinite-scroll icon="ion-loading-c" immediate-check="false" ng-if="!moreRecordStop" on-infinite="loadMore(recordTypes[0])" distance="10%"></ion-infinite-scroll>
+				</ion-content>
+			</div>
+			
+		</ion-slide>
+		<ion-slide class="">
+			<div class="Recordmsg bgBlue" ng-if="msgJewel">
+				<img src="../../img2.0/shop2.0/newShop/dhjl_4.png" alt="" />
+				<div>暂无记录</div>
+			</div>
+			<div ng-if="msgJewel===false">
+				<!--<header class="shopHead">
+				  	<h1 class="a-font-size-medium a-text-color-whit font-weight">最终结果请以钱款到账为准！</h1>
+				  	<p class="a-font-size-small">若显示成功后钱款还未到账，请通过公众号与我们联系</p>
+				</header>-->
+				<ion-content class="shoptop" delegate-handle="recordCon">
+					<div class="Recordbox RecordboxTitle">
+						<div class="Rone">时间</div>
+						<div class="Rtwo" style="text-align: left;">商品</div>
+						<div class="Rthr"></div>
+						<div class="Rfor">状态</div>
+					</div>
+					<div class="Recordbox" ng-repeat="coinChangeItem in coinChange track by $index">
+						<div class="Rone">
+							<p class="a-font-size-small RoneYear" style="color: rgb(187,161,255);">{{coinChangeItem.years}}</p>
+							<p class="a-text-color-whit a-font-size-small font-weight">{{coinChangeItem.month}}</p>
+							<p class="a-text-color-whit a-font-size-small">{{coinChangeItem.hours}}</p>
+						</div>
+						<div class="Rtwo">
+							<img ng-src="../../img2.0/shop2.0/dhjl_3.png" alt="" />
+						</div>
+						<div class="Rthr"><p style="margin-bottom: .1rem;">{{coinChangeItem.dmd_count}}星钻</p><p><img class="a-img-size" src="../../img2.0/shop2.0/shopchange/dh_xb_2.png" alt="" />{{coinChangeItem.custom_coin}}</p></div>
+						<div class="Rfor">
+							<span style="color: rgb(52,237,65);">成功</span>
+						</div>
+					</div>
+					<ion-infinite-scroll icon="ion-loading-c" immediate-check="false" ng-if="!moreRecordStop" on-infinite="loadMore(recordTypes[1])" distance="10%"></ion-infinite-scroll>
+				</ion-content>
+			</div>
+		</ion-slide>
+	</ion-slide-box>
+</ion-view>
