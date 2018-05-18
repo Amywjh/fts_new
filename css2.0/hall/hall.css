@@ -1,3 +1,38 @@
+@-webkit-keyframes _around {
+  0% {
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
+  }
+  25% {
+    -webkit-transform: translateX(10%);
+    transform: translateX(10%);
+  }
+  50% {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+  75% {
+    -webkit-transform: translateX(-10%);
+    transform: translateX(-10%);
+  }
+  100% {
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
+  }
+}
+@-webkit-keyframes _going {
+  0% {
+    width: 30%;
+    z-index: 1;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+    z-index: 0;
+  }
+}
 #rank {
   position: relative;
   background-image: linear-gradient(-180deg, #19232B 0%, #303845 100%);
@@ -113,7 +148,8 @@
 }
 .hallheader {
   position: absolute;
-  top: .4rem;
+  top: 0.5rem;
+  bottom: 0px;
   height: .44rem;
   width: 100%;
   background-color: #26323d;
@@ -200,7 +236,7 @@
   display: none;
 }
 .hall {
-  top: .84rem;
+  top: .94rem;
   bottom: .2rem;
   background: #26323d;
 }

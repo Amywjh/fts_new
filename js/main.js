@@ -10,7 +10,7 @@ require.config({
     	'services':"services",//启动services
     	"controllers":"controllers",//启动controllers
     	"AllCtrl":"controllers/AllCtrl",//主tab控制器
-    	"Functions":"functions/functions-90c9f77707",//functions
+    	"Functions":"functions/functions",//functions -90c9f77707
     	"LineupFunction":"functions/lineupFunction-6c47979b0a",//布阵func
     	"IntroCtrl":"controllers/guideControllers/IntroCtrl",// 引导页控制器
     	"headerCtrl":"controllers/commonControllers/headerCtrl",//header
