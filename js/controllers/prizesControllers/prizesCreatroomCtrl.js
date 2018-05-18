@@ -182,7 +182,7 @@ define(["app"],function(app){
 				"dataName":"prizeall",
 			}
 			$scope.voter = data;//投票球员
-			$scope.voter.expectPrize =getPreIncome(9,1,$scope.prizeall[$index].homeTotalCost,$scope.prizeall[$index].awayTotalCost,rule);
+			$scope.voter.expectPrize =getPreIncome(1,room.prizePool,room.homeTotalCost,room.awayTotalCost,rule);
 	
 		/*剩余星钻*/
 			var user = sessionStorage.getItem("user");
@@ -210,13 +210,13 @@ define(["app"],function(app){
 			$('.prizes-room').find('.input_bg').css({display:"block"});
 			$("#vote_num").bind('input oninput',function(event){
 				getVal(event,min,99999,$scope.xz_f);
-				$scope.voter.expectPrize =getPreIncome(9,Number(event.target.value),$scope.prizeall[$index].homeTotalCost,$scope.prizeall[$index].awayTotalCost,rule);
+				$scope.voter.expectPrize =getPreIncome(Number(event.target.value),room.prizePool,room.homeTotalCost,room.awayTotalCost,rule);
 				$scope.$apply();
 				
 			})
 			$scope.changeInput = function(changeId){
 				var nowNum = setNum(min,99999,$scope.xz_f,changeId);//调用加减得函数
-				$scope.voter.expectPrize =getPreIncome(9,Number(nowNum),$scope.prizeall[$index].homeTotalCost,$scope.prizeall[$index].awayTotalCost,rule);
+				$scope.voter.expectPrize =getPreIncome(Number(nowNum),room.prizePool,room.homeTotalCost,room.awayTotalCost,rule);
 			}
 		}
 		

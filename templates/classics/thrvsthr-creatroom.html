@@ -84,7 +84,7 @@
 		</div>
 		<div class="a-flex-start-column a-pad-mar a-con-padding a-background-item awardRule">
 			<h1 class="a-flex-start a-font-size-small a-text-color-light">
-			 	入场费:&nbsp;<img class="a-img-size" src="../../img2.0/creatroom/cjfj_3.png"/><span class="a-text-color-whitopc a-font-size-small-x">{{creat_choosed.fee}}</span>
+			 	入场费:&nbsp;<img class="a-img-size" src="../../img/common/hb_24.png"/><span class="a-text-color-whitopc a-font-size-small-x">{{creat_choosed.fee}}</span>
 			</h1>
 			<ul class="a-flex-between">
 				  <ion-radio class="a-radio-small" ng-repeat="fee in creatroom_fee.value"
@@ -106,9 +106,9 @@
 			</h1>
 			<div class="a-flex-between a-con-padding awardNumCon">
 				 <ul class="leftAward">
-				 	<li class="a-flex-start" ng-if="rewardArr[0]>0"><span class="a-text-color-whitDark a-font-size-small-x">第一名</span><img class="a-img-size" src="../../img2.0/creatroom/cjfj_4.png" alt="" /><span class="a-font-family-special a-text-shawgreen a-font-size-medium-x">{{rewardArr[0]}}</span></li>
-				 	<li class="a-flex-start" ng-if="(creat_choosed.rewardPlanId==1 || creat_choosed.rewardPlanId==2) && rewardArr[1]>0" ><span class="a-text-color-whitDark a-font-size-small-x">第二名</span><img class="a-img-size" src="../../img2.0/creatroom/cjfj_4.png" alt="" /><span class="a-font-family-special a-text-shawgreen a-font-size-medium-x">{{rewardArr[1]}}</span></li>
-				 	<li class="a-flex-start" ng-if="(creat_choosed.rewardPlanId==1 || creat_choosed.rewardPlanId==2) && rewardArr[2]>0" ><span class="a-text-color-whitDark a-font-size-small-x">第三名</span><img class="a-img-size" src="../../img2.0/creatroom/cjfj_4.png" alt="" /><span class="a-font-family-special a-text-shawgreen a-font-size-medium-x">{{rewardArr[2]}}</span></li>
+				 	<li class="a-flex-start" ng-if="rewardArr[0]>0"><span class="a-text-color-whitDark a-font-size-small-x">第一名</span><img class="a-img-size" src="../../img/common/hb_28.png" alt="" /><span class="a-font-family-special a-text-shawgreen a-font-size-medium-x">{{rewardArr[0]}}</span></li>
+				 	<li class="a-flex-start" ng-if="(creat_choosed.rewardPlanId==1 || creat_choosed.rewardPlanId==2) && rewardArr[1]>0" ><span class="a-text-color-whitDark a-font-size-small-x">第二名</span><img class="a-img-size" src="../../img/common/hb_28.png" alt="" /><span class="a-font-family-special a-text-shawgreen a-font-size-medium-x">{{rewardArr[1]}}</span></li>
+				 	<li class="a-flex-start" ng-if="(creat_choosed.rewardPlanId==1 || creat_choosed.rewardPlanId==2) && rewardArr[2]>0" ><span class="a-text-color-whitDark a-font-size-small-x">第三名</span><img class="a-img-size" src="../../img/common/hb_28.png" alt="" /><span class="a-font-family-special a-text-shawgreen a-font-size-medium-x">{{rewardArr[2]}}</span></li>
 				 	<div have-more ng-if="creat_choosed.rewardPlanId==2 && creat_choosed.num>15"></div>
 				 </ul>
 				 <div class="rightImg">

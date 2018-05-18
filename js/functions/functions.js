@@ -1,6 +1,8 @@
 function sysPar(){
-	this.starToJewel = 10;//星币转星钻
+	this.starToJewel = 1;//星币转星钻
+	this.servePercent = 0.9;//抽水剩余
 	this.prizeStart = "8:00";
+	
 }
 //千分位显示函数
 function toThousands(num) {
@@ -34,24 +36,28 @@ function lineup_qudh(num,list){
  * rank //排名
  */
 function getReward(playId,num,fee){
+	var rate = new sysPar();
+	var prent = rate.starToJewel;
+	var serve = rate.servePercent;
+	var getPercent = prent*serve;
 	var prize = [];
 	if(playId==undefined || !num || !fee) return false; 
 	if(playId==4 || playId==3){
-		prize.push(fee*18)
+		prize.push(fee*2*getPercent);
 		return prize;
 	}else if(playId==0){
-		prize.push(fee*num*9);
+		prize.push(fee*num*getPercent);
 		return prize;
 	}else if(playId==1){
 		if(num<3) return prize;
-		prize.push(parseInt(fee*num*9/2));
-		prize.push(parseInt(fee*num*9/3));
-		prize.push(parseInt(fee*num*9/6));
+		prize.push(parseInt(fee*num*getPercent/2));
+		prize.push(parseInt(fee*num*getPercent/3));
+		prize.push(parseInt(fee*num*getPercent/6));
 		return prize;
 	}else if(playId==2){
 		if(num<4) return prize;
 		function reward25(rank){
-			return parseInt(fee*num*9*((2*num/4)-(2*rank)+1)/(num/4)/(num/4));
+			return parseInt(fee*num*getPercent*((2*num/4)-(2*rank)+1)/(num/4)/(num/4));
 		}
 		prize.push(reward25(1));
 		prize.push(reward25(2));
@@ -98,21 +104,23 @@ $(function(){
 })
 //输入框的加减号
 function setNum(min,max,sum,changeId){//changeId 1为减，2为加
+	var changUnit = 0.01;
 	if(changeId==1){
-		var num = $("#vote_num").val()|0;
+		var num = Number($("#vote_num").val());
 		$("#vote_num").val(num);
+		console.log(num,min);
 		if(num>min){
-			$("#vote_num").val(num-1);
+			$("#vote_num").val(num-changUnit);
 		}
 	}else if(changeId==2){
-		var num = $("#vote_num").val()|0;
+		var num = Number($("#vote_num").val());
 		$("#vote_num").val(num);
 		if(sum!=undefined){
 			if(num<sum){
-				$("#vote_num").val(num+1);
+				$("#vote_num").val(num+changUnit);
 			}
 		}else{
-			$("#vote_num").val(num+1);
+			$("#vote_num").val(num+changUnit);
 		}
 		if(num>=max){
 			$("#vote_num").val(max);
@@ -143,21 +151,25 @@ function getVal(event,min,max,sum){
 	}
 }
 //球星对战获取预计奖励
-function getPreIncome(percent,nowNum,leftAll,rightAll,isLeft){//参数依次为：转化率，输入金额，主队投入总额，客队投入总额，是否是主队
-	var count = (nowNum + leftAll + rightAll)*percent;
+function getPreIncome(nowNum,pool,leftAll,rightAll,isLeft){//参数依次为：转化率，输入金额，主队投入总额，客队投入总额，是否是主队
+	var rate = new sysPar();
+	var prent = rate.starToJewel;
+	var serve = rate.servePercent;
+	var getPercent = prent*serve;
+	var count = (nowNum*getPercent)+pool;
 	var num;
 	if(!nowNum) return num = false;
 	if(isLeft){
 		if(!rightAll) return num=false;//如果右边为0
 		num = count* nowNum/(nowNum+leftAll);
-		if(num<nowNum*10){//预计奖励不足本金，奖励为本金*10星币。
-			num = nowNum*10;
+		if(num<nowNum*prent){//预计奖励不足本金，奖励为本金*10星币。
+			num = nowNum*prent;
 		}
 	}else{
 		if(!leftAll) return num=false;//如果左边为0
 		num = count* nowNum/(nowNum+rightAll);
-		if(num<nowNum*10){
-			num = nowNum*10;
+		if(num<nowNum*prent){
+			num = nowNum*prent;
 		}
 	}
 	return num = Math.round(num);	

@@ -32,7 +32,7 @@ define(["app"], function(app) {
 		//	入场费
 		$scope.creatroom_fee = {
 			'title': "入场费",
-			'value': [{'detial': 1}, {'detial': 5}, {'detial': 20}, {'detial': 50}, {'detial': "自定义"}]
+			'value': [{'detial': 0.1}, {'detial': 0.5}, {'detial': 1}, {'detial': 5}, {'detial': "自定义"}]
 		};
 		var creatroom_fun = function(list) {
 			if(JSON.parse(sessionStorage.getItem("onlyDate"))){
@@ -383,13 +383,13 @@ define(["app"], function(app) {
 			$scope.titleName = value?"入场费":"入场人数";
 			$scope.titleId = value;
 			var max = value?99999:100;
-			var min = value?1:2;
+			var min = value?0.1:2;
 			if(value){//入场费
 				var defaultNum = $scope.creat_choosed.fee;
 			}else{//入场人数
 				var defaultNum = $scope.creat_choosed.num;
 			}
-			$scope.inputAction($scope.titleName,$scope.titleId,defaultNum,min|0,max);
+			$scope.inputAction($scope.titleName,$scope.titleId,defaultNum,Number(min),max);
 		}
 		
 		$scope.exit_enter_c = function(){//取消输入
